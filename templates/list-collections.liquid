@@ -1,0 +1,44 @@
+<!-- /templates/list-collections.liquid -->
+{% comment %}
+
+  This page represents the /collections and /products pages.
+  It is an optional, but highly recommended, template for your theme.
+
+  More info:
+    - http://docs.shopify.com/manual/configuration/store-customization/taking-control-of-collections-listing
+
+{% endcomment %}
+
+<script>
+  // https://github.com/aFarkas/lazysizes
+  window.lazySizesConfig = window.lazySizesConfig || {};
+  window.lazySizesConfig.expand = 150;
+
+  $(document).on('lazyloaded', function(e){
+    $(e.target).parent().addClass('show');
+  });
+</script>
+
+<main class="cn-wrapper cn-wrapper--top">
+  {% for collection in collections %} 
+    <h3>{{ collection.title }}</h3>
+    {% for product in collection.products %}
+      {% if product.images.size > 0 %}
+        <a class="cn-categoryproduct" href="{{ product.url }}">
+          <div class="cn-categoryproduct__img content-fill">
+            <img class="lazyload" data-src="{{ product.featured_image | img_url : '409x273', crop: 'center' }}" alt="{{ product.featured_image.alt }}" />
+          </div>
+          <div class="cn-categoryproduct__title dolceVita">{{ product.title }}</div>
+
+          {% if product.available == false %}
+            <div class="cn-categoryproduct__soldout product-mark sold-out">sold out</div>
+          {% endif %}
+        </a>
+      {% else %}
+        <a class="cn-categoryproduct">no product thumbnail</a>
+      {% endif %}
+    {% endfor %}
+  {% endfor %}
+</main>
+
+{{ 'lazysizes.min.js' | asset_url | script_tag }}

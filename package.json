@@ -1,0 +1,39 @@
+{
+  "name": "christy-natsumi-jewelry",
+  "version": "1.0.0",
+  "description": "",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "remove": "theme remove $file",
+    "scss": "gulp scss",
+    "dev": "gulp shopify",
+    "prod": "theme upload --env=production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kakorcal/christy-natsumi-jewelry.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kakorcal/christy-natsumi-jewelry/issues"
+  },
+  "homepage": "https://github.com/kakorcal/christy-natsumi-jewelry#readme",
+  "devDependencies": {
+    "dotenv": "^4.0.0",
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-minify": "^1.0.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-shopify-sass": "^0.4.1",
+    "gulp-shopify-upload": "^2.0.0",
+    "gulp-watch": "^4.3.11",
+    "merge-stream": "^1.0.1"
+  },
+  "dependencies": {
+    "jquery-validation": "^1.17.0",
+    "lazysizes": "^4.0.1"
+  }
+}

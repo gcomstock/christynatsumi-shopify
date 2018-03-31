@@ -1,0 +1,9 @@
+{% for link in linklists.shop-menu.links %}
+  <li {% if link.active %}class="active"{% endif %}>
+    {% if link.url == '/cart' %}
+      <a href="/cart" class="cn-header__sectnav__cart">Cart: {{ cart.item_count }}</a>
+    {% else %}
+      <a href="{{ link.url }}">{{ link.title }}</a>
+    {% endif %}
+  </li>
+{% endfor %}

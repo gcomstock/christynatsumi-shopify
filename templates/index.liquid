@@ -1,0 +1,65 @@
+<!-- /templates/index.liquid -->
+{% comment %}
+
+  This is the homepage of your site.
+
+  More info on global variables (available on all templates):
+    - http://docs.shopify.com/themes/liquid-variables/global
+{% endcomment %}
+
+<main class="cn-home">
+
+    <div class="row row--imgRow">
+        <a href="/collections/all" class="cn-home__homeMenuImage cn-home__homeMenuImage--margin cn-home__homeMenuImage--big cn-home__homeMenuImage--shop">
+            <div class="cn-home__homeMenuImage__text">
+                <h2>shop</h2>
+            </div>
+            <div class="cn-home__homeMenuImage__bg"></div>
+        </a>
+        <a href="/pages/custom" class="cn-home__homeMenuImage cn-home__homeMenuImage--small cn-home__homeMenuImage--custom">
+            <div class="cn-home__homeMenuImage__text">
+                <h2>custom</h2>
+            </div>
+            <div class="cn-home__homeMenuImage__bg"></div>
+        </a>
+    </div>
+
+    <div class="row row--imgRow row--imgRow--noBottom">
+        <a class="cn-home__homeMenuImage cn-home__homeMenuImage--margin cn-home__homeMenuImage--small cn-home__homeMenuImage--email">
+            <div class="cn-home__homeMenuImage__text">
+                <h2>stay in touch</h2>
+            </div>
+
+            <div class="cn-home__homeMenuImage__form">
+                <h4 class="cn-home__homeMenuImage__form__content">Get the latest Christy Natsumi news and specials.</h4>
+                <form class="cn-emailForm validate" action="//christynatsumi.us2.list-manage.com/subscribe/post?u=f04f5f29de9eb0f93431bcf1c&amp;id=902b73c91f" method="post" name="mc-embedded-subscribe-form" target="_blank">
+                    <input type="email" value="" name="EMAIL" class="email" placeholder="email address" required><input type="submit" value="sign up" name="subscribe"/>
+                </form>
+            </div>
+
+            <div class="cn-home__homeMenuImage__bg"></div>
+        </a>
+        <a href="/pages/about" class="cn-home__homeMenuImage cn-home__homeMenuImage--big cn-home__homeMenuImage--about">
+            <div class="cn-home__homeMenuImage__text">
+                <h2>about</h2>
+            </div>
+            <div class="cn-home__homeMenuImage__bg"></div>
+        </a>
+    </div>
+
+</main>
+
+
+<div class="modal">
+    <div class="modal__content">
+        <div class="modal__content__x"></div>
+        <div class="modal__content__body">
+            <h2 class="font--med--thin color-white">Get the latest Christy Natsumi news and specials.</h2>
+            <form class="cn-emailForm validate" action="//christynatsumi.us2.list-manage.com/subscribe/post?u=f04f5f29de9eb0f93431bcf1c&amp;id=902b73c91f" method="post" name="mc-embedded-subscribe-form" target="_blank">
+                <input type="email" value="" name="EMAIL" class="email" placeholder="email address" required><input id="cn-emailForm__modalSignup" type="submit" value="sign up" name="subscribe"/>
+            </form>
+        </div>
+    </div>
+</div>
+
+{{ 'main-home.js' | asset_url | script_tag }}

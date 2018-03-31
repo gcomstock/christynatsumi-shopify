@@ -1,0 +1,152 @@
+<!-- /templates/product.liquid -->
+{% comment %}
+
+  Rich snippets (itemscope, itemtype, etc.) for products are a theme requirement,
+  and allow search engines to easily understand what the content is.
+
+  For more information on these Scheme.org tags, visit:
+    - http://schema.org/docs/gs.html
+
+{% endcomment %}
+
+<main class="cn-wrapper cn-wrapper--top">
+  <div class="cn-product" itemscope itemtype="http://schema.org/Product">
+    <h4 class="cn-product__title--mobile dolceVita">{{ product.title }}</h4>
+
+
+      <!--LEFT COLUMN-->
+      <div class="cn-product__mask content-fit">
+        {% for image in product.images %}
+          {% if image.position == 1 %}
+            <img class="cn-product__mask__slide active cn-imageFrame" src="{{ image | img_url : 'master' }}" itemprop="image" alt="original"/>
+          {% else %}
+            <img class="cn-product__mask__slide cn-imageFrame" src="{{ image | img_url : 'master' }}" alt="original"/>
+          {% endif %}
+        {% endfor %}
+      </div>
+
+
+      <!--RIGHT COLUMN-->
+      <div class="cn-product__details">
+        <h4 class="cn-product__title--web dolceVita" itemprop="name">{{ product.title }}</h4>
+        
+        {% if product.images.size > 1 %}
+          <div class="cn-product__tnContainer">
+            {{ product.images.size }}
+            {% for image in product.images %}
+              <div class="cn-product__tnContainer__tn content-fill" data-index="{{ image.position }}">
+                <img src="{{ image | img_url : 'compact' }}" alt="{{ image.alt }}" />
+              </div>
+            {% endfor %}
+          </div>
+        {% endif %}
+
+        <div class="cn-product__options-wrapper">
+          <div class="cn-product__price cn-number">
+            <span id="ProductPrice" class="product-single__price sqs-money-native" itemprop="price" content="{{ current_variant.price | divided_by: 100.00 }}">
+              {{ current_variant.price | money }}
+            </span>
+          </div>
+          
+          <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
+
+            <select name="id" id="productSelect" class="product-single__variants">
+              {% for variant in product.variants %}
+                {% if variant.available %}
+
+                  {% comment %}
+                    Note: if you use option_selection.js, your <select> tag will be overwritten, meaning what you have inside <option> will not reflect what you coded below.
+                  {% endcomment %}
+                  <option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
+
+                {% else %}
+                  <option disabled="disabled">
+                    {{ variant.title }} - {{ 'products.product.sold_out' | t }}
+                  </option>
+                {% endif %}
+              {% endfor %}
+            </select>
+
+            <div class="product-single__quantity product-quantity-input">
+              <div class="quantity-label">
+                <label for="Quantity">Quantity:</label>
+              </div>
+              <input type="number" id="Quantity" name="quantity" value="1" min="1" max="9999" class="quantity-selector">
+            </div>
+            
+            <div class="sqs-add-to-cart-button-wrapper">
+              <button type="submit" name="add" id="AddToCart" class="sqs-add-to-cart-button sqs-suppress-edit-mode sqs-editable-button btn">
+                  <span id="AddToCartText" class="sqs-add-to-cart-button-inner">Add to Cart</span>
+              </button>              
+            </div>
+          </form>
+
+          <div class="cn-product__status">
+            {% if product.available == false %}
+              <div class="product-mark sold-out">sold out</div>
+            {% endif %}
+          </div>
+        </div>
+
+        <div class="cn-product__excerpt">
+          <p>{{ product.description }}</p>
+        </div>
+
+        <h2>related products</h2>
+        {% section 'related-products' %}
+
+      </div>
+  </div>
+</main>
+
+{{ 'products-item.js' | asset_url | script_tag }}
+
+{% comment %}
+  To take advantage of a callback on the select dropdown, add option_selection.js
+  and customize the JS in timber.productPage as needed.
+
+  Currently, timber.productPage does the following:
+    - Hides your <select> tag from above
+    - Breaks out the product variants into separate product options, if more than one exists
+    - Generates a <select> tag for each product option
+    - Enables/disables elements based on variant availability
+
+  Callback notes:
+    - Keep the callback available to the global scope (window.selectCallback) so that advanced
+      addons can override it.
+      * E.g. multiple currencies http://docs.shopify.com/manual/configuration/store-customization/currencies-and-translations/currencies/how-to-toggle-between-two-currencies
+{% endcomment %}
+
+{{ 'option_selection.js' | shopify_asset_url | script_tag }}
+<script>
+  var selectCallback = function(variant, selector) {
+    timber.productPage({
+      money_format: "{{ shop.money_format }}",
+      variant: variant,
+      selector: selector,
+      translations: {
+        add_to_cart : "Add to Cart",
+        sold_out : "Sold Out",
+        unavailable : "Unavailable"
+      }
+    });
+  };
+
+  jQuery(function($) {
+    new Shopify.OptionSelectors('productSelect', {
+      product: {{ product | json }},
+      onVariantSelected: selectCallback,
+      enableHistoryState: true
+    });
+
+    // Add label if only one product option and it isn't 'Title'. Could be 'Size'.
+    {% if product.options.size == 1 and product.options.first != 'Title' %}
+      $('.selector-wrapper:eq(0)').prepend('<label for="productSelect-option-0">{{ product.options.first | escape }}</label>');
+    {% endif %}
+
+    // Hide selectors if we only have 1 variant and its title contains 'Default'.
+    {% if product.variants.size == 1 and product.variants.first.title contains 'Default' %}
+      $('.selector-wrapper').hide();
+    {% endif %}
+  });
+</script>
