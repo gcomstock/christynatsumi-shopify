@@ -148,7 +148,7 @@ ul.shopify-challenge__error {
   text-align: center;
   font-weight: bold !important;
   color: #fff;
-  background: #000 url({{ 'marker_bg2.jpg' | asset_url }}) bottom center;
+  background: #000 url('marker_bg2.jpg' ) bottom center;
   border: 1px solid #000;
   cursor: pointer;
 
@@ -195,7 +195,7 @@ button, .button {
     top: 0;
     right: -18%;
 
-    background-image: url({{ 'btnFwd.png' | asset_url }});
+    background-image: url('btnFwd.png');
     background-size: 100% 100%;
   }
 }
@@ -212,7 +212,7 @@ button, .button {
     top: 0;
     left: -18%;
 
-    background-image: url({{ 'btnBack.png' | asset_url }});
+    background-image: url('btnBack.png');
     background-size: 100% 100%;
   }
 }

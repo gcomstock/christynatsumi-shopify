@@ -1,9 +1,9 @@
 .cn-heroimage--about {
-  background-image: url({{ 'christynatsumi-about-heroimage-mobile.jpg' | asset_url }});
+  background-image: url('christynatsumi-about-heroimage-mobile.jpg');
 
   @media (min-width: $screen-tablet) {
     padding-bottom: 48%;
-    background-image: url({{ 'christynatsumi-about-heroimage.jpg' | asset_url }});
+    background-image: url('christynatsumi-about-heroimage.jpg');
   }
 }
 

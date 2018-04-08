@@ -9,7 +9,7 @@
     padding-right: 1rem;
     font-size: 0;
     line-height: 0;
-    background: #000 url({{ 'marker_bg.jpg' | asset_url }}) bottom;
+    background: #000 url('marker_bg.jpg') bottom;
 
     ul {
       text-align: right;

@@ -9,20 +9,6 @@ var merge = require('merge-stream');
 var minify = require('gulp-minify');
 var jsFile = '';
 
-gulp.task('scss-bundle', function() {
-  return gulp.src('./lib/styles/scss/main.scss')
-    .pipe(gss())
-    .pipe(rename('main.scss.liquid'))
-    .pipe(gulp.dest('./assets'));
-});
-
-gulp.task('scss-clean', function() {
-  return gulp.src('./assets/main.scss.liquid', {read: false})
-    .pipe(clean());
-});
-
-// bundle scss move to assets folder
-gulp.task('scss', ['scss-clean', 'scss-bundle']);
 
 gulp.task('node_modules-copy', function() {
   var minified = [
@@ -57,8 +43,6 @@ gulp.task('js-push', function() {
 gulp.task('js', ['js-clean', 'js-push']);
 
 gulp.task('shopify', function() {
-  gulp.watch('./lib/styles/scss/**/*.scss', ['scss']);
-
   gulp.watch('./lib/scripts/**/*.js', function(event) {
     jsFile = event.path.substr(event.path.lastIndexOf('/') + 1);
     gulp.start('js');

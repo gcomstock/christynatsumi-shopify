@@ -52,10 +52,10 @@
   }
 
   &.sold-out {
-    background-image: url({{ 'status_soldout.png' | asset_url }});
+    background-image: url('status_soldout.png');
   }
   &.sale {
-    background-image: url({{ 'status_sale.png' | asset_url }});
+    background-image: url('status_sale.png');
   }
 }
 

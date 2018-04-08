@@ -561,7 +561,6 @@ assets/main-home.js:
   development: 2017-11-01T13:34:28-04:00   953b6023bb58c76b5640b85b4d743d24
   production: 2017-10-29T20:10:26-04:00   953b6023bb58c76b5640b85b4d743d24
 assets/main.scss.liquid:
-  development: 2018-04-07T23:49:08-04:00   db4f10ee47cc7560506f13eb36614153
   production: 2017-11-01T15:03:41-04:00   df9f0f28bc40bdd9c508ab34e3018025
 assets/marker-bg.gif:
   development: 2017-10-28T19:21:57-04:00   79e69033da8b549ea0e6d5e987fd715a
@@ -615,7 +614,7 @@ assets/strikeout.png:
   development: 2017-10-28T19:22:01-04:00   5a55c95127359b884dd7fb512c063d41
   production: 2017-10-29T06:03:16-04:00   5a55c95127359b884dd7fb512c063d41
 assets/theme.css:
-  development: 2018-04-08T00:09:35-04:00   4da329fa8d72bacea17bbe7707384575
+  development: 2018-04-08T19:32:58-04:00   bf26f4ba38ab850110385de81ba01a10
 assets/timber.js.liquid:
   development: 2017-08-13T17:52:27-04:00   8663e17d15e94386b5d6fb7c3e44b0bf
   production: 2017-08-13T17:39:48-04:00   8663e17d15e94386b5d6fb7c3e44b0bf
@@ -625,7 +624,7 @@ config/settings_schema.json:
   development: 2018-03-18T18:25:02-04:00   4de50d8b26c23ea835a23162e448572d
   production: 2017-08-13T18:37:56-04:00   4de50d8b26c23ea835a23162e448572d
 layout/theme.liquid:
-  development: 2018-04-07T23:49:06-04:00   c0aa28e731068c33058331c8ef29042f
+  development: 2018-04-08T15:56:30-04:00   91a2b592e043c869455f57a9495cfd7f
   production: 2017-11-01T15:03:38-04:00   532df49cacdd3335b7e6f1f62adb5c5b
 locales/de.json:
   development: 2018-03-18T18:17:11-04:00   585899bd4424d43afa93b72083a5aa0e
@@ -742,7 +741,7 @@ templates/blog.liquid:
   development: 2017-08-13T17:52:28-04:00   2d2ff4bd1bf2ef7ce2b889d6a95c6f74
   production: 2017-08-13T17:39:49-04:00   2d2ff4bd1bf2ef7ce2b889d6a95c6f74
 templates/cart.liquid:
-  development: 2018-03-09T20:07:10-05:00   c8e0c6ff6ceee3bf771d09346df50fa0
+  development: 2018-04-08T19:30:51-04:00   1f30db82b8d5ebed0dbbf9e254b41081
   production: 2017-08-13T17:39:49-04:00   49bbbe1b3bda19110f7e72abc158bb91
 templates/collection.liquid:
   development: 2018-04-07T21:01:16-04:00   c446997d91a7ae54549655eb252845f2

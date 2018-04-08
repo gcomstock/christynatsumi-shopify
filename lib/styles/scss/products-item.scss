@@ -205,10 +205,10 @@
     background-size: 100%;
     background-repeat: no-repeat;
     &.sold-out {
-      background-image: url({{ 'status_soldout_sm.png' | asset_url }});
+      background-image: url('status_soldout_sm.png');
     }
     &.sale {
-      background-image: url({{ 'status_sale_sm.png' | asset_url }});
+      background-image: url('status_sale_sm.png');
     }
 
     @media (min-width: $screen-tablet) and (max-width: $screen-desktop-1) {
@@ -293,7 +293,7 @@
       width: 100%;
       height: 100%;
       content: '';
-      background-image: url({{ 'strikeout.png' | asset_url }});
+      background-image: url('strikeout.png');
       background-size: 100% 100%;
       position: absolute;
     }
