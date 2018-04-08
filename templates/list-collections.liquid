@@ -23,6 +23,7 @@
   {% for collection in collections %} 
     <h3>{{ collection.title }}</h3>
     {% for product in collection.products %}
+
       {% if product.images.size > 0 %}
         <a class="cn-categoryproduct" href="{{ product.url }}">
           <div class="cn-categoryproduct__img content-fill">
@@ -37,6 +38,7 @@
       {% else %}
         <a class="cn-categoryproduct">no product thumbnail</a>
       {% endif %}
+
     {% endfor %}
   {% endfor %}
 </main>

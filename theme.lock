@@ -71,6 +71,10 @@ assets/ajax-cart.js.liquid:
 assets/arcn-logo.png:
   development: 2017-10-28T19:20:47-04:00   72c56f66bae582b55a3337a2fdc4626a
   production: 2017-10-29T06:02:58-04:00   72c56f66bae582b55a3337a2fdc4626a
+assets/badge-ethical_metalsmiths.png:
+  development: 2017-10-28T19:20:48-04:00   f73eedb0cada83f665a34ce3c63cdf03
+assets/badge-sfmade.png:
+  development: 2017-10-28T19:20:48-04:00   52f6677dcf3c8ed92a5accae3a3ccd01
 assets/btnBack.png:
   development: 2017-10-28T19:20:49-04:00   a9c033bbb716eae48e2af700848a5d2e
   production: 2017-10-29T06:02:58-04:00   a9c033bbb716eae48e2af700848a5d2e
@@ -222,6 +226,8 @@ assets/christy-natsumi__about__press__7x7.png:
   development: 2018-03-18T20:02:53-04:00   71a151ee7c566ef9508f0164f94099ef
 assets/christy-natsumi__about__press__dailycandy.png:
   development: 2018-03-18T20:26:50-04:00   c156884acd136b5930cec9c1b6b11537
+assets/christy-natsumi__about__press__designsponge.png:
+  development: 2018-03-18T20:14:44-04:00   797aede1e8d686281a24bcf1fa4ba4ea
 assets/christy-natsumi__about__press__ruedaily.png:
   development: 2018-03-18T20:14:42-04:00   1992014683acee16c39fc5f7525ea83f
 assets/christy-natsumi__about__press__sfchronicle.png:
@@ -369,6 +375,14 @@ assets/christynatsumi-logo.jpg:
 assets/christynatsumi-logo.png:
   development: 2017-10-28T19:21:38-04:00   f3c01f7bf64b7f428c6496e45bb50ced
   production: 2017-10-29T06:03:30-04:00   f3c01f7bf64b7f428c6496e45bb50ced
+assets/christynatsumi-press-7x7.png:
+  development: 2017-10-28T19:21:38-04:00   71a151ee7c566ef9508f0164f94099ef
+assets/christynatsumi-press-dailycandy.png:
+  development: 2017-10-28T19:21:38-04:00   c156884acd136b5930cec9c1b6b11537
+assets/christynatsumi-press-ruedaily.png:
+  development: 2017-10-28T19:21:38-04:00   7aed3fe4ba3b54f9f7c7a9d08270c706
+assets/christynatsumi-press-sfchronicle.png:
+  development: 2017-10-28T19:21:39-04:00   97e8cc07d7085fb490b44768049502a5
 assets/christynatsumi-process-1.jpg:
   development: 2017-10-28T19:21:40-04:00   20034c947936d9edc8f4df7fd478d09f
   production: 2017-10-29T06:02:48-04:00   20034c947936d9edc8f4df7fd478d09f
@@ -547,7 +561,7 @@ assets/main-home.js:
   development: 2017-11-01T13:34:28-04:00   953b6023bb58c76b5640b85b4d743d24
   production: 2017-10-29T20:10:26-04:00   953b6023bb58c76b5640b85b4d743d24
 assets/main.scss.liquid:
-  development: 2018-03-19T02:03:49-04:00   c67725e186d0dc1437a1f3a9261fdfd8
+  development: 2018-04-07T23:49:08-04:00   db4f10ee47cc7560506f13eb36614153
   production: 2017-11-01T15:03:41-04:00   df9f0f28bc40bdd9c508ab34e3018025
 assets/marker-bg.gif:
   development: 2017-10-28T19:21:57-04:00   79e69033da8b549ea0e6d5e987fd715a
@@ -600,16 +614,18 @@ assets/status_soldout_sm.png:
 assets/strikeout.png:
   development: 2017-10-28T19:22:01-04:00   5a55c95127359b884dd7fb512c063d41
   production: 2017-10-29T06:03:16-04:00   5a55c95127359b884dd7fb512c063d41
+assets/theme.css:
+  development: 2018-04-08T00:09:35-04:00   4da329fa8d72bacea17bbe7707384575
 assets/timber.js.liquid:
   development: 2017-08-13T17:52:27-04:00   8663e17d15e94386b5d6fb7c3e44b0bf
   production: 2017-08-13T17:39:48-04:00   8663e17d15e94386b5d6fb7c3e44b0bf
 config/settings_data.json:
-  development: 2017-11-02T22:35:19-04:00   f144bb251f6d07fb8b53aa689a1ec29f
+  development: 2018-03-25T17:16:30-04:00   7693bf310418c4d7e479473e16d776bd
 config/settings_schema.json:
   development: 2018-03-18T18:25:02-04:00   4de50d8b26c23ea835a23162e448572d
   production: 2017-08-13T18:37:56-04:00   4de50d8b26c23ea835a23162e448572d
 layout/theme.liquid:
-  development: 2018-03-18T21:18:38-04:00   742e3a256752602447bfdf5b7b05d770
+  development: 2018-04-07T23:49:06-04:00   c0aa28e731068c33058331c8ef29042f
   production: 2017-11-01T15:03:38-04:00   532df49cacdd3335b7e6f1f62adb5c5b
 locales/de.json:
   development: 2018-03-18T18:17:11-04:00   585899bd4424d43afa93b72083a5aa0e
@@ -636,13 +652,13 @@ sections/custom-form.liquid:
   development: 2018-03-04T20:32:06-05:00   b5c9f5253540f49e0e922dcada08c115
   production: 2017-10-31T07:10:29-04:00   618bfdc78e364f0239870b3b2c48b106
 sections/footer.liquid:
-  development: 2017-10-29T22:10:50-04:00   0f3502fd7a52cbdb04030105bfe3d8b4
+  development: 2018-03-25T17:08:04-04:00   b4bf71b3ce544c60d392f41dd4225deb
   production: 2017-10-29T22:15:40-04:00   0f3502fd7a52cbdb04030105bfe3d8b4
 sections/header-custom.liquid:
   development: 2017-10-29T20:38:05-04:00   d73f1b80823b291475ee8c19f3b3df99
   production: 2017-10-29T22:15:44-04:00   40d7e2cb76c94fa37d3024b8a62c1ca8
 sections/header-home.liquid:
-  development: 2017-10-31T14:08:16-04:00   699eafb88fdd5e786fd74d78c0f0f527
+  development: 2018-04-08T00:07:22-04:00   699eafb88fdd5e786fd74d78c0f0f527
   production: 2017-11-01T15:03:40-04:00   699eafb88fdd5e786fd74d78c0f0f527
 sections/header-shop.liquid:
   development: 2017-11-01T09:48:48-04:00   191f90a323edd48f9782c9d78ca04fe1
@@ -709,7 +725,7 @@ snippets/sectnav-shop.liquid:
   development: 2018-03-19T01:50:24-04:00   5c64b4705fd2235b1cbccfb2036a7849
   production: 2017-11-01T15:03:45-04:00   29adf6770b0ec49939ad8794c2b87604
 snippets/shop-menu.liquid:
-  development: 2018-03-19T02:03:49-04:00   8b142af6d456027432967e706167e87c
+  development: 2018-03-31T11:42:02-04:00   8b142af6d456027432967e706167e87c
 snippets/social-meta-tags.liquid:
   development: 2017-08-13T17:52:28-04:00   e7c97d7cb76c7925dd144dfb7b188cac
   production: 2017-08-13T17:39:49-04:00   e7c97d7cb76c7925dd144dfb7b188cac
@@ -729,7 +745,7 @@ templates/cart.liquid:
   development: 2018-03-09T20:07:10-05:00   c8e0c6ff6ceee3bf771d09346df50fa0
   production: 2017-08-13T17:39:49-04:00   49bbbe1b3bda19110f7e72abc158bb91
 templates/collection.liquid:
-  development: 2017-11-01T15:00:36-04:00   16d9fd21f8b946683a6bed160267b8e5
+  development: 2018-04-07T21:01:16-04:00   c446997d91a7ae54549655eb252845f2
   production: 2017-11-01T15:03:44-04:00   16d9fd21f8b946683a6bed160267b8e5
 templates/customers/account.liquid:
   development: 2017-08-13T17:52:28-04:00   da9e3584ef6699ac5c811b73b42c58db
@@ -759,7 +775,7 @@ templates/index.liquid:
   development: 2018-03-18T18:32:16-04:00   67c5dab2b88da6dff54d3467a77e3beb
   production: 2017-11-01T15:03:41-04:00   67c5dab2b88da6dff54d3467a77e3beb
 templates/list-collections.liquid:
-  development: 2017-11-01T15:00:40-04:00   1ec5dfbb60be0c36673117a21030d0af
+  development: 2018-04-07T20:41:15-04:00   da8eb765fe75c5957a6dc16971e1ef11
   production: 2017-11-01T15:03:44-04:00   1ec5dfbb60be0c36673117a21030d0af
 templates/page.about.liquid:
   development: 2018-03-18T20:57:45-04:00   eaff4436889c20755a59166c176d6210
@@ -782,7 +798,7 @@ templates/page.lookbook.glint.liquid:
 templates/page.workshop.liquid:
   development: 2017-11-05T21:47:32-05:00   f4caf98ffc92e1667bf9ae15d9664610
 templates/product.liquid:
-  development: 2018-03-05T11:35:16-05:00   81127699cba2d73639222efe69072ec6
+  development: 2018-03-23T18:51:14-04:00   d280af21420bbfb4733002c09f2eaa42
   production: 2017-11-01T15:03:39-04:00   aef516cbf5b605b1419ea70490ea4cef
 templates/search.liquid:
   development: 2017-08-13T17:52:28-04:00   3926b96d4d14c2cd8409e56f7cc6d6e0
