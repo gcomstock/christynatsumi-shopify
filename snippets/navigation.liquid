@@ -1,5 +1,5 @@
 {% for link in linklists.main-menu.links %}
-  {% if link.url == '/collections/all' and collection.url %}
+  {% if link.url == '/collections/all' and collection.url or link.url == '/collections/all' and product.url %}
     <li class="active">
       <a href="{{ link.url }}"> {{ link.title }}</a>
     </li>
