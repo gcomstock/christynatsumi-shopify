@@ -531,19 +531,14 @@ assets/icon_twitter.png:
   development: 2017-10-28T19:21:58-04:00   2d442e03ceba25d1e568e34a58f9d788
   production: 2017-10-29T06:02:34-04:00   2d442e03ceba25d1e568e34a58f9d788
 assets/icons.eot:
-  development: 2017-08-13T17:52:27-04:00   6499aa740322bffbb6e26ebadf450c4a
   production: 2017-08-13T17:39:48-04:00   6499aa740322bffbb6e26ebadf450c4a
 assets/icons.json:
-  development: 2018-03-18T18:19:01-04:00   6f9018585c3e215e29cef8e390091787
   production: 2017-08-13T18:37:37-04:00   6f9018585c3e215e29cef8e390091787
 assets/icons.svg:
-  development: 2017-08-13T17:52:27-04:00   1f568afd815839eae6eb796a52a497a6
   production: 2017-08-13T17:39:48-04:00   1f568afd815839eae6eb796a52a497a6
 assets/icons.ttf:
-  development: 2017-08-13T17:52:27-04:00   0678272006d7b08a523ae6973a72d181
   production: 2017-08-13T17:39:48-04:00   0678272006d7b08a523ae6973a72d181
 assets/icons.woff:
-  development: 2017-08-13T17:52:27-04:00   6d64bee3b4d239a6cf6af98045a95954
   production: 2017-08-13T17:39:48-04:00   6d64bee3b4d239a6cf6af98045a95954
 assets/instafeed.min.js:
   development: 2017-10-29T19:45:59-04:00   1b9d5439b41e462220f9e6937df15b60
@@ -614,7 +609,7 @@ assets/strikeout.png:
   development: 2017-10-28T19:22:01-04:00   5a55c95127359b884dd7fb512c063d41
   production: 2017-10-29T06:03:16-04:00   5a55c95127359b884dd7fb512c063d41
 assets/theme.css:
-  development: 2018-04-08T19:32:58-04:00   bf26f4ba38ab850110385de81ba01a10
+  development: 2018-04-08T19:51:58-04:00   1323242ae2a32cc8315ea440cde90120
 assets/timber.js.liquid:
   development: 2017-08-13T17:52:27-04:00   8663e17d15e94386b5d6fb7c3e44b0bf
   production: 2017-08-13T17:39:48-04:00   8663e17d15e94386b5d6fb7c3e44b0bf
@@ -694,8 +689,10 @@ snippets/mobilenav.liquid:
   development: 2017-10-31T14:06:45-04:00   c04e98b0924a47d47d3f97b69d29c33c
   production: 2017-11-01T15:03:43-04:00   c04e98b0924a47d47d3f97b69d29c33c
 snippets/navigation.liquid:
-  development: 2017-10-29T19:43:54-04:00   62ec83c1d2828fefbf02e215e8d1a925
+  development: 2018-04-08T21:01:29-04:00   22eb85f7d8cdd9ee0ea8312d8bea7753
   production: 2017-10-29T20:10:21-04:00   62ec83c1d2828fefbf02e215e8d1a925
+snippets/navigation.liquid___jb_old___:
+  development: 2018-04-08T21:01:28-04:00
 snippets/oldIE-js.liquid:
   development: 2017-08-13T17:52:28-04:00   1197cc7109944206a600ed5caaef6a6f
   production: 2017-08-13T17:39:48-04:00   1197cc7109944206a600ed5caaef6a6f
@@ -744,7 +741,7 @@ templates/cart.liquid:
   development: 2018-04-08T19:30:51-04:00   1f30db82b8d5ebed0dbbf9e254b41081
   production: 2017-08-13T17:39:49-04:00   49bbbe1b3bda19110f7e72abc158bb91
 templates/collection.liquid:
-  development: 2018-04-07T21:01:16-04:00   c446997d91a7ae54549655eb252845f2
+  development: 2018-04-08T20:24:09-04:00   8bf240c64871a0080b105e06268f62fc
   production: 2017-11-01T15:03:44-04:00   16d9fd21f8b946683a6bed160267b8e5
 templates/customers/account.liquid:
   development: 2017-08-13T17:52:28-04:00   da9e3584ef6699ac5c811b73b42c58db
