@@ -12,7 +12,6 @@
   {% if cart.item_count > 0 %}
     <form action="/cart" method="post" novalidate class="cart">
       <div class="cart__container">
-        <h2 class="cart__title">SHOPPING CART</h2>
         <div class="cart__table">
           <div class="cart__header-labels">
             <span class="cart__header-item"><span>ITEM</span></span>
@@ -21,13 +20,13 @@
             <div class="cart__header-qty"><div><span>QTY.</span></div></div>
             <div class="cart__header-price"><div><span>PRICE</span></div></div>
           </div>
-          {% for item in cart.items %}              
+          {% for line_item in cart.items %}
             <div class="cart__item">
               <div class="cart__item-remove">
                 <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0" title="Remove Item">×</a>
               </div>
               <div data-label="{{ 'customer.order.product' | t }}" class="cart__item-img">
-                <div style="background-image: url({{ item | img_url: '100x' }});">
+                <div style="background-image: url({{ line_item | img_url: '200x' }});">
                   <!-- 
                   <a href="{{ item.url | within: collections.all }}" class="cart__image">
                     <img src="{{ item | img_url: '100x' }}" alt="{{ item.title | escape }}">
@@ -37,17 +36,29 @@
               </div>
               <div class="cart__item-desc">
                 <div class="cart__item-title">
-                  <a href="{{ item.url | within: collections.all }}">{{ item.product.title }}</a>
+                  <a href="{{ line_item.url | within: collections.all }}">{{ line_item.title }}</a>
                 </div>
+
+                {% unless line_item.variant.title contains 'Default' %}
                 <div class="cart__variant-info">
-                  {{ item.variant.title }}
+                  {{ line_item.variant.title }}
                 </div>
+                {% endunless %}
+
+                {% unless line_item.properties == empty %}
+                <div class="cart__variant-info">
+                  {% for property in line_item.properties %}
+                  {{ property.first }}: {{ property.last }}
+                  {% endfor %}
+                </div>
+                {% endunless %}
+
               </div>
               <div data-label="{{ 'cart.label.quantity' | t }}" class="cart__item-qty">
-                <input type="number" name="updates[]" id="updates_{{ item.key }}" data-id="{{ item.key }}" value="{{ item.quantity }}" min="1" max="{{ item.variant.inventory_quantity }}">
+                <input type="number" name="updates[]" id="updates_{{ line_item.key }}" data-id="{{ line_item.key }}" value="{{ line_item.quantity }}" min="1" max="{{ line_item.variant.inventory_quantity }}">
               </div>
               <div data-label="{{ 'cart.label.price' | t }}" class="cart__item-price">
-                {{ item.price | money }}
+                {{ line_item.price | money }}
               </div>
             </div>
           {% endfor %}

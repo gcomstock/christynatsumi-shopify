@@ -9,13 +9,39 @@
 
 
 <script>
-  // https://github.com/aFarkas/lazysizes
-  window.lazySizesConfig = window.lazySizesConfig || {};
-  window.lazySizesConfig.expand = 150;
+  /*
+   function handleScroll() {
+     console.log('scroling');
+     if($(document).height() - 800 < ($(document).scrollTop() + $(window).height())) {
+         scrollNode = $('#more').last();
+         scrollURL = $('#more p a').last().attr("href");
+         if(scrollNode.length > 0 && scrollNode.css('display') != 'none') {
+             $.ajax({
+                 type: 'GET',
+                 url: scrollURL,
+                 beforeSend: function() {
+                     scrollNode.clone().empty().insertAfter(scrollNode).append('<img src=\"{{ "loading.gif" | asset_url }}\" />');
+                     scrollNode.hide();
+                 },
+                 success: function(data) {
+                     // remove loading feedback
+                     scrollNode.next().remove();
+                     var filteredData = $(data).find(".product");
+                     filteredData.insertBefore( $("#product-list-foot") );
+                 },
+                 dataType: "html"
+             });
+         }
+     }
+   }
 
-  $(document).on('lazyloaded', function(e){
-    $(e.target).parent().addClass('show');
-  });
+   $(document).ready(function () {
+     $(window).scroll(function(){
+        handleScroll();
+         //$.doTimeout( 'scroll', 200, ScrollExecute);
+     });
+   });
+  */
 </script>
 
 
@@ -24,8 +50,15 @@
       {% for product in collection.products %}
         {% if product.images.size > 0 %}
           <a class="cn-categoryproduct" href="{{ product.url }}">
-            <div class="cn-categoryproduct__img content-fill">
-              <img class="lazyload" data-src="{{ product.featured_image | img_url: '250x250', crop: 'bottom' }}" alt="{{ product.featured_image.alt }}" />
+            <div class="cn-categoryproduct__img">
+            <img
+                src="{{ product.featured_image | img_url: '600x600', crop: 'bottom' }}"
+                alt="{{ product.featured_image.alt | escape }}"
+                sizes="(min-width: 415px) 600px, (min-width: 376px and max-width: 414px) 400px, (max-width: 376px) 350px"
+                data-srcset="{{ product.featured_image | img_url: '600x600', crop: 'bottom' }} 600w,
+                  {{ product.featured_image | img_url: '400x400', crop: 'bottom' }} 400w,
+                  {{ product.featured_image | img_url: '350x350', crop: 'bottom' }} 350w"
+                class="lazyload" />
             </div>
             <div class="cn-categoryproduct__title dolceVita">{{ product.title }}</div>
 
@@ -38,11 +71,17 @@
         {% endif %}
 
       {% endfor %}
+
+    {% if paginate.pages > 1 %}
+        <h1>pages!</h1>
+      <hr>
+      <div class="pagination">
+        {{ paginate | default_pagination | replace: '&laquo; Previous', '&larr;' | replace: 'Next &raquo;', '&rarr;' }}
+      </div>
+    {% endif %}
+
     {% endpaginate %}
 </main>
 
 
-
-
 {{ 'lazysizes.min.js' | asset_url | script_tag }}
-

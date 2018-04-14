@@ -89,13 +89,17 @@ Shopify.AjaxifyCart = (function($) {
             // Re-enable add to cart button.
             $addToCartBtn.addClass('inverted');
             _setText($addToCartBtn, _config.addedToCartBtnLabel);
-            _showFeedback('success','<i class="fa fa-check"></i> Added to cart! <a href="/cart">View cart</a> or <a href="/collections/all">continue shopping</a>.',$addToCartForm);
+            _showFeedback('success','Added to cart! <a href="/cart">View cart</a> or <a href="/collections/all">continue shopping</a>.',$addToCartForm);
             window.setTimeout(function(){
               $addToCartBtn.prop('disabled', false).removeClass('disabled').removeClass('inverted');
               _setText($addToCartBtn,_config.addToCartBtnLabel);
             }, _config.howLongTillBtnReturnsToNormal);
             // Update cart count and show cart link.
+
+
+
             $.getJSON(_config.shopifyAjaxCartURL, function(cart) {
+                debugger;
               if (_config.cartCountSelector && $(_config.cartCountSelector).size()) {
                 var value = $(_config.cartCountSelector).html() || '0';
                 $(_config.cartCountSelector).html(value.replace(/[0-9]+/,cart.item_count)).removeClass('hidden-count');
@@ -167,11 +171,6 @@ Shopify.AjaxifyCart.init();
   If you want to animate your feedback message.
 {% endcomment %}
 
-{% comment %}
-{{ '//cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.0/animate.min.css' | stylesheet_tag }}
-{% endcomment %}
-
-{{ '//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.0.3/css/font-awesome.css' | stylesheet_tag }}
 
 <style>
 .ajaxified-cart-feedback {

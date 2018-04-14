@@ -7,22 +7,6 @@
     return;
   }
 
-  // {shoppingCart.totalQuantity} was caching cart count, so we have to do this dumb interval
-  // instead to get the count from the official squarespace ui element and put it into ours
-  //var cartInterval = setInterval(function(){
-  //  var cartEl = document.querySelector('.sqs-pill-shopping-cart-content .total-quantity') || null;
-  //
-  //  if (cartEl) {
-  //    var squareSpaceCartCount = cartEl.innerText;
-  //    var cartCountEl = document.querySelectorAll('.cn-cart-count');
-  //
-  //    for (var i = 0; i < cartCountEl.length; i++) {
-  //      cartCountEl[i].innerHTML = squareSpaceCartCount;
-  //    }
-  //  }
-  //}, 500);
-
-
   //only construct Instafeed on home page, where script has been included
   /*
   if (typeof Instafeed !== 'undefined') {
