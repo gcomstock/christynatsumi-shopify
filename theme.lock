@@ -558,7 +558,7 @@ assets/modernizr.min.js:
   development: 2017-08-13T17:52:27-04:00   dc21cffad945a84cbbe770d52b1a0ded
   production: 2017-08-13T17:39:48-04:00   dc21cffad945a84cbbe770d52b1a0ded
 assets/products-item.js:
-  development: 2018-04-14T20:23:27-04:00   a8902f4c3737c3ca771556eba37233af
+  development: 2018-04-14T21:37:25-04:00   baed65c403301595e5eb444b81f13b21
   production: 2017-10-29T20:10:25-04:00   3bb4dd77cc09a72e11d0b6b0b882dc23
 assets/products-list.js:
   development: 2017-10-29T19:45:59-04:00   185226d8e45086caa9cf32a56578c35d
@@ -591,7 +591,7 @@ assets/strikeout.png:
   development: 2017-10-28T19:22:01-04:00   5a55c95127359b884dd7fb512c063d41
   production: 2017-10-29T06:03:16-04:00   5a55c95127359b884dd7fb512c063d41
 assets/theme.css:
-  development: 2018-04-14T20:30:20-04:00   d34b111a7b11b711f68930cd2a6e1b60
+  development: 2018-04-14T22:27:55-04:00   a9761207e5ccb579c119ab3fcc6e9853
 assets/timber.js.liquid:
   development: 2018-04-08T21:08:05-04:00   26ee9f8df9f9c8d746bc13403010fddf
   production: 2017-08-13T17:39:48-04:00   8663e17d15e94386b5d6fb7c3e44b0bf
@@ -648,7 +648,7 @@ snippets/ajax-cart-template.liquid:
   development: 2017-08-13T17:52:28-04:00   e6fa15367ab47a164d9dc8e47353c684
   production: 2017-08-13T17:39:48-04:00   e6fa15367ab47a164d9dc8e47353c684
 snippets/ajaxify-cart.liquid:
-  development: 2018-04-08T22:25:37-04:00   8fb9d2607c1daaa4e79d1b9579a7cd92
+  development: 2018-04-14T21:28:38-04:00   c8a850350fbfdffe163d15a73dbec61d
 snippets/blog-sidebar.liquid:
   development: 2017-08-13T17:52:28-04:00   ae3891e372509ded7074e50b2a97f438
   production: 2017-08-13T17:39:48-04:00   ae3891e372509ded7074e50b2a97f438
@@ -668,7 +668,7 @@ snippets/headernotice.liquid:
   development: 2018-03-07T05:56:17-05:00   7e238bca8c54b9b15ecc3a454d009575
   production: 2017-11-01T15:03:38-04:00   d49cab2fc80eb5553df5aef3a13b05bf
 snippets/mobilenav.liquid:
-  development: 2018-04-08T22:30:55-04:00   4948050b876e992e31a7488966eac46e
+  development: 2018-04-14T22:00:43-04:00   ebbb0d6dcdab45893360460295691657
   production: 2017-11-01T15:03:43-04:00   c04e98b0924a47d47d3f97b69d29c33c
 snippets/navigation.liquid:
   development: 2018-04-08T22:19:08-04:00   2c0d9e5d8ba753dbaff7bf9ad5e26edc
@@ -760,7 +760,7 @@ templates/page.contact.liquid:
   development: 2018-03-18T17:58:04-04:00   a6291162564434f5338c862235c4d5ef
   production: 2017-10-31T07:10:32-04:00   ac6c47895432d316a1be5edd3c0f5eda
 templates/page.custom.liquid:
-  development: 2017-10-31T13:52:01-04:00   9073c3c92ef2a75eb97432544b322daa
+  development: 2018-04-14T22:00:44-04:00   67ab8fd34f7e9e717a2ecf2eb760bcc7
   production: 2017-11-01T15:03:42-04:00   9073c3c92ef2a75eb97432544b322daa
 templates/page.faq.liquid:
   development: 2017-10-31T13:52:07-04:00   9bf19590944960d3cfa8bc5d98d3e41f
@@ -774,7 +774,7 @@ templates/page.lookbook.glint.liquid:
 templates/page.workshop.liquid:
   development: 2017-11-05T21:47:32-05:00   f4caf98ffc92e1667bf9ae15d9664610
 templates/product.liquid:
-  development: 2018-04-14T20:14:21-04:00   0d411ba97ce285cc4a0856ff2fc6440f
+  development: 2018-04-14T22:13:37-04:00   40a03433f7983774b8bc77b269f69140
   production: 2017-11-01T15:03:39-04:00   aef516cbf5b605b1419ea70490ea4cef
 templates/search.liquid:
   development: 2017-08-13T17:52:28-04:00   3926b96d4d14c2cd8409e56f7cc6d6e0

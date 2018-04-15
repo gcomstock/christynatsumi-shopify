@@ -99,7 +99,6 @@ Shopify.AjaxifyCart = (function($) {
 
 
             $.getJSON(_config.shopifyAjaxCartURL, function(cart) {
-                debugger;
               if (_config.cartCountSelector && $(_config.cartCountSelector).size()) {
                 var value = $(_config.cartCountSelector).html() || '0';
                 $(_config.cartCountSelector).html(value.replace(/[0-9]+/,cart.item_count)).removeClass('hidden-count');

@@ -19,53 +19,5 @@
 	}
 
 
-	function productSelectChangeEvent() {
-		var el = document.querySelectorAll('.variant-select-wrapper select');
-
-		for (var i = 0; i < el.length; i++) {
-			el[i].addEventListener('change', function(){
-				var product = document.querySelector('.product-variants');
-
-				setTimeout(function(){
-					var selected = product.dataset.selectedVariant;
-					if (typeof selected !== 'undefined') {
-						var selectedData = JSON.parse(selected);
-
-						//if sale or soldout, show .product-mark, else hide. crossout old price?
-						if (selectedData.qtyInStock < 1) {
-							//product-mark
-							//.variant-out-of-stock
-						}
-
-						var money = selectedData.onSale ? selectedData.salePrice : selectedData.price;
-						var moneyWithDecimal = insertDecimal(money);
-						var moneyEl = document.querySelector('.sqs-money-native');
-						moneyEl.innerHTML = moneyWithDecimal;
-					}
-				}, 200);
-
-			}, false);
-		}
-	}
-
-
-	function insertDecimal(num) {
-		return (num / 100).toFixed(2);
-	}
-
-
-	//hide thumbnails if only 1 image
-	// @deprecated
-	function checkThumbnailCount() {
-		var arr = document.querySelectorAll('.cn-product__tnContainer__tn');
-
-		if (arr.length < 2 ) {
-			var el = document.querySelector('.cn-product__tnContainer');
-			el.style.display = 'none';
-		}
-	}
-
-	// checkThumbnailCount();
 	thumbnailClickEvent();
-	productSelectChangeEvent();
 }());

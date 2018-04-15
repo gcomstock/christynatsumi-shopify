@@ -126,10 +126,18 @@
   }
 }
 
+// a shopify plugin
+#infiniteoptions-container {
+  width: 66%;
+  margin-left: 34%;
 
+  @media (min-width: $screen-tablet) and (max-width: $screen-desktop-1) {
+    width: 100%;
+    margin-left: 0;
+  }
+}
 
-
-.variant-select-wrapper {
+.single-option-selector {
   display: inline-block;
   width: 66%;
 
@@ -244,6 +252,8 @@
     padding-top: 1.5rem;
     padding-right: 2%;
     padding-bottom: 3rem;
+    padding-left: 2%;
+    text-align: right;
 
     p {
       text-align: right;
@@ -330,9 +340,7 @@
 
 //add to cart button styles
 .sqs-add-to-cart-button-wrapper {
-  // margin-left: 34%;
-  // margin-top: 1.5rem;
-  margin: 20px 0;
+  margin: 1.5rem 0 1.5rem 34%;
 
   @media (min-width: $screen-tablet) and (max-width: $screen-desktop-1) {
     margin-left: 0;
@@ -341,10 +349,14 @@
 }
 
 .sqs-add-to-cart-button {
-  margin-left: 1px !important;
+  margin-left: 34%;
   color: $color-highlight !important;
   min-width: 124px;
   text-align: center;
+
+  @media (min-width: $screen-tablet) and (max-width: $screen-desktop-1) {
+    margin-left: 0;
+  }
 
   // styles applied while item is being added to cart
   &.cart-adding {
@@ -362,7 +374,9 @@
 }
 
 .cn-product__options-wrapper #AddToCartForm .ajaxified-cart-feedback {
-  font-size: 1.4rem;
+  font-size: 1.6rem;
+  margin-top: 1.5rem;
+  line-height: 2.2rem;
 
   a {
     border-bottom: none;

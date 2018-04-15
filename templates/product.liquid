@@ -66,7 +66,8 @@
                 {% endif %}
               {% endfor %}
             </select>
-<div id="infiniteoptions-container"></div>
+
+            <div id="infiniteoptions-container"></div>
 
             <div class="product-single__quantity product-quantity-input">
               <div class="quantity-label">
@@ -74,12 +75,10 @@
               </div>
               <input type="number" id="Quantity" name="quantity" value="1" min="1" max="9999" class="quantity-selector">
             </div>
-            
-            <div class="sqs-add-to-cart-button-wrapper">
-              <button type="submit" name="add" id="AddToCart" class="sqs-add-to-cart-button sqs-suppress-edit-mode sqs-editable-button btn">
-                  <span id="AddToCartText" class="sqs-add-to-cart-button-inner">Add to Cart</span>
-              </button>              
-            </div>
+
+            <button type="submit" name="add" id="AddToCart" class="sqs-add-to-cart-button sqs-suppress-edit-mode sqs-editable-button btn">
+              <span id="AddToCartText" class="sqs-add-to-cart-button-inner">Add to Cart</span>
+            </button>
           </form>
 
           <div class="cn-product__status">
