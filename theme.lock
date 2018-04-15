@@ -591,7 +591,7 @@ assets/strikeout.png:
   development: 2017-10-28T19:22:01-04:00   5a55c95127359b884dd7fb512c063d41
   production: 2017-10-29T06:03:16-04:00   5a55c95127359b884dd7fb512c063d41
 assets/theme.css:
-  development: 2018-04-14T22:27:55-04:00   a9761207e5ccb579c119ab3fcc6e9853
+  development: 2018-04-15T01:47:17-04:00   1756516613e200bbbe4c10940f607c3d
 assets/timber.js.liquid:
   development: 2018-04-08T21:08:05-04:00   26ee9f8df9f9c8d746bc13403010fddf
   production: 2017-08-13T17:39:48-04:00   8663e17d15e94386b5d6fb7c3e44b0bf
@@ -751,7 +751,6 @@ templates/index.liquid:
   development: 2018-03-18T18:32:16-04:00   67c5dab2b88da6dff54d3467a77e3beb
   production: 2017-11-01T15:03:41-04:00   67c5dab2b88da6dff54d3467a77e3beb
 templates/list-collections.liquid:
-  development: 2018-04-07T20:41:15-04:00   da8eb765fe75c5957a6dc16971e1ef11
   production: 2017-11-01T15:03:44-04:00   1ec5dfbb60be0c36673117a21030d0af
 templates/page.about.liquid:
   development: 2018-03-18T20:57:45-04:00   eaff4436889c20755a59166c176d6210
