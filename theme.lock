@@ -721,7 +721,7 @@ templates/cart.liquid:
   development: 2018-04-09T02:39:42-04:00   f7a96278852db9c84f2561c845ba6384
   production: 2017-08-13T17:39:49-04:00   49bbbe1b3bda19110f7e72abc158bb91
 templates/collection.liquid:
-  development: 2018-04-14T17:18:04-04:00   dc95d405a2a49cb4177b08d0fa9b3bf9
+  development: 2018-04-14T20:00:52-04:00   8e1298204aecbe24b80929aa7abefd55
   production: 2017-11-01T15:03:44-04:00   16d9fd21f8b946683a6bed160267b8e5
 templates/customers/account.liquid:
   development: 2017-08-13T17:52:28-04:00   da9e3584ef6699ac5c811b73b42c58db

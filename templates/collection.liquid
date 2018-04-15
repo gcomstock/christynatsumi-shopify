@@ -52,7 +52,7 @@
           <a class="cn-categoryproduct" href="{{ product.url }}">
             <div class="cn-categoryproduct__img">
             <img
-                src="{{ product.featured_image | img_url: '600x600', crop: 'bottom' }}"
+                data-src="{{ product.featured_image | img_url: '600x600', crop: 'bottom' }}"
                 alt="{{ product.featured_image.alt | escape }}"
                 sizes="(min-width: 415px) 600px, (min-width: 376px and max-width: 414px) 400px, (max-width: 376px) 350px"
                 data-srcset="{{ product.featured_image | img_url: '600x600', crop: 'bottom' }} 600w,
