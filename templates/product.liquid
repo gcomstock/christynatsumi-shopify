@@ -15,7 +15,7 @@
 
 
       <!--LEFT COLUMN-->
-      <div class="cn-product__mask content-fit">
+      <div class="cn-product__mask">
         {% for image in product.images %}
           {% if image.position == 1 %}
             <img class="cn-product__mask__slide active cn-imageFrame" src="{{ image | img_url : 'master' }}" itemprop="image" alt="original"/>

@@ -30,11 +30,11 @@ function highlightCustomNav() {
 function createCustomSelectNav() {
 	var tabLinks = document.querySelectorAll('.cn-header--mini .cn-header__sectnav__custom a');
 	var mobileHeader = document.createElement('div');
-		mobileHeader.id = 'cn-mobileFixedHeader';
+		  mobileHeader.id = 'cn-mobileFixedHeader';
 	var mobileHeaderTitle = document.createElement('h3');
-		mobileHeaderTitle.innerText = 'Custom:';
+		  mobileHeaderTitle.innerText = 'Custom:';
 	var select = document.createElement('select');
-		select.id = 'cn-mobileFixedHeader__nav';
+		  select.id = 'cn-mobileFixedHeader__nav';
 
 	for (var i = 0; i < tabLinks.length; i++) {
 		var href = tabLinks[i].href;

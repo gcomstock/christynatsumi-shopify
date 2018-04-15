@@ -65,41 +65,6 @@
 		}
 	}
 
-/*
-	// we are now just checking the official squarespace ui element
-
-	//updates cart count UI to reflect new quantity
-	function addToCartEvent() {
-		var el = document.querySelector('.sqs-add-to-cart-button');
-		var clickInterval;
-
-		el.addEventListener('click', function(){
-
-			if (typeof clickInterval !== 'undefined') {
-				clearInterval(clickInterval);
-			}
-
-			clickInterval = setInterval(function(){
-				if (this.classList.contains('cart-added')) {
-					var cartCountEl = document.querySelectorAll('.cn-cart-count');
-					var count = cartCountEl[0].innerHTML;
-					var qty = document.querySelector('.quantity-label').nextElementSibling.value;
-					var sum = parseInt(count, 10) + parseInt(qty, 10);
-
-					for (var i = 0; i < cartCountEl.length; i++) {
-						cartCountEl[i].innerHTML = sum;
-					};
-
-					clearInterval(clickInterval);
-				}
-
-			}.bind(this), 500);
-		});
-	}
-*/
-
-
-	//addToCartEvent();
 	// checkThumbnailCount();
 	thumbnailClickEvent();
 	productSelectChangeEvent();
