@@ -45,42 +45,21 @@
 </script>
 
 
+
 <main class="cn-wrapper cn-wrapper--top">
-    {% paginate collection.products by 48 %}
-      {% for product in collection.products %}
-        {% if product.images.size > 0 %}
-          <a class="cn-categoryproduct" href="{{ product.url }}">
-            <div class="cn-categoryproduct__img">
-            <img
-                data-src="{{ product.featured_image | img_url: '600x600', crop: 'bottom' }}"
-                alt="{{ product.featured_image.alt | escape }}"
-                sizes="(min-width: 415px) 600px, (min-width: 376px and max-width: 414px) 400px, (max-width: 376px) 350px"
-                data-srcset="{{ product.featured_image | img_url: '600x600', crop: 'bottom' }} 600w,
-                  {{ product.featured_image | img_url: '400x400', crop: 'bottom' }} 400w,
-                  {{ product.featured_image | img_url: '350x350', crop: 'bottom' }} 350w"
-                class="lazyload" />
-            </div>
-            <div class="cn-categoryproduct__title dolceVita">{{ product.title }}</div>
+  {% paginate collection.products by 48 %}
+    {% for product in collection.products %}
+      {% include 'product-grid-item' %}
+    {% endfor %}
 
-            {% if product.available == false %}
-              <div class="cn-categoryproduct__soldout product-mark sold-out">sold out</div>
-            {% endif %}
-          </a>
-        {% else %}
-          <a class="cn-categoryproduct">no product thumbnail</a>
-        {% endif %}
-
-      {% endfor %}
-
-    {% if paginate.pages > 1 %}
-        <h1>pages!</h1>
-      <hr>
-      <div class="pagination">
-        {{ paginate | default_pagination | replace: '&laquo; Previous', '&larr;' | replace: 'Next &raquo;', '&rarr;' }}
-      </div>
-    {% endif %}
-
-    {% endpaginate %}
+  {% if paginate.pages > 1 %}
+    <h1>pages!</h1>
+    <hr>
+    <div class="pagination">
+      {{ paginate | default_pagination | replace: '&laquo; Previous', '&larr;' | replace: 'Next &raquo;', '&rarr;' }}
+    </div>
+  {% endif %}
+  {% endpaginate %}
 </main>
 
 

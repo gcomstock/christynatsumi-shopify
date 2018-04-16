@@ -591,7 +591,7 @@ assets/strikeout.png:
   development: 2017-10-28T19:22:01-04:00   5a55c95127359b884dd7fb512c063d41
   production: 2017-10-29T06:03:16-04:00   5a55c95127359b884dd7fb512c063d41
 assets/theme.css:
-  development: 2018-04-15T01:47:17-04:00   1756516613e200bbbe4c10940f607c3d
+  development: 2018-04-15T20:18:28-04:00   0adf988b0543eac74aa05f413f27610f
 assets/timber.js.liquid:
   development: 2018-04-08T21:08:05-04:00   26ee9f8df9f9c8d746bc13403010fddf
   production: 2017-08-13T17:39:48-04:00   8663e17d15e94386b5d6fb7c3e44b0bf
@@ -643,7 +643,7 @@ sections/header.liquid:
   development: 2017-10-29T21:20:45-04:00   ff601970b3d5f23a3dd526e1c9e00257
   production: 2017-10-29T22:15:42-04:00   ff601970b3d5f23a3dd526e1c9e00257
 sections/related-products.liquid:
-  development: 2018-03-05T11:30:52-05:00   5a9ee467b3a87c44f7cd200eb8ce97ee
+  development: 2018-04-15T20:09:10-04:00   50802019d4b60fa610e6e9e17b117cc6
 snippets/ajax-cart-template.liquid:
   development: 2017-08-13T17:52:28-04:00   e6fa15367ab47a164d9dc8e47353c684
   production: 2017-08-13T17:39:48-04:00   e6fa15367ab47a164d9dc8e47353c684
@@ -685,9 +685,15 @@ snippets/onboarding-featured-collections.liquid:
 snippets/onboarding-featured-products.liquid:
   development: 2017-08-13T17:52:28-04:00   6a32fc5786e0f1dc98a1f75897fca8b3
   production: 2017-08-13T17:39:49-04:00   6a32fc5786e0f1dc98a1f75897fca8b3
+snippets/product-grid-item--old.liquid:
+  development: 2018-04-15T16:30:11-04:00   9fa5572e0fab153408f0e3bed50c146a
+snippets/product-grid-item--old.liquid___jb_bak___:
+  development: 2018-04-15T16:30:10-04:00
 snippets/product-grid-item.liquid:
-  development: 2017-08-13T17:52:28-04:00   5c056a854988fba46c535845cd5aeba1
+  development: 2018-04-15T16:36:02-04:00   aebc87964c9e48ba80f2068faca665ec
   production: 2017-08-13T17:39:49-04:00   5c056a854988fba46c535845cd5aeba1
+snippets/product-grid-item.liquid___jb_bak___:
+  development: 2018-04-15T16:33:06-04:00
 snippets/respond.liquid:
   development: 2017-08-13T17:52:28-04:00   ca6abf0635dc2ad8c6bd377f83c79f6b
   production: 2017-08-13T17:39:49-04:00   ca6abf0635dc2ad8c6bd377f83c79f6b
@@ -721,7 +727,7 @@ templates/cart.liquid:
   development: 2018-04-09T02:39:42-04:00   f7a96278852db9c84f2561c845ba6384
   production: 2017-08-13T17:39:49-04:00   49bbbe1b3bda19110f7e72abc158bb91
 templates/collection.liquid:
-  development: 2018-04-14T20:00:52-04:00   8e1298204aecbe24b80929aa7abefd55
+  development: 2018-04-15T16:33:04-04:00   02bb2b420c40bf4b964930a83f05da4c
   production: 2017-11-01T15:03:44-04:00   16d9fd21f8b946683a6bed160267b8e5
 templates/customers/account.liquid:
   development: 2017-08-13T17:52:28-04:00   da9e3584ef6699ac5c811b73b42c58db
@@ -773,7 +779,7 @@ templates/page.lookbook.glint.liquid:
 templates/page.workshop.liquid:
   development: 2017-11-05T21:47:32-05:00   f4caf98ffc92e1667bf9ae15d9664610
 templates/product.liquid:
-  development: 2018-04-14T22:13:37-04:00   40a03433f7983774b8bc77b269f69140
+  development: 2018-04-15T16:44:24-04:00   9b73cbd80ca0bb19fe4b9ef83bfa4f5e
   production: 2017-11-01T15:03:39-04:00   aef516cbf5b605b1419ea70490ea4cef
 templates/search.liquid:
   development: 2017-08-13T17:52:28-04:00   3926b96d4d14c2cd8409e56f7cc6d6e0

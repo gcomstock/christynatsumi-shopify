@@ -1,21 +1,5 @@
-{% if section.settings.show_related_products == true %}
-<hr>
-<div class="product-template__container page-width" itemscope itemtype="http://schema.org/Product" id="ProductSection-{{ section.id }}" data-section-id="{{ section.id }}" data-section-type="product" data-enable-history-state="true">
-
-{% comment %}
-  Number of related items per row,
-  and number of rows.
-{% endcomment %}
-
-{% assign number_of_related_products_per_row = section.settings.related_grid_num %}
-{% assign number_of_rows = section.settings.related_grid_row %}
-
-{% comment %}
-  Heading.
-  Leave blank if you don't need one.
-{% endcomment %}
-
-{% assign heading = section.settings.related_title %}
+{% assign number_of_related_products_per_row = 4 %}
+{% assign number_of_rows = 1 %}
 
 {% comment %}
   Set either or both to true, if you want
@@ -25,12 +9,15 @@
 {% assign same_vendor = false %}
 {% assign same_type = false %}
 
+
 {% comment %}
   Collections to ignore.
   Never pick related items from those.
 {% endcomment %}
 
 {% assign exclusions = 'frontpage,all' | split: ',' %}
+
+
 
 {% comment %}
   Looking for a relevant collection.
@@ -62,35 +49,29 @@
 
 {% if found_a_collection %}
 
+  {% comment %}
+    We assign an index based on current time, then make sure that index is low enough to return enough related products
+    This is a hacky way to randomize the related products so user isnt always seeing the same 4
+  {% endcomment %}
+
   {% assign counter = 0 %}
   {% assign break_at = number_of_rows | times: number_of_related_products_per_row %}
   {% assign current_product = product %}
+  {% assign index = 'now' | date: '%S' | times: collection.products.size | divided_by: 60 %}
+  {% assign maxIndex = collection.products.size | minus: break_at | minus: 1 %}
 
-    {% case number_of_related_products_per_row %}
-    {% when '1' %}
-      {% assign grid_item_width = '' %}
-    {% when '2' %}
-      {% assign grid_item_width = 'large--one-half medium--one-half' %}
-    {% when '3' %}
-      {% assign grid_item_width = 'large--one-third medium--one-half' %}
-    {% when '4' %}
-      {% assign grid_item_width = 'large--one-quarter medium--one-third small--one-half' %}
-    {% when '5' %}
-      {% assign grid_item_width = 'large--one-fifth medium--one-third small--one-half' %}
-    {% when '6' %}
-      {% assign grid_item_width = 'large--one-sixth medium--one-third small--one-half' %}
-    {% else %}
-      {% assign grid_item_width = 'large--one-quarter medium--one-third small--one-half' %}
-  {% endcase %}
+  {% if index > maxIndex %}
+    {% assign index = maxIndex %}
+  {% endif %}
 
 
   {% capture related_items %}
-    {% for product in collection.products %}
+    {% for product in collection.products offset:index %}
       {% unless product.handle == current_product.handle %}
          {% unless same_vendor and current_product.vendor != product.vendor %}
            {% unless same_type and current_product.type != product.type %}
 
-    {% include 'product-grid-item' %}
+             {% include 'product-grid-item' %}
 
              {% assign counter = counter | plus: 1 %}
              {% if counter == break_at %}
@@ -105,87 +86,9 @@
   {% assign related_items = related_items | trim %}
 
   {% unless related_items == blank %}
-
-  <aside class="grid">
-    <div class="grid__item">
-      {% unless heading == blank %}
-      <header class="section-header">
-        <h2 class="section-header__title">{{ heading }}</h1>
-      </header>
-      {% endunless %}
-      <div class="grid-uniform">
-        {{ related_items }}
-      </div>
-    </div>
-  </aside>
-
+    <h3>related items</h3>
+    <hr>
+    {{ related_items }}
   {% endunless %}
 
 {% endif %}
-
-</div>
-{% endif %}
-
-{% schema %}
-{
-  "name": "Related products",
-  "settings": [
-    {
-      "type": "checkbox",
-      "id": "show_related_products",
-      "label": "Show related products",
-      "default": false
-    },
-    {
-      "id": "related_title",
-      "type": "text",
-      "label": "Section title",
-      "default": "Other fine products"
-    },
-    {
-      "type": "select",
-      "id": "related_grid_num",
-      "label": "Products per row (Desktop)",
-      "default": "4",
-      "options": [
-        {
-          "value": "2",
-          "label": "2"
-        },
-        {
-          "value": "3",
-          "label": "3"
-        },
-        {
-          "value": "4",
-          "label": "4"
-        },
-        {
-          "value": "5",
-          "label": "5"
-        }
-      ]
-    },
-    {
-      "type": "select",
-      "id": "related_grid_row",
-      "label": "Number of rows (Desktop)",
-      "default": "1",
-      "options": [
-        {
-          "value": "1",
-          "label": "1"
-        },
-        {
-          "value": "2",
-          "label": "2"
-        },
-        {
-          "value": "3",
-          "label": "3"
-        }
-      ]
-    }
-  ]
-}
-{% endschema %}

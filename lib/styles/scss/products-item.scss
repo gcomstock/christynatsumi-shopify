@@ -236,7 +236,7 @@
 .cn-product__options-wrapper {
   font-size: 0;
   position: relative;
-  padding-bottom: 6rem;
+  padding-bottom: 3rem;
   text-align: left;
 
   p {
@@ -404,4 +404,10 @@
     vertical-align: top;
     padding-top: 1.5rem;
   }
+}
+
+.cn-product__related {
+  margin-top: 3rem;
+  width: 100%;
+  float: left;
 }

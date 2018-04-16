@@ -91,15 +91,17 @@
         <div class="cn-product__excerpt">
           <p>{{ product.description }}</p>
         </div>
-
-        <h2>related products</h2>
-        {% section 'related-products' %}
-
       </div>
+
+      <div class="cn-product__related">
+        {% section 'related-products' %}
+      </div>
+
   </div>
 </main>
 
 {{ 'products-item.js' | asset_url | script_tag }}
+{{ 'lazysizes.min.js' | asset_url | script_tag }}
 
 {% comment %}
   To take advantage of a callback on the select dropdown, add option_selection.js
