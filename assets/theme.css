@@ -2504,6 +2504,8 @@ button, .button {
   .product-single__quantity.product-quantity-input input {
     display: inline-block;
     margin-bottom: 0; }
+  .product-single__quantity.product-quantity-input p {
+    margin-bottom: 0; }
 
 .cn-product__tnContainer {
   font-size: 0;

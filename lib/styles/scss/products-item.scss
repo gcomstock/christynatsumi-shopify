@@ -126,6 +126,7 @@
   }
 }
 
+
 // a shopify plugin
 #infiniteoptions-container {
   width: 66%;
@@ -151,6 +152,10 @@
 
   input {
     display: inline-block;
+    margin-bottom: 0;
+  }
+
+  p {
     margin-bottom: 0;
   }
 }
