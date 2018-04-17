@@ -69,12 +69,14 @@
 
             <div id="infiniteoptions-container"></div>
 
-            <div class="product-single__quantity product-quantity-input">
-              <div class="variant-option-title">
-                <label for="Measurements">Measurements:</label>
+            {% if product.metafields.details.measurements %}
+              <div class="product-single__quantity product-quantity-input">
+                <div class="variant-option-title">
+                  <label for="Measurements">Measurements:</label>
+                </div>
+                <p class="single-option-selector">{{ product.metafields.details.measurements }}</p>
               </div>
-              <p class="single-option-selector">{{ product.metafields.details.measurements }}</p>
-            </div>
+            {% endif %}
 
             <div class="product-single__quantity product-quantity-input">
               <div class="quantity-label">

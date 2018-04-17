@@ -9,25 +9,29 @@
 
 
 <script>
-  /*
+
+  var requestInFlight = false;
+
    function handleScroll() {
-     console.log('scroling');
+     console.log('scrolling');
      if($(document).height() - 800 < ($(document).scrollTop() + $(window).height())) {
-         scrollNode = $('#more').last();
-         scrollURL = $('#more p a').last().attr("href");
-         if(scrollNode.length > 0 && scrollNode.css('display') != 'none') {
+         scrollNode = $('.next').last();
+         scrollURL = scrollNode.children('a').attr('href');
+         if(scrollNode.length > 0 && scrollNode.css('display') != 'none' && !requestInFlight) {
+             requestInFlight = true;
              $.ajax({
                  type: 'GET',
                  url: scrollURL,
                  beforeSend: function() {
-                     scrollNode.clone().empty().insertAfter(scrollNode).append('<img src=\"{{ "loading.gif" | asset_url }}\" />');
-                     scrollNode.hide();
+                     //scrollNode.clone().empty().insertAfter(scrollNode).append('<img src=\"{{ "loading.gif" | asset_url }}\" />');
+                     //scrollNode.hide();
                  },
                  success: function(data) {
                      // remove loading feedback
-                     scrollNode.next().remove();
-                     var filteredData = $(data).find(".product");
-                     filteredData.insertBefore( $("#product-list-foot") );
+                     //scrollNode.next().remove();
+                     var filteredData = $(data).find('.cn-categoryproduct');
+                     $('main').append(filteredData);
+                     requestInFlight = false;
                  },
                  dataType: "html"
              });
@@ -37,11 +41,11 @@
 
    $(document).ready(function () {
      $(window).scroll(function(){
-        handleScroll();
+        // handleScroll();
          //$.doTimeout( 'scroll', 200, ScrollExecute);
      });
    });
-  */
+
 </script>
 
 
@@ -53,10 +57,8 @@
     {% endfor %}
 
   {% if paginate.pages > 1 %}
-    <h1>pages!</h1>
-    <hr>
     <div class="pagination">
-      {{ paginate | default_pagination | replace: '&laquo; Previous', '&larr;' | replace: 'Next &raquo;', '&rarr;' }}
+      {{ paginate | default_pagination }}
     </div>
   {% endif %}
   {% endpaginate %}

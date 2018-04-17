@@ -2798,6 +2798,10 @@ button, .button {
       -o-transition: all 200ms ease;
       transition: all 200ms ease; } }
 
+.pagination {
+  text-align: center;
+  font-size: 3rem; }
+
 .summary-thumbnail-container {
   width: 100% !important;
   float: none !important;
