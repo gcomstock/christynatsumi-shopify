@@ -9,43 +9,43 @@
 
 
 <script>
-
   var requestInFlight = false;
 
-   function handleScroll() {
-     console.log('scrolling');
-     if($(document).height() - 800 < ($(document).scrollTop() + $(window).height())) {
-         scrollNode = $('.next').last();
-         scrollURL = scrollNode.children('a').attr('href');
-         if(scrollNode.length > 0 && scrollNode.css('display') != 'none' && !requestInFlight) {
-             requestInFlight = true;
-             $.ajax({
-                 type: 'GET',
-                 url: scrollURL,
-                 beforeSend: function() {
-                     //scrollNode.clone().empty().insertAfter(scrollNode).append('<img src=\"{{ "loading.gif" | asset_url }}\" />');
-                     //scrollNode.hide();
-                 },
-                 success: function(data) {
-                     // remove loading feedback
-                     //scrollNode.next().remove();
-                     var filteredData = $(data).find('.cn-categoryproduct');
-                     $('main').append(filteredData);
-                     requestInFlight = false;
-                 },
-                 dataType: "html"
-             });
-         }
-     }
-   }
+  function handleScroll() {
+
+    if( window.pageYOffset > $('.pagination').offset().top - window.innerHeight ) {
+      scrollNode = $('.next').last();
+      scrollURL = scrollNode.children('a').attr('href');
+
+      if(scrollNode.length > 0 && scrollNode.css('display') != 'none' && !requestInFlight) {
+        requestInFlight = true;
+
+        $.ajax({
+          type: 'GET',
+          url: scrollURL,
+          success: function(data) {
+            $('.pagination').remove();
+
+            var filteredData = $(data).find('.cn-categoryproduct');
+            var pagination = $(data).find('.pagination');
+            $('main').append(filteredData);
+            $('main').append(pagination);
+          },
+          complete: function() {
+            requestInFlight = false;
+          },
+          dataType: "html"
+        });
+      }
+    }
+  }
 
    $(document).ready(function () {
      $(window).scroll(function(){
-        // handleScroll();
-         //$.doTimeout( 'scroll', 200, ScrollExecute);
+       handleScroll();
+       //$.doTimeout( 'scroll', 200, ScrollExecute);
      });
    });
-
 </script>
 
 
