@@ -52,8 +52,11 @@
 
 <main class="cn-wrapper cn-wrapper--top">
   {% paginate collection.products by 48 %}
+
     {% for product in collection.products %}
-      {% include 'product-grid-item' %}
+      {% if product.type != 'Gift Card' %}
+        {% include 'product-grid-item' %}
+      {% endif %}
     {% endfor %}
 
   {% if paginate.pages > 1 %}

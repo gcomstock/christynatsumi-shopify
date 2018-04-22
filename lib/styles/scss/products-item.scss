@@ -99,7 +99,10 @@
   }
 }
 
-
+// so variant fields w/o a name aligns right
+.selector-wrapper {
+  text-align: right;
+}
 
 .selector-wrapper label,
 .variant-option-title,
