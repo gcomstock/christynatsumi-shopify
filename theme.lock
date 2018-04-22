@@ -619,25 +619,25 @@ locales/pt-PT.json:
   development: 2018-03-18T18:17:35-04:00   6ddf443592f389ff55aa739569736f47
   production: 2017-08-13T18:37:38-04:00   6ddf443592f389ff55aa739569736f47
 sections/contact-form.liquid:
-  development: 2017-10-30T18:51:39-04:00   d9eb53b7cf630ec44bb88f59cfb20b8e
+  development: 2018-04-22T11:17:30-04:00   e8f46915d2246c6d0d8285fc5e874c0f
   production: 2017-10-31T07:10:26-04:00   d9eb53b7cf630ec44bb88f59cfb20b8e
 sections/custom-form.liquid:
-  development: 2018-03-04T20:32:06-05:00   b5c9f5253540f49e0e922dcada08c115
+  development: 2018-04-22T11:17:28-04:00   6b3498ebe85a980f5e8743644ac78b3a
   production: 2017-10-31T07:10:29-04:00   618bfdc78e364f0239870b3b2c48b106
 sections/footer.liquid:
-  development: 2018-03-25T17:08:04-04:00   b4bf71b3ce544c60d392f41dd4225deb
+  development: 2018-04-22T11:17:29-04:00   1ed4640cad5190a1b6b96a597e665957
   production: 2017-10-29T22:15:40-04:00   0f3502fd7a52cbdb04030105bfe3d8b4
 sections/header-custom.liquid:
-  development: 2017-10-29T20:38:05-04:00   d73f1b80823b291475ee8c19f3b3df99
+  development: 2018-04-22T11:14:55-04:00   5b45a90ff3a3b911eddfadd422a2513b
   production: 2017-10-29T22:15:44-04:00   40d7e2cb76c94fa37d3024b8a62c1ca8
 sections/header-home.liquid:
-  development: 2018-04-08T00:07:22-04:00   699eafb88fdd5e786fd74d78c0f0f527
+  development: 2018-04-22T11:14:22-04:00   a71adfca6cf992eea45f8827f841468d
   production: 2017-11-01T15:03:40-04:00   699eafb88fdd5e786fd74d78c0f0f527
 sections/header-shop.liquid:
-  development: 2017-11-01T09:48:48-04:00   191f90a323edd48f9782c9d78ca04fe1
+  development: 2018-04-22T11:14:43-04:00   375f2350a87f2dd837b8a733c05734c3
   production: 2017-11-01T15:03:43-04:00   191f90a323edd48f9782c9d78ca04fe1
 sections/header.liquid:
-  development: 2017-10-29T21:20:45-04:00   ff601970b3d5f23a3dd526e1c9e00257
+  development: 2018-04-22T11:15:08-04:00   872a6a1889d19e761e003019a2ff2777
   production: 2017-10-29T22:15:42-04:00   ff601970b3d5f23a3dd526e1c9e00257
 sections/related-products.liquid:
   development: 2018-04-15T20:09:10-04:00   50802019d4b60fa610e6e9e17b117cc6
@@ -668,7 +668,7 @@ snippets/mobilenav.liquid:
   development: 2018-04-14T22:00:43-04:00   ebbb0d6dcdab45893360460295691657
   production: 2017-11-01T15:03:43-04:00   c04e98b0924a47d47d3f97b69d29c33c
 snippets/navigation.liquid:
-  development: 2018-04-08T22:19:08-04:00   2c0d9e5d8ba753dbaff7bf9ad5e26edc
+  development: 2018-04-22T11:17:31-04:00   fbef184a1116b0d39a36bcbb8411a648
   production: 2017-10-29T20:10:21-04:00   62ec83c1d2828fefbf02e215e8d1a925
 snippets/oldIE-js.liquid:
   development: 2017-08-13T17:52:28-04:00   1197cc7109944206a600ed5caaef6a6f
@@ -749,30 +749,30 @@ templates/gift_card.liquid:
   development: 2017-08-13T17:52:28-04:00   c1ae0f8232e003fac57213d1353e513c
   production: 2017-08-13T17:39:49-04:00   c1ae0f8232e003fac57213d1353e513c
 templates/index.liquid:
-  development: 2018-03-18T18:32:16-04:00   67c5dab2b88da6dff54d3467a77e3beb
+  development: 2018-04-22T11:08:28-04:00   1f30f357c60e68b8ad5fcb301f9e2da4
   production: 2017-11-01T15:03:41-04:00   67c5dab2b88da6dff54d3467a77e3beb
 templates/page.about.liquid:
   development: 2018-03-18T20:57:45-04:00   eaff4436889c20755a59166c176d6210
   production: 2017-11-01T15:03:40-04:00   569d0450b1767353b1c23349beb54150
 templates/page.contact.liquid:
-  development: 2018-03-18T17:58:04-04:00   a6291162564434f5338c862235c4d5ef
+  development: 2018-04-22T11:07:31-04:00   f835ec9319af9c202083100bc87d17ba
   production: 2017-10-31T07:10:32-04:00   ac6c47895432d316a1be5edd3c0f5eda
 templates/page.custom.liquid:
-  development: 2018-04-14T22:00:44-04:00   67ab8fd34f7e9e717a2ecf2eb760bcc7
+  development: 2018-04-22T11:07:07-04:00   c6514060aec32f23a3a03e07fb38bf19
   production: 2017-11-01T15:03:42-04:00   9073c3c92ef2a75eb97432544b322daa
 templates/page.faq.liquid:
-  development: 2017-10-31T13:52:07-04:00   9bf19590944960d3cfa8bc5d98d3e41f
+  development: 2018-04-22T11:09:03-04:00   28ff5a89c78a36d35b75fc2fb7ac26fe
   production: 2017-11-01T15:03:39-04:00   9bf19590944960d3cfa8bc5d98d3e41f
 templates/page.liquid:
-  development: 2017-10-30T10:26:31-04:00   813d518c7cdc01755e9988f3213bcef5
+  development: 2018-04-22T11:09:04-04:00   00d4b7d54c9cb81a7b74f6b7c717d366
   production: 2017-10-31T07:10:31-04:00   813d518c7cdc01755e9988f3213bcef5
 templates/page.lookbook.glint.liquid:
-  development: 2017-10-31T14:14:23-04:00   40302e7bc6a03d32f61ee88251a9c826
+  development: 2018-04-22T11:09:56-04:00   86faa0eeb4163d3a15bf70b6bcdce511
   production: 2017-11-01T15:03:42-04:00   40302e7bc6a03d32f61ee88251a9c826
 templates/page.workshop.liquid:
-  development: 2017-11-05T21:47:32-05:00   f4caf98ffc92e1667bf9ae15d9664610
+  development: 2018-04-22T11:09:54-04:00   302d8d045446800c3fe3e5a854ecb0d1
 templates/product.liquid:
-  development: 2018-04-17T10:44:50-04:00   43391973ba5708af406f1c7caabf24fd
+  development: 2018-04-22T11:13:37-04:00   23b6e03f01170c04efd091859ff3db93
   production: 2017-11-01T15:03:39-04:00   aef516cbf5b605b1419ea70490ea4cef
 templates/search.liquid:
   development: 2017-08-13T17:52:28-04:00   3926b96d4d14c2cd8409e56f7cc6d6e0

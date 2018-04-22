@@ -14,97 +14,97 @@
     <h4 class="cn-product__title--mobile dolceVita">{{ product.title }}</h4>
 
 
-      <!--LEFT COLUMN-->
-      <div class="cn-product__mask">
-        {% for image in product.images %}
-          {% if image.position == 1 %}
-            <img class="cn-product__mask__slide active cn-imageFrame" src="{{ image | img_url : 'master' }}" itemprop="image" alt="original"/>
-          {% else %}
-            <img class="cn-product__mask__slide cn-imageFrame" src="{{ image | img_url : 'master' }}" alt="original"/>
-          {% endif %}
-        {% endfor %}
-      </div>
-
-
-      <!--RIGHT COLUMN-->
-      <div class="cn-product__details">
-        <h4 class="cn-product__title--web dolceVita" itemprop="name">{{ product.title }}</h4>
-        
-        {% if product.images.size > 1 %}
-          <div class="cn-product__tnContainer">
-            {{ product.images.size }}
-            {% for image in product.images %}
-              <div class="cn-product__tnContainer__tn content-fill" data-index="{{ image.position }}">
-                <img src="{{ image | img_url : 'compact' }}" alt="{{ image.alt }}" />
-              </div>
-            {% endfor %}
-          </div>
+    <!--LEFT COLUMN-->
+    <div class="cn-product__mask">
+      {% for image in product.images %}
+        {% if image.position == 1 %}
+          <img class="cn-product__mask__slide active cn-imageFrame" src="{{ image | img_url : 'master' }}" itemprop="image" alt="original"/>
+        {% else %}
+          <img class="cn-product__mask__slide cn-imageFrame" src="{{ image | img_url : 'master' }}" alt="original"/>
         {% endif %}
+      {% endfor %}
+    </div>
 
-        <div class="cn-product__options-wrapper">
-          <div class="cn-product__price cn-number">
-            <span id="ProductPrice" class="product-single__price sqs-money-native" itemprop="price" content="{{ current_variant.price | divided_by: 100.00 }}">
-              {{ current_variant.price | money }}
-            </span>
-          </div>
-          
-          <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
 
-            <select name="id" id="productSelect" class="product-single__variants">
-              {% for variant in product.variants %}
-                {% if variant.available %}
+    <!--RIGHT COLUMN-->
+    <div class="cn-product__details">
+      <h4 class="cn-product__title--web dolceVita" itemprop="name">{{ product.title }}</h4>
 
-                  {% comment %}
-                    Note: if you use option_selection.js, your <select> tag will be overwritten, meaning what you have inside <option> will not reflect what you coded below.
-                  {% endcomment %}
-                  <option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
-
-                {% else %}
-                  <option disabled="disabled">
-                    {{ variant.title }} - {{ 'products.product.sold_out' | t }}
-                  </option>
-                {% endif %}
-              {% endfor %}
-            </select>
-
-            <div id="infiniteoptions-container"></div>
-
-            {% if product.metafields.details.measurements %}
-              <div class="product-single__quantity product-quantity-input">
-                <div class="variant-option-title">
-                  <label for="Measurements">Measurements:</label>
-                </div>
-                <p class="single-option-selector">{{ product.metafields.details.measurements }}</p>
-              </div>
-            {% endif %}
-
-            <div class="product-single__quantity product-quantity-input">
-              <div class="quantity-label">
-                <label for="Quantity">Quantity:</label>
-              </div>
-              <input type="number" id="Quantity" name="quantity" value="1" min="1" max="9999" class="quantity-selector">
+      {% if product.images.size > 1 %}
+        <div class="cn-product__tnContainer">
+          {{ product.images.size }}
+          {% for image in product.images %}
+            <div class="cn-product__tnContainer__tn content-fill" data-index="{{ image.position }}">
+              <img src="{{ image | img_url : 'compact' }}" alt="{{ image.alt }}" />
             </div>
+          {% endfor %}
+        </div>
+      {% endif %}
 
-            <button type="submit" name="add" id="AddToCart" class="sqs-add-to-cart-button sqs-suppress-edit-mode sqs-editable-button btn">
-              <span id="AddToCartText" class="sqs-add-to-cart-button-inner">Add to Cart</span>
-            </button>
-          </form>
+      <div class="cn-product__options-wrapper">
+        <div class="cn-product__price cn-number">
+          <span id="ProductPrice" class="product-single__price sqs-money-native" itemprop="price" content="{{ current_variant.price | divided_by: 100.00 }}">
+            {{ current_variant.price | money }}
+          </span>
+        </div>
 
-          <div class="cn-product__status">
-            {% if product.available == false %}
-              <div class="product-mark sold-out">sold out</div>
-            {% endif %}
+        <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
+
+          <select name="id" id="productSelect" class="product-single__variants">
+            {% for variant in product.variants %}
+              {% if variant.available %}
+
+                {% comment %}
+                  Note: if you use option_selection.js, your <select> tag will be overwritten, meaning what you have inside <option> will not reflect what you coded below.
+                {% endcomment %}
+                <option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
+
+              {% else %}
+                <option disabled="disabled">
+                  {{ variant.title }} - {{ 'products.product.sold_out' | t }}
+                </option>
+              {% endif %}
+            {% endfor %}
+          </select>
+
+          <div id="infiniteoptions-container"></div>
+
+          {% if product.metafields.details.measurements %}
+            <div class="product-single__quantity product-quantity-input">
+              <div class="variant-option-title">
+                <label for="Measurements">Measurements:</label>
+              </div>
+              <p class="single-option-selector">{{ product.metafields.details.measurements }}</p>
+            </div>
+          {% endif %}
+
+          <div class="product-single__quantity product-quantity-input">
+            <div class="quantity-label">
+              <label for="Quantity">Quantity:</label>
+            </div>
+            <input type="number" id="Quantity" name="quantity" value="1" min="1" max="9999" class="quantity-selector">
           </div>
-        </div>
 
-        <div class="cn-product__excerpt">
-          <p>{{ product.description }}</p>
+          <button type="submit" name="add" id="AddToCart" class="sqs-add-to-cart-button sqs-suppress-edit-mode sqs-editable-button btn">
+            <span id="AddToCartText" class="sqs-add-to-cart-button-inner">Add to Cart</span>
+          </button>
+        </form>
+
+        <div class="cn-product__status">
+          {% if product.available == false %}
+            <div class="product-mark sold-out">sold out</div>
+          {% endif %}
         </div>
       </div>
 
-      <div class="cn-product__related">
-        {% section 'related-products' %}
+      <div class="cn-product__excerpt">
+        <p>{{ product.description }}</p>
       </div>
+    </div>
+
+    <div class="cn-product__related">
+      {% section 'related-products' %}
+    </div>
 
   </div>
 </main>
