@@ -590,7 +590,7 @@ assets/strikeout.png:
 assets/theme.css:
   development: 2018-04-18T01:36:13-04:00   3ba633b77c3ed4bad18ca8eba41276c0
 assets/timber.js.liquid:
-  development: 2018-04-08T21:08:05-04:00   26ee9f8df9f9c8d746bc13403010fddf
+  development: 2018-04-22T20:25:07-04:00   8663e17d15e94386b5d6fb7c3e44b0bf
   production: 2017-08-13T17:39:48-04:00   8663e17d15e94386b5d6fb7c3e44b0bf
 config/settings_data.json:
   development: 2018-03-25T17:16:30-04:00   7693bf310418c4d7e479473e16d776bd
@@ -665,8 +665,10 @@ snippets/headernotice.liquid:
   development: 2018-03-07T05:56:17-05:00   7e238bca8c54b9b15ecc3a454d009575
   production: 2017-11-01T15:03:38-04:00   d49cab2fc80eb5553df5aef3a13b05bf
 snippets/mobilenav.liquid:
-  development: 2018-04-14T22:00:43-04:00   ebbb0d6dcdab45893360460295691657
+  development: 2018-04-22T19:43:37-04:00   77238c1be840706286d44f1efcb5c841
   production: 2017-11-01T15:03:43-04:00   c04e98b0924a47d47d3f97b69d29c33c
+snippets/mobilenav.liquid___jb_old___:
+  development: 2018-04-22T19:43:37-04:00
 snippets/navigation.liquid:
   development: 2018-04-22T11:17:31-04:00   fbef184a1116b0d39a36bcbb8411a648
   production: 2017-10-29T20:10:21-04:00   62ec83c1d2828fefbf02e215e8d1a925
@@ -710,7 +712,7 @@ snippets/tags-article.liquid:
   development: 2017-08-13T17:52:28-04:00   52bc59a44a51be2f1745559c2ba514a2
   production: 2017-08-13T17:39:49-04:00   52bc59a44a51be2f1745559c2ba514a2
 templates/404.liquid:
-  development: 2017-08-13T17:52:28-04:00   44a6b0129de575e7085a047bc2096a76
+  development: 2018-04-22T20:43:36-04:00   e727fd468d5ec4403225a8d3473f6188
   production: 2017-08-13T17:39:49-04:00   44a6b0129de575e7085a047bc2096a76
 templates/article.liquid:
   development: 2017-08-13T17:52:28-04:00   ff67120cd7978f6390cdb79827f34d02
@@ -764,10 +766,10 @@ templates/page.faq.liquid:
   development: 2018-04-22T11:09:03-04:00   28ff5a89c78a36d35b75fc2fb7ac26fe
   production: 2017-11-01T15:03:39-04:00   9bf19590944960d3cfa8bc5d98d3e41f
 templates/page.liquid:
-  development: 2018-04-22T11:09:04-04:00   00d4b7d54c9cb81a7b74f6b7c717d366
+  development: 2018-04-22T20:38:55-04:00   740c96874cac73b280c430b7fd6b9c50
   production: 2017-10-31T07:10:31-04:00   813d518c7cdc01755e9988f3213bcef5
 templates/page.lookbook.glint.liquid:
-  development: 2018-04-22T11:09:56-04:00   86faa0eeb4163d3a15bf70b6bcdce511
+  development: 2018-04-22T20:07:24-04:00   9e1f194aa2f068c9bf4048839f4b5d6f
   production: 2017-11-01T15:03:42-04:00   40302e7bc6a03d32f61ee88251a9c826
 templates/page.workshop.liquid:
   development: 2018-04-22T11:09:54-04:00   302d8d045446800c3fe3e5a854ecb0d1
