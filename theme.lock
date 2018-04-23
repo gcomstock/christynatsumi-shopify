@@ -598,7 +598,7 @@ config/settings_schema.json:
   development: 2018-03-18T18:25:02-04:00   4de50d8b26c23ea835a23162e448572d
   production: 2017-08-13T18:37:56-04:00   4de50d8b26c23ea835a23162e448572d
 layout/theme.liquid:
-  development: 2018-04-08T21:22:14-04:00   80d3a5c989179a3cf38c260ab2a5fb6b
+  development: 2018-04-23T00:46:12-04:00   1d65b911f99ee696bf2e4cf50ad6d48b
   production: 2017-11-01T15:03:38-04:00   532df49cacdd3335b7e6f1f62adb5c5b
 locales/de.json:
   development: 2018-03-18T18:17:11-04:00   585899bd4424d43afa93b72083a5aa0e
@@ -754,7 +754,7 @@ templates/index.liquid:
   development: 2018-04-22T11:08:28-04:00   1f30f357c60e68b8ad5fcb301f9e2da4
   production: 2017-11-01T15:03:41-04:00   67c5dab2b88da6dff54d3467a77e3beb
 templates/page.about.liquid:
-  development: 2018-03-18T20:57:45-04:00   eaff4436889c20755a59166c176d6210
+  development: 2018-04-23T00:25:18-04:00   d24179ab4b11c5f4f67fbca267feadb5
   production: 2017-11-01T15:03:40-04:00   569d0450b1767353b1c23349beb54150
 templates/page.contact.liquid:
   development: 2018-04-22T11:07:31-04:00   f835ec9319af9c202083100bc87d17ba
