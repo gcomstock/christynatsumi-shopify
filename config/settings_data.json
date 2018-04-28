@@ -52,7 +52,7 @@
         "settings": {
           "show_related_products": true,
           "related_title": "",
-          "related_grid_num": "3",
+          "related_grid_num": "4",
           "related_grid_row": "1"
         }
       }
