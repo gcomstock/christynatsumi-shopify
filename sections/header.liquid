@@ -1,17 +1,67 @@
-<header class="cn-header cn-header--notHome dolceVita">
-  <a class="cn-header__title" itemprop="brand" href="/" alt="{{ page_title }}" ></a>
+<header class="cnew-header">
 
-  <ul class="cn-header__nav dolceVita">
-    {% include 'navigation' %}
-  </ul>
+  <div class="cnew-header__nav">
+    <a class="cnew-header__nav__title" itemprop="brand" href="/" alt="{{ page_title }}" ></a>
+
+    <div class="cnew-header__nav__items">
+      {% for link in linklists.main-menu.links %}
+        {% if link.url == '/collections/all' and collection.url
+           or link.url == '/collections/all' and product.url
+        %}
+          <a data-subnav="{{ link.title }}" class="active" href="{{ link.url }}"> {{ link.title }}</a>
+        {% else %}
+          <a data-subnav="{{ link.title }}" {% if link.active %}class="active"{% endif %} href="{{ link.url }}">{{ link.title }}</a>
+        {% endif %}
+      {% endfor %}
+    </div>
+  </div>
+
+  <div class="cnew-header__subnav cnew-header__subnav--Shop">
+    <div class="cn-wrapper cnew-header__subnav__items">
+      <a class="cnew-header__subnav__items__item" href="#">
+        <div class="cnew-header__subnav__items__item__img">
+        </div>
+        <div class="cnew-header__subnav__items__item__text">
+          engagement rings
+        </div>
+      </a>
+      <a class="cnew-header__subnav__items__item" href="#">
+        <div class="cnew-header__subnav__items__item__img">
+        </div>
+        <div class="cnew-header__subnav__items__item__text">
+          wedding bands
+        </div>
+      </a>
+      <a class="cnew-header__subnav__items__item" href="#">
+        <div class="cnew-header__subnav__items__item__img">
+        </div>
+        <div class="cnew-header__subnav__items__item__text">
+          men's
+        </div>
+      </a>
+      <a class="cnew-header__subnav__items__item" href="#">
+        <div class="cnew-header__subnav__items__item__img">
+        </div>
+        <div class="cnew-header__subnav__items__item__text">
+          best sellers
+        </div>
+      </a>
+    </div>
+  </div>
+
+<!--
+  <div class="cnew-header__subnav cnew-header__subnav--About">
+    about
+  </div>
+
+  <div class="cnew-header__subnav cnew-header__subnav--Custom">
+    custom
+  </div>
+-->
+
+
 </header>
 
-<div class="cn-header--mini">
-  <a class="cn-header__title--mini" href="/" alt="{{ page_title }}" ></a>
-
-  <ul class="cn-header__nav cn-header__nav--mini dolceVita cn-header__nav--mini--black">
-    {% include 'navigation' %}
-  </ul>
-</div>
+<div class="cnew-header-spacer"></div>
 
 {% include 'mobilenav' %}

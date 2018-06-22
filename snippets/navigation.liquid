@@ -2,12 +2,8 @@
   {% if link.url == '/collections/all' and collection.url
      or link.url == '/collections/all' and product.url
   %}
-    <li class="active">
-      <a href="{{ link.url }}"> {{ link.title }}</a>
-    </li>
+    <a data-subnav="{{ link.title }}" class="nav-item active" href="{{ link.url }}"> {{ link.title }}</a>
   {% else %}
-    <li class="{% if link.active %}active{% endif %}">
-      <a href="{{ link.url }}"> {{ link.title }}</a>
-    </li>
+    <a data-subnav="{{ link.title }}" class="nav-item{% if link.active %} active{% endif %}" href="{{ link.url }}">{{ link.title }}</a>
   {% endif %}
 {% endfor %}

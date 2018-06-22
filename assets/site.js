@@ -29,9 +29,6 @@
 
 
   window.onscroll = function() {
-    if (typeof toggleMiniHeader !== 'undefined') {
-      toggleMiniHeader();
-    }
     if (typeof highlightCustomNav !== 'undefined') {
       highlightCustomNav();
     }
@@ -43,5 +40,28 @@
   document.getElementById('cn-mobileNav__drawerBtn').addEventListener('click', function(){
     document.getElementById('cn-mobileNav').classList.toggle('open');
   });
+
+
+
+  $('.cnew-header__nav__items a').on('mouseenter', function(){
+    var subnav = $(this).data('subnav');
+
+    $('.cnew-header__nav__items a, .cnew-header__subnav').removeClass('expanded');
+
+    $(this).addClass('expanded');
+    $('.cnew-header__subnav--' + subnav).addClass('expanded');
+  });
+
+  $('.cnew-header').on('mouseleave', function(){
+    $('.cnew-header__nav__items a, .cnew-header__subnav').removeClass('expanded');
+  });
+
+  $('.cnew-header__nav__title').on('mouseenter mouseleave', function(){
+    $('.cnew-header__nav__items a, .cnew-header__subnav').removeClass('expanded');
+  });
+
+  function expandSubNav() {
+
+  }
 
 }());
