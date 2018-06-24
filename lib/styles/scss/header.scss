@@ -7,6 +7,7 @@
   border-bottom: 1px solid transparent;
   -webkit-font-smoothing: auto;
   -moz-osx-font-smoothing: auto;
+  display: inline-block;
 }
 
 .cnew-header {
@@ -55,7 +56,6 @@
     white-space: nowrap;
 
     a {
-      display: inline-block;
       margin: 0 1.6rem;
       @include navLink;
 
@@ -100,21 +100,42 @@
   text-align: center;
 
   &:hover .cnew-header__subnav__items__item__text { border-bottom: 1px solid #7e7e7e; }
+  &:hover .cnew-header__subnav__items__item__img  { box-shadow: 0 0 0 1px #7e7e7e; }
 }
 
 .cnew-header__subnav__items__item__img {
   width: 100%;
   padding-bottom: 66%;
   background-color: #fff;
+  background-size: cover;
+  transition: box-shadow 0.2s ease;
 }
 
 .cnew-header__subnav__items__item__text {
   margin-top: 2.4rem;
-  display: inline-block;
   @include navLink;
 }
 
 
+.cnew-header__subnav__items__links {
+  border-left: 1px solid #7e7e7e;
+  width: 21%;
+  padding: 1.2rem 0 1.2rem 1.6rem;
+  margin: -2.4rem 0;
+
+  a {
+    padding: 1.2rem 0;
+    display: block;
+
+    span {
+      @include navLink;
+    }
+  }
+
+  @media (min-width: $screen-desktop) {
+    a:hover span { border-bottom: 1px solid #7e7e7e; }
+  }
+}
 
 
 
