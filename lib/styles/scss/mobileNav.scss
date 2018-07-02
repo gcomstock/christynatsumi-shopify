@@ -1,3 +1,26 @@
+
+
+
+.cn-header--mobileFixedHeader {
+  //give the header some room on top for the page's dropdown nav menu
+  padding-top: 60px;
+  height: 200px;
+
+  @media (min-width: $screen-tablet) {
+    height: 260px;
+  }
+
+  //same as base class above - mobileFixedHeader is hidden on web
+  @media (min-width: $screen-desktop-1) {
+    padding-top: 0;
+    height: 280px;
+    text-align: left;
+  }
+}
+
+
+
+
 #cn-mobileNav {
   position: fixed;
   top: 0;

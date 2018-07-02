@@ -27,6 +27,8 @@ function highlightCustomNav() {
 }
 
 
+
+
 function createCustomSelectNav() {
 	var tabLinks = document.querySelectorAll('.cn-header--mini .cn-header__sectnav__custom a');
 	var mobileHeader = document.createElement('div');

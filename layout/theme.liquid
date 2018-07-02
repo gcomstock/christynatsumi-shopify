@@ -42,20 +42,13 @@
 {% endcomment %}
 <body id="{{ page_title | handle }}" class="{% if customer %}customer-logged-in {% endif %}template-{{ template | replace: '.', ' ' | truncatewords: 1, '' | handle }}" >
 
-  {% if template == 'index' %}
-    {% section 'header-home' %}
-  {% elsif template == 'page.custom' %}
-    {% section 'header-custom' %}
-  {% elsif template == 'list-collections' or 
-           template == 'collection' or 
-           template == 'product' or
-           template == 'cart' %}
-    {% section 'header-shop' %}
-  {% else %}
-    {% section 'header' %}
-  {% endif %}
-    
+  {% section 'header' %}
+  {% section 'header-mobile' %}
+  <div class="cnew-header-spacer"></div>
+
+
   {{ content_for_layout }}
+
 
   {% section 'footer' %}
 
