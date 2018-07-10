@@ -447,6 +447,12 @@ h4 {
   font-weight: normal;
   font-style: normal; }
 
+@font-face {
+  font-family: 'ahpuch apollyon';
+  src: url("font_AhpuchApollyon.woff2") format("woff2"), url("font_AhpuchApollyon.woff") format("woff");
+  font-weight: normal;
+  font-style: normal; }
+
 h1, h2, h3, h4, .dolceVita {
   font-family: 'dolce vita', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
   -webkit-font-smoothing: antialiased;
@@ -1505,41 +1511,36 @@ button, .button {
     vertical-align: top;
     margin-right: 2%; } }
 
-.cn-header__coverImage {
-  height: 160px;
+.cn-home__hero {
+  width: 100%;
+  padding-bottom: 48%;
+  background-color: #ddd;
   position: relative;
-  border-bottom: 2px solid #000;
-  background-color: #fff;
   text-align: center;
-  border-bottom: none;
-  background-image: url("christynatsumi-header--home-mobile-2017.06.jpg");
-  background-size: cover;
-  background-position: center top;
-  height: 50vh;
-  max-height: 360px; }
-  @media (min-width: 600px) {
-    .cn-header__coverImage {
-      height: 360px; } }
-  @media (min-width: 959px) {
-    .cn-header__coverImage {
-      height: 280px;
-      text-align: left; } }
-  @media (min-width: 959px) {
-    .cn-header__coverImage {
-      height: calc(100vh - 100px);
-      max-height: none;
-      background-position: left top;
-      background-image: url("christynatsumi-header--home-2017.06.jpg"); } }
+  background-image: url("christynatsumi-header--home-2018.07.jpg");
+  background-size: cover; }
 
-@media (min-width: 960px) {
-  .cn-header__nav--home {
-    margin-top: 1.5rem;
-    margin-right: 1.5rem;
-    position: static; } }
+.cn-home__hero__text {
+  position: absolute;
+  bottom: 64px;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+  -ms-transform: translateX(-50%);
+  transform: translateX(-50%); }
 
-@media (min-width: 960px) {
-  .cn-header__nav--home li {
-    padding-top: 0; } }
+.cn-home__hero__text__intro {
+  font-family: "ahpuch apollyon", serif;
+  font-size: 72px;
+  color: #666; }
+
+.cn-home__hero__text__subhead {
+  font-family: 'dolce vita', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0.2rem !important;
+  text-rendering: optimizeLegibility;
+  font-size: 14px;
+  font-weight: bold; }
 
 .cn-home__homeMenuImage {
   position: relative;

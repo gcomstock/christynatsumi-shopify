@@ -115,6 +115,14 @@ h4 {
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'ahpuch apollyon';
+  src: url('font_AhpuchApollyon.woff2') format('woff2'),
+       url('font_AhpuchApollyon.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @mixin dolceVita { //should only be applied to element that needs the font, otherwise children will inherit letter-spacing
   font-family: 'dolce vita', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
   -webkit-font-smoothing: antialiased;
