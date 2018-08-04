@@ -85,11 +85,9 @@ textarea,
   background-color: #272727;
   border-width: 0;
   font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 12px;
   line-height: 1em;
   font-weight: normal;
   font-style: normal;
-  text-transform: uppercase;
   letter-spacing: 0px;
   text-align: center;
   text-decoration: none;
@@ -139,35 +137,32 @@ ul.shopify-challenge__error {
 // style all buttons the same and override squarespace stylings
 @mixin button {
   border-radius: 0;
-  font-size: 1.4rem !important;
+  font-size: 1.4rem;
   display: inline-block;
   margin: 0;
-  padding: 1rem 3rem !important;
-  line-height: 22px !important; //to match height of add to cart spinner
+  padding: 0 32px;
+  min-width: 200px;
+  line-height: 48px;
   text-decoration: none;
   text-align: center;
-  font-weight: bold !important;
-  color: #fff;
-  background: #000 url('marker_bg2.jpg' ) bottom center;
-  border: 1px solid #000;
+  font-weight: bold;
+  color: #666;
+  border: 1px solid #666;
   cursor: pointer;
+  transition: background-color 200ms ease;
 
-  @include dolceVita;
+  @include subHeader;
 
   &:hover {
-    text-decoration: underline;
+    background-color: $btn-highlight;
   }
 }
 
-@mixin sqs-add-to-cart-button {
-  @include button;
-}
-
-.sqs-editable-button,
-.sqs-add-to-cart-button-wrapper .sqs-add-to-cart-button,
-.form-wrapper input[type=submit],
-.sqs-fullpage-shopping-cart-content .checkout-button,
-input[type=submit],
+//.sqs-editable-button,
+//.sqs-add-to-cart-button-wrapper .sqs-add-to-cart-button,
+//.form-wrapper input[type=submit],
+//.sqs-fullpage-shopping-cart-content .checkout-button,
+//input[type=submit],
 button, .button {
   @include button;
 }

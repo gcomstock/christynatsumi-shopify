@@ -1,11 +1,64 @@
+@mixin homeBlock {
+  display: flex;;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+  margin-bottom: 96px;
+
+  @media (min-width: $screen-tablet) {
+    margin-bottom: 192px;
+  }
+  @media (min-width: $screen-desktop) {
+  }
+}
+@mixin homeBlock__img {
+  width: 100%;
+  padding-bottom: 50%;
+  background-color: #7e7e7e;
+}
+@mixin homeBlock__text {
+  width: 100%;
+  text-align: center;
+}
+@mixin homeBlock__text__title {
+  @include serifHeader;
+  margin-top: 16px;
+  margin-bottom: 24px;
+
+  br {
+    display: none;
+  }
+
+  @media (min-width: $screen-tablet) {
+    margin-bottom: 32px;
+
+    br {
+      display: block;
+    }
+  }
+  @media (min-width: $screen-desktop) {
+  }
+}
+
+
+
+
 .cn-home__hero {
   width: 100%;
-  padding-bottom: 48%;
+  padding-bottom: 60%;
+  margin-bottom: 64px;
+
   background-color: #ddd;
   position: relative;
   text-align: center;
-  background-image: url('christynatsumi-header--home-2018.07.jpg');
   background-size: cover;
+
+  @media (min-width: $screen-tablet) {
+    margin-bottom: 64px;
+  }
+  @media (min-width: $screen-desktop) {
+    padding-bottom: 38%;
+  }
 }
 
 .cn-home__hero__text {
@@ -16,149 +69,200 @@
 }
 
 .cn-home__hero__text__intro {
-  font-family: "ahpuch apollyon", serif;
-  font-size: 72px;
-  color: #666;
+  @include serifHeader;
 }
 
 .cn-home__hero__text__subhead {
-  @include dolceVita;
+  @include subHeader;
   font-size: 14px;
-  font-weight: bold;
+  //font-weight: bold;
 }
 
-.cn-home__homeMenuImage {
-  position: relative;
-  cursor: pointer;
-  background-size: cover;
-  color: #fff;
-  display: inline-block;
-  vertical-align: top;
-  margin: 1% 0 0 0;
-  padding-bottom: 50%;
 
-  @media (min-width: $screen-desktop) {
-    padding-bottom: 32%;
-  }
-}
 
-.cn-home__homeMenuImage--small {
-  width: calc(50% - 1px);
+
+.cn-home__wedding-rings {
+  @include homeBlock;
 
   @media (min-width: $screen-tablet) {
-    width: calc(50% - 2px);
+    margin-bottom: 64px;
   }
-
   @media (min-width: $screen-desktop) {
-    width: calc(38% - 2px);
   }
 }
 
-.cn-home__homeMenuImage--big {
-  width: calc(50% - 1px);
+.cn-home__wedding-rings__img {
+  @include homeBlock__img;
 
   @media (min-width: $screen-tablet) {
-    width: calc(50% - 2px);
+    width: 40%;
+    margin-right: 8px;
   }
-
   @media (min-width: $screen-desktop) {
-    width: calc(62% - 2px);
   }
 }
 
-.cn-home__homeMenuImage--margin {
-  margin-right: 2px;
+.cn-home__wedding-rings__text {
+  @include homeBlock__text;
 
   @media (min-width: $screen-tablet) {
-    margin-right: 4px;
+    width: 40%;
+    margin-left: 8px;
+    text-align: left;
+  }
+  @media (min-width: $screen-desktop) {
   }
 }
 
-.cn-home__homeMenuImage__text {
-  position: absolute;
-  top: 50%;
-  left: 0;
+.cn-home__wedding-rings__text__title {
+  @include homeBlock__text__title;
+
+  @media (min-width: $screen-desktop) {
+    margin-bottom: 128px;
+  }
+}
+
+
+
+
+.cn-home__new-arrivals {
+  @include homeBlock;
+  justify-content: flex-end;
+}
+
+.cn-home__new-arrivals__img {
+  @include homeBlock__img;
+
+  @media (min-width: $screen-tablet) {
+    width: 50%;
+    padding-bottom: 30%;
+    margin-right: 8px;
+  }
+  @media (min-width: $screen-desktop) {
+  }
+}
+
+.cn-home__new-arrivals__text {
+  @include homeBlock__text;
+
+  @media (min-width: $screen-tablet) {
+    width: 30%;
+    margin-left: 8px;
+    text-align: left;
+  }
+  @media (min-width: $screen-desktop) {
+  }
+}
+
+.cn-home__new-arrivals__text__title {
+  @include homeBlock__text__title;
+}
+
+
+
+
+.cn-home__customer-favorites {
   text-align: center;
-  z-index: 2;
-  transform: translate3d(0, -50%, 0);
-  transition: all 150ms ease-in-out;
-  width: calc(100% - 4rem);
-  margin: 0 2rem;
+  @include homeBlock;
+
+  @media (min-width: $screen-tablet) {
+    .cn-categoryproduct:nth-child(4) {
+      display: none;
+    }
+  }
+  @media (min-width: $screen-desktop) {
+    .cn-categoryproduct:nth-child(4) {
+      display: inline-block;
+    }
+  }
 }
 
-.cn-home__homeMenuImage__bg {
-  position: absolute;
-  top: 0;
-  left: 0;
+.cn-home__customer-favorites__text {
+  @include homeBlock__text__title;
+}
+
+.cn-home__customer-favorites__imgs {
   width: 100%;
-  height: 100%;
-  z-index: 1;
-  background: linear-gradient(to bottom, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.5) 100%);
-  transition: all 150ms ease-in-out;
-  pointer-events: none;
+  margin-bottom: 3rem;
 }
 
-.cn-home__homeMenuImage__form {
-  position: absolute;
-  opacity: 0;
-  top: 50%;
-  left: 0;
-  width: calc(100% - 8rem);
-  margin: 0 4rem;
+
+
+
+.cn-home__custom-jewelry {
+  @include homeBlock;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.cn-home__custom-jewelry__img {
+  @include homeBlock__img;
+  order: 1;
+
+  @media (min-width: $screen-tablet) {
+    order: 2;
+    width: 50%;
+    margin-left: 8px;
+    padding-bottom: 30%;
+    background-color: #999;
+  }
+  @media (min-width: $screen-desktop) {
+  }
+}
+
+.cn-home__custom-jewelry__text {
+  @include homeBlock__text;
+  order: 2;
+
+  @media (min-width: $screen-tablet) {
+    order: 1;
+    width: 30%;
+    margin-right: 8px;
+    text-align: right;
+  }
+}
+
+.cn-home__custom-jewelry__text__title {
+  @include homeBlock__text__title;
+}
+
+
+
+
+
+.cn-home__featured-in {
+  @include serifHeader;
   text-align: center;
-  transform: translate3d(0, calc(1.5rem - 50%), 0);
-  transition: all 150ms ease-in-out;
+
+  //margin-top: 128px;
+  width: 100%;
+  background-color: #fff;
+  padding: 64px 0;
 }
 
-.cn-home__homeMenuImage__form__content {
-  font-size: 3rem;
-  font-weight: lighter;
-  padding-bottom: 1.5rem;
+.cn-home__featured-in__wrapper {
+  @extend .cn-wrapper;
+  display: flex;
+  justify-content: space-around;
+  flex-flow: row wrap;
+  padding-top: 64px;
 }
 
-@media (min-width: $screen-desktop) {
-  .cn-home__homeMenuImage:hover {
-    .cn-home__homeMenuImage__form {
-      transform: translate3d(0, -50%, 0);
-      opacity: 1;
-    }
-
-    .cn-home__homeMenuImage__bg {
-      background-color: rgba(0, 0, 0, 0);
-      opacity: 0;
-    }
-  }
-
-  .cn-home__homeMenuImage--email:hover {
-    .cn-home__homeMenuImage__text {
-      transform: translate3d(0, calc(-1.5rem - 50%), 0);
-      opacity: 0;
-    }
-  }
+.cn-home__featured-in__wrapper__item {
+  display: inline-block;
+  width: 256px;
+  margin: 32px;
+  height: 64px;
+  background-color: #ccc;
 }
 
 
-.cn-home__homeMenuImage--shop {
-  background-image: url('homeMenuImage--shop--1x1.jpg');
 
-  @media (min-width: $screen-desktop) {
-    background-image: url('homeMenuImage--shop.jpg');
-  }
-}
-.cn-home__homeMenuImage--custom {
-  background-image: url('homeMenuImage--custom--1x1.jpg');
 
-  @media (min-width: $screen-desktop) {
-    background-image: url('homeMenuImage--custom.jpg');
-  }
-}
-.cn-home__homeMenuImage--about {
-  background-image: url('homeMenuImage--about--1x1.jpg');
 
-  @media (min-width: $screen-desktop) {
-    background-image: url('homeMenuImage--about.jpg');
-  }
-}
+
+
+
 .cn-home__homeMenuImage--email {
   cursor: default;
   background-image: url('homeMenuImage--email--1x1.jpg');

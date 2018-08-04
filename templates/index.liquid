@@ -9,6 +9,7 @@
 
 <main class="cn-home">
 
+
   <div class="cn-home__hero">
     <div class="cn-home__hero__text">
       <div class="cn-home__hero__text__intro">Fine Jewelry</div>
@@ -16,43 +17,77 @@
     </div>
   </div>
 
-  <div class="row row--imgRow">
-    <a href="/collections/all" class="cn-home__homeMenuImage cn-home__homeMenuImage--margin cn-home__homeMenuImage--big cn-home__homeMenuImage--shop">
-      <div class="cn-home__homeMenuImage__text">
-        <h2>shop</h2>
+
+  <div class="cn-home__wedding-rings">
+    <div class="cn-home__wedding-rings__img">
+    </div>
+    <div class="cn-home__wedding-rings__text">
+      <div class="cn-home__wedding-rings__text__title">
+        Wedding<br/> Rings
       </div>
-      <div class="cn-home__homeMenuImage__bg"></div>
-    </a>
-    <a href="/pages/custom" class="cn-home__homeMenuImage cn-home__homeMenuImage--small cn-home__homeMenuImage--custom">
-      <div class="cn-home__homeMenuImage__text">
-        <h2>custom</h2>
-      </div>
-      <div class="cn-home__homeMenuImage__bg"></div>
-    </a>
+      <a class="button" href="#">explore</a>
+    </div>
   </div>
 
-  <div class="row row--imgRow row--imgRow--noBottom">
-    <a class="cn-home__homeMenuImage cn-home__homeMenuImage--margin cn-home__homeMenuImage--small cn-home__homeMenuImage--email">
-      <div class="cn-home__homeMenuImage__text">
-        <h2>stay in touch</h2>
-      </div>
 
-      <div class="cn-home__homeMenuImage__form">
-        <h4 class="cn-home__homeMenuImage__form__content">Get the latest Christy Natsumi news and specials.</h4>
-        <form class="cn-emailForm validate" action="//christynatsumi.us2.list-manage.com/subscribe/post?u=f04f5f29de9eb0f93431bcf1c&amp;id=902b73c91f" method="post" name="mc-embedded-subscribe-form" target="_blank">
-          <input type="email" value="" name="EMAIL" class="email" placeholder="email address" required><input type="submit" value="sign up" name="subscribe"/>
-        </form>
+  <div class="cn-home__new-arrivals">
+    <div class="cn-home__new-arrivals__img">
+    </div>
+    <div class="cn-home__new-arrivals__text">
+      <div class="cn-home__new-arrivals__text__title">
+        New <br/>Arrivals
       </div>
-
-      <div class="cn-home__homeMenuImage__bg"></div>
-    </a>
-    <a href="/pages/about" class="cn-home__homeMenuImage cn-home__homeMenuImage--big cn-home__homeMenuImage--about">
-      <div class="cn-home__homeMenuImage__text">
-        <h2>about</h2>
-      </div>
-      <div class="cn-home__homeMenuImage__bg"></div>
-    </a>
+      <a class="button" href="#">see whats new</a>
+    </div>
   </div>
+
+
+  <div class="cn-home__customer-favorites">
+    <div class="cn-home__customer-favorites__text">
+      Customer Favorites
+    </div>
+    <div class="cn-home__customer-favorites__imgs">
+      <div class="cn-wrapper">
+        {% assign counter = 0 %}
+        {% for product in collections.customer-favorites.products %}
+          {% include 'product-grid-item' %}
+
+          {% assign counter = counter | plus: 1 %}
+          {% if counter == 4 %}
+            {% break %}
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+    <a class="button" href="#">see more customer favorites</a>
+  </div>
+
+
+  <div class="cn-home__custom-jewelry">
+    <div class="cn-home__custom-jewelry__text">
+      <div class="cn-home__custom-jewelry__text__title">
+        Custom<br/> Jewelry<br/>
+      </div>
+
+      <a class="button" href="#">made just for you</a>
+    </div>
+    <div class="cn-home__custom-jewelry__img">
+    </div>
+  </div>
+
+
+  <div class="cn-home__featured-in">
+    Featured In
+    <div class="cn-home__featured-in__wrapper">
+      <a class="cn-home__featured-in__wrapper__item" href="#"></a>
+      <a class="cn-home__featured-in__wrapper__item" href="#"></a>
+      <a class="cn-home__featured-in__wrapper__item" href="#"></a>
+      <a class="cn-home__featured-in__wrapper__item" href="#"></a>
+      <a class="cn-home__featured-in__wrapper__item" href="#"></a>
+      <a class="cn-home__featured-in__wrapper__item" href="#"></a>
+    </div>
+  </div>
+
 
 </main>
 
@@ -70,3 +105,4 @@
 </div>
 
 {{ 'main-home.js' | asset_url | script_tag }}
+{{ 'lazysizes.min.js' | asset_url | script_tag }}

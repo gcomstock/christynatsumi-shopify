@@ -1,5 +1,6 @@
 @mixin navLink {
-  @include dolceVita;
+  @include lightSubHeader;
+
   font-size: 1.6rem;
   color: #7e7e7e;
   text-decoration: none;
@@ -31,7 +32,7 @@ $mobile-nav-height: 56px;
   position: absolute;
   z-index: 2;
   background-color: #fff;
-  border-bottom: 4px solid $pink-bg;
+  border-bottom: 4px solid $nav-bg;
   display: flex;
   justify-content: space-between;
   width: 100%;
@@ -76,18 +77,19 @@ $mobile-nav-height: 56px;
 
 .cnew-header__subnav {
   position: absolute;
-  z-index: 1;
+  z-index: 200;
   top: $nav-height;
-  background-color: $pink-bg;
+  background-color: $nav-bg;
   padding: 64px;
   opacity: 0;
   width: 100%;
   pointer-events: none;
-  transform: translate3d(0, 0, 0);
+  //transform: translate3d(0, -8px, 0);
   transition: opacity .25s ease, transform 0.5s ease;
+  box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 
   &.expanded {
-    transform: translate3d(0, 0, 0);
+    //transform: translate3d(0, 0, 0);
     opacity: 1;
     pointer-events: all;
   }
@@ -168,7 +170,7 @@ $mobile-nav-height: 56px;
 
 
 .cn-headerNotice {
-  @include dolceVita;
+  @include subHeader;
   text-align: center;
   background-color: #000;
   color: #fff;

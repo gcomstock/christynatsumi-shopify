@@ -1,3 +1,5 @@
+var timeouts = [];
+
 (function() {
   'use strict';
 
@@ -42,6 +44,10 @@
 
   function collapseSubNav() {
     $('.cnew-header__nav__items a, .cnew-header__subnav').removeClass('expanded');
+
+    for (var i = 0; i < timeouts.length; i++) {
+      clearTimeout(timeouts[i]);
+    }
   }
 
 
@@ -49,10 +55,14 @@
   $('.cnew-header__nav__items a').on('mouseenter', function(){
     var subnav = $(this).data('subnav');
 
-    collapseSubNav();
+    if (!$(this).hasClass('expanded')) {
+      collapseSubNav();
 
-    $(this).addClass('expanded');
-    $('.cnew-header__subnav--' + subnav).addClass('expanded');
+      timeouts.push(setTimeout((function() {
+        $(this).addClass('expanded');
+        $('.cnew-header__subnav--' + subnav).addClass('expanded');
+      }.bind(this)), 400));
+    }
   });
 
   $('.cnew-header').on('mouseleave', function(){

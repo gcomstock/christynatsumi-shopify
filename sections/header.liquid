@@ -5,49 +5,79 @@
     <a class="cnew-header__nav__title" itemprop="brand" href="/" alt="{{ page_title }}" ></a>
 
     <div class="cnew-header__nav__items">
-      {% for link in linklists.main-menu.links %}
-        {% if link.url == '/collections/all' and collection.url
-           or link.url == '/collections/all' and product.url
-        %}
-          <a data-subnav="{{ link.title }}" class="active" href="{{ link.url }}"> {{ link.title }}</a>
-        {% else %}
-          <a data-subnav="{{ link.title }}" {% if link.active %}class="active"{% endif %} href="{{ link.url }}">{{ link.title }}</a>
-        {% endif %}
-      {% endfor %}
+      {% include 'navigation' %}
     </div>
   </div>
 
 
-  <div class="cnew-header__subnav cnew-header__subnav--Shop">
+  <div class="cnew-header__subnav cnew-header__subnav--Wedding">
     <div class="cn-wrapper cnew-header__subnav__items">
-      <a class="cnew-header__subnav__items__item" href="#">
-        <div class="cnew-header__subnav__items__item__img" style="background-image:url({{ '1.jpg' | asset_url }})">
+      <a class="cnew-header__subnav__items__item" href="/collections/diamond-rings">
+        <div class="cnew-header__subnav__items__item__img" style="background-image:url({{ 'christy-natsumi-glint-5-m.jpg' | asset_url }})">
         </div>
         <div class="cnew-header__subnav__items__item__text">
-          engagement rings
+          diamond rings
         </div>
       </a>
-      <a class="cnew-header__subnav__items__item" href="#">
-        <div class="cnew-header__subnav__items__item__img" style="background-image:url({{ '2.jpg' | asset_url }})">
+      <a class="cnew-header__subnav__items__item" href="/collections/wedding-bands">
+        <div class="cnew-header__subnav__items__item__img" style="background-image:url({{ 'christy-natsumi-glint-5-m.jpg' | asset_url }})">
         </div>
         <div class="cnew-header__subnav__items__item__text">
           wedding bands
         </div>
       </a>
-      <a class="cnew-header__subnav__items__item" href="#">
+      <a class="cnew-header__subnav__items__item" href="/collections/mens">
         <div class="cnew-header__subnav__items__item__img" style="background-image:url({{ 'christy-natsumi-glint-5-m.jpg' | asset_url }})">
         </div>
         <div class="cnew-header__subnav__items__item__text">
           men's
         </div>
       </a>
-      <a class="cnew-header__subnav__items__item" href="#">
+      <a class="cnew-header__subnav__items__item" href="/collections/wedding">
         <div class="cnew-header__subnav__items__item__img" style="background-image:url({{ 'christy-natsumi-glint-4-m.jpg' | asset_url }})">
         </div>
         <div class="cnew-header__subnav__items__item__text">
-          best sellers
+          see all
         </div>
       </a>
+    </div>
+  </div>
+
+
+  <div class="cnew-header__subnav cnew-header__subnav--Jewelry">
+    <div class="cn-wrapper cnew-header__subnav__items">
+      <a class="cnew-header__subnav__items__item" href="/collections/rings">
+        <div class="cnew-header__subnav__items__item__img" style="background-image:url({{ 'christy-natsumi-glint-5-m.jpg' | asset_url }})">
+        </div>
+        <div class="cnew-header__subnav__items__item__text">
+          rings
+        </div>
+      </a>
+      <a class="cnew-header__subnav__items__item" href="/collections/necklaces">
+        <div class="cnew-header__subnav__items__item__img" style="background-image:url({{ 'christy-natsumi-glint-5-m.jpg' | asset_url }})">
+        </div>
+        <div class="cnew-header__subnav__items__item__text">
+          necklaces
+        </div>
+      </a>
+      <a class="cnew-header__subnav__items__item" href="/collections/earrings">
+        <div class="cnew-header__subnav__items__item__img" style="background-image:url({{ 'christy-natsumi-glint-5-m.jpg' | asset_url }})">
+        </div>
+        <div class="cnew-header__subnav__items__item__text">
+          earrings
+        </div>
+      </a>
+      <div class="cnew-header__subnav__items__links">
+        <a href="/collections/customer-favorites">
+          <span>customer favorites</span>
+        </a>
+        <a href="/collections/last-call">
+          <span>last call</span>
+        </a>
+        <a href="/collections/all">
+          <span>see all</span>
+        </a>
+      </div>
     </div>
   </div>
 
@@ -55,14 +85,14 @@
   <div class="cnew-header__subnav cnew-header__subnav--Custom">
     <div class="cn-wrapper cnew-header__subnav__items">
       <a class="cnew-header__subnav__items__item" href="#">
-        <div class="cnew-header__subnav__items__item__img" style="background-image:url({{ '3.jpg' | asset_url }})">
+        <div class="cnew-header__subnav__items__item__img" style="background-image:url({{ 'christy-natsumi-glint-5-m.jpg' | asset_url }})">
         </div>
         <div class="cnew-header__subnav__items__item__text">
           custom services
         </div>
       </a>
       <a class="cnew-header__subnav__items__item" href="#">
-        <div class="cnew-header__subnav__items__item__img" style="background-image:url({{ '4.jpg' | asset_url }})">
+        <div class="cnew-header__subnav__items__item__img" style="background-image:url({{ 'christy-natsumi-glint-5-m.jpg' | asset_url }})">
         </div>
         <div class="cnew-header__subnav__items__item__text">
           custom gallery
@@ -93,7 +123,7 @@
   <div class="cnew-header__subnav cnew-header__subnav--About">
     <div class="cn-wrapper cnew-header__subnav__items">
       <a class="cnew-header__subnav__items__item" href="#">
-        <div class="cnew-header__subnav__items__item__img" style="background-image:url({{ '5.jpg' | asset_url }})">
+        <div class="cnew-header__subnav__items__item__img" style="background-image:url({{ 'christy-natsumi-glint-5-m.jpg' | asset_url }})">
         </div>
         <div class="cnew-header__subnav__items__item__text">
           custom services

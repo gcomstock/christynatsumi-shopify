@@ -51,6 +51,8 @@
 
 
 <main class="cn-wrapper cn-wrapper--top">
+  <h1>{{ collection.title }}</h1>
+
   {% paginate collection.products by 48 %}
 
     {% for product in collection.products %}

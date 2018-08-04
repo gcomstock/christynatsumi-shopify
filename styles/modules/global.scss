@@ -15,7 +15,7 @@ html {
 body {
   font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
   color: #444;
-  background-color: #eee;
+  background-color: #efefef;
 }
 
 main {
@@ -45,8 +45,8 @@ p, ul, ol {
   @include defaultText;
 }
 
-//to divide majors sections in a page (h1 used by squarespace for blog posts)
-h1, h2 {
+//to divide majors sections in a page
+h2 {
   font-size: 4rem;
   font-weight: lighter;
   margin: 3rem 0 1.5rem 0;
@@ -115,6 +115,32 @@ h4 {
   font-style: normal;
 }
 
+
+
+@font-face {
+  font-family: 'proxima nova';
+  src: url('font_proxima_nova_regular.woff2') format('woff2'),
+       url('font_proxima_nova_regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'proxima nova';
+  src: url('font_proxima_nova_semibold.woff2') format('woff2'),
+       url('font_proxima_nova_semibold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'proxima nova';
+  src: url('font_proxima_nova_light.woff2') format('woff2'),
+  url('font_proxima_nova_light.woff') format('woff');
+  font-weight: lighter;
+  font-style: normal;
+}
+
 @font-face {
   font-family: 'ahpuch apollyon';
   src: url('font_AhpuchApollyon.woff2') format('woff2'),
@@ -131,9 +157,77 @@ h4 {
   text-rendering: optimizeLegibility;
 }
 
-h1, h2, h3, h4, .dolceVita {
+
+@mixin proximaNova { //should only be applied to element that needs the font, otherwise children will inherit letter-spacing
+  font-family: 'proxima nova', Helvetica, Arial, sans-serif !important;
+  //-webkit-font-smoothing: antialiased;
+  //-moz-osx-font-smoothing: grayscale;
+  //letter-spacing: 0.2rem !important;
+  //text-rendering: optimizeLegibility;
+}
+
+
+
+
+@mixin lightSubHeader {
+  font-family: 'proxima nova', Helvetica, Arial, sans-serif !important;
+  letter-spacing: 0.125em;
+  text-transform: uppercase;
+  font-weight: lighter;
+}
+
+@mixin subHeader {
+  font-family: 'proxima nova', Helvetica, Arial, sans-serif !important;
+  letter-spacing: 0.125em;
+  text-transform: uppercase;
+  font-weight: bold;
+
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+
+
+
+
+@mixin serifHeader {
+  font-family: 'ahpuch apollyon', serif;
+  font-weight: normal;
+  color: #666;
+  font-size: 36px;
+  line-height: 36px;
+
+  @media (min-width: $screen-tablet) {
+    font-size: 48px;
+    line-height: 44px;
+  }
+  @media (min-width: $screen-desktop) {
+    font-size: 72px;
+    line-height: 64px;
+  }
+}
+
+h2, h3, h4, .dolceVita {
   @include dolceVita;
 }
+
+
+h1 {
+  @include serifHeader;
+  text-align: center;
+  margin-bottom: 48px;
+
+  @media (min-width: $screen-tablet) {
+    margin-bottom: 64px;
+  }
+  @media (min-width: $screen-desktop) {
+    margin-bottom: 96px;
+  }
+}
+
+
 
 .cn-number {
   color: #666;
@@ -159,28 +253,30 @@ h1, h2, h3, h4, .dolceVita {
 
 
 .cn-wrapper {
-  max-width: 1240px;
-  padding: 0 1rem;
+  width: 100%;
+  max-width: 1440px;
+  padding: 0 8px;
   margin: 0 auto;
   position: relative;
   font-size: 0;
+  z-index: 1;
 
   @media (min-width: $screen-tablet) {
-    padding: 0 2rem;
+    padding: 0 32px;
   }
   @media (min-width: $screen-desktop-1) {
-    padding: 0 4rem;
+    padding: 0 64px;
   }
 }
 
 .cn-wrapper--top {
-  margin-top: 4rem;
+  margin-top: 40px;
 
   @media (min-width: $screen-tablet) {
-    margin-top: 8rem;
+    margin-top: 80px;
   }
   @media (min-width: $screen-desktop-1) {
-    margin-top: 12rem;
+    margin-top: 64px;
   }
 }
 
@@ -198,10 +294,6 @@ img.full {
   transition: all 200ms ease;
 }
 
-//hide default squarespace shopping cart button site-wide
-.sqs-pill-shopping-cart-content {
-  display: none;
-}
 
 
 //this creates offset for anchor tags so they dont hide under mini menu
@@ -220,10 +312,10 @@ img.full {
   left: 0;
   width: 100%;
   height: 100%;
-  box-shadow: inset 0 0 4vw 4vw #eeeeee;
+  box-shadow: inset 0 0 4vw 4vw #efefef;
 
   @media screen and (min-width: $screen-tablet) {
-    box-shadow: inset 0 0 1.5vw 1.5vw #eeeeee;
+    box-shadow: inset 0 0 1.5vw 1.5vw #efefef;
   }
 }
 
@@ -254,4 +346,9 @@ img.full {
   @media (min-width: $screen-tablet) {
     padding-bottom: 48%;
   }
+}
+
+
+.cn-simplepage {
+  max-width: 800px;
 }

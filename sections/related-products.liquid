@@ -64,7 +64,6 @@
     {% assign index = maxIndex %}
   {% endif %}
 
-
   {% capture related_items %}
     {% for product in collection.products offset:index %}
       {% unless product.handle == current_product.handle %}

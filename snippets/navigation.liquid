@@ -1,9 +1,29 @@
-{% for link in linklists.main-menu.links %}
-  {% if link.url == '/collections/all' and collection.url
-     or link.url == '/collections/all' and product.url
-  %}
-    <a data-subnav="{{ link.title }}" class="nav-item active" href="{{ link.url }}"> {{ link.title }}</a>
-  {% else %}
-    <a data-subnav="{{ link.title }}" class="nav-item{% if link.active %} active{% endif %}" href="{{ link.url }}">{{ link.title }}</a>
-  {% endif %}
-{% endfor %}
+{% if collection.url == '/collections/wedding'
+   or collection.url == '/collections/diamond-rings'
+   or collection.url == '/collections/wedding-bands'
+   or collection.url == '/collections/mens'
+%}
+  <a data-subnav="Wedding" class="active" href="/collections/wedding">Wedding</a>
+{% else %}
+	<a data-subnav="Wedding" href="/collections/wedding">Wedding</a>
+{% endif %}
+
+
+{% if collection.url == '/collections/all'
+   or collection.url == '/collections/rings'
+   or collection.url == '/collections/necklaces'
+   or collection.url == '/collections/earrings'
+   or collection.url == '/collections/customer-favorites'
+   or collection.url == '/collections/last-call'
+%}
+  <a data-subnav="Jewelry" class="active" href="/collections/all">Jewelry</a>
+{% else %}
+	<a data-subnav="Jewelry" href="/collections/all">Jewelry</a>
+{% endif %}
+
+<a {% if page.url == '/pages/custom' %}  class="active"{% endif %} href="/pages/custom">Custom</a>
+<a {% if page.url == '/pages/contact' %} class="active"{% endif %} href="/pages/contact">Contact</a>
+<a {% if page.url == '/pages/about' %}   class="active"{% endif %} href="/pages/about">About</a>
+
+<a {% if page_title == 'Your Shopping Cart' %} class="active"{% endif %} href="/cart">Cart</a>
+
