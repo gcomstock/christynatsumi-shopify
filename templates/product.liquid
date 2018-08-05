@@ -1,17 +1,17 @@
 <!-- /templates/product.liquid -->
 {% comment %}
-
   Rich snippets (itemscope, itemtype, etc.) for products are a theme requirement,
   and allow search engines to easily understand what the content is.
 
   For more information on these Scheme.org tags, visit:
     - http://schema.org/docs/gs.html
-
 {% endcomment %}
 
+
 <main class="cn-wrapper cn-wrapper--top">
+  <h1>{{ product.title }}</h1>
+
   <div class="cn-product" itemscope itemtype="http://schema.org/Product">
-    <h4 class="cn-product__title--mobile dolceVita">{{ product.title }}</h4>
 
 
     <!--LEFT COLUMN-->
@@ -28,37 +28,72 @@
 
     <!--RIGHT COLUMN-->
     <div class="cn-product__details">
-      <h4 class="cn-product__title--web dolceVita" itemprop="name">{{ product.title }}</h4>
 
       {% if product.images.size > 1 %}
         <div class="cn-product__tnContainer">
           {{ product.images.size }}
           {% for image in product.images %}
-            <div class="cn-product__tnContainer__tn content-fill" data-index="{{ image.position }}">
-              <img src="{{ image | img_url : 'compact' }}" alt="{{ image.alt }}" />
+            <div class="cn-product__tnContainer__tn" data-index="{{ image.position }}">
+
+              <img
+                alt="{{ image.alt }}"
+                data-sizes="auto"
+                data-src="{{ image | img_url: '300x300', crop: 'bottom' }}"
+                data-srcset="{{ image | img_url: '200x200', crop: 'bottom' }} 200w,
+                  {{ image | img_url: '300x300', crop: 'bottom' }} 300w"
+                class="lazyload"
+              />
+
             </div>
           {% endfor %}
         </div>
       {% endif %}
 
+
+
+
       <div class="cn-product__options-wrapper">
+
+
         <div class="cn-product__price cn-number">
-          <span id="ProductPrice" class="product-single__price sqs-money-native" itemprop="price" content="{{ current_variant.price | divided_by: 100.00 }}">
+          <span id="ProductPrice" class="product-single__price" itemprop="price" content="{{ current_variant.price | divided_by: 100.00 }}">
             {{ current_variant.price | money }}
           </span>
         </div>
 
-        <form action="/cart/add" method="post" enctype="multipart/form-data" id="AddToCartForm">
+        <!--
+        <form action="/cart/add" method="post">
+          <div id="product-variants">
+              <div id="price-field"></div>
+              <select id="product-select" name="id">
+                {% for variant in product.variants %}
+                  <option value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money }}</option>
+                {% endfor %}
+              </select>
+          </div>
+          <input type="image" src="{{ 'purchase.png' | asset_url }}" name="add" value="Purchase" id="purchase" />
+        </form>
+        -->
 
-          <select name="id" id="productSelect" class="product-single__variants">
+
+
+
+        <form action="/cart/add" method="post">
+
+
+
+          <select name="id" id="productSelect">
+            {% for variant in product.variants %}
+              <option value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money }}</option>
+            {% endfor %}
+          </select>
+
+
+<!--
+          <select name="id" id="productSelect">
             {% for variant in product.variants %}
               {% if variant.available %}
-
-                {% comment %}
-                  Note: if you use option_selection.js, your <select> tag will be overwritten, meaning what you have inside <option> will not reflect what you coded below.
-                {% endcomment %}
                 <option {% if variant == product.selected_or_first_available_variant %} selected="selected" {% endif %} data-sku="{{ variant.sku }}" value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money_with_currency }}</option>
-
               {% else %}
                 <option disabled="disabled">
                   {{ variant.title }} - {{ 'products.product.sold_out' | t }}
@@ -66,29 +101,33 @@
               {% endif %}
             {% endfor %}
           </select>
+-->
 
-          <div id="infiniteoptions-container"></div>
+          <!--<div id="infiniteoptions-container"></div>-->
+
 
           {% if product.metafields.details.measurements %}
-            <div class="product-single__quantity product-quantity-input">
-              <div class="variant-option-title">
-                <label for="Measurements">Measurements:</label>
-              </div>
-              <p class="single-option-selector">{{ product.metafields.details.measurements }}</p>
+            <div class="selector-wrapper">
+              <label for="Measurements">Measurements</label>
+              <p>{{ product.metafields.details.measurements }}</p>
             </div>
           {% endif %}
 
-          <div class="product-single__quantity product-quantity-input">
-            <div class="quantity-label">
-              <label for="Quantity">Quantity:</label>
-            </div>
-            <input type="number" id="Quantity" name="quantity" value="1" min="1" max="9999" class="quantity-selector">
+
+          <div class="selector-wrapper">
+            <label for="Quantity">Quantity</label>
+            <input type="number" id="Quantity" name="quantity" value="1" min="1" max="9999">
           </div>
 
-          <button type="submit" name="add" id="AddToCart">
-            <span id="AddToCartText" class="sqs-add-to-cart-button-inner">Add to Cart</span>
-          </button>
+
+          <div class="selector-wrapper">
+            <label></label>
+            <button type="submit" class="dark" id="AddToCart">add to cart</button>
+          </div>
+
         </form>
+
+
 
         <div class="cn-product__status">
           {% if product.available == false %}
@@ -102,62 +141,110 @@
       </div>
     </div>
 
-    <div class="cn-product__related">
-      {% section 'related-products' %}
-    </div>
-
   </div>
+
+
+
+  <div class="cn-product__related">
+    {% section 'related-products' %}
+  </div>
+
 </main>
 
-{{ 'products-item.js' | asset_url | script_tag }}
+
 {{ 'lazysizes.min.js' | asset_url | script_tag }}
-
-{% comment %}
-  To take advantage of a callback on the select dropdown, add option_selection.js
-  and customize the JS in timber.productPage as needed.
-
-  Currently, timber.productPage does the following:
-    - Hides your <select> tag from above
-    - Breaks out the product variants into separate product options, if more than one exists
-    - Generates a <select> tag for each product option
-    - Enables/disables elements based on variant availability
-
-  Callback notes:
-    - Keep the callback available to the global scope (window.selectCallback) so that advanced
-      addons can override it.
-      * E.g. multiple currencies http://docs.shopify.com/manual/configuration/store-customization/currencies-and-translations/currencies/how-to-toggle-between-two-currencies
-{% endcomment %}
-
 {{ 'option_selection.js' | shopify_asset_url | script_tag }}
-<script>
-  var selectCallback = function(variant, selector) {
-    timber.productPage({
-      money_format: "{{ shop.money_format }}",
-      variant: variant,
-      selector: selector,
-      translations: {
-        add_to_cart : "Add to Cart",
-        sold_out : "Sold Out",
-        unavailable : "Unavailable"
-      }
-    });
-  };
 
+
+
+
+<script>
+
+  Shopify.OptionSelectors.prototype.buildSelectors = function() {
+      for (var t = 0; t < this.product.optionNames().length; t++) {
+          var e = new Shopify.SingleOptionSelector(this,t,this.product.optionNames()[t],this.product.optionValues(t));
+          e.element.disabled = !1,
+          this.selectors.push(e)
+      }
+      var o = this.selectorDivClass
+        , i = this.product.optionNames();
+      return Shopify.map(this.selectors, function(t) {
+          var e = document.createElement("div");
+          if (e.setAttribute("class", o),
+          i.length > 0) {
+              var r = document.createElement("label");
+              r.htmlFor = t.element.id,
+              r.innerHTML = t.name,
+              e.appendChild(r)
+          }
+          return e.appendChild(t.element),
+          e
+      })
+  }
+
+
+
+
+
+  // thumbnail click handler
+	function thumbnailClickEvent() {
+		var productTn = document.querySelectorAll('.cn-product__tnContainer__tn');
+
+		for (var i = 0; i < productTn.length; i++) {
+			productTn[i].addEventListener('click', function(){
+				var clicked = this.dataset.index-1;
+				var slides = document.querySelectorAll('.cn-product__mask__slide');
+
+				for (var i = 0; i < slides.length; i++) {
+					slides[i].classList.remove('active');
+				}
+				slides[clicked].classList.add('active');
+			}, false);
+		}
+	}
+
+	thumbnailClickEvent();
+
+
+
+
+  // option selection handler
   jQuery(function($) {
+
+    var selectCallback = function(variant, selector) {
+      console.log(variant);
+      console.log(selector);
+
+
+      if (variant) {
+        if (variant.available) {
+          // Selected a valid variant that is available.
+
+          // $('#add').removeClass('disabled').removeAttr('disabled').val('Add to Cart').fadeTo(200,1);
+        } else {
+          // Variant is sold out.
+
+
+          // $('#add').val('Sold Out').addClass('disabled').attr('disabled', 'disabled').fadeTo(200,0.5);
+        }
+        // Whether the variant is in stock or not, we can update the price and compare at price.
+        if ( variant.compare_at_price > variant.price ) {
+          // $('#price-field').html('<span class="product-price on-sale">'+ Shopify.formatMoney(variant.price, "") +'</span>'+'&nbsp;<s class="product-compare-price">'+Shopify.formatMoney(variant.compare_at_price, "")+ '</s>');
+        } else {
+          // $('#price-field').html('<span class="product-price">'+ Shopify.formatMoney(variant.price, "") + '</span>' );
+        }
+      } else {
+        // variant doesn't exist.
+        // $('#add').val('Unavailable').addClass('disabled').attr('disabled', 'disabled').fadeTo(200,0.5);
+      }
+
+    }
+
+
     new Shopify.OptionSelectors('productSelect', {
       product: {{ product | json }},
-      onVariantSelected: selectCallback,
-      enableHistoryState: true
+      onVariantSelected: selectCallback
     });
 
-    // Add label if only one product option and it isn't 'Title'. Could be 'Size'.
-    {% if product.options.size == 1 and product.options.first != 'Title' %}
-      $('.selector-wrapper:eq(0)').prepend('<label for="productSelect-option-0">{{ product.options.first | escape }}</label>');
-    {% endif %}
-
-    // Hide selectors if we only have 1 variant and its title contains 'Default'.
-    {% if product.variants.size == 1 and product.variants.first.title contains 'Default' %}
-      $('.selector-wrapper').hide();
-    {% endif %}
   });
 </script>

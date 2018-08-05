@@ -1,56 +1,77 @@
-//squarespace form widget styles
-.form-wrapper .field-list .title {
-  @include dolceVita;
-  font-size: 1.8rem;
+select, input {
+  @include defaultText;
+  height: 48px;
+  padding: 0 16px;
+  border-radius: 0;
+  background-color: transparent;
+  border: 1px solid #666;
+}
+
+
+select {
+  position: relative;
+  padding: 0 48px 0 16px;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  background-image: url('select-arrow-2.png');
+  background-position: calc(100% - 16px);
+  background-size: 12px 6px;
+  background-repeat: no-repeat;
+}
+
+select::-ms-expand {
+  display: none; /* hide the default arrow in ie10 and ie11 */
 }
 
 
 
 
-.product-variants,
-.product-quantity-input {
-  text-align: left;
-
-  @media (min-width: $screen-tablet) and (max-width: $screen-desktop-1) {
-    text-align: right;
-  }
-}
-
-.form-wrapper .field-list .field .field-element {
-  width: 100%;
-  padding: 12px;
-  margin: 6px 0 4px;
-  border: 1px solid #ccc;
-  background: #fafafa;
-  color: #000;
-  font-family: sans-serif;
-  font-size: 12px;
-  line-height: normal;
-  box-sizing: border-box;
-  border-radius: 2px;
-}
-
-input,
-textarea,
-select,
-.form-wrapper .field-list .field .field-element {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-  font-size: 1.6rem;
-  padding: 0.7rem 1rem;
-  color: #666;
-  border: 1px solid $border-color;
-  background-color: #fff;
-  vertical-align: middle;
-  border-radius: 4px;
-  height: 3.4rem;
-  margin-bottom: 1rem;
-  max-width: 100%;
-}
+//input,
+//textarea,
+//.form-wrapper .field-list .field .field-element {
+//  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+//  font-size: 1.6rem;
+//  padding: 0.7rem 1rem;
+//  color: #666;
+//  border: 1px solid $border-color;
+//  background-color: #fff;
+//  vertical-align: middle;
+//  border-radius: 4px;
+//  height: 3.4rem;
+//  margin-bottom: 1rem;
+//  max-width: 100%;
+//}
 
 textarea,
 .form-wrapper .field-list textarea {
   min-height: 12rem;
 }
+
+
+
+
+
+
+
+
+
+//.form-wrapper .field-list .field .field-element {
+//  width: 100%;
+//  padding: 12px;
+//  margin: 6px 0 4px;
+//  border: 1px solid #ccc;
+//  background: #fafafa;
+//  color: #000;
+//  font-family: sans-serif;
+//  font-size: 12px;
+//  line-height: normal;
+//  box-sizing: border-box;
+//  border-radius: 2px;
+//}
+
+
+
 
 .form-wrapper .field-list {
   line-height: normal;
@@ -134,8 +155,9 @@ ul.shopify-challenge__error {
   text-align: center;
 }
 
-// style all buttons the same and override squarespace stylings
-@mixin button {
+
+
+button, .button {
   border-radius: 0;
   font-size: 1.4rem;
   display: inline-block;
@@ -149,12 +171,19 @@ ul.shopify-challenge__error {
   color: #666;
   border: 1px solid #666;
   cursor: pointer;
+  background-color: transparent;
   transition: background-color 200ms ease;
 
   @include subHeader;
 
   &:hover {
     background-color: $btn-highlight;
+  }
+
+  &.dark {
+    background-color: #444;
+    color: #FFF;
+    border-color: #000;
   }
 }
 
@@ -163,9 +192,9 @@ ul.shopify-challenge__error {
 //.form-wrapper input[type=submit],
 //.sqs-fullpage-shopping-cart-content .checkout-button,
 //input[type=submit],
-button, .button {
-  @include button;
-}
+
+
+
 
 
 .form-submission-text {

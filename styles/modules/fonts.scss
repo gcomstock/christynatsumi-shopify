@@ -1,3 +1,208 @@
+@font-face {
+  font-family: 'dolce vita';
+  src: url('dolce_vita_heavy-webfont.eot');
+  src: url('dolce_vita_heavy-webfont.eot?#iefix') format('embedded-opentype'),
+  url('dolce_vita_heavy-webfont.woff') format('woff'),
+  url('dolce_vita_heavy-webfont.ttf') format('truetype'),
+  url('dolce_vita_heavy-webfont.svg#dolce_vita_heavyafewXpounds') format('svg');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'dolce vita';
+  src: url('dolce_vita_light-webfont.eot');
+  src: url('dolce_vita_light-webfont.eot?#iefix') format('embedded-opentype'),
+  url('dolce_vita_light-webfont.woff') format('woff'),
+  url('dolce_vita_light-webfont.ttf') format('truetype'),
+  url('dolce_vita_light-webfont.svg#dolce_vita_lightsuper_light') format('svg');
+  font-weight: 100;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'dolce vita';
+  src: url('dolce_vita-webfont.eot');
+  src: url('dolce_vita-webfont.eot?#iefix') format('embedded-opentype'),
+  url('dolce_vita-webfont.woff') format('woff'),
+  url('dolce_vita-webfont.ttf') format('truetype'),
+  url('dolce_vita-webfont.svg#dolce_vitaquite_regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
+
+
+@font-face {
+  font-family: 'proxima nova';
+  src: url('font_proxima_nova_regular.woff2') format('woff2'),
+  url('font_proxima_nova_regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'proxima nova';
+  src: url('font_proxima_nova_semibold.woff2') format('woff2'),
+  url('font_proxima_nova_semibold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'proxima nova';
+  src: url('font_proxima_nova_light.woff2') format('woff2'),
+  url('font_proxima_nova_light.woff') format('woff');
+  font-weight: lighter;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'ahpuch apollyon';
+  src: url('font_AhpuchApollyon.woff2') format('woff2'),
+  url('font_AhpuchApollyon.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@mixin dolceVita { //should only be applied to element that needs the font, otherwise children will inherit letter-spacing
+  font-family: 'dolce vita', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  letter-spacing: 0.2rem !important;
+  text-rendering: optimizeLegibility;
+}
+
+
+@mixin proximaNova { //should only be applied to element that needs the font, otherwise children will inherit letter-spacing
+  font-family: 'proxima nova', Helvetica, Arial, sans-serif !important;
+  //-webkit-font-smoothing: antialiased;
+  //-moz-osx-font-smoothing: grayscale;
+  //letter-spacing: 0.2rem !important;
+  //text-rendering: optimizeLegibility;
+}
+
+
+
+
+@mixin lightSubHeader {
+  font-family: 'proxima nova', Helvetica, Arial, sans-serif !important;
+  letter-spacing: 0.125em;
+  text-transform: uppercase;
+  font-weight: lighter;
+}
+
+
+@mixin subHeader {
+  font-family: 'proxima nova', Helvetica, Arial, sans-serif !important;
+  letter-spacing: 0.125em;
+  text-transform: uppercase;
+  font-weight: bold;
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+
+@mixin serifHeader {
+  font-family: 'ahpuch apollyon', serif;
+  font-weight: normal;
+  color: #666;
+  font-size: 36px;
+  line-height: 36px;
+
+  @media (min-width: $screen-tablet) {
+    font-size: 48px;
+    line-height: 44px;
+  }
+  @media (min-width: $screen-desktop) {
+    font-size: 72px;
+    line-height: 64px;
+  }
+}
+
+
+@mixin defaultText {
+  font-family: 'proxima nova', Helvetica, Arial, sans-serif;
+  text-align: left;
+  font-size: 16px;
+  color: #444;
+}
+
+
+
+
+
+h1 {
+  @include serifHeader;
+  text-align: center;
+  margin-bottom: 48px;
+
+  @media (min-width: $screen-tablet) {
+    margin-bottom: 64px;
+  }
+  @media (min-width: $screen-desktop) {
+    margin-bottom: 96px;
+  }
+}
+
+
+h2, h3, h4, .dolceVita {
+  @include dolceVita;
+}
+
+
+
+
+//to divide majors sections in a page
+h2 {
+  font-size: 4rem;
+  font-weight: lighter;
+  margin: 3rem 0 1.5rem 0;
+
+  @media (min-width: $screen-tablet) {
+    font-size: 5rem;
+  }
+  @media (min-width: $screen-desktop) {
+    font-size: 6rem;
+  }
+}
+
+//for subheaders in a subsection
+h3 {
+  font-size: 2.2rem;
+  margin: 1rem 0;
+  font-weight: normal;
+
+  @media (min-width: $screen-tablet) {
+  }
+  @media (min-width: $screen-desktop) {
+    font-size: 2.8rem;
+  }
+}
+
+//to emphasize the title of something in a subsection (business link in about page)
+h4 {
+  font-size: 1.8rem;
+  line-height: 3rem;
+  margin: 0;
+}
+
+p, ul, ol {
+  @include defaultText;
+  line-height: 30px;
+  margin: 0 0 30px 0;
+}
+
+
+
+
+
+
+
+
 .font--med--thin {
   font-size: 2.5rem;
   font-weight: lighter;
