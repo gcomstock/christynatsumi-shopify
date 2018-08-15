@@ -51,8 +51,6 @@
 
   {% section 'footer' %}
 
-  {{ 'fastclick.min.js' | asset_url | script_tag }}
-
 
   {% comment %}
     Template-specific js
@@ -64,9 +62,14 @@
       });
     {% endif %}
   </script>
-  
+
+  {{ 'fastclick.min.js' | asset_url | script_tag }}
+
+
   {{ 'jquery.validate.min.js' | asset_url | script_tag }}
   {{ 'additional-methods.min.js' | asset_url | script_tag }}
+
+
   {{ 'site.js' | asset_url | script_tag }}
 
   <script>
@@ -79,6 +82,6 @@
     ga('send', 'pageview');
   </script>
 
-  {% include 'ajaxify-cart' %}
+
 </body>
 </html>

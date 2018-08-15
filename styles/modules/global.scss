@@ -35,15 +35,6 @@ a.rss:hover       { background-color: #ff9900 !important; }
 
 
 
-
-
-.cn-number {
-  color: #666;
-  font-weight: lighter;
-  letter-spacing: 0.05rem;
-  text-rendering: optimizeLegibility;
-}
-
 .cn-imageFrame {
   -webkit-box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
   box-shadow: 0px 2px 5px 0px rgba(0, 0, 0, 0.2);
@@ -86,6 +77,10 @@ a.rss:hover       { background-color: #ff9900 !important; }
   @media (min-width: $screen-desktop-1) {
     margin-top: 64px;
   }
+}
+
+.cn-wrapper--narrow {
+  max-width: 1280px;
 }
 
 

@@ -66,6 +66,16 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'ahpuch apollyon';
+  src: url('font_AhpuchApollyon_italic.woff2') format('woff2'),
+  url('font_AhpuchApollyon_italic.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
+
+
+
 @mixin dolceVita { //should only be applied to element that needs the font, otherwise children will inherit letter-spacing
   font-family: 'dolce vita', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
   -webkit-font-smoothing: antialiased;
@@ -77,13 +87,7 @@
 
 @mixin proximaNova { //should only be applied to element that needs the font, otherwise children will inherit letter-spacing
   font-family: 'proxima nova', Helvetica, Arial, sans-serif !important;
-  //-webkit-font-smoothing: antialiased;
-  //-moz-osx-font-smoothing: grayscale;
-  //letter-spacing: 0.2rem !important;
-  //text-rendering: optimizeLegibility;
 }
-
-
 
 
 @mixin lightSubHeader {
@@ -123,10 +127,30 @@
   }
 }
 
+@mixin serifItalic {
+  font-family: 'ahpuch apollyon', serif;
+  font-weight: normal;
+  font-style: italic;
+  color: #666;
+  font-size: 28px;
+  //line-height: 24px;
+
+  @media (min-width: $screen-tablet) {
+    font-size: 32px;
+    //line-height: 28px;
+  }
+  @media (min-width: $screen-desktop) {
+    font-size: 36px;
+    //line-height: 32px;
+  }
+}
+
+
+
 
 @mixin defaultText {
   font-family: 'proxima nova', Helvetica, Arial, sans-serif;
-  text-align: left;
+  //text-align: left;
   font-size: 16px;
   color: #444;
 }
@@ -149,7 +173,7 @@ h1 {
 }
 
 
-h2, h3, h4, .dolceVita {
+h3, h4, .dolceVita {
   @include dolceVita;
 }
 
@@ -158,30 +182,36 @@ h2, h3, h4, .dolceVita {
 
 //to divide majors sections in a page
 h2 {
-  font-size: 4rem;
-  font-weight: lighter;
+  @include lightSubHeader;
+  font-size: 32px;
   margin: 3rem 0 1.5rem 0;
 
   @media (min-width: $screen-tablet) {
-    font-size: 5rem;
+    font-size: 48px;
   }
   @media (min-width: $screen-desktop) {
-    font-size: 6rem;
+    font-size: 60px;
   }
 }
+
+
 
 //for subheaders in a subsection
 h3 {
-  font-size: 2.2rem;
-  margin: 1rem 0;
-  font-weight: normal;
+  @include lightSubHeader;
+  font-size: 24px;
+  margin: 8px 0;
+  //font-weight: normal;
 
   @media (min-width: $screen-tablet) {
+    font-size: 24px;
   }
   @media (min-width: $screen-desktop) {
-    font-size: 2.8rem;
+    font-size: 28px;
   }
 }
+
+
 
 //to emphasize the title of something in a subsection (business link in about page)
 h4 {

@@ -1,12 +1,12 @@
 select, input {
   @include defaultText;
+  min-width: 88px;
   height: 48px;
   padding: 0 16px;
   border-radius: 0;
   background-color: transparent;
   border: 1px solid #666;
 }
-
 
 select {
   position: relative;
@@ -24,6 +24,41 @@ select::-ms-expand {
   display: none; /* hide the default arrow in ie10 and ie11 */
 }
 
+button, .button {
+  border-radius: 0;
+  font-size: 1.4rem;
+  display: inline-block;
+  margin: 0;
+  padding: 0 32px;
+  line-height: 48px;
+  text-decoration: none;
+  text-align: center;
+  font-weight: bold;
+  color: #666;
+  border: 1px solid #666;
+  cursor: pointer;
+  background-color: transparent;
+  transition: background-color 200ms ease;
+
+  @include subHeader;
+
+  &:hover {
+    background-color: $btn-highlight;
+  }
+
+  &.dark {
+    background-color: #444;
+    color: #FFF;
+    border-color: #000;
+  }
+
+  @media screen and (min-width: $screen-tablet) {
+    min-width: 184px;
+  }
+}
+
+
+// BEKOW THI LINE ARE OLD FORM STYLES
 
 
 
@@ -157,35 +192,7 @@ ul.shopify-challenge__error {
 
 
 
-button, .button {
-  border-radius: 0;
-  font-size: 1.4rem;
-  display: inline-block;
-  margin: 0;
-  padding: 0 32px;
-  min-width: 200px;
-  line-height: 48px;
-  text-decoration: none;
-  text-align: center;
-  font-weight: bold;
-  color: #666;
-  border: 1px solid #666;
-  cursor: pointer;
-  background-color: transparent;
-  transition: background-color 200ms ease;
 
-  @include subHeader;
-
-  &:hover {
-    background-color: $btn-highlight;
-  }
-
-  &.dark {
-    background-color: #444;
-    color: #FFF;
-    border-color: #000;
-  }
-}
 
 //.sqs-editable-button,
 //.sqs-add-to-cart-button-wrapper .sqs-add-to-cart-button,

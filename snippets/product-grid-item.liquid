@@ -8,9 +8,12 @@
         data-srcset="{{ product.featured_image | img_url: '600x600', crop: 'bottom' }} 600w,
           {{ product.featured_image | img_url: '400x400', crop: 'bottom' }} 400w,
           {{ product.featured_image | img_url: '350x350', crop: 'bottom' }} 350w"
-        class="lazyload" />
+        class="lazyload"
+      />
     </div>
-    <div class="cn-categoryproduct__title">{{ product.title }}</div>
+    <div class="cn-categoryproduct__title">
+      {{ product.title }}
+    </div>
 
     {% if product.available == false %}
       <div class="product-mark sold-out">sold out</div>

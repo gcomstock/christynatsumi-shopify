@@ -25,5 +25,4 @@
 <a {% if page.url == '/pages/contact' %} class="active"{% endif %} href="/pages/contact">Contact</a>
 <a {% if page.url == '/pages/about' %}   class="active"{% endif %} href="/pages/about">About</a>
 
-<a {% if page_title == 'Your Shopping Cart' %} class="active"{% endif %} href="/cart">Cart</a>
-
+<a {% if page_title == 'Your Shopping Cart' %} class="active"{% endif %} href="/cart">Cart{% if cart.item_count > 0 %} ({{ cart.item_count }}){% endif %}</a>

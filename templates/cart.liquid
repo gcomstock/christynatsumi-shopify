@@ -1,96 +1,80 @@
 <!-- /templates/cart.liquid -->
 {% comment %}
-
   For info on test orders:
     - General http://docs.shopify.com/manual/your-store/orders/test-orders
     - Shopify Payments - http://docs.shopify.com/manual/more/shopify-payments/testing-shopify-payments
-
 {% endcomment %}
 
-<main>
-<div class="cn-wrapper cn-wrapper--top">
-  {% if cart.item_count > 0 %}
+<main class="cn-wrapper cn-wrapper--top cn-wrapper--narrow">
+  {% if cart.item_count < 1 %}
+    <div class="cart__empty">
+      <h1>Nothing Yet!</h1>
+      <p>You have nothing in your shopping cart.</p>
+      <a class="button" href="/collections/all">see all jewelry</a>
+    </div>
+  {% else %}
     <form action="/cart" method="post" novalidate class="cart">
-      <div class="cart__container">
-        <div class="cart__table">
-          <div class="cart__header-labels">
-            <span class="cart__header-item"><span>ITEM</span></span>
-            <div class="cart__header-img"></div>
-            <div class="cart__header-desc"></div>
-            <div class="cart__header-qty"><div><span>QTY.</span></div></div>
-            <div class="cart__header-price"><div><span>PRICE</span></div></div>
-          </div>
-          {% for line_item in cart.items %}
-            <div class="cart__item">
-              <div class="cart__item-remove">
-                <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0" title="Remove Item">×</a>
-              </div>
-              <div data-label="{{ 'customer.order.product' | t }}" class="cart__item-img">
-                <div style="background-image: url({{ line_item | img_url: '200x' }});">
-                  <!-- 
-                  <a href="{{ item.url | within: collections.all }}" class="cart__image">
-                    <img src="{{ item | img_url: '100x' }}" alt="{{ item.title | escape }}">
-                  </a>
-                   -->
-                </div>
-              </div>
-              <div class="cart__item-desc">
-                <div class="cart__item-title">
-                  <a href="{{ line_item.url | within: collections.all }}">{{ line_item.title }}</a>
-                </div>
+      <h1>Your Cart</h1>
 
-                {% unless line_item.variant.title contains 'Default' %}
-                <div class="cart__variant-info">
-                  {{ line_item.variant.title }}
-                </div>
-                {% endunless %}
+      <div class="cart__header">
+        <div class="cart__header__img"></div>
+        <div class="cart__header__desc">item</div>
+        <div class="cart__header__qty">quantity</div>
+        <div class="cart__header__price">price</div>
+      </div>
 
-                {% unless line_item.properties == empty %}
-                <div class="cart__variant-info">
-                  {% for property in line_item.properties %}
+      {% for item in cart.items %}
+        <div class="cart__item">
+          <a class="cart__item__remove" href="/cart/change?line={{ forloop.index }}&amp;quantity=0" title="Remove Item">×</a>
+
+          <a class="cart__item__img" href="{{ item.url | within: collections.all }}">
+            <img
+              alt="{{ item.product.title }}"
+              data-sizes="auto"
+              data-src="{{ item | img_url: '250x250', crop: 'bottom' }}"
+              data-srcset="{{ item | img_url: '250x250', crop: 'bottom' }} 250w,
+                           {{ item | img_url: '500x500', crop: 'bottom' }} 500w"
+              class="lazyload"
+            />
+          </a>
+
+          <div class="cart__item__desc">
+            <a class="cart__item__desc__title" href="{{ item.url | within: collections.all }}">{{ item.product.title }}</a>
+
+            <div class="cart__item__desc__variant">
+              {% unless item.variant.title contains 'Default' %}
+                {{ item.variant.title }}
+              {% endunless %}
+              {% unless item.properties == empty %}
+                {% for property in item.properties %}
                   {{ property.first }}: {{ property.last }}
-                  {% endfor %}
-                </div>
-                {% endunless %}
-
-              </div>
-              <div data-label="{{ 'cart.label.quantity' | t }}" class="cart__item-qty">
-                <input type="number" name="updates[]" id="updates_{{ line_item.key }}" data-id="{{ line_item.key }}" value="{{ line_item.quantity }}" min="1" max="{{ line_item.variant.inventory_quantity }}">
-              </div>
-              <div data-label="{{ 'cart.label.price' | t }}" class="cart__item-price">
-                {{ line_item.price | money }}
-              </div>
+                {% endfor %}
+              {% endunless %}
             </div>
-          {% endfor %}
+          </div>
+
+          <div class="cart__item__qty" data-label="{{ 'cart.label.quantity' | t }}">
+            <input type="number" name="updates[]" id="updates_{{ item.key }}" data-id="{{ item.key }}" value="{{ item.quantity }}" min="1" max="{{ item.variant.inventory_quantity }}">
+          </div>
+
+          <div class="cart__item__price" data-label="{{ 'cart.label.price' | t }}">
+            {{ item.price | money }}
+          </div>
         </div>
-        <div class="cart__subtotal">
-          <span class="cart__subtotal-label">{{ 'cart.general.subtotal' | t }}</span>
-          <span class="cart__subtotal-price">{{ cart.total_price | money }}</span>
-          <!-- 
-          {% if cart.total_discounts > 0 %}
-            {% assign savings = cart.total_discounts | money %}
-            <p>
-              <span class="cart__subtotal-savings"><em>{{ 'cart.general.savings_html' | t: price: savings }}</em></span>
-            </p>
-          {% endif %}
-           -->
-        </div>
-        <div class="cart__checkout">
-          <button type="submit" name="update" class="sqs-editable-button button">{{ 'cart.general.update' | t }}</button>
-          <button type="submit" name="checkout" class="sqs-editable-button button">Checkout</button>
-        </div>
+      {% endfor %}
+
+      <div class="cart__subtotal">
+        <span class="cart__subtotal__label">Subtotal:</span>
+        <span class="cart__subtotal__price">{{ cart.total_price | money }}</span>
+      </div>
+
+      <div class="cart__checkout">
+        <button class="dark" type="submit" name="update">{{ 'cart.general.update' | t }}</button>
+        <button class="dark" type="submit" name="checkout">Checkout</button>
       </div>
     </form>
-  {% else %}
-    {% comment %}
-      The cart is empty
-    {% endcomment %}
-    <div class="cart__empty">
-      <div>
-        <span>You have nothing in your shopping cart.</span>
-        <a href="/collections/all">Continue Shopping</a>
-      </div>
-    </div>
   {% endif %}
-</div>
+
+  {{ 'lazysizes.min.js' | asset_url | script_tag }}
+
 </main>
