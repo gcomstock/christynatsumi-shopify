@@ -56,21 +56,25 @@
 
 
 .row--btnRow {
-  margin-bottom: 9rem;
+  margin-bottom: 88px;
+
+  @media (min-width: $screen-tablet) and (max-width: $screen-desktop-1) {
+    .fourth { width: 48%; }
+    .fourth:nth-child(even) { margin-right: 0; }
+  }
 
   span {
-    @include dolceVita;
-    font-size: 1.4rem;
-    font-weight: bold;
+    @include subHeader;
+    padding-bottom: 8px;
+    font-size: 12px;
     display: block;
-    margin-top: 3rem;
-    margin-bottom: 0.25rem;
+    margin-top: 32px;
   }
 
   .button {
     width: 100%;
-    padding-left: 0;
-    padding-right: 0;
+    max-width: 320px;
+    padding: 0;
   }
 }
 

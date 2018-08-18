@@ -1,14 +1,13 @@
 @import 'modules/reset.scss';
 @import 'modules/vars.scss';
-@import 'modules/global.scss';
 @import 'modules/fonts.scss';
+@import 'modules/global.scss';
 
 
 @import 'modules/header.scss';
 @import 'modules/header-mobile.scss';
 
 
-@import 'modules/mobileNav.scss';
 @import 'modules/grid.scss';
 @import 'modules/footer.scss';
 @import 'modules/forms.scss';
@@ -23,6 +22,5 @@
 @import 'modules/lookbook-arcn.scss';
 @import 'modules/product';
 @import 'modules/products-list.scss';
-@import 'modules/products-summaryblock-list.scss';
 @import 'modules/modal.scss';
 

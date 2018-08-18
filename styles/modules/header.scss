@@ -15,6 +15,8 @@ $nav-height: 104px;
 $mobile-nav-height: 56px;
 
 
+
+
 .cnew-header {
   display: none;
 
@@ -124,7 +126,6 @@ $mobile-nav-height: 56px;
   @include navLink;
 }
 
-
 .cnew-header__subnav__items__links {
   border-left: 1px solid #7e7e7e;
   width: 21%;
@@ -150,17 +151,7 @@ $mobile-nav-height: 56px;
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
+// so content begins after header ends rather than hiding under it
 .cnew-header-spacer {
   height: $mobile-nav-height;
 
@@ -175,16 +166,13 @@ $mobile-nav-height: 56px;
   text-align: center;
   background-color: #000;
   color: #fff;
-  margin-top: 6rem;
-  padding: 1.4rem 0;
+  padding: 16px 0;
 
   span {
-    color: $color-highlight;
+    color: $btn-highlight-dark;
   }
 }
 
 .cn-headerNotice__wrapper {
-  font-size: 1.6rem;
-  line-height: 2.4rem;
-  font-weight: bold;
+  font-size: 16px;
 }

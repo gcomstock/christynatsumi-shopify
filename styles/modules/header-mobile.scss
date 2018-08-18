@@ -122,22 +122,20 @@
 }
 
 .cnew-header-mobile-drawer__content a {
-  @include dolceVita;
+  @include lightSubHeader();
   font-size: 1.6rem;
   padding: 1.6rem 0;
   color: #7e7e7e;
   text-decoration: none;
-  -webkit-font-smoothing: auto;
-  -moz-osx-font-smoothing: auto;
   display: block;
 }
 
 a.cnew-header-mobile-drawer__content__main {
+  @include subHeader();
   margin-top: 3.2rem;
   margin-bottom: 1.6rem;
   padding-bottom: 0.5rem;
   border-bottom: 1px solid #7e7e7e;
-  font-weight: bold;
   display: inline-block;
   max-width: 600px;
   width: 100%;
@@ -151,10 +149,9 @@ a.cnew-header-mobile-drawer__content__main {
   width: 100%;
 }
 
-
 a.cnew-header-mobile-drawer__content__nosubnav {
-  margin-top: 3.2rem;
+  @include subHeader();
+  //margin-top: 3.2rem;
   margin-bottom: 1.6rem;
   padding-bottom: 0.8rem;
-  font-weight: bold;
 }

@@ -25,7 +25,7 @@
 
       {% for item in cart.items %}
         <div class="cart__item">
-          <a class="cart__item__remove" href="/cart/change?line={{ forloop.index }}&amp;quantity=0" title="Remove Item">×</a>
+          <a class="cart__item__remove" href="/cart/change?line={{ forloop.index }}&amp;quantity=0" title="Remove Item"></a>
 
           <a class="cart__item__img" href="{{ item.url | within: collections.all }}">
             <img

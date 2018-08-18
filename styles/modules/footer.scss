@@ -68,11 +68,6 @@
 .row .cn-footer__links {
   display: none;
 
-  h3 a { //restate h3 rules to override a tag css
-    font-weight: normal;
-    @include dolceVita;
-  }
-
   @media (min-width: $screen-tablet) {
     display: inline-block;
     border-bottom: 1px solid #666;

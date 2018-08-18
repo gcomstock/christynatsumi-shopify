@@ -1,40 +1,4 @@
 @font-face {
-  font-family: 'dolce vita';
-  src: url('dolce_vita_heavy-webfont.eot');
-  src: url('dolce_vita_heavy-webfont.eot?#iefix') format('embedded-opentype'),
-  url('dolce_vita_heavy-webfont.woff') format('woff'),
-  url('dolce_vita_heavy-webfont.ttf') format('truetype'),
-  url('dolce_vita_heavy-webfont.svg#dolce_vita_heavyafewXpounds') format('svg');
-  font-weight: bold;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'dolce vita';
-  src: url('dolce_vita_light-webfont.eot');
-  src: url('dolce_vita_light-webfont.eot?#iefix') format('embedded-opentype'),
-  url('dolce_vita_light-webfont.woff') format('woff'),
-  url('dolce_vita_light-webfont.ttf') format('truetype'),
-  url('dolce_vita_light-webfont.svg#dolce_vita_lightsuper_light') format('svg');
-  font-weight: 100;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'dolce vita';
-  src: url('dolce_vita-webfont.eot');
-  src: url('dolce_vita-webfont.eot?#iefix') format('embedded-opentype'),
-  url('dolce_vita-webfont.woff') format('woff'),
-  url('dolce_vita-webfont.ttf') format('truetype'),
-  url('dolce_vita-webfont.svg#dolce_vitaquite_regular') format('svg');
-  font-weight: normal;
-  font-style: normal;
-}
-
-
-
-
-@font-face {
   font-family: 'proxima nova';
   src: url('font_proxima_nova_regular.woff2') format('woff2'),
   url('font_proxima_nova_regular.woff') format('woff');
@@ -76,15 +40,6 @@
 
 
 
-@mixin dolceVita { //should only be applied to element that needs the font, otherwise children will inherit letter-spacing
-  font-family: 'dolce vita', 'Helvetica Neue', Helvetica, Arial, sans-serif !important;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  letter-spacing: 0.2rem !important;
-  text-rendering: optimizeLegibility;
-}
-
-
 @mixin proximaNova { //should only be applied to element that needs the font, otherwise children will inherit letter-spacing
   font-family: 'proxima nova', Helvetica, Arial, sans-serif !important;
 }
@@ -95,6 +50,10 @@
   letter-spacing: 0.125em;
   text-transform: uppercase;
   font-weight: lighter;
+
+  -webkit-font-smoothing: auto;
+  -moz-osx-font-smoothing: auto;
+  text-rendering: auto;
 }
 
 
@@ -127,6 +86,7 @@
   }
 }
 
+
 @mixin serifItalic {
   font-family: 'ahpuch apollyon', serif;
   font-weight: normal;
@@ -146,8 +106,6 @@
 }
 
 
-
-
 @mixin defaultText {
   font-family: 'proxima nova', Helvetica, Arial, sans-serif;
   //text-align: left;
@@ -158,7 +116,7 @@
 
 
 
-
+// for all page headers
 h1 {
   @include serifHeader;
   text-align: center;
@@ -171,13 +129,6 @@ h1 {
     margin-bottom: 96px;
   }
 }
-
-
-h3, h4, .dolceVita {
-  @include dolceVita;
-}
-
-
 
 
 //to divide majors sections in a page
@@ -195,13 +146,11 @@ h2 {
 }
 
 
-
 //for subheaders in a subsection
 h3 {
   @include lightSubHeader;
   font-size: 24px;
   margin: 8px 0;
-  //font-weight: normal;
 
   @media (min-width: $screen-tablet) {
     font-size: 24px;
@@ -215,7 +164,8 @@ h3 {
 
 //to emphasize the title of something in a subsection (business link in about page)
 h4 {
-  font-size: 1.8rem;
+  @include subHeader;
+  font-size: 16px;
   line-height: 3rem;
   margin: 0;
 }
@@ -226,22 +176,3 @@ p, ul, ol {
   margin: 0 0 30px 0;
 }
 
-
-
-
-
-
-
-
-.font--med--thin {
-  font-size: 2.5rem;
-  font-weight: lighter;
-  padding-bottom: 1.5rem;
-  margin: 0; //TODO: move this override out after dealing with h1, h2, etc styles
-}
-
-
-
-.color-white {
-  color: #fff;
-}
