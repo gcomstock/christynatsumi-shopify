@@ -391,7 +391,6 @@ th {
 h1 {
   font-family: 'ahpuch apollyon', serif;
   font-weight: normal;
-  color: #666;
   font-size: 36px;
   line-height: 36px;
   text-align: center;
@@ -597,7 +596,7 @@ img.full {
   position: absolute;
   z-index: 2;
   background-color: #fff;
-  border-bottom: 4px solid #FFE8E8;
+  border-bottom: 4px solid #ffe1e1;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -661,7 +660,7 @@ img.full {
   z-index: 200;
   width: 100%;
   top: 104px;
-  background-color: #FFE8E8;
+  background-color: #fff0f0;
   padding: 64px 0;
   opacity: 0;
   pointer-events: none;
@@ -698,8 +697,7 @@ img.full {
 .cnew-header__subnav__items__item__img {
   width: 100%;
   padding-bottom: 66%;
-  background-color: #fff;
-  background-size: cover;
+  background-size: 100% 100%;
   -webkit-transition: -webkit-box-shadow 0.2s ease;
   transition: -webkit-box-shadow 0.2s ease;
   -o-transition: box-shadow 0.2s ease;
@@ -877,7 +875,7 @@ img.full {
   top: 56px;
   bottom: 0;
   width: 100%;
-  background-color: #FFE8E8;
+  background-color: #fff0f0;
   padding: 0.8rem 2.4rem 3.2rem 2.4rem;
   opacity: 0;
   overflow-y: scroll;
@@ -891,6 +889,9 @@ img.full {
     .cnew-header-mobile-drawer.expanded .cnew-header-mobile-drawer__content {
       -webkit-transform: translate3d(0, 0, 0);
       transform: translate3d(0, 0, 0); }
+  @media (min-width: 960px) {
+    .cnew-header-mobile-drawer {
+      display: none; } }
 
 .cnew-header-mobile-drawer__content {
   -webkit-transform: translate3d(0, -2.4rem, 0);
@@ -1201,6 +1202,9 @@ button, .button {
     border-color: #000; }
     button.dark:hover, .button.dark:hover {
       color: #ff96cd; }
+  button.disabled, .button.disabled {
+    pointer-events: none;
+    opacity: 0.5; }
   @media screen and (min-width: 600px) {
     button, .button {
       min-width: 184px; } }
@@ -1317,33 +1321,43 @@ ul.shopify-challenge__error {
 
 .cn-home__hero {
   width: 100%;
-  padding-bottom: 60%;
   margin-bottom: 64px;
-  background-color: #ddd;
   position: relative;
   text-align: center;
-  background-size: cover; }
-  @media (min-width: 600px) {
-    .cn-home__hero {
-      margin-bottom: 64px; } }
+  background-size: cover;
+  padding-bottom: 100%;
+  background-image: url("{{ 'christy-natsumi-home-hero--mobile.jpg' | asset_url }}"); }
   @media (min-width: 960px) {
     .cn-home__hero {
-      padding-bottom: 38%; } }
+      padding-bottom: 40%;
+      background-image: url("{{ 'christy-natsumi-home-hero--web.jpg' | asset_url }}"); } }
 
 .cn-home__hero__text {
   position: absolute;
-  bottom: 64px;
+  color: #fff;
+  bottom: 16px;
   left: 50%;
   -webkit-transform: translateX(-50%);
   -ms-transform: translateX(-50%);
   transform: translateX(-50%); }
+  @media (min-width: 600px) {
+    .cn-home__hero__text {
+      -webkit-transform: translateX(0);
+      -ms-transform: translateX(0);
+      transform: translateX(0); } }
+  @media (min-width: 960px) {
+    .cn-home__hero__text {
+      left: auto;
+      top: auto;
+      bottom: 64px;
+      right: 64px; } }
 
 .cn-home__hero__text__intro {
   font-family: 'ahpuch apollyon', serif;
   font-weight: normal;
-  color: #666;
   font-size: 36px;
-  line-height: 36px; }
+  line-height: 36px;
+  white-space: nowrap; }
   @media (min-width: 600px) {
     .cn-home__hero__text__intro {
       font-size: 48px;
@@ -1361,7 +1375,10 @@ ul.shopify-challenge__error {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  font-size: 14px; }
+  font-size: 12px; }
+  @media (min-width: 600px) {
+    .cn-home__hero__text__subhead {
+      font-size: 14px; } }
 
 .cn-home__wedding-rings {
   display: -webkit-box;
@@ -1406,9 +1423,9 @@ ul.shopify-challenge__error {
 .cn-home__wedding-rings__text__title {
   font-family: 'ahpuch apollyon', serif;
   font-weight: normal;
-  color: #666;
   font-size: 36px;
   line-height: 36px;
+  color: #666;
   margin-top: 16px;
   margin-bottom: 24px; }
   @media (min-width: 600px) {
@@ -1474,9 +1491,9 @@ ul.shopify-challenge__error {
 .cn-home__new-arrivals__text__title {
   font-family: 'ahpuch apollyon', serif;
   font-weight: normal;
-  color: #666;
   font-size: 36px;
   line-height: 36px;
+  color: #666;
   margin-top: 16px;
   margin-bottom: 24px; }
   @media (min-width: 600px) {
@@ -1524,9 +1541,9 @@ ul.shopify-challenge__error {
 .cn-home__customer-favorites__text {
   font-family: 'ahpuch apollyon', serif;
   font-weight: normal;
-  color: #666;
   font-size: 36px;
   line-height: 36px;
+  color: #666;
   margin-top: 16px;
   margin-bottom: 24px; }
   @media (min-width: 600px) {
@@ -1607,9 +1624,9 @@ ul.shopify-challenge__error {
 .cn-home__custom-jewelry__text__title {
   font-family: 'ahpuch apollyon', serif;
   font-weight: normal;
-  color: #666;
   font-size: 36px;
   line-height: 36px;
+  color: #666;
   margin-top: 16px;
   margin-bottom: 24px; }
   @media (min-width: 600px) {
@@ -1631,9 +1648,9 @@ ul.shopify-challenge__error {
 .cn-home__featured-in {
   font-family: 'ahpuch apollyon', serif;
   font-weight: normal;
-  color: #666;
   font-size: 36px;
   line-height: 36px;
+  color: #666;
   text-align: center;
   width: 100%;
   background-color: #fff;
@@ -3083,7 +3100,6 @@ ul.shopify-challenge__error {
   width: 4rem;
   height: 4rem;
   cursor: pointer;
-  background-image: url("drawerOpen.png");
   background-size: 100%; }
 
 .modal__content__body {

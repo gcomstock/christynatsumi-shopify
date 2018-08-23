@@ -11,17 +11,21 @@
   @media (min-width: $screen-desktop) {
   }
 }
+
 @mixin homeBlock__img {
   width: 100%;
   padding-bottom: 50%;
   background-color: #7e7e7e;
 }
+
 @mixin homeBlock__text {
   width: 100%;
   text-align: center;
 }
+
 @mixin homeBlock__text__title {
   @include serifHeader;
+  color: #666;
   margin-top: 16px;
   margin-bottom: 24px;
 
@@ -41,41 +45,58 @@
 }
 
 
-
-
 .cn-home__hero {
   width: 100%;
-  padding-bottom: 60%;
   margin-bottom: 64px;
-
-  background-color: #ddd;
   position: relative;
   text-align: center;
   background-size: cover;
 
+  padding-bottom: 100%;
+  background-image: url("{{ 'christy-natsumi-home-hero--mobile.jpg' | asset_url }}");
   @media (min-width: $screen-tablet) {
-    margin-bottom: 64px;
   }
   @media (min-width: $screen-desktop) {
-    padding-bottom: 38%;
+    padding-bottom: 40%;
+    background-image: url("{{ 'christy-natsumi-home-hero--web.jpg' | asset_url }}");
   }
 }
 
 .cn-home__hero__text {
   position: absolute;
-  bottom: 64px;
+  color: #fff;
+
+  bottom: 16px;
   left: 50%;
   transform: translateX(-50%);
+
+  @media (min-width: $screen-tablet) {
+    //left: 64px;
+    //top: 64px;
+    transform: translateX(0);
+  }
+  @media (min-width: $screen-desktop) {
+    left: auto;
+    top: auto;
+    bottom: 64px;
+    right: 64px;
+  }
 }
 
 .cn-home__hero__text__intro {
   @include serifHeader;
+  white-space: nowrap;
 }
 
 .cn-home__hero__text__subhead {
   @include subHeader;
-  font-size: 14px;
-  //font-weight: bold;
+  font-size: 12px;
+
+  @media (min-width: $screen-tablet) {
+    font-size: 14px;
+  }
+  @media (min-width: $screen-desktop) {
+  }
 }
 
 
@@ -232,9 +253,8 @@
 
 .cn-home__featured-in {
   @include serifHeader;
+  color: #666;
   text-align: center;
-
-  //margin-top: 128px;
   width: 100%;
   background-color: #fff;
   padding: 64px 0;

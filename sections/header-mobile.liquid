@@ -3,9 +3,9 @@
     <div class="cnew-header-mobile__navbtn__icon cnew-header-mobile__navbtn__icon--hamburger active"></div>
     <div class="cnew-header-mobile__navbtn__icon cnew-header-mobile__navbtn__icon--close"></div>
   </div>
-  <a class="cnew-header-mobile__logo">
+  <a href="/" class="cnew-header-mobile__logo" alt="Christy Natsumi Jewelry">
   </a>
-  <a class="cnew-header-mobile__cart" href="/cart">
+  <a href="/cart" class="cnew-header-mobile__cart">
     {% if cart.item_count > 0 %}
       <div class="cnew-header-mobile__cart__count">
         {{ cart.item_count }}
@@ -17,31 +17,24 @@
 <div class="cnew-header-mobile-drawer">
   <div class="cnew-header-mobile-drawer__content">
 
-    <a href="#" class="cnew-header-mobile-drawer__content__main">wedding</a>
-    <a href="#">engagement rings</a>
-    <a href="#">wedding bands</a>
-    <a href="#">men's</a>
-    <a href="#">best sellers</a>
+    <a href="/collections/wedding" class="cnew-header-mobile-drawer__content__main">wedding</a>
+    <a href="/collections/diamond-rings">diamond rings</a>
+    <a href="/collections/wedding-bands">wedding bands</a>
+    <a href="/collections/mens">men's</a>
+    <a href="/collections/wedding">all wedding</a>
 
-    <a href="#" class="cnew-header-mobile-drawer__content__main">jewelry</a>
-    <a href="#">rings</a>
-    <a href="#">necklaces</a>
-    <a href="#">earrings</a>
-    <a href="#">gift cards</a>
-    <a href="#">best sellers</a>
-    <a href="#">sale</a>
-
-    <a href="#" class="cnew-header-mobile-drawer__content__main">custom</a>
-    <a href="#">custom services</a>
-    <a href="#">gallery</a>
-    <a href="#">the process</a>
-    <a href="#">testimonials</a>
-    <a href="#">faq</a>
-    <a href="#">order form</a>
+    <a href="/collections/all" class="cnew-header-mobile-drawer__content__main">jewelry</a>
+    <a href="/collections/rings">rings</a>
+    <a href="/collections/necklaces">necklaces</a>
+    <a href="/collections/earrings">earrings</a>
+    <a href="/collections/customer-favorites">customer favorites</a>
+    <a href="/collections/last-call">last call</a>
+    <a href="/collections/all">see all</a>
 
     <div class="cnew-header-mobile-drawer__content__divider"></div>
 
-    <a href="#" class="cnew-header-mobile-drawer__content__nosubnav">about</a>
-    <a href="#" class="cnew-header-mobile-drawer__content__nosubnav">contact</a>
+    <a href="/pages/custom" class="cnew-header-mobile-drawer__content__nosubnav">custom</a>
+    <a href="/pages/contact" class="cnew-header-mobile-drawer__content__nosubnav">contact</a>
+    <a href="/pages/about" class="cnew-header-mobile-drawer__content__nosubnav">about</a>
   </div>
 </div>

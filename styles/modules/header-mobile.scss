@@ -112,6 +112,10 @@
       transform: translate3d(0, 0, 0);
     }
   }
+
+  @media (min-width: $screen-desktop) {
+    display: none;
+  }
 }
 
 
@@ -151,7 +155,6 @@ a.cnew-header-mobile-drawer__content__main {
 
 a.cnew-header-mobile-drawer__content__nosubnav {
   @include subHeader();
-  //margin-top: 3.2rem;
   margin-bottom: 1.6rem;
   padding-bottom: 0.8rem;
 }

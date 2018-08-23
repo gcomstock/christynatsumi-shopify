@@ -55,8 +55,10 @@ button, .button {
     }
   }
 
-
-
+  &.disabled {
+    pointer-events: none;
+    opacity: 0.5;
+  }
 
 
   @media screen and (min-width: $screen-tablet) {
@@ -211,39 +213,6 @@ ul.shopify-challenge__error {
   }
 }
 
-
-@mixin cn-btn_fwdArrow {
-  border: none;
-
-  &:after {
-    content: '';
-    width: 18%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    right: -18%;
-
-    background-image: url('btnFwd.png');
-    background-size: 100% 100%;
-  }
-}
-
-
-@mixin cn-btn_backArrow {
-  border: none;
-
-  &:after {
-    content: '';
-    width: 18%;
-    height: 100%;
-    position: absolute;
-    top: 0;
-    left: -18%;
-
-    background-image: url('btnBack.png');
-    background-size: 100% 100%;
-  }
-}
 
 
 
