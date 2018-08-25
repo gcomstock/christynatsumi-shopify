@@ -251,6 +251,7 @@
   @include priceFlex;
   @include subHeader;
   font-size: 16px;
+  text-align: left;
 }
 .cart__subtotal__price {
   @include priceFlex;
@@ -267,7 +268,8 @@
 
   // treating these buttons just a bit differently from the rest because they still look good on one line on a 320px screen
   button {
-    padding: 0;
+    padding-left: 0;
+    padding-right: 0;
     flex: 1 1 1px;
     max-width: 200px;
     white-space: nowrap;

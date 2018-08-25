@@ -10,34 +10,32 @@
 <main class="cn-home">
 
 
-  <div class="cn-home__hero">
+  <a class="cn-home__hero" href="/collections/all">
     <div class="cn-home__hero__text">
       <div class="cn-home__hero__text__intro">Fine Jewelry</div>
       <div class="cn-home__hero__text__subhead">designed and crafted <br/>in san francisco</div>
     </div>
-  </div>
+  </a>
 
 
   <div class="cn-home__wedding-rings">
-    <div class="cn-home__wedding-rings__img">
-    </div>
+    <a class="cn-home__wedding-rings__img" href="/collections/wedding-bands"></a>
     <div class="cn-home__wedding-rings__text">
       <div class="cn-home__wedding-rings__text__title">
         Wedding<br/> Rings
       </div>
-      <a class="button" href="#">explore</a>
+      <a class="button" href="wedding-bands">explore</a>
     </div>
   </div>
 
 
-  <div class="cn-home__new-arrivals">
-    <div class="cn-home__new-arrivals__img">
-    </div>
+  <div class="cn-homelink cn-home__new-arrivals">
+    <a class="cn-home__new-arrivals__img" href="/collections/mens"></a>
     <div class="cn-home__new-arrivals__text">
       <div class="cn-home__new-arrivals__text__title">
         Men’s<br/> Rings
       </div>
-      <a class="button" href="#">for every taste</a>
+      <a class="button" href="/collections/mens">for every taste</a>
     </div>
   </div>
 
@@ -59,50 +57,23 @@
         {% endfor %}
       </div>
     </div>
-    <a class="button" href="#">see more customer favorites</a>
+    <a class="button" href="/collections/customer-favorites">see more customer favorites</a>
   </div>
 
 
   <div class="cn-home__custom-jewelry">
     <div class="cn-home__custom-jewelry__text">
       <div class="cn-home__custom-jewelry__text__title">
-        Custom<br/> Jewelry<br/>
+        View the<br/> Collection<br/>
       </div>
 
-      <a class="button" href="pages/custom">made just for you</a>
+      <a class="button" href="/collections/all">made in san francisco</a>
     </div>
-    <div class="cn-home__custom-jewelry__img">
-    </div>
+    <a class="cn-home__custom-jewelry__img" href="/collections/all"></a>
   </div>
 
 
-  <div class="cn-home__featured-in">
-    Featured In
-    <div class="cn-home__featured-in__wrapper">
-      <a class="cn-home__featured-in__wrapper__item" href="#"></a>
-      <a class="cn-home__featured-in__wrapper__item" href="#"></a>
-      <a class="cn-home__featured-in__wrapper__item" href="#"></a>
-      <a class="cn-home__featured-in__wrapper__item" href="#"></a>
-      <a class="cn-home__featured-in__wrapper__item" href="#"></a>
-      <a class="cn-home__featured-in__wrapper__item" href="#"></a>
-    </div>
-  </div>
+  {% include 'featuredin' %}
 
 
 </main>
-
-
-<div class="modal">
-  <div class="modal__content">
-    <div class="modal__content__x"></div>
-    <div class="modal__content__body">
-      <h2>Get the latest Christy Natsumi news and specials.</h2>
-      <form class="cn-emailForm validate" action="//christynatsumi.us2.list-manage.com/subscribe/post?u=f04f5f29de9eb0f93431bcf1c&amp;id=902b73c91f" method="post" name="mc-embedded-subscribe-form" target="_blank">
-        <input type="email" value="" name="EMAIL" class="email" placeholder="email address" required><input id="cn-emailForm__modalSignup" type="submit" value="sign up" name="subscribe"/>
-      </form>
-    </div>
-  </div>
-</div>
-
-{{ 'main-home.js' | asset_url | script_tag }}
-{{ 'lazysizes.min.js' | asset_url | script_tag }}

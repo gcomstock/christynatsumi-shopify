@@ -1,5 +1,5 @@
 @mixin homeBlock {
-  display: flex;;
+  display: flex;
   justify-content: center;
   align-items: center;
   flex-flow: row wrap;
@@ -15,7 +15,8 @@
 @mixin homeBlock__img {
   width: 100%;
   padding-bottom: 50%;
-  background-color: #7e7e7e;
+  background-color: #cccccc;
+  background-size: cover;
 }
 
 @mixin homeBlock__text {
@@ -25,7 +26,6 @@
 
 @mixin homeBlock__text__title {
   @include serifHeader;
-  color: #666;
   margin-top: 16px;
   margin-bottom: 24px;
 
@@ -46,51 +46,54 @@
 
 
 .cn-home__hero {
-  width: 100%;
   margin-bottom: 64px;
   position: relative;
   text-align: center;
   background-size: cover;
+  display: block;
 
+  width: 100%;
   padding-bottom: 100%;
   background-image: url("{{ 'christy-natsumi-home-hero--mobile.jpg' | asset_url }}");
+  background-position: center;
+
   @media (min-width: $screen-tablet) {
+    padding-bottom: 80%;
   }
   @media (min-width: $screen-desktop) {
-    padding-bottom: 40%;
     background-image: url("{{ 'christy-natsumi-home-hero--web.jpg' | asset_url }}");
+    padding-bottom: 40%;
   }
 }
 
 .cn-home__hero__text {
   position: absolute;
-  color: #fff;
-
   bottom: 16px;
   left: 50%;
   transform: translateX(-50%);
 
   @media (min-width: $screen-tablet) {
-    //left: 64px;
-    //top: 64px;
     transform: translateX(0);
+    left: auto;
+    right: 32px;
+    bottom: 32px;
   }
   @media (min-width: $screen-desktop) {
-    left: auto;
-    top: auto;
-    bottom: 64px;
     right: 64px;
+    bottom: 64px;
   }
 }
 
 .cn-home__hero__text__intro {
   @include serifHeader;
   white-space: nowrap;
+  color: #fff;
 }
 
 .cn-home__hero__text__subhead {
   @include subHeader;
   font-size: 12px;
+  color: #fff;
 
   @media (min-width: $screen-tablet) {
     font-size: 14px;
@@ -107,8 +110,10 @@
 
   @media (min-width: $screen-tablet) {
     margin-bottom: 64px;
+    justify-content: flex-end;
   }
   @media (min-width: $screen-desktop) {
+    justify-content: center;
   }
 }
 
@@ -116,10 +121,14 @@
   @include homeBlock__img;
 
   @media (min-width: $screen-tablet) {
-    width: 40%;
+    width: 45%;
+    padding-bottom: 58%;
     margin-right: 8px;
+    background-image: url("{{ 'christy-natsumi-home-wedding--web.jpg' | asset_url }}");
   }
   @media (min-width: $screen-desktop) {
+    width: 40%;
+    padding-bottom: 50%;
   }
 }
 
@@ -137,10 +146,6 @@
 
 .cn-home__wedding-rings__text__title {
   @include homeBlock__text__title;
-
-  @media (min-width: $screen-desktop) {
-    margin-bottom: 128px;
-  }
 }
 
 
@@ -148,18 +153,25 @@
 
 .cn-home__new-arrivals {
   @include homeBlock;
-  justify-content: flex-end;
+
+  @media (min-width: $screen-desktop) {
+    justify-content: flex-end;
+  }
 }
 
 .cn-home__new-arrivals__img {
   @include homeBlock__img;
 
+
   @media (min-width: $screen-tablet) {
-    width: 50%;
-    padding-bottom: 30%;
+    width: 60%;
+    padding-bottom: 38%;
     margin-right: 8px;
+    background-image: url("{{ 'christy-natsumi-home-mens--web.jpg' | asset_url }}");
   }
   @media (min-width: $screen-desktop) {
+    width: 50%;
+    padding-bottom: 30%;
   }
 }
 
@@ -204,7 +216,6 @@
 
 .cn-home__customer-favorites__imgs {
   width: 100%;
-  margin-bottom: 3rem;
 }
 
 
@@ -212,7 +223,7 @@
 
 .cn-home__custom-jewelry {
   @include homeBlock;
-  justify-content: flex-end;
+  //justify-content: flex-end;
   align-items: center;
 }
 
@@ -222,12 +233,15 @@
 
   @media (min-width: $screen-tablet) {
     order: 2;
-    width: 50%;
     margin-left: 8px;
-    padding-bottom: 30%;
-    background-color: #999;
+    background-image: url("{{ 'christy-natsumi-home-collection--web.jpg' | asset_url }}");
+
+    width: 42%;
+    padding-bottom: 64%;
   }
   @media (min-width: $screen-desktop) {
+    width: 32%;
+    padding-bottom: 50%;
   }
 }
 
@@ -237,7 +251,7 @@
 
   @media (min-width: $screen-tablet) {
     order: 1;
-    width: 30%;
+    width: 40%;
     margin-right: 8px;
     text-align: right;
   }
@@ -253,7 +267,6 @@
 
 .cn-home__featured-in {
   @include serifHeader;
-  color: #666;
   text-align: center;
   width: 100%;
   background-color: #fff;
@@ -263,32 +276,29 @@
 .cn-home__featured-in__wrapper {
   @extend .cn-wrapper;
   display: flex;
+  //flex-wrap: wrap-reverse;
   justify-content: space-around;
   flex-flow: row wrap;
   padding-top: 64px;
 }
 
 .cn-home__featured-in__wrapper__item {
-  display: inline-block;
-  width: 256px;
+  @include fx-allFast;
+  flex: 0 1 256px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 32px;
   height: 64px;
-  background-color: #ccc;
-}
+  opacity: 0.6;
 
+  &:hover {
+    opacity: 1;
+  }
 
-
-
-
-
-
-
-.cn-home__homeMenuImage--email {
-  cursor: default;
-  background-image: url('homeMenuImage--email--1x1.jpg');
-
-  @media (min-width: $screen-desktop) {
-    background-image: url('homeMenuImage--email.jpg');
+  img {
+    max-width: 100%;
+    max-height: 100%;
   }
 }
 

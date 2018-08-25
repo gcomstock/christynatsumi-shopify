@@ -9,6 +9,9 @@
 
 
 <script>
+  // hacking lazy loading within shopify
+
+
   var requestInFlight = false;
 
   function handleScroll() {
@@ -68,6 +71,3 @@
   {% endif %}
   {% endpaginate %}
 </main>
-
-
-{{ 'lazysizes.min.js' | asset_url | script_tag }}

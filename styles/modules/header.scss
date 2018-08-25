@@ -44,7 +44,7 @@ $mobile-nav-height: 56px;
 .cnew-header__nav__title {
   width: 127px;
   margin: 16px 64px;
-  background-image: url('christy-natsumi-logo-stacked.png');
+  background-image: url("{{ 'christy-natsumi-logo--stacked.png' | asset_url }}");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat;

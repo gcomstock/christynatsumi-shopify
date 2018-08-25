@@ -11,12 +11,14 @@
 .cn-aboutpage {
   h3 {
     @media (min-width: $screen-tablet) {
-      margin-top: 5.6rem;
+      margin-top: 48px;
     }
     @media (min-width: $screen-desktop) {
       margin-top: 5rem;
     }
   }
+
+  margin-bottom: 96px;
 }
 
 

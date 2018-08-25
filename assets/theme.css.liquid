@@ -393,6 +393,7 @@ h1 {
   font-weight: normal;
   font-size: 36px;
   line-height: 36px;
+  color: #666;
   text-align: center;
   margin-bottom: 48px; }
   @media (min-width: 600px) {
@@ -476,7 +477,7 @@ html {
   font-size: 10px; }
 
 body {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'proxima nova', Helvetica, Arial, sans-serif;
   color: #444;
   background-color: #efefef; }
 
@@ -609,7 +610,7 @@ img.full {
 .cnew-header__nav__title {
   width: 127px;
   margin: 16px 64px;
-  background-image: url("christy-natsumi-logo-stacked.png");
+  background-image: url("{{ 'christy-natsumi-logo--stacked.png' | asset_url }}");
   background-size: contain;
   background-position: center;
   background-repeat: no-repeat; }
@@ -776,7 +777,7 @@ img.full {
   color: #fff;
   padding: 16px 0; }
   .cn-headerNotice span {
-    color: #ff96cd; }
+    color: #ffaaaa; }
 
 .cn-headerNotice__wrapper {
   font-size: 16px; }
@@ -835,16 +836,16 @@ img.full {
     transform: scale3d(1, 1, 1); }
 
 .cnew-header-mobile__navbtn__icon--hamburger {
-  background-image: url("christy-natsumi-icon-hamburger2.png"); }
+  background-image: url("{{ 'christy-natsumi-icon--hamburger.png' | asset_url }}"); }
 
 .cnew-header-mobile__navbtn__icon--close {
-  background-image: url("christy-natsumi-icon-close.png"); }
+  background-image: url("{{ 'christy-natsumi-icon--close.png' | asset_url }}"); }
 
 .cnew-header-mobile__logo {
   width: 150px;
   height: 56px;
   background-size: 100%;
-  background-image: url("christy-natsumi-logo-mobile4.png"); }
+  background-image: url("{{ 'christy-natsumi-logo--mobile.png' | asset_url }}"); }
 
 .cnew-header-mobile__cart {
   width: 56px;
@@ -852,7 +853,7 @@ img.full {
   cursor: pointer;
   position: relative;
   background-size: 100%;
-  background-image: url("christy-natsumi-icon-cart3.png"); }
+  background-image: url("{{ 'christy-natsumi-icon--cart.png' | asset_url }}"); }
 
 .cnew-header-mobile__cart__count {
   background-color: red;
@@ -1020,7 +1021,8 @@ a.cnew-header-mobile-drawer__content__nosubnav {
   .row--btnRow .button {
     width: 100%;
     max-width: 320px;
-    padding: 0; }
+    padding-left: 8px;
+    padding-right: 8px; }
 
 .row--imgRow {
   margin: 6rem 0; }
@@ -1185,8 +1187,8 @@ button, .button {
   font-size: 14px;
   display: inline-block;
   margin: 0;
-  padding: 0 32px;
-  line-height: 48px;
+  padding: 12px 32px;
+  line-height: 24px;
   text-decoration: none;
   text-align: center;
   font-weight: bold;
@@ -1195,13 +1197,13 @@ button, .button {
   cursor: pointer;
   background-color: transparent; }
   button:hover, .button:hover {
-    background-color: #FFE8E8; }
+    background-color: #ffe8e8; }
   button.dark, .button.dark {
     background-color: #444;
     color: #FFF;
     border-color: #000; }
     button.dark:hover, .button.dark:hover {
-      color: #ff96cd; }
+      color: #ffaaaa; }
   button.disabled, .button.disabled {
     pointer-events: none;
     opacity: 0.5; }
@@ -1320,21 +1322,25 @@ ul.shopify-challenge__error {
     margin-right: 2%; } }
 
 .cn-home__hero {
-  width: 100%;
   margin-bottom: 64px;
   position: relative;
   text-align: center;
   background-size: cover;
+  display: block;
+  width: 100%;
   padding-bottom: 100%;
-  background-image: url("{{ 'christy-natsumi-home-hero--mobile.jpg' | asset_url }}"); }
+  background-image: url("{{ 'christy-natsumi-home-hero--mobile.jpg' | asset_url }}");
+  background-position: center; }
+  @media (min-width: 600px) {
+    .cn-home__hero {
+      padding-bottom: 80%; } }
   @media (min-width: 960px) {
     .cn-home__hero {
-      padding-bottom: 40%;
-      background-image: url("{{ 'christy-natsumi-home-hero--web.jpg' | asset_url }}"); } }
+      background-image: url("{{ 'christy-natsumi-home-hero--web.jpg' | asset_url }}");
+      padding-bottom: 40%; } }
 
 .cn-home__hero__text {
   position: absolute;
-  color: #fff;
   bottom: 16px;
   left: 50%;
   -webkit-transform: translateX(-50%);
@@ -1344,20 +1350,23 @@ ul.shopify-challenge__error {
     .cn-home__hero__text {
       -webkit-transform: translateX(0);
       -ms-transform: translateX(0);
-      transform: translateX(0); } }
+      transform: translateX(0);
+      left: auto;
+      right: 32px;
+      bottom: 32px; } }
   @media (min-width: 960px) {
     .cn-home__hero__text {
-      left: auto;
-      top: auto;
-      bottom: 64px;
-      right: 64px; } }
+      right: 64px;
+      bottom: 64px; } }
 
 .cn-home__hero__text__intro {
   font-family: 'ahpuch apollyon', serif;
   font-weight: normal;
   font-size: 36px;
   line-height: 36px;
-  white-space: nowrap; }
+  color: #666;
+  white-space: nowrap;
+  color: #fff; }
   @media (min-width: 600px) {
     .cn-home__hero__text__intro {
       font-size: 48px;
@@ -1375,7 +1384,8 @@ ul.shopify-challenge__error {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  font-size: 12px; }
+  font-size: 12px;
+  color: #fff; }
   @media (min-width: 600px) {
     .cn-home__hero__text__subhead {
       font-size: 14px; } }
@@ -1400,16 +1410,31 @@ ul.shopify-challenge__error {
       margin-bottom: 192px; } }
   @media (min-width: 600px) {
     .cn-home__wedding-rings {
-      margin-bottom: 64px; } }
+      margin-bottom: 64px;
+      -webkit-box-pack: end;
+      -ms-flex-pack: end;
+      justify-content: flex-end; } }
+  @media (min-width: 960px) {
+    .cn-home__wedding-rings {
+      -webkit-box-pack: center;
+      -ms-flex-pack: center;
+      justify-content: center; } }
 
 .cn-home__wedding-rings__img {
   width: 100%;
   padding-bottom: 50%;
-  background-color: #7e7e7e; }
+  background-color: #cccccc;
+  background-size: cover; }
   @media (min-width: 600px) {
     .cn-home__wedding-rings__img {
+      width: 45%;
+      padding-bottom: 58%;
+      margin-right: 8px;
+      background-image: url("{{ 'christy-natsumi-home-wedding--web.jpg' | asset_url }}"); } }
+  @media (min-width: 960px) {
+    .cn-home__wedding-rings__img {
       width: 40%;
-      margin-right: 8px; } }
+      padding-bottom: 50%; } }
 
 .cn-home__wedding-rings__text {
   width: 100%;
@@ -1443,9 +1468,6 @@ ul.shopify-challenge__error {
       margin-bottom: 32px; }
       .cn-home__wedding-rings__text__title br {
         display: block; } }
-  @media (min-width: 960px) {
-    .cn-home__wedding-rings__text__title {
-      margin-bottom: 128px; } }
 
 .cn-home__new-arrivals {
   display: -webkit-box;
@@ -1461,23 +1483,31 @@ ul.shopify-challenge__error {
   -webkit-box-direction: normal;
   -ms-flex-flow: row wrap;
   flex-flow: row wrap;
-  margin-bottom: 96px;
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: flex-end; }
+  margin-bottom: 96px; }
   @media (min-width: 600px) {
     .cn-home__new-arrivals {
       margin-bottom: 192px; } }
+  @media (min-width: 960px) {
+    .cn-home__new-arrivals {
+      -webkit-box-pack: end;
+      -ms-flex-pack: end;
+      justify-content: flex-end; } }
 
 .cn-home__new-arrivals__img {
   width: 100%;
   padding-bottom: 50%;
-  background-color: #7e7e7e; }
+  background-color: #cccccc;
+  background-size: cover; }
   @media (min-width: 600px) {
     .cn-home__new-arrivals__img {
+      width: 60%;
+      padding-bottom: 38%;
+      margin-right: 8px;
+      background-image: url("{{ 'christy-natsumi-home-mens--web.jpg' | asset_url }}"); } }
+  @media (min-width: 960px) {
+    .cn-home__new-arrivals__img {
       width: 50%;
-      padding-bottom: 30%;
-      margin-right: 8px; } }
+      padding-bottom: 30%; } }
 
 .cn-home__new-arrivals__text {
   width: 100%;
@@ -1563,8 +1593,7 @@ ul.shopify-challenge__error {
         display: block; } }
 
 .cn-home__customer-favorites__imgs {
-  width: 100%;
-  margin-bottom: 3rem; }
+  width: 100%; }
 
 .cn-home__custom-jewelry {
   display: -webkit-box;
@@ -1581,9 +1610,6 @@ ul.shopify-challenge__error {
   -ms-flex-flow: row wrap;
   flex-flow: row wrap;
   margin-bottom: 96px;
-  -webkit-box-pack: end;
-  -ms-flex-pack: end;
-  justify-content: flex-end;
   align-items: center; }
   @media (min-width: 600px) {
     .cn-home__custom-jewelry {
@@ -1592,7 +1618,8 @@ ul.shopify-challenge__error {
 .cn-home__custom-jewelry__img {
   width: 100%;
   padding-bottom: 50%;
-  background-color: #7e7e7e;
+  background-color: #cccccc;
+  background-size: cover;
   -webkit-box-ordinal-group: 2;
   -ms-flex-order: 1;
   order: 1; }
@@ -1601,10 +1628,14 @@ ul.shopify-challenge__error {
       -webkit-box-ordinal-group: 3;
       -ms-flex-order: 2;
       order: 2;
-      width: 50%;
       margin-left: 8px;
-      padding-bottom: 30%;
-      background-color: #999; } }
+      background-image: url("{{ 'christy-natsumi-home-collection--web.jpg' | asset_url }}");
+      width: 42%;
+      padding-bottom: 64%; } }
+  @media (min-width: 960px) {
+    .cn-home__custom-jewelry__img {
+      width: 32%;
+      padding-bottom: 50%; } }
 
 .cn-home__custom-jewelry__text {
   width: 100%;
@@ -1617,7 +1648,7 @@ ul.shopify-challenge__error {
       -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
       order: 1;
-      width: 30%;
+      width: 40%;
       margin-right: 8px;
       text-align: right; } }
 
@@ -1677,18 +1708,31 @@ ul.shopify-challenge__error {
   padding-top: 64px; }
 
 .cn-home__featured-in__wrapper__item {
-  display: inline-block;
-  width: 256px;
+  -webkit-transition: all 200ms ease;
+  -moz-transition: all 200ms ease;
+  -ms-transition: all 200ms ease;
+  -o-transition: all 200ms ease;
+  transition: all 200ms ease;
+  -webkit-box-flex: 0;
+  -ms-flex: 0 1 256px;
+  flex: 0 1 256px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
   margin: 32px;
   height: 64px;
-  background-color: #ccc; }
-
-.cn-home__homeMenuImage--email {
-  cursor: default;
-  background-image: url("homeMenuImage--email--1x1.jpg"); }
-  @media (min-width: 960px) {
-    .cn-home__homeMenuImage--email {
-      background-image: url("homeMenuImage--email.jpg"); } }
+  opacity: 0.6; }
+  .cn-home__featured-in__wrapper__item:hover {
+    opacity: 1; }
+  .cn-home__featured-in__wrapper__item img {
+    max-width: 100%;
+    max-height: 100%; }
 
 .cn-heroimage--about {
   background-image: url("christynatsumi-about-heroimage-mobile.jpg"); }
@@ -1697,13 +1741,14 @@ ul.shopify-challenge__error {
       padding-bottom: 48%;
       background-image: url("christynatsumi-about-heroimage.jpg"); } }
 
-@media (min-width: 600px) {
-  .cn-aboutpage h3 {
-    margin-top: 5.6rem; } }
-
-@media (min-width: 960px) {
-  .cn-aboutpage h3 {
-    margin-top: 5rem; } }
+.cn-aboutpage {
+  margin-bottom: 96px; }
+  @media (min-width: 600px) {
+    .cn-aboutpage h3 {
+      margin-top: 48px; } }
+  @media (min-width: 960px) {
+    .cn-aboutpage h3 {
+      margin-top: 5rem; } }
 
 .cn-aboutpage__press-img {
   display: block;
@@ -2056,7 +2101,8 @@ ul.shopify-challenge__error {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-rendering: optimizeLegibility;
-  font-size: 16px; }
+  font-size: 16px;
+  text-align: left; }
   @media screen and (min-width: 600px) {
     .cart__subtotal__label {
       margin-right: 0;
@@ -2099,7 +2145,8 @@ ul.shopify-challenge__error {
   justify-content: flex-end;
   margin-bottom: 128px; }
   .cart__checkout button {
-    padding: 0;
+    padding-left: 0;
+    padding-right: 0;
     -webkit-box-flex: 1;
     -ms-flex: 1 1 1px;
     flex: 1 1 1px;
