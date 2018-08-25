@@ -1144,7 +1144,7 @@ a.cnew-header-mobile-drawer__content__nosubnav {
     width: 4.4rem;
     height: 4.4rem; }
 
-select, input {
+select, input, textarea {
   font-family: 'proxima nova', Helvetica, Arial, sans-serif;
   font-size: 16px;
   color: #444;
@@ -1169,6 +1169,9 @@ select {
 select::-ms-expand {
   display: none;
   /* hide the default arrow in ie10 and ie11 */ }
+
+textarea {
+  min-height: 160px; }
 
 button, .button {
   font-family: 'proxima nova', Helvetica, Arial, sans-serif !important;
@@ -1211,30 +1214,85 @@ button, .button {
     button, .button {
       min-width: 184px; } }
 
-textarea,
-.form-wrapper .field-list textarea {
-  min-height: 12rem; }
+form {
+  width: 100%; }
+
+.field-wrapper {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  margin-bottom: 8px;
+  min-height: 48px;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap; }
+  @media (min-width: 600px) {
+    .field-wrapper {
+      -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap; } }
+  .field-wrapper label {
+    font-family: 'proxima nova', Helvetica, Arial, sans-serif !important;
+    letter-spacing: 0.125em;
+    text-transform: uppercase;
+    font-weight: bold;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    font-size: 12px;
+    padding: 16px 0 8px 0;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    -o-text-overflow: ellipsis;
+    text-overflow: ellipsis;
+    position: relative;
+    margin-right: 8px; }
+    @media (min-width: 600px) {
+      .field-wrapper label {
+        font-size: 14px;
+        -webkit-box-flex: 1;
+        -ms-flex: 1 0 88px;
+        flex: 1 0 88px; } }
+  .field-wrapper input, .field-wrapper textarea, .field-wrapper .button-container {
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 100%;
+    flex: 0 0 100%; }
+    @media (min-width: 600px) {
+      .field-wrapper input, .field-wrapper textarea, .field-wrapper .button-container {
+        -webkit-box-flex: 12;
+        -ms-flex: 12 1 88px;
+        flex: 12 1 88px; } }
+  .field-wrapper .button-container {
+    text-align: center; }
+
+/*
 
 .form-wrapper .field-list {
-  line-height: normal; }
+  line-height: normal;
+}
 
 .form-wrapper .field-list .field {
   position: relative;
-  margin: 0 0 24px; }
+  margin: 0 0 24px;
+}
 
 .form-wrapper .form-button-wrapper--align-center {
-  text-align: center; }
+  text-align: center;
+}
 
 .shopify-challenge__container input[type=submit].shopify-challenge__button {
   position: relative;
   left: 50%;
-  -webkit-transform: translateX(-50%);
-  -ms-transform: translateX(-50%);
-  transform: translateX(-50%); }
-  .shopify-challenge__container input[type=submit].shopify-challenge__button:hover {
-    text-decoration: underline; }
+  transform: translateX(-50%);
 
-.form-wrapper input[type=submit],
+  &:hover {
+    text-decoration: underline;
+  }
+}
+
+.form-wrapper input[type=submit], 
 .shopify-challenge__container input[type=submit].shopify-challenge__button {
   display: inline-block;
   width: auto;
@@ -1256,71 +1314,86 @@ textarea,
   -moz-appearance: none;
   appearance: none;
   font-size: 14px;
-  text-transform: none; }
+  text-transform: none;
+}
 
 .form-wrapper .error,
 .form-wrapper .errors ul li {
   color: red;
   font-size: 14px;
   list-style: none;
-  margin: 0; }
+  margin: 0;
+}
 
 .form-inner-wrapper .errors ul {
-  margin-left: 0; }
+  margin-left: 0;
+}
 
 .form-wrapper .success {
   color: green;
   background: lightgreen;
   padding: 5px;
-  text-align: center; }
+  text-align: center;
+}
 
 #challenge .shopify-challenge__container {
-  margin-top: 4rem; }
-  @media (min-width: 600px) {
-    #challenge .shopify-challenge__container {
-      margin-top: 8rem; } }
-  @media (min-width: 959px) {
-    #challenge .shopify-challenge__container {
-      margin-top: 12rem; } }
+  margin-top: 4rem;
+
+  @media (min-width: $screen-tablet) {
+    margin-top: 8rem;
+  }
+  @media (min-width: $screen-desktop-1) {
+    margin-top: 12rem;
+  }
+}
 
 ul.shopify-challenge__error {
-  text-align: center; }
+  text-align: center;
+}
+
+
+
+
 
 .form-submission-text {
-  margin-top: 0; }
-  .form-submission-text p {
+  margin-top: 0;
+
+  p {
     text-align: center;
     font-size: 2rem;
-    font-family: 'proxima nova', Helvetica, Arial, sans-serif !important;
-    letter-spacing: 0.125em;
-    text-transform: uppercase;
-    font-weight: bold;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-    text-rendering: optimizeLegibility; }
+    @include subHeader;
+  }
+}
+
+
+
 
 .cn-emailForm {
-  margin-top: 2rem; }
-
+  margin-top: 2rem;
+}
 .cn-emailForm input {
   width: 66%;
-  margin-bottom: 0; }
-
+  margin-bottom: 0;
+}
 .cn-emailForm input label {
-  opacity: 0.5; }
-
+  opacity: 0.5;
+}
 .cn-emailForm input[type=submit] {
   border-color: #444;
   margin-left: 2%;
   width: 32%;
-  padding: 0.7rem 1rem !important; }
+  padding: 0.7rem 1rem !important;
+}
 
-@media (min-width: 600px) and (max-width: 959px) {
+@media (min-width: $screen-tablet) and (max-width: $screen-desktop-1) {
   .cn-emailForm {
     display: inline-block;
     vertical-align: top;
-    margin-right: 2%; } }
+    margin-right: 2%;
+  }
+}
 
+*/
 .cn-home__hero {
   margin-bottom: 64px;
   position: relative;
@@ -2268,6 +2341,9 @@ ul.shopify-challenge__error {
   .cn-faqpage h2:first-child {
     margin-top: 1rem; }
 
+.cn-contactpage {
+  margin-bottom: 96px; }
+
 .cn-contactpage__map {
   position: relative;
   margin-bottom: 3rem;
@@ -2288,6 +2364,43 @@ ul.shopify-challenge__error {
         .cn-contactpage__map iframe.cn-imageFrame {
           padding: 10px; } }
 
+/*
+.field-list {
+  label {
+    @include subHeader;
+    font-size: 12px;
+    display: inline-block;
+
+    //flex: 0 0 $colWidthDetails;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+    margin-right: 10px;
+    width: 104px;
+
+    @media (min-width: $screen-tablet) and (max-width: $screen-desktop-1) {
+      //flex: 0 0 $labelWidthDetailsTablet;
+      text-align: right;
+    }
+
+    @media (min-width: $screen-tablet) {
+      font-size: 14px;
+    }
+  }
+
+  input {
+    width: 288px;
+  }
+
+  textarea {
+    width: 288px;
+    height: 200px;
+    background-color: transparent;
+  }
+}
+
+*/
 .lookbook {
   font-size: 0; }
 

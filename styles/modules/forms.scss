@@ -1,4 +1,4 @@
-select, input {
+select, input, textarea {
   @include defaultText;
   min-width: 88px;
   height: 48px;
@@ -22,6 +22,10 @@ select {
 
 select::-ms-expand {
   display: none; /* hide the default arrow in ie10 and ie11 */
+}
+
+textarea {
+  min-height: 160px;
 }
 
 button, .button {
@@ -69,55 +73,66 @@ button, .button {
 
 
 
-// BEKOW THI LINE ARE OLD FORM STYLES
+form {
+  width: 100%;
+}
 
 
+// NOT used on product page because that layout varies from normal form fields
+// (no inputs or textareas on the product page allow for a more condensed form layout)
+.field-wrapper {
+  width: 100%;
+  display: flex;
+  margin-bottom: 8px;
+  min-height: 48px;
 
-//input,
-//textarea,
-//.form-wrapper .field-list .field .field-element {
-//  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
-//  font-size: 1.6rem;
-//  padding: 0.7rem 1rem;
-//  color: #666;
-//  border: 1px solid $border-color;
-//  background-color: #fff;
-//  vertical-align: middle;
-//  border-radius: 4px;
-//  height: 3.4rem;
-//  margin-bottom: 1rem;
-//  max-width: 100%;
-//}
+  flex-wrap: wrap;
+  @media (min-width: $screen-tablet) {
+    flex-wrap: nowrap;
+  }
 
-textarea,
-.form-wrapper .field-list textarea {
-  min-height: 12rem;
+  label {
+    @include subHeader;
+    font-size: 12px;
+    padding: 16px 0 8px 0;
+    flex: 0 0 100%;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+    margin-right: 8px;
+
+    @media (min-width: $screen-tablet) {
+      font-size: 14px;
+      flex: 1 0 88px;
+    }
+  }
+
+  input, textarea, .button-container {
+    flex: 0 0 100%;
+    @media (min-width: $screen-tablet) {
+      flex: 12 1 88px;
+    }
+  }
+
+  .button-container {
+    text-align: center;
+  }
 }
 
 
 
 
 
+// BELOW THI LINE ARE OLD FORM STYLES
 
 
 
 
-//.form-wrapper .field-list .field .field-element {
-//  width: 100%;
-//  padding: 12px;
-//  margin: 6px 0 4px;
-//  border: 1px solid #ccc;
-//  background: #fafafa;
-//  color: #000;
-//  font-family: sans-serif;
-//  font-size: 12px;
-//  line-height: normal;
-//  box-sizing: border-box;
-//  border-radius: 2px;
-//}
 
 
 
+/*
 
 .form-wrapper .field-list {
   line-height: normal;
@@ -242,3 +257,5 @@ ul.shopify-challenge__error {
     margin-right: 2%;
   }
 }
+
+*/
