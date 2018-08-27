@@ -18,9 +18,31 @@ body {
   background-color: #efefef;
 }
 
+
 main {
   overflow: hidden;
 }
+.main--top {
+  margin-top: 48px;
+
+  @media (min-width: $screen-tablet) {
+    margin-top: 64px;
+  }
+  @media (min-width: $screen-desktop-1) {
+    margin-top: 80px;
+  }
+}
+.main--bottom {
+  margin-bottom: 64px;
+
+  @media (min-width: $screen-tablet) {
+    margin-bottom: 88px;
+  }
+  @media (min-width: $screen-desktop-1) {
+    margin-bottom: 128px;
+  }
+}
+
 
 a {
   color: #000;
@@ -53,7 +75,8 @@ a.rss:hover       { background-color: #ff9900 !important; }
   width: 100%;
   max-width: 1440px;
   padding: 0 8px;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
   position: relative;
   font-size: 0;
   z-index: 1;
@@ -67,14 +90,7 @@ a.rss:hover       { background-color: #ff9900 !important; }
 }
 
 .cn-wrapper--top {
-  margin-top: 40px;
-
-  @media (min-width: $screen-tablet) {
-    margin-top: 80px;
-  }
-  @media (min-width: $screen-desktop-1) {
-    margin-top: 64px;
-  }
+  @extend .main--top;
 }
 
 .cn-wrapper--narrow {
@@ -100,8 +116,8 @@ img.full {
 //this creates offset for anchor tags so they dont hide under mini menu
 .cn-anchor {
   display: block;
-  position: relative;
-  top: -100px;
+  //position: relative;
+  //top: -100px;
   visibility: hidden;
 }
 

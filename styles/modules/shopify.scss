@@ -1,0 +1,17 @@
+.shopify-challenge__container {
+  margin: 96px auto 200px auto !important;
+
+  .g-recaptcha {
+    margin: 0 0 32px 0 !important;
+  }
+
+  .shopify-challenge__error {
+    color: red;
+    font-weight: bold;
+  }
+}
+
+
+.btn {
+  @extend .button;
+}

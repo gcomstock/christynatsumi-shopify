@@ -12,55 +12,25 @@
   {% endif %}
 
   <div class="field-wrapper">
-    <label class="title" for="contactFormName">Name*</label>
-    <input class="full" type="text" id="contactFormName" name="contact[name]" required>
+    <label for="contactFormName">Name*</label>
+    <input type="text" id="contactFormName" name="contact[name]" required>
   </div>
   <div class="field-wrapper">
-    <label class="title" for="contactFormEmail">Email*</label>
-    <input class="full" type="email" id="contactFormEmail" name="contact[email]" required>
+    <label for="contactFormEmail">Email*</label>
+    <input type="email" id="contactFormEmail" name="contact[email]" required>
   </div>
   <div class="field-wrapper">
-    <label class="title" for="contactFormSubject">Subject*</label>
-    <input class="full" type="text" id="contactFormSubject" name="contact[subject]" required>
+    <label for="contactFormSubject">Subject*</label>
+    <input type="text" id="contactFormSubject" name="contact[subject]" required>
   </div>
   <div class="field-wrapper">
-    <label class="title" for="contactFormMessage">Message*</label>
-    <textarea class="full" id="contactFormMessage" name="contact[message]" required></textarea>
+    <label for="contactFormMessage">Message*</label>
+    <textarea id="contactFormMessage" name="contact[message]" required></textarea>
   </div>
-  <div class="field-wrapper">
+  <div class="field-wrapper extra">
     <label></label>
     <div class="button-container">
       <input type="submit" class="button" id="contactFormSubmit" value="Submit" />
     </div>
   </div>
 {% endform %}
-
-
-<script>
-  (function() {
-    $(".contact-form-wrapper form#contact_form").validate({
-      // Specify validation rules
-      rules: {
-        // The key name on the left side is the name attribute
-        // of an input field. Validation rules are defined on the right side
-        "contact[name]": "required",
-        "contact[email]": {
-          required: true,
-          email: true
-        },
-        "contact[subject]": "required",
-        "contact[message]": "required"
-      },
-      // Specify validation error messages
-      messages: {
-        "contact[name]": "Please enter your name",
-        "contact[email]": "Please enter a valid email address",
-        "contact[subject]": "Please enter your subject",
-        "contact[message]": "Please enter your message"
-      },
-      submitHandler: function(form) {
-        form.submit();
-      }
-    });
-  })();
-</script>

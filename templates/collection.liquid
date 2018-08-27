@@ -15,6 +15,10 @@
   var requestInFlight = false;
 
   function handleScroll() {
+    if ($('.pagination').length < 1) {
+      // this page has no pagination, no need to lazyload
+      return false
+    }
 
     if( window.pageYOffset > $('.pagination').offset().top - window.innerHeight ) {
       scrollNode = $('.next').last();
@@ -46,14 +50,13 @@
    $(document).ready(function () {
      $(window).scroll(function(){
        handleScroll();
-       //$.doTimeout( 'scroll', 200, ScrollExecute);
      });
    });
 </script>
 
 
 
-<main class="cn-wrapper cn-wrapper--top">
+<main class="main--top main--bottom cn-wrapper">
   <h1>{{ collection.title }}</h1>
 
   {% paginate collection.products by 48 %}

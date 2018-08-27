@@ -12,7 +12,7 @@ var timeouts = [];
 
   window.onscroll = function() {
     if (typeof highlightCustomNav !== 'undefined') {
-      highlightCustomNav();
+      // highlightCustomNav();
     }
     if (typeof checkProductListImages !== 'undefined') {
       checkProductListImages();

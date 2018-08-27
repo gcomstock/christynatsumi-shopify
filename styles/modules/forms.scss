@@ -1,14 +1,33 @@
+form {
+  width: 100%;
+
+  p.success {
+    color: green;
+    background: lightgreen;
+    padding: 8px;
+    text-align: center;
+  }
+
+  p.error {
+    color: darkred;
+    background: lightpink;
+    padding: 8px;
+    text-align: center;
+  }
+}
+
 select, input, textarea {
   @include defaultText;
   min-width: 88px;
   height: 48px;
-  padding: 0 16px;
+  padding: 13px 16px;
   border-radius: 0;
   background-color: transparent;
   border: 1px solid $border-color;
 }
 
 select {
+  cursor: pointer;
   position: relative;
   padding: 0 48px 0 16px;
   -webkit-appearance: none;
@@ -73,32 +92,29 @@ button, .button {
 
 
 
-form {
-  width: 100%;
-}
-
-
 // NOT used on product page because that layout varies from normal form fields
 // (no inputs or textareas on the product page allow for a more condensed form layout)
 .field-wrapper {
   width: 100%;
   display: flex;
-  margin-bottom: 8px;
+  margin-bottom: 24px;
   min-height: 48px;
+  align-items: center;
 
   flex-wrap: wrap;
   @media (min-width: $screen-tablet) {
     flex-wrap: nowrap;
+    margin-bottom: 8px;
+  }
+
+  &.extra {
+    margin-top: 24px;
   }
 
   label {
     @include subHeader;
     font-size: 12px;
-    padding: 16px 0 8px 0;
     flex: 0 0 100%;
-    white-space: nowrap;
-    overflow: hidden;
-    text-overflow: ellipsis;
     position: relative;
     margin-right: 8px;
 
@@ -108,131 +124,35 @@ form {
     }
   }
 
-  input, textarea, .button-container {
+  input, textarea, select, div {
     flex: 0 0 100%;
     @media (min-width: $screen-tablet) {
-      flex: 12 1 88px;
+      flex: 3 1 200px;
     }
   }
 
   .button-container {
     text-align: center;
   }
+  .checkbox-container {
+    display: flex;
+    align-items: center;
+
+    input {
+      flex: 0 0 32px;
+    }
+    p {
+      flex: 1 1 100px;
+      margin-bottom: 0;
+    }
+  }
 }
-
-
-
-
-
-// BELOW THI LINE ARE OLD FORM STYLES
-
-
 
 
 
 
 
 /*
-
-.form-wrapper .field-list {
-  line-height: normal;
-}
-
-.form-wrapper .field-list .field {
-  position: relative;
-  margin: 0 0 24px;
-}
-
-.form-wrapper .form-button-wrapper--align-center {
-  text-align: center;
-}
-
-.shopify-challenge__container input[type=submit].shopify-challenge__button {
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-
-  &:hover {
-    text-decoration: underline;
-  }
-}
-
-.form-wrapper input[type=submit], 
-.shopify-challenge__container input[type=submit].shopify-challenge__button {
-  display: inline-block;
-  width: auto;
-  height: auto;
-  padding: 1em 2.5em;
-  color: #fff;
-  background-color: #272727;
-  border-width: 0;
-  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
-  line-height: 1em;
-  font-weight: normal;
-  font-style: normal;
-  letter-spacing: 0px;
-  text-align: center;
-  text-decoration: none;
-  cursor: pointer;
-  outline: none;
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  appearance: none;
-  font-size: 14px;
-  text-transform: none;
-}
-
-.form-wrapper .error,
-.form-wrapper .errors ul li {
-  color: red;
-  font-size: 14px;
-  list-style: none;
-  margin: 0;
-}
-
-.form-inner-wrapper .errors ul {
-  margin-left: 0;
-}
-
-.form-wrapper .success {
-  color: green;
-  background: lightgreen;
-  padding: 5px;
-  text-align: center;
-}
-
-#challenge .shopify-challenge__container {
-  margin-top: 4rem;
-
-  @media (min-width: $screen-tablet) {
-    margin-top: 8rem;
-  }
-  @media (min-width: $screen-desktop-1) {
-    margin-top: 12rem;
-  }
-}
-
-ul.shopify-challenge__error {
-  text-align: center;
-}
-
-
-
-
-
-.form-submission-text {
-  margin-top: 0;
-
-  p {
-    text-align: center;
-    font-size: 2rem;
-    @include subHeader;
-  }
-}
-
-
-
-
 .cn-emailForm {
   margin-top: 2rem;
 }
@@ -257,5 +177,4 @@ ul.shopify-challenge__error {
     margin-right: 2%;
   }
 }
-
 */

@@ -54,12 +54,9 @@
 
   {% comment %}
     Template-specific js
-    (additional-methods.min.js is for jquery validate)
   {% endcomment %}
 
   {{ 'fastclick.min.js' | asset_url | script_tag }}
-  {{ 'jquery.validate.min.js' | asset_url | script_tag }}
-  {{ 'additional-methods.min.js' | asset_url | script_tag }}
   {{ 'site.js' | asset_url | script_tag }}
 
   <script>

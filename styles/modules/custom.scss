@@ -24,23 +24,6 @@
   ol, ul {
     margin-left: 3rem;
   }
-
-  .form-inner-wrapper {
-    font-size: 0;
-
-    .select {
-      display: inline-block;
-      width: 49%;
-
-      &:nth-child(even) {
-        margin-right: 2%;
-      }
-    }
-
-    select {
-      width: 100%;
-    }
-  }
 }
 
 
