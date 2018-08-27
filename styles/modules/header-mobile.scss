@@ -46,11 +46,11 @@
 }
 
 .cnew-header-mobile__navbtn__icon--hamburger {
-  background-image: url("{{ 'christy-natsumi-icon--hamburger.png' | asset_url }}");
+  background-image: url("{{ 'icon--hamburger.png' | asset_url }}");
 }
 
 .cnew-header-mobile__navbtn__icon--close {
-  background-image: url("{{ 'christy-natsumi-icon--close.png' | asset_url }}");
+  background-image: url("{{ 'icon--close.png' | asset_url }}");
 }
 
 
@@ -69,7 +69,7 @@
   cursor: pointer;
   position: relative;
   background-size: 100%;
-  background-image: url("{{ 'christy-natsumi-icon--cart.png' | asset_url }}");
+  background-image: url("{{ 'icon--cart.png' | asset_url }}");
 }
 
 .cnew-header-mobile__cart__count {

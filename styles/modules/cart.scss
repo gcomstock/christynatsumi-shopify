@@ -120,7 +120,7 @@
 .cart__item__remove {
   width: 48px;
   height: 48px;
-  background-image: url('christy-natsumi-icon-close.png');
+  background-image: url("{{ 'icon--close.png' | asset_url }}");
   background-size: 100%;
   opacity: 0.4;
   @include fx-allFast;

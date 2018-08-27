@@ -847,10 +847,10 @@ img.full {
     transform: scale3d(1, 1, 1); }
 
 .cnew-header-mobile__navbtn__icon--hamburger {
-  background-image: url("{{ 'christy-natsumi-icon--hamburger.png' | asset_url }}"); }
+  background-image: url("{{ 'icon--hamburger.png' | asset_url }}"); }
 
 .cnew-header-mobile__navbtn__icon--close {
-  background-image: url("{{ 'christy-natsumi-icon--close.png' | asset_url }}"); }
+  background-image: url("{{ 'icon--close.png' | asset_url }}"); }
 
 .cnew-header-mobile__logo {
   width: 150px;
@@ -864,7 +864,7 @@ img.full {
   cursor: pointer;
   position: relative;
   background-size: 100%;
-  background-image: url("{{ 'christy-natsumi-icon--cart.png' | asset_url }}"); }
+  background-image: url("{{ 'icon--cart.png' | asset_url }}"); }
 
 .cnew-header-mobile__cart__count {
   background-color: red;
@@ -1725,11 +1725,11 @@ button, .button, .btn {
     max-height: 100%; }
 
 .cn-heroimage--about {
-  background-image: url("christynatsumi-about-heroimage-mobile.jpg"); }
+  background-image: url("{{ 'christynatsumi-about-heroimage-mobile.jpg' | asset_url }}"); }
   @media (min-width: 600px) {
     .cn-heroimage--about {
       padding-bottom: 48%;
-      background-image: url("christynatsumi-about-heroimage.jpg"); } }
+      background-image: url("{{ 'christynatsumi-about-heroimage.jpg' | asset_url }}"); } }
 
 .cn-aboutpage {
   margin-bottom: 96px; }
@@ -1870,7 +1870,7 @@ button, .button, .btn {
 .cart__item__remove {
   width: 48px;
   height: 48px;
-  background-image: url("christy-natsumi-icon-close.png");
+  background-image: url("{{ 'icon--close.png' | asset_url }}");
   background-size: 100%;
   opacity: 0.4;
   -webkit-transition: all 200ms ease;
@@ -2155,11 +2155,11 @@ button, .button, .btn {
     text-align: center; }
 
 .cn-heroimage--custom {
-  background-image: url("christynatsumi-custom-heroimage-mobile.jpg"); }
+  background-image: url("{{ 'christynatsumi-custom-heroimage-mobile.jpg' | asset_url }}"); }
   @media (min-width: 600px) {
     .cn-heroimage--custom {
       padding-bottom: 48%;
-      background-image: url("christynatsumi-custom-heroimage.jpg"); } }
+      background-image: url("{{ 'christynatsumi-custom-heroimage.jpg' | asset_url }}"); } }
 
 .cn-custompage h2 {
   border-bottom: 1px solid #444;
@@ -2536,9 +2536,9 @@ button, .button, .btn {
       .cn-categoryproduct .product-mark {
         background-position: 1vw 1vw; } }
     .cn-categoryproduct .product-mark.sold-out {
-      background-image: url("status_soldout.png"); }
+      background-image: url("{{ 'status--soldout.png' | asset_url }}"); }
     .cn-categoryproduct .product-mark.sale {
-      background-image: url("status_sale.png"); }
+      background-image: url("{{ 'status--sale.png' | asset_url }}"); }
 
 .cn-categoryproduct__img {
   position: relative;
