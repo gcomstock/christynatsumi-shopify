@@ -120,10 +120,13 @@
 .cn-home__wedding-rings__img {
   @include homeBlock__img;
 
+  padding-bottom: 75%;
+  background-image: url("{{ 'christy-natsumi-home-wedding--mobile.jpg' | asset_url }}");
   @media (min-width: $screen-tablet) {
+    margin-right: 8px;
+
     width: 45%;
     padding-bottom: 58%;
-    margin-right: 8px;
     background-image: url("{{ 'christy-natsumi-home-wedding--web.jpg' | asset_url }}");
   }
   @media (min-width: $screen-desktop) {
@@ -162,11 +165,13 @@
 .cn-home__new-arrivals__img {
   @include homeBlock__img;
 
-
+  padding-bottom: 66%;
+  background-image: url("{{ 'christy-natsumi-home-mens--mobile.jpg' | asset_url }}");
   @media (min-width: $screen-tablet) {
+    margin-right: 8px;
+
     width: 60%;
     padding-bottom: 38%;
-    margin-right: 8px;
     background-image: url("{{ 'christy-natsumi-home-mens--web.jpg' | asset_url }}");
   }
   @media (min-width: $screen-desktop) {
@@ -231,13 +236,15 @@
   @include homeBlock__img;
   order: 1;
 
+  padding-bottom: 120%;
+  background-image: url("{{ 'christy-natsumi-home-collection--mobile.jpg' | asset_url }}");
   @media (min-width: $screen-tablet) {
     order: 2;
     margin-left: 8px;
-    background-image: url("{{ 'christy-natsumi-home-collection--web.jpg' | asset_url }}");
 
     width: 42%;
     padding-bottom: 64%;
+    background-image: url("{{ 'christy-natsumi-home-collection--web.jpg' | asset_url }}");
   }
   @media (min-width: $screen-desktop) {
     width: 32%;

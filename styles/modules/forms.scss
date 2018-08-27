@@ -33,7 +33,7 @@ select {
   -webkit-appearance: none;
   -moz-appearance: none;
   appearance: none;
-  background-image: url('select-arrow-2.png');
+  background-image: url("{{ 'icon--select-arrow.png' | asset_url }}");
   background-position: calc(100% - 16px);
   background-size: 12px 6px;
   background-repeat: no-repeat;
@@ -68,13 +68,21 @@ button, .button {
     background-color: $btn-highlight;
   }
 
-  &.dark {
+  &.button--dark {
     background-color: #444;
     color: #FFF;
     border-color: #000;
 
     &:hover {
       color: $btn-highlight-dark;
+    }
+  }
+
+  &.button--footer {
+    &:hover {
+      color: $btn-highlight-dark;
+      border-color: $btn-highlight-dark;
+      background-color: transparent;
     }
   }
 
@@ -147,34 +155,3 @@ button, .button {
     }
   }
 }
-
-
-
-
-
-/*
-.cn-emailForm {
-  margin-top: 2rem;
-}
-.cn-emailForm input {
-  width: 66%;
-  margin-bottom: 0;
-}
-.cn-emailForm input label {
-  opacity: 0.5;
-}
-.cn-emailForm input[type=submit] {
-  border-color: #444;
-  margin-left: 2%;
-  width: 32%;
-  padding: 0.7rem 1rem !important;
-}
-
-@media (min-width: $screen-tablet) and (max-width: $screen-desktop-1) {
-  .cn-emailForm {
-    display: inline-block;
-    vertical-align: top;
-    margin-right: 2%;
-  }
-}
-*/
