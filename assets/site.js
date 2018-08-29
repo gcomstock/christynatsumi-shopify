@@ -24,6 +24,8 @@ var timeouts = [];
   $('.cnew-header-mobile__navbtn').on('click', function(){
     $('.cnew-header-mobile__navbtn__icon').toggleClass('active');
     $('.cnew-header-mobile-drawer').toggleClass('expanded');
+
+    $('body').toggleClass('mobilenav--expanded');
   });
 
 

@@ -483,6 +483,9 @@ body {
   font-family: 'proxima nova', Helvetica, Arial, sans-serif;
   color: #444;
   background-color: #efefef; }
+  body .mobilenav--expanded {
+    height: 100%;
+    overflow: hidden; }
 
 main {
   overflow: hidden; }
@@ -894,7 +897,8 @@ img.full {
   pointer-events: none;
   -webkit-transition: opacity .25s ease;
   -o-transition: opacity .25s ease;
-  transition: opacity .25s ease; }
+  transition: opacity .25s ease;
+  -webkit-overflow-scrolling: touch; }
   .cnew-header-mobile-drawer.expanded {
     opacity: 1;
     pointer-events: all; }

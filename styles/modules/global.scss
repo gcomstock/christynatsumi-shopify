@@ -16,6 +16,12 @@ body {
   font-family: 'proxima nova', Helvetica, Arial, sans-serif;
   color: #444;
   background-color: #efefef;
+
+
+  .mobilenav--expanded {
+    height: 100%;
+    overflow: hidden;
+  }
 }
 
 
