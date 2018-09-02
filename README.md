@@ -8,13 +8,11 @@ https://www.shopify.com/partners/blog/live-reload-shopify-sass
 
 
 
+
 ###Install Shopify Theme Kit
 
 (make a new config.yml to give auth for theme changes)
 
 Commands:
-$ theme upload --env=development
-$ theme watch
-
-
-
+$ theme deploy --env=dev —-nodelete
+$ theme watch --env=dev
