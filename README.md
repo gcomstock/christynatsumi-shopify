@@ -1,17 +1,12 @@
 # Christy Natsumi Jewelry
 
-## Setup:
 
-Because Shopify does not have a local dev environment, I followed this tutorial to process scss, watch local changes, push them to Shopify, and hot reload the page.
-
-https://www.shopify.com/partners/blog/live-reload-shopify-sass
+##Download Prepros and add project folder. All settings are already set in prepros-6.config
 
 
+##Install Shopify Theme Kit
 
-
-###Install Shopify Theme Kit
-
-(make a new config.yml to give auth for theme changes)
+make a new config.yml to give auth for theme changes. Theme IDs for dev and prod are in their respective Shopify "edit code" URLs
 
 Commands:
 $ theme deploy --env=dev —-nodelete
