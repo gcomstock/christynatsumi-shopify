@@ -1,0 +1,91 @@
+.cn-home__hero {
+  margin-bottom: 64px;
+  position: relative;
+  text-align: center;
+  background-size: cover;
+  display: block;
+
+  width: 100%;
+  padding-bottom: 100%;
+  background-image: url("{{ 'christy-natsumi-home-hero--mobile.jpg' | asset_url }}");
+  background-position: center;
+
+  @media (min-width: $screen-tablet) {
+    padding-bottom: 80%;
+  }
+  @media (min-width: $screen-desktop) {
+    background-image: url("{{ 'christy-natsumi-home-hero--web.jpg' | asset_url }}");
+    padding-bottom: 40%;
+  }
+}
+
+.cn-home__hero__text {
+  position: absolute;
+  bottom: 16px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  @media (min-width: $screen-tablet) {
+    transform: translateX(0);
+    left: auto;
+    right: 32px;
+    bottom: 32px;
+  }
+  @media (min-width: $screen-desktop) {
+    right: 64px;
+    bottom: 64px;
+  }
+}
+
+.cn-home__hero__text__intro {
+  @include serifHeader;
+  white-space: nowrap;
+  color: #fff;
+}
+
+.cn-home__hero__text__subhead {
+  @include subHeader;
+  font-size: 12px;
+  color: #fff;
+
+  @media (min-width: $screen-tablet) {
+    font-size: 14px;
+  }
+  @media (min-width: $screen-desktop) {
+  }
+}
+
+
+
+
+.cn-home__customer-favorites {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-flow: row wrap;
+  margin-bottom: 96px;
+  text-align: center;
+
+  @media (min-width: $screen-tablet) {
+    margin-bottom: 192px;
+
+    .cn-categoryproduct:nth-child(4) {
+      display: none;
+    }
+  }
+  @media (min-width: $screen-desktop) {
+    .cn-categoryproduct:nth-child(4) {
+      display: inline-block;
+    }
+  }
+}
+
+.cn-home__customer-favorites__text {
+  @include serifHeader;
+  margin-top: 16px;
+  margin-bottom: 24px;
+}
+
+.cn-home__customer-favorites__imgs {
+  width: 100%;
+}

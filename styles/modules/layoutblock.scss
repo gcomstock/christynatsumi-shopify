@@ -1,0 +1,117 @@
+.cn-layoutBlock {
+  display: flex;
+  flex-flow: row wrap;
+  margin-bottom: 96px;
+  justify-content: center;
+
+  @media (min-width: 600px) {
+    flex-flow: nowrap;
+    margin-bottom: 192px;
+  }
+  @media (min-width: 1000px) {
+  }
+}
+
+.cn-layoutBlock__img {
+  text-align: center;
+
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
+.cn-layoutBlock__container {
+  flex: 0 0 100%;
+  align-self: center;
+  text-align: center;
+  margin: 0 8px;
+  @media (min-width: 600px) {
+    flex: 0 2 480px;
+    text-align: left;
+    margin: 0 32px 0 16px;
+  }
+}
+
+
+.cn-layoutBlock__container__title {
+  @include serifHeader;
+  margin-top: 16px;
+  margin-bottom: 24px;
+
+  br {
+    display: none;
+  }
+
+  @media (min-width: $screen-tablet) {
+    margin-bottom: 32px;
+
+    br {
+      display: block;
+    }
+  }
+  @media (min-width: $screen-desktop) {
+  }
+}
+
+
+
+
+
+
+
+// BEGIN MODIFIER CLASSES
+
+.cn-layoutBlock--smallBottom {
+  @media (min-width: 600px) {
+    margin-bottom: 64px;
+  }
+}
+
+
+.cn-layoutBlock--reverse {
+  flex-direction: row-reverse;
+
+  .cn-layoutBlock__container {
+    @media (min-width: 600px) {
+      text-align: right;
+      margin: 0 16px 0 32px;
+    }
+  }
+}
+
+
+// keeps container more rigid in width so image resizes more
+.cn-layoutBlock--withText {
+  .cn-layoutBlock__container {
+    @media (min-width: 600px) {
+      text-align: left;
+      flex: 1 0 400px;
+      max-width: 600px;
+    }
+  }
+
+  p {
+    text-align: left;
+  }
+}
+
+
+.cn-layoutBlock--flexEnd {
+  @media (min-width: 600px) {
+    justify-content: flex-end;
+  }
+}
+
+
+.cn-layoutBlock--flexStart {
+  @media (min-width: 600px) {
+    justify-content: flex-start;
+  }
+}
+
+.cn-layoutBlock--marginLeft10 {
+  @media (min-width: 600px) {
+    margin-left: 6%;
+  }
+}

@@ -1058,6 +1058,111 @@ a.cnew-header-mobile-drawer__content__nosubnav {
 .row--imgRow--noBottom {
   margin-bottom: 0; }
 
+.cn-layoutBlock {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-flow: row wrap;
+  flex-flow: row wrap;
+  margin-bottom: 96px;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center; }
+  @media (min-width: 600px) {
+    .cn-layoutBlock {
+      -ms-flex-flow: nowrap;
+      flex-flow: nowrap;
+      margin-bottom: 192px; } }
+
+.cn-layoutBlock__img {
+  text-align: center; }
+  .cn-layoutBlock__img img {
+    max-width: 100%;
+    height: auto; }
+
+.cn-layoutBlock__container {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 0 100%;
+  flex: 0 0 100%;
+  -ms-flex-item-align: center;
+  align-self: center;
+  text-align: center;
+  margin: 0 8px; }
+  @media (min-width: 600px) {
+    .cn-layoutBlock__container {
+      -webkit-box-flex: 0;
+      -ms-flex: 0 2 480px;
+      flex: 0 2 480px;
+      text-align: left;
+      margin: 0 32px 0 16px; } }
+
+.cn-layoutBlock__container__title {
+  font-family: 'ahpuch apollyon', serif;
+  font-weight: normal;
+  font-size: 36px;
+  line-height: 36px;
+  color: #666;
+  margin-top: 16px;
+  margin-bottom: 24px; }
+  @media (min-width: 600px) {
+    .cn-layoutBlock__container__title {
+      font-size: 48px;
+      line-height: 44px; } }
+  @media (min-width: 960px) {
+    .cn-layoutBlock__container__title {
+      font-size: 72px;
+      line-height: 64px; } }
+  .cn-layoutBlock__container__title br {
+    display: none; }
+  @media (min-width: 600px) {
+    .cn-layoutBlock__container__title {
+      margin-bottom: 32px; }
+      .cn-layoutBlock__container__title br {
+        display: block; } }
+
+@media (min-width: 600px) {
+  .cn-layoutBlock--smallBottom {
+    margin-bottom: 64px; } }
+
+.cn-layoutBlock--reverse {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: reverse;
+  -ms-flex-direction: row-reverse;
+  flex-direction: row-reverse; }
+  @media (min-width: 600px) {
+    .cn-layoutBlock--reverse .cn-layoutBlock__container {
+      text-align: right;
+      margin: 0 16px 0 32px; } }
+
+@media (min-width: 600px) {
+  .cn-layoutBlock--withText .cn-layoutBlock__container {
+    text-align: left;
+    -webkit-box-flex: 1;
+    -ms-flex: 1 0 400px;
+    flex: 1 0 400px;
+    max-width: 600px; } }
+
+.cn-layoutBlock--withText p {
+  text-align: left; }
+
+@media (min-width: 600px) {
+  .cn-layoutBlock--flexEnd {
+    -webkit-box-pack: end;
+    -ms-flex-pack: end;
+    justify-content: flex-end; } }
+
+@media (min-width: 600px) {
+  .cn-layoutBlock--flexStart {
+    -webkit-box-pack: start;
+    -ms-flex-pack: start;
+    justify-content: flex-start; } }
+
+@media (min-width: 600px) {
+  .cn-layoutBlock--marginLeft10 {
+    margin-left: 6%; } }
+
 .cn-footer {
   border-top: 2px solid #000;
   background-color: #222;
@@ -1378,164 +1483,7 @@ button, .button, .btn {
     .cn-home__hero__text__subhead {
       font-size: 14px; } }
 
-.cn-home__wedding-rings {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-flow: row wrap;
-  flex-flow: row wrap;
-  margin-bottom: 96px; }
-  @media (min-width: 600px) {
-    .cn-home__wedding-rings {
-      margin-bottom: 192px; } }
-  @media (min-width: 600px) {
-    .cn-home__wedding-rings {
-      margin-bottom: 64px;
-      -webkit-box-pack: end;
-      -ms-flex-pack: end;
-      justify-content: flex-end; } }
-  @media (min-width: 960px) {
-    .cn-home__wedding-rings {
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
-      justify-content: center; } }
-
-.cn-home__wedding-rings__img {
-  width: 100%;
-  padding-bottom: 50%;
-  background-color: #cccccc;
-  background-size: cover;
-  padding-bottom: 75%;
-  background-image: url("{{ 'christy-natsumi-home-wedding--mobile.jpg' | asset_url }}"); }
-  @media (min-width: 600px) {
-    .cn-home__wedding-rings__img {
-      margin-right: 8px;
-      width: 45%;
-      padding-bottom: 58%;
-      background-image: url("{{ 'christy-natsumi-home-wedding--web.jpg' | asset_url }}"); } }
-  @media (min-width: 960px) {
-    .cn-home__wedding-rings__img {
-      width: 40%;
-      padding-bottom: 50%; } }
-
-.cn-home__wedding-rings__text {
-  width: 100%;
-  text-align: center; }
-  @media (min-width: 600px) {
-    .cn-home__wedding-rings__text {
-      width: 40%;
-      margin-left: 8px;
-      text-align: left; } }
-
-.cn-home__wedding-rings__text__title {
-  font-family: 'ahpuch apollyon', serif;
-  font-weight: normal;
-  font-size: 36px;
-  line-height: 36px;
-  color: #666;
-  margin-top: 16px;
-  margin-bottom: 24px; }
-  @media (min-width: 600px) {
-    .cn-home__wedding-rings__text__title {
-      font-size: 48px;
-      line-height: 44px; } }
-  @media (min-width: 960px) {
-    .cn-home__wedding-rings__text__title {
-      font-size: 72px;
-      line-height: 64px; } }
-  .cn-home__wedding-rings__text__title br {
-    display: none; }
-  @media (min-width: 600px) {
-    .cn-home__wedding-rings__text__title {
-      margin-bottom: 32px; }
-      .cn-home__wedding-rings__text__title br {
-        display: block; } }
-
-.cn-home__new-arrivals {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-flow: row wrap;
-  flex-flow: row wrap;
-  margin-bottom: 96px; }
-  @media (min-width: 600px) {
-    .cn-home__new-arrivals {
-      margin-bottom: 192px; } }
-  @media (min-width: 960px) {
-    .cn-home__new-arrivals {
-      -webkit-box-pack: end;
-      -ms-flex-pack: end;
-      justify-content: flex-end; } }
-
-.cn-home__new-arrivals__img {
-  width: 100%;
-  padding-bottom: 50%;
-  background-color: #cccccc;
-  background-size: cover;
-  padding-bottom: 66%;
-  background-image: url("{{ 'christy-natsumi-home-mens--mobile.jpg' | asset_url }}"); }
-  @media (min-width: 600px) {
-    .cn-home__new-arrivals__img {
-      margin-right: 8px;
-      width: 60%;
-      padding-bottom: 38%;
-      background-image: url("{{ 'christy-natsumi-home-mens--web.jpg' | asset_url }}"); } }
-  @media (min-width: 960px) {
-    .cn-home__new-arrivals__img {
-      width: 50%;
-      padding-bottom: 30%; } }
-
-.cn-home__new-arrivals__text {
-  width: 100%;
-  text-align: center; }
-  @media (min-width: 600px) {
-    .cn-home__new-arrivals__text {
-      width: 30%;
-      margin-left: 8px;
-      text-align: left; } }
-
-.cn-home__new-arrivals__text__title {
-  font-family: 'ahpuch apollyon', serif;
-  font-weight: normal;
-  font-size: 36px;
-  line-height: 36px;
-  color: #666;
-  margin-top: 16px;
-  margin-bottom: 24px; }
-  @media (min-width: 600px) {
-    .cn-home__new-arrivals__text__title {
-      font-size: 48px;
-      line-height: 44px; } }
-  @media (min-width: 960px) {
-    .cn-home__new-arrivals__text__title {
-      font-size: 72px;
-      line-height: 64px; } }
-  .cn-home__new-arrivals__text__title br {
-    display: none; }
-  @media (min-width: 600px) {
-    .cn-home__new-arrivals__text__title {
-      margin-bottom: 32px; }
-      .cn-home__new-arrivals__text__title br {
-        display: block; } }
-
 .cn-home__customer-favorites {
-  text-align: center;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -1549,13 +1497,13 @@ button, .button, .btn {
   -webkit-box-direction: normal;
   -ms-flex-flow: row wrap;
   flex-flow: row wrap;
-  margin-bottom: 96px; }
+  margin-bottom: 96px;
+  text-align: center; }
   @media (min-width: 600px) {
     .cn-home__customer-favorites {
-      margin-bottom: 192px; } }
-  @media (min-width: 600px) {
-    .cn-home__customer-favorites .cn-categoryproduct:nth-child(4) {
-      display: none; } }
+      margin-bottom: 192px; }
+      .cn-home__customer-favorites .cn-categoryproduct:nth-child(4) {
+        display: none; } }
   @media (min-width: 960px) {
     .cn-home__customer-favorites .cn-categoryproduct:nth-child(4) {
       display: inline-block; } }
@@ -1576,99 +1524,9 @@ button, .button, .btn {
     .cn-home__customer-favorites__text {
       font-size: 72px;
       line-height: 64px; } }
-  .cn-home__customer-favorites__text br {
-    display: none; }
-  @media (min-width: 600px) {
-    .cn-home__customer-favorites__text {
-      margin-bottom: 32px; }
-      .cn-home__customer-favorites__text br {
-        display: block; } }
 
 .cn-home__customer-favorites__imgs {
   width: 100%; }
-
-.cn-home__custom-jewelry {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: center;
-  -ms-flex-pack: center;
-  justify-content: center;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-  -ms-flex-flow: row wrap;
-  flex-flow: row wrap;
-  margin-bottom: 96px;
-  align-items: center; }
-  @media (min-width: 600px) {
-    .cn-home__custom-jewelry {
-      margin-bottom: 192px; } }
-
-.cn-home__custom-jewelry__img {
-  width: 100%;
-  padding-bottom: 50%;
-  background-color: #cccccc;
-  background-size: cover;
-  -webkit-box-ordinal-group: 2;
-  -ms-flex-order: 1;
-  order: 1;
-  padding-bottom: 120%;
-  background-image: url("{{ 'christy-natsumi-home-collection--mobile.jpg' | asset_url }}"); }
-  @media (min-width: 600px) {
-    .cn-home__custom-jewelry__img {
-      -webkit-box-ordinal-group: 3;
-      -ms-flex-order: 2;
-      order: 2;
-      margin-left: 8px;
-      width: 42%;
-      padding-bottom: 64%;
-      background-image: url("{{ 'christy-natsumi-home-collection--web.jpg' | asset_url }}"); } }
-  @media (min-width: 960px) {
-    .cn-home__custom-jewelry__img {
-      width: 32%;
-      padding-bottom: 50%; } }
-
-.cn-home__custom-jewelry__text {
-  width: 100%;
-  text-align: center;
-  -webkit-box-ordinal-group: 3;
-  -ms-flex-order: 2;
-  order: 2; }
-  @media (min-width: 600px) {
-    .cn-home__custom-jewelry__text {
-      -webkit-box-ordinal-group: 2;
-      -ms-flex-order: 1;
-      order: 1;
-      width: 40%;
-      margin-right: 8px;
-      text-align: right; } }
-
-.cn-home__custom-jewelry__text__title {
-  font-family: 'ahpuch apollyon', serif;
-  font-weight: normal;
-  font-size: 36px;
-  line-height: 36px;
-  color: #666;
-  margin-top: 16px;
-  margin-bottom: 24px; }
-  @media (min-width: 600px) {
-    .cn-home__custom-jewelry__text__title {
-      font-size: 48px;
-      line-height: 44px; } }
-  @media (min-width: 960px) {
-    .cn-home__custom-jewelry__text__title {
-      font-size: 72px;
-      line-height: 64px; } }
-  .cn-home__custom-jewelry__text__title br {
-    display: none; }
-  @media (min-width: 600px) {
-    .cn-home__custom-jewelry__text__title {
-      margin-bottom: 32px; }
-      .cn-home__custom-jewelry__text__title br {
-        display: block; } }
 
 .cn-home__featured-in {
   font-family: 'ahpuch apollyon', serif;

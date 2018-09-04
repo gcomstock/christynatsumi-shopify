@@ -9,9 +9,12 @@
 
 
 @import 'modules/grid.scss';
+@import 'modules/layoutblock.scss';
 @import 'modules/footer.scss';
 @import 'modules/forms.scss';
-@import 'modules/home.scss';
+
+
+@import 'modules/index';
 @import 'modules/featuredin.scss';
 @import 'modules/about.scss';
 @import 'modules/cart.scss';
