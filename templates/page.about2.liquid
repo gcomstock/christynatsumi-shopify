@@ -3,12 +3,18 @@
   <!--<div class="cn-heroimage cn-heroimage--about"></div>-->
 
 
-  <div class="cn-about__sustainability">
-    <div class="cn-about__sustainability__img">
-
+  <div class="cn-layoutBlock cn-layoutBlock--flexStart cn-layoutBlock--withText">
+    <div class="cn-layoutBlock__img" style="flex: 0 1 960px">
+      <img
+        alt="Christy Natsumi taking care of her many plant friends"
+        sizes="(max-width: 599px) 1200px, (min-width: 600px) 1920px"
+        src="{{ 'christy-natsumi__about__sustainability--web.jpg' | asset_url }}"
+        srcset="{{ 'christy-natsumi__about__sustainability--mobile.jpg' | asset_url }} 1200w,
+                {{ 'christy-natsumi__about__sustainability--web.jpg' | asset_url }} 1920w"
+      />
     </div>
-    <div class="cn-about__sustainability__text">
-      <div class="cn-about__sustainability__text__title">
+    <div class="cn-layoutBlock__container">
+      <div class="cn-layoutBlock__container__title">
         Sustainability
       </div>
       <p>
@@ -16,34 +22,35 @@
       </p>
       <p>
         <a href="https://sfenvironment.org/" target="_blank">
-          <img width="300" class="cn-aboutpage__press-img" src="{{ 'christy-natsumi__about__member__sf-green-business.png' | asset_url }}"/>
+          <img width="200" src="{{ 'christy-natsumi__about__member__sf-green-business.png' | asset_url }}"/>
         </a>
       </p>
     </div>
   </div>
 
 
-  <div class="cn-layoutBlock">
-    <div class="cn-layoutBlock__img">
 
+  <div class="cn-layoutBlock cn-layoutBlock--flexStart cn-layoutBlock--withText cn-layoutBlock--reverse">
+    <div class="cn-layoutBlock__img" style="flex: 0 1 960px">
+      <div class="cn-layoutBlock__iframe">
+        <iframe src="https://www.youtube.com/embed/B_5iDPpjQkE" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
+      </div>
     </div>
-    <div class="cn-layoutBlock__content cn-layoutBlock__content--text">
-
-      <div class="cn-layoutBlock__content__title">
+    <div class="cn-layoutBlock__container">
+      <div class="cn-layoutBlock__container__title">
         Sustainability
       </div>
-
       <p>
         It’s not enough to create beautiful products. We believe it must be made in ways that enhances the beauty in the lives of the people who contribute to its creation and to the environment from which the materials came from. We do this by working with trusted vendors with honest supply chains, implementing eco-minded studio practices, using alternative stones such as antique, recycled, and domestically sourced diamonds and gemstones, and consciously designing for quality and longevity. By purchasing from Christy Natsumi, you are not only supporting skilled craftsmen and women in San Francisco, but also a network of vendors who are committed to celebrating and respecting the earth’s beautiful resources.
       </p>
       <p>
         <a href="https://sfenvironment.org/" target="_blank">
-          <img width="300" class="cn-aboutpage__press-img" src="{{ 'christy-natsumi__about__member__sf-green-business.png' | asset_url }}"/>
+          <img width="200" src="{{ 'christy-natsumi__about__member__sf-green-business.png' | asset_url }}"/>
         </a>
       </p>
-
     </div>
   </div>
+
 
 
 
