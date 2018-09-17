@@ -16,16 +16,11 @@
     cn-layoutBlock--marginOuter
   ">
     <div class="cn-layoutBlock__img" style="flex: 0 1 896px">
-
-      <img
-        data-src="{{ 'christy-natsumi__about__hammer-box--688w.gif' | asset_url }}"
-        alt="Christy Natsumi Jewelry Animation"
-        data-sizes="(max-width: 375px) 375px, (min-width: 376px) 688px"
-        data-srcset="{{ 'christy-natsumi__about__hammer-box--375w.gif' | asset_url }} 375w,
-                     {{ 'christy-natsumi__about__hammer-box--688w.gif' | asset_url }} 688w"
-        class="lazyload"
-      />
-
+      <picture>
+        <source srcset="{{ 'christy-natsumi__about__hammer-box--375w.gif' | asset_url }}" media="(max-width: 375px)" />
+        <source srcset="{{ 'christy-natsumi__about__hammer-box--688w.gif' | asset_url }}" media="(min-width: 376px)" />
+        <img src="{{ 'christy-natsumi__about__hammer-box--688w.gif' | asset_url }}" alt="Christy Natsumi Jewelry Animation"/>
+      </picture>
     </div>
     <div class="cn-layoutBlock__container">
       <p>
@@ -106,15 +101,12 @@
     cn-layoutBlock--marginOuter
   ">
     <div class="cn-layoutBlock__img" style="flex: 0 1 896px">
-      <img
-        data-src="{{ 'christy-natsumi__about__sustainability--web.jpg' | asset_url }}"
-        alt="Christy Natsumi taking care of her many plant friends"
-        sizes="(max-width: 375px) 750px, (max-width: 599px) 1200px, (min-width: 600px) 1920px"
-        data-srcset="{{ 'christy-natsumi__about__sustainability--mobile.jpg' | asset_url }} 750w,
-                     {{ 'christy-natsumi__about__sustainability--mobile-large.jpg' | asset_url }} 1200w,
-                     {{ 'christy-natsumi__about__sustainability--web.jpg' | asset_url }} 1920w"
-        class="lazyload"
-      />
+      <picture>
+        <source srcset="{{ 'christy-natsumi__about__sustainability--mobile.jpg' | asset_url }}" media="(max-width: 375px)" />
+        <source srcset="{{ 'christy-natsumi__about__sustainability--mobile-large.jpg' | asset_url }}" media="(max-width: 600px)" />
+        <source srcset="{{ 'christy-natsumi__about__sustainability--web.jpg' | asset_url }}" media="(min-width: 601px)" />
+        <img class="lazyload" src="{{ 'christy-natsumi__about__sustainability--web.jpg' | asset_url }}" alt="Christy Natsumi taking care of her many plant friends"/>
+      </picture>
     </div>
     <div class="cn-layoutBlock__container">
       <div class="cn-layoutBlock__container__title">
