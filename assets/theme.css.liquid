@@ -403,6 +403,10 @@ h1 {
       line-height: 44px; } }
   @media (min-width: 960px) {
     h1 {
+      font-size: 64px;
+      line-height: 58px; } }
+  @media (min-width: 1450px) {
+    h1 {
       font-size: 72px;
       line-height: 64px; } }
   @media (min-width: 600px) {
@@ -549,7 +553,7 @@ a.rss:hover {
 .cn-wrapper, .cn-home__featured-in__wrapper {
   width: 100%;
   max-width: 1440px;
-  padding: 0 8px;
+  padding: 0 12px;
   margin-left: auto;
   margin-right: auto;
   position: relative;
@@ -1039,24 +1043,32 @@ a.cnew-header-mobile-drawer__content__nosubnav {
     padding-left: 8px;
     padding-right: 8px; }
 
-.row--imgRow {
-  margin: 6rem 0; }
-  .row--imgRow .fourth {
-    width: 49.5%;
-    margin: 1% 1% 0 0; }
-    .row--imgRow .fourth:nth-child(even) {
-      margin-right: 0; }
+.cn-imgRow {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  margin-bottom: 96px; }
+  @media (min-width: 600px) {
+    .cn-imgRow {
+      margin-bottom: 192px; } }
+  .cn-imgRow .cn-imgRow__img {
+    margin-bottom: 1px;
+    -webkit-box-flex: 0;
+    -ms-flex: 0 0 calc(50% - 0.5px);
+    flex: 0 0 calc(50% - 0.5px); }
     @media (min-width: 600px) {
-      .row--imgRow .fourth {
-        width: 24.85%;
-        margin: 0.2% 0.2% 0 0; }
-        .row--imgRow .fourth:nth-child(even) {
-          margin-right: 0.2%; }
-        .row--imgRow .fourth:nth-child(4n) {
-          margin-right: 0; } }
-
-.row--imgRow--noBottom {
-  margin-bottom: 0; }
+      .cn-imgRow .cn-imgRow__img {
+        -webkit-box-flex: 0;
+        -ms-flex: 0 0 calc(25% - 0.75px);
+        flex: 0 0 calc(25% - 0.75px); } }
+    .cn-imgRow .cn-imgRow__img img {
+      display: block;
+      width: 100% !important; }
 
 .cn-layoutBlock {
   display: -webkit-box;
@@ -1092,16 +1104,16 @@ a.cnew-header-mobile-drawer__content__nosubnav {
     left: 0;
     width: 100%;
     height: 100%;
-    border: 0; }
+    border: 1px solid #666; }
 
 .cn-layoutBlock__container {
   -webkit-box-flex: 0;
-  -ms-flex: 0 0 100%;
-  flex: 0 0 100%;
+  -ms-flex: 0 1 100%;
+  flex: 0 1 100%;
   -ms-flex-item-align: center;
   align-self: center;
   text-align: center;
-  margin: 0 8px; }
+  margin: 0 12px; }
   @media (min-width: 600px) {
     .cn-layoutBlock__container {
       -webkit-box-flex: 0;
@@ -1123,6 +1135,10 @@ a.cnew-header-mobile-drawer__content__nosubnav {
       font-size: 48px;
       line-height: 44px; } }
   @media (min-width: 960px) {
+    .cn-layoutBlock__container__title {
+      font-size: 64px;
+      line-height: 58px; } }
+  @media (min-width: 1450px) {
     .cn-layoutBlock__container__title {
       font-size: 72px;
       line-height: 64px; } }
@@ -1149,10 +1165,24 @@ a.cnew-header-mobile-drawer__content__nosubnav {
       margin: 0 16px 0 32px; } }
   @media (min-width: 600px) {
     .cn-layoutBlock--reverse.cn-layoutBlock--withText .cn-layoutBlock__container {
-      margin: 0 64px 0 32px; } }
+      margin: 0 64px; } }
+  @media (min-width: 600px) {
+    .cn-layoutBlock--reverse.cn-layoutBlock--marginOuter {
+      margin-right: 64px;
+      margin-left: 0; } }
+
+@media (min-width: 600px) {
+  .cn-layoutBlock--withText {
+    -ms-flex-flow: wrap;
+    flex-flow: wrap; } }
+
+@media (min-width: 960px) {
+  .cn-layoutBlock--withText {
+    -ms-flex-flow: nowrap;
+    flex-flow: nowrap; } }
 
 .cn-layoutBlock--withText .cn-layoutBlock__container {
-  margin: 0 8px; }
+  margin: 32px 16px 0; }
   @media (min-width: 600px) {
     .cn-layoutBlock--withText .cn-layoutBlock__container {
       text-align: left;
@@ -1160,10 +1190,19 @@ a.cnew-header-mobile-drawer__content__nosubnav {
       -ms-flex: 1 0 400px;
       flex: 1 0 400px;
       max-width: 600px;
-      margin: 0 32px 0 64px; } }
+      margin: 32px 64px 0; } }
+  @media (min-width: 960px) {
+    .cn-layoutBlock--withText .cn-layoutBlock__container {
+      margin: 0 64px; } }
 
 .cn-layoutBlock--withText p {
   text-align: left; }
+
+.cn-layoutBlock--withText .cn-layoutBlock__container__title {
+  text-align: center; }
+  @media (min-width: 960px) {
+    .cn-layoutBlock--withText .cn-layoutBlock__container__title {
+      text-align: left; } }
 
 @media (min-width: 600px) {
   .cn-layoutBlock--flexEnd {
@@ -1180,6 +1219,22 @@ a.cnew-header-mobile-drawer__content__nosubnav {
 @media (min-width: 600px) {
   .cn-layoutBlock--marginLeft {
     margin-left: 6%; } }
+
+@media (min-width: 600px) {
+  .cn-layoutBlock--marginRight {
+    margin-right: 64px; } }
+
+@media (min-width: 600px) {
+  .cn-layoutBlock--marginOuter {
+    margin-left: 64px; } }
+
+@media (min-width: 600px) {
+  .cn-layoutBlock--marginOuter.cn-layoutBlock--withText {
+    margin-left: 0; } }
+
+@media (min-width: 960px) {
+  .cn-layoutBlock--marginOuter.cn-layoutBlock--withText {
+    margin-left: 64px; } }
 
 .cn-footer {
   border-top: 2px solid #000;
@@ -1438,7 +1493,6 @@ button, .button, .btn {
   text-align: center;
   background-size: cover;
   display: block;
-  width: 100%;
   padding-bottom: 100%;
   background-image: url("{{ 'christy-natsumi-home-hero--mobile.jpg' | asset_url }}");
   background-position: center; }
@@ -1483,6 +1537,10 @@ button, .button, .btn {
       font-size: 48px;
       line-height: 44px; } }
   @media (min-width: 960px) {
+    .cn-home__hero__text__intro {
+      font-size: 64px;
+      line-height: 58px; } }
+  @media (min-width: 1450px) {
     .cn-home__hero__text__intro {
       font-size: 72px;
       line-height: 64px; } }
@@ -1540,6 +1598,10 @@ button, .button, .btn {
       line-height: 44px; } }
   @media (min-width: 960px) {
     .cn-home__customer-favorites__text {
+      font-size: 64px;
+      line-height: 58px; } }
+  @media (min-width: 1450px) {
+    .cn-home__customer-favorites__text {
       font-size: 72px;
       line-height: 64px; } }
 
@@ -1561,6 +1623,10 @@ button, .button, .btn {
       font-size: 48px;
       line-height: 44px; } }
   @media (min-width: 960px) {
+    .cn-home__featured-in {
+      font-size: 64px;
+      line-height: 58px; } }
+  @media (min-width: 1450px) {
     .cn-home__featured-in {
       font-size: 72px;
       line-height: 64px; } }
@@ -1604,28 +1670,39 @@ button, .button, .btn {
     max-width: 100%;
     max-height: 100%; }
 
-.cn-heroimage--about {
-  background-image: url("{{ 'christynatsumi-about-heroimage-mobile.jpg' | asset_url }}"); }
-  @media (min-width: 600px) {
-    .cn-heroimage--about {
-      padding-bottom: 48%;
-      background-image: url("{{ 'christynatsumi-about-heroimage.jpg' | asset_url }}"); } }
+.cn-about__hero {
+  margin-bottom: 64px; }
+  .cn-about__hero img {
+    width: 100%; }
 
-.cn-aboutpage {
-  margin-bottom: 96px; }
-  @media (min-width: 600px) {
-    .cn-aboutpage h3 {
-      margin-top: 48px; } }
+p.cn-about__membership-badges {
+  text-align: center; }
   @media (min-width: 960px) {
-    .cn-aboutpage h3 {
-      margin-top: 5rem; } }
+    p.cn-about__membership-badges {
+      text-align: left; } }
+  p.cn-about__membership-badges a {
+    text-decoration: none;
+    margin-right: 16px; }
 
-.cn-aboutpage__press-img {
-  display: block;
-  max-width: 100%;
-  margin-top: 3rem; }
+.cn-about__membership-badges__sfenv {
+  width: 120px; }
+  @media (min-width: 600px) {
+    .cn-about__membership-badges__sfenv {
+      width: 160px; } }
 
-/* establish rules how each column */
+.cn-about__membership-badges__sfmade {
+  width: 50px; }
+  @media (min-width: 600px) {
+    .cn-about__membership-badges__sfmade {
+      width: 80px; } }
+
+.cn-about__membership-badges__ethical {
+  width: 70px; }
+  @media (min-width: 600px) {
+    .cn-about__membership-badges__ethical {
+      width: 100px; } }
+
+/* establish rules on how each column resizes */
 .cart__empty {
   margin-bottom: 128px;
   text-align: center; }
@@ -2160,17 +2237,16 @@ button, .button, .btn {
   position: relative;
   text-align: center;
   width: 100%;
-  padding-bottom: 90%;
-  margin-bottom: 32px; }
+  margin-bottom: 32px;
+  height: 55vh; }
   @media (min-width: 960px) {
     .cn-product__mask {
       -webkit-box-flex: 0;
       -ms-flex: 0 1 620px;
       flex: 0 1 620px;
-      min-height: 420px;
       margin-right: 64px;
       margin-top: 0;
-      padding-bottom: 20%; } }
+      height: 620px; } }
 
 .cn-product__mask__slide {
   max-width: 100%;

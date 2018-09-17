@@ -16,15 +16,14 @@ $labelWidthDetailsTablet: calc(50% - 7px);
   position: relative;
   text-align: center;
   width: 100%;
-  padding-bottom: 90%;
   margin-bottom: 32px;
+  height: 55vh;
 
   @media (min-width: $screen-desktop) {
     flex: 0 1 620px;
-    min-height: 420px;
     margin-right: 64px;
     margin-top: 0;
-    padding-bottom: 20%; //shorter portrait images for desktop
+    height: 620px;
   }
 }
 

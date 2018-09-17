@@ -1,10 +1,77 @@
 <!-- /templates/page.about2.liquid -->
 <main>
-  <!--<div class="cn-heroimage cn-heroimage--about"></div>-->
+  <div class="cn-about__hero">
+    <picture>
+      <source srcset="{{ 'christy-natsumi__about__hero--mobile.jpg' | asset_url }}" media="(max-width: 599px)" />
+      <source srcset="{{ 'christy-natsumi__about__hero--web.jpg' | asset_url }}" media="(min-width: 600px)" />
+      <img src="{{ 'christy-natsumi__about__hero--web.jpg' | asset_url }}" alt="Christy Natsumi"/>
+    </picture>
+  </div>
 
 
-  <div class="cn-layoutBlock cn-layoutBlock--flexStart cn-layoutBlock--withText">
-    <div class="cn-layoutBlock__img" style="flex: 0 1 960px">
+  <div class="
+    cn-layoutBlock
+    cn-layoutBlock--withText
+    cn-layoutBlock--marginOuter
+  ">
+    <div class="cn-layoutBlock__img" style="flex: 0 1 896px">
+      <img src="{{ 'christy-natsumi__about__hammer-box--640w.gif' | asset_url }}"/>
+    </div>
+    <div class="cn-layoutBlock__container">
+      <p>
+        Christy Natsumi is an independent fine jewelry designer in San Francisco, CA. We specialize in wedding rings, engagement rings, and modern jewelry essentials so you can wear meaningful reminders of all of your special celebrations. We love a clean, minimal look accentuated with a twist to make sure you are getting something that is unique but will also stand the test of time. Christy Natsumi is proud to be a certified San Francisco Green Business and has been featured in The Knot, Design Sponge, and San Francisco Magazine, among others.
+      </p>
+    </div>
+  </div>
+
+
+  <div class="
+    cn-layoutBlock
+    cn-layoutBlock--withText
+    cn-layoutBlock--marginOuter
+  ">
+    <div class="cn-layoutBlock__img" style="flex: 0 1 896px">
+      <div class="cn-layoutBlock__iframe">
+        <iframe src="https://www.youtube.com/embed/BM3Efp-W8zg" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="cn-layoutBlock__container">
+      <div class="cn-layoutBlock__container__title">
+        Values
+      </div>
+      <p>
+        Christy grew up equal parts in Tokyo and California, a product of parents from two countries. She always felt deeply that she wanted to embody and honor our connectedness beyond culture, language, looks, and gender. Celebrating inclusivity, diversity, and the infinite ways we love and are loved is at the core of everything we do. Hear more about Christy’s background and why it’s so fulfilling for us to create jewelry that celebrates you.
+      </p>
+    </div>
+  </div>
+
+
+
+
+  <div class="cn-imgRow">
+    <div class="cn-imgRow__img">
+      <img class="full" src="{{ 'christynatsumi-process-1.jpg' | asset_url }}"/>
+    </div>
+    <div class="cn-imgRow__img">
+      <img class="full" src="{{ 'christynatsumi-process-2.jpg' | asset_url }}"/>
+    </div>
+    <div class="cn-imgRow__img">
+      <img class="full" src="{{ 'christynatsumi-process-3.jpg' | asset_url }}"/>
+    </div>
+    <div class="cn-imgRow__img">
+      <img class="full" src="{{ 'christynatsumi-process-4.jpg' | asset_url }}"/>
+    </div>
+  </div>
+
+
+
+
+  <div class="
+    cn-layoutBlock
+    cn-layoutBlock--withText
+    cn-layoutBlock--marginOuter
+  ">
+    <div class="cn-layoutBlock__img" style="flex: 0 1 896px">
       <img
         alt="Christy Natsumi taking care of her many plant friends"
         sizes="(max-width: 599px) 1200px, (min-width: 600px) 1920px"
@@ -20,41 +87,48 @@
       <p>
         It’s not enough to create beautiful products. We believe it must be made in ways that enhances the beauty in the lives of the people who contribute to its creation and to the environment from which the materials came from. We do this by working with trusted vendors with honest supply chains, implementing eco-minded studio practices, using alternative stones such as antique, recycled, and domestically sourced diamonds and gemstones, and consciously designing for quality and longevity. By purchasing from Christy Natsumi, you are not only supporting skilled craftsmen and women in San Francisco, but also a network of vendors who are committed to celebrating and respecting the earth’s beautiful resources.
       </p>
-      <p>
+
+      <p class="cn-about__membership-badges">
         <a href="https://sfenvironment.org/" target="_blank">
-          <img width="200" src="{{ 'christy-natsumi__about__member__sf-green-business.png' | asset_url }}"/>
+          <img class="cn-about__membership-badges__sfenv" src="{{ 'christy-natsumi__about__member__sf-green-business.png' | asset_url }}"/>
+        </a>
+        <a href="//www.sfmade.org/members/christy-natsumi" target="_blank">
+          <img class="cn-about__membership-badges__sfmade" src="{{ 'christy-natsumi__about__member__sf-made.png' | asset_url }}"/>
+        </a>
+        <a href="http://www.ethicalmetalsmiths.org/" target="_blank">
+          <img class="cn-about__membership-badges__ethical" src="{{ 'christy-natsumi__about__member__ethical-metalsmiths.png' | asset_url }}"/>
         </a>
       </p>
+
     </div>
   </div>
 
 
 
-  <div class="cn-layoutBlock cn-layoutBlock--flexStart cn-layoutBlock--withText cn-layoutBlock--reverse">
-    <div class="cn-layoutBlock__img" style="flex: 0 1 960px">
+
+  <div class="
+    cn-layoutBlock
+    cn-layoutBlock--marginOuter
+    cn-layoutBlock--withText
+  ">
+    <div class="cn-layoutBlock__img" style="flex: 0 1 896px">
       <div class="cn-layoutBlock__iframe">
         <iframe src="https://www.youtube.com/embed/B_5iDPpjQkE" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
       </div>
     </div>
     <div class="cn-layoutBlock__container">
       <div class="cn-layoutBlock__container__title">
-        Sustainability
+        About Christy
       </div>
       <p>
-        It’s not enough to create beautiful products. We believe it must be made in ways that enhances the beauty in the lives of the people who contribute to its creation and to the environment from which the materials came from. We do this by working with trusted vendors with honest supply chains, implementing eco-minded studio practices, using alternative stones such as antique, recycled, and domestically sourced diamonds and gemstones, and consciously designing for quality and longevity. By purchasing from Christy Natsumi, you are not only supporting skilled craftsmen and women in San Francisco, but also a network of vendors who are committed to celebrating and respecting the earth’s beautiful resources.
-      </p>
-      <p>
-        <a href="https://sfenvironment.org/" target="_blank">
-          <img width="200" src="{{ 'christy-natsumi__about__member__sf-green-business.png' | asset_url }}"/>
-        </a>
+        On a whim over a decade ago, Christy signed up for a weekend metalsmithing class as a creative outlet from her pre-med and psychology studies. As a little luck would have it, on that day she met both her love of working with metal and her now husband. After further pursuing her jewelry studies, she started her namesake business in 2013 and has enjoyed working with amazing clients in the San Francisco Bay Area and beyond.
       </p>
     </div>
   </div>
 
 
 
-
-
+<!--
   <div class="cn-wrapper cn-aboutpage">
     <div class="row row--btnRow">
       <div class="fourth">
@@ -73,22 +147,6 @@
         <span>schedule a</span>
         <a class="button" href="/pages/workshop-visit">workshop visit</a>
       </div>
-    </div>
-  </div>
-
-
-  <div class="row row--imgRow">
-    <div class="fourth">
-      <img class="full" src="{{ 'christynatsumi-process-1.jpg' | asset_url }}"/>
-    </div>
-    <div class="fourth">
-      <img class="full" src="{{ 'christynatsumi-process-2.jpg' | asset_url }}"/>
-    </div>
-    <div class="fourth">
-      <img class="full" src="{{ 'christynatsumi-process-3.jpg' | asset_url }}"/>
-    </div>
-    <div class="fourth">
-      <img class="full" src="{{ 'christynatsumi-process-4.jpg' | asset_url }}"/>
     </div>
   </div>
 
@@ -116,24 +174,10 @@
           Downtown San Francisco, California
         </p>
       </div>
-      <div class="half">
-        <h3>Proud member of:</h3>
-        <p>
-          <a href="//www.sfmade.org/members/christy-natsumi" target="_blank">
-            <img width="100" class="cn-aboutpage__press-img" src="{{ 'christy-natsumi__about__member__sf-made.png' | asset_url }}"/>
-          </a>
-          <a href="http://www.ethicalmetalsmiths.org/" target="_blank">
-            <img width="100" class="cn-aboutpage__press-img" src="{{ 'christy-natsumi__about__member__ethical-metalsmiths.png' | asset_url }}"/>
-          </a>
-          <a href="https://sfenvironment.org/" target="_blank">
-            <img width="300" class="cn-aboutpage__press-img" src="{{ 'christy-natsumi__about__member__sf-green-business.png' | asset_url }}"/>
-          </a>
-        </p>
-      </div>
     </div>
   </div>
+-->
 
 
   {% include 'featuredin' %}
-
 </main>

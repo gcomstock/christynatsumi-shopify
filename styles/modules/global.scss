@@ -80,7 +80,7 @@ a.rss:hover       { background-color: #ff9900 !important; }
 .cn-wrapper {
   width: 100%;
   max-width: 1440px;
-  padding: 0 8px;
+  padding: 0 $site-margin--mobile;
   margin-left: auto;
   margin-right: auto;
   position: relative;

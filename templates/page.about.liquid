@@ -1,121 +1,173 @@
 <!-- /templates/page.about.liquid -->
 <main>
-  <div class="cn-heroimage cn-heroimage--about"></div>
+  <div class="cn-about__hero">
+    <picture>
+      <source srcset="{{ 'christy-natsumi__about__hero--mobile.jpg' | asset_url }}" media="(max-width: 375px)" />
+      <source srcset="{{ 'christy-natsumi__about__hero--mobile-large.jpg' | asset_url }}" media="(max-width: 599px)" />
+      <source srcset="{{ 'christy-natsumi__about__hero--web.jpg' | asset_url }}" media="(min-width: 600px)" />
+      <img src="{{ 'christy-natsumi__about__hero--web.jpg' | asset_url }}" alt="Christy Natsumi"/>
+    </picture>
+  </div>
 
-  <div class="cn-wrapper cn-aboutpage">
-    
-    <div class="row">
-      <div class="half">
-        <a class="cn-anchor" name="brand"></a>
-        <h3>The Brand</h3>
-        <p>
-          Christy Natsumi is a San Francisco CA based independent design studio that creates modern jewelry essentials. We aim to make wearable fine jewelry so you can effortlessly adorn your life with meaningful, subtle, and artful details. From single stud earrings, engagement and wedding rings, to commissioned designs, all of our jewelry is created with the hope that it will be lovingly worn for a lifetime and passed on as future heirlooms.
-        </p>
-        <p>
-          Our downtown San Francisco workshop is open for visits by appointment only (no walk-ins). <a href="/pages/contact">We’d love to hear from you</a> if you’d like to see some of our work in person.
-        </p>
-        <a class="cn-anchor" name="process"></a>
-        <h3>A Sustainable Process</h3>
-        <p>
-          We think a lot about beauty -- not only in creating beautiful products, but in making them in a way that enhances the beauty in the lives of the people who contribute to its creation and the environment in which the materials come from. Some of the ways we do this are by working with vendors with transparent supply chain, practicing eco-minded studio processes, using antique, post-consumer, and/or domestically sourced gems and recycled metals whenever possible, and by consciously designing for quality and longevity. By purchasing from Christy Natsumi, you are not only supporting skilled craftsmen and women in San Francisco, but also a network of vendors who are committed to celebrating and respecting the earth and it’s beautiful resources.
-        </p>
-      </div>
-      <div class="half">
-        <a class="cn-anchor" name="designer"></a>
-        <h3>Designer Story</h3>
-        <p>
-          One of Christy Natsumi’s favorite things to do is to make jewelry for special occasions. She believes that being part of a celebration of love in her own small way is one of the most fulfilling parts of being a jeweler.
-        </p>
-        <p>
-          Her fascination with love stories stems from her own parents. The fact that any two people can be lucky enough to find someone they want to spend their life with is a blessing. But what intrigued Christy even further was how her Japanese mom and American father managed to break barriers of culture, language, and judgements in favor of love, tolerance, and open-mindedness.
-        </p>
-        <p>
-          With her family history, and having grown up spending equal amounts of time in Tokyo and California, Christy always felt deeply that she wanted to embody and honor our connectedness beyond culture, language, looks, and gender; to find a vocation that allows her to celebrate how we love and are loved in its infinite forms.
-        </p>
-        <p>
-          On a whim, Christy signed up for her first metalsmithing class as a creative outlet from her pre-med and psychology studies. As a little luck would have it, on that day she met both her love of working with metal and her now husband. Since then, Christy has further pursued her jewelry training at Revere Academy of Jewelry Arts in San Francisco and with numerous visiting jewelry masters from around the world. Five years after her first class, Christy decided to start her own business in 2012. She now creates out of her workshop in downtown San Francisco, designing and making jewelry that merges her clean and minimal design aesthetic with her deeply felt values of love and connection.
-        </p>
-      </div>
+
+  <div class="
+    cn-layoutBlock
+    cn-layoutBlock--withText
+    cn-layoutBlock--marginOuter
+  ">
+    <div class="cn-layoutBlock__img" style="flex: 0 1 896px">
+
+      <img
+        data-src="{{ 'christy-natsumi__about__hammer-box--688w.gif' | asset_url }}"
+        alt="Christy Natsumi Jewelry Animation"
+        data-sizes="(max-width: 375px) 375px, (min-width: 376px) 688px"
+        data-srcset="{{ 'christy-natsumi__about__hammer-box--375w.gif' | asset_url }} 375w,
+                     {{ 'christy-natsumi__about__hammer-box--688w.gif' | asset_url }} 688w"
+        class="lazyload"
+      />
+
     </div>
-
-    <div class="row row--btnRow">
-      <div class="fourth">
-        <span>shop</span>
-        <a class="button" href="/collections/all">the collection</a>
-      </div>
-      <div class="fourth">
-        <span>shop</span>
-        <a class="button" href="/collections/wedding">wedding jewelry</a>
-      </div>
-      <div class="fourth">
-        <span>inquire about</span>
-        <a class="button" href="/pages/custom">custom jewelry</a>
-      </div>
-      <div class="fourth">
-        <span>schedule a</span>
-        <a class="button" href="/pages/workshop-visit">workshop visit</a>
-      </div>
+    <div class="cn-layoutBlock__container">
+      <p>
+        Christy Natsumi is an independent fine jewelry designer in San Francisco, CA. We specialize in wedding rings, engagement rings, and modern jewelry essentials so you can wear meaningful reminders of all of your special celebrations. We love a clean, minimal look accentuated with a twist to make sure you are getting something that is unique but will also stand the test of time. Christy Natsumi is proud to be a certified San Francisco Green Business and has been featured in The Knot, Design Sponge, and San Francisco Magazine, among others.
+      </p>
     </div>
   </div>
 
 
-  <div class="row row--imgRow">
-    <div class="fourth">
-      <img class="full" src="{{ 'christynatsumi-process-1.jpg' | asset_url }}"/>
+  <div class="
+    cn-layoutBlock
+    cn-layoutBlock--withText
+    cn-layoutBlock--marginOuter
+  ">
+    <div class="cn-layoutBlock__img" style="flex: 0 1 896px">
+      <div class="cn-layoutBlock__iframe">
+        <iframe src="https://www.youtube.com/embed/BM3Efp-W8zg" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
+      </div>
     </div>
-    <div class="fourth">
-      <img class="full" src="{{ 'christynatsumi-process-2.jpg' | asset_url }}"/>
-    </div>
-    <div class="fourth">
-      <img class="full" src="{{ 'christynatsumi-process-3.jpg' | asset_url }}"/>
-    </div>
-    <div class="fourth">
-      <img class="full" src="{{ 'christynatsumi-process-4.jpg' | asset_url }}"/>
+    <div class="cn-layoutBlock__container">
+      <div class="cn-layoutBlock__container__title">
+        Values
+      </div>
+      <p>
+        Christy grew up equal parts in Tokyo and California, a product of parents from two countries. She always felt deeply that she wanted to embody and honor our connectedness beyond culture, language, looks, and gender. Celebrating inclusivity, diversity, and the infinite ways we love and are loved is at the core of everything we do. Hear more about Christy’s background and why it’s so fulfilling for us to create jewelry that celebrates you.
+      </p>
     </div>
   </div>
 
 
-  <div class="cn-wrapper cn-aboutpage">
-    <a class="cn-anchor" name="stockists"></a>
+  <div class="cn-imgRow">
+    <div class="cn-imgRow__img">
+      <img
+        data-src="{{ 'christy-natsumi__about__process1--web.jpg' | asset_url }}"
+        alt="Christy Natsumi Creating Jewelry"
+        sizes="auto"
+        data-srcset="{{ 'christy-natsumi__about__process1--mobile.jpg' | asset_url }} 300w,
+                     {{ 'christy-natsumi__about__process1--web.jpg' | asset_url }} 600w"
+        class="lazyload"
+      />
+    </div>
+    <div class="cn-imgRow__img">
+      <img
+        data-src="{{ 'christy-natsumi__about__process2--web.jpg' | asset_url }}"
+        alt="Christy Natsumi Creating Jewelry"
+        sizes="auto"
+        data-srcset="{{ 'christy-natsumi__about__process2--mobile.jpg' | asset_url }} 300w,
+                     {{ 'christy-natsumi__about__process2--web.jpg' | asset_url }} 600w"
+        class="lazyload"
+      />
+    </div>
+    <div class="cn-imgRow__img">
+      <img
+        data-src="{{ 'christy-natsumi__about__process3--web.jpg' | asset_url }}"
+        alt="Christy Natsumi Creating Jewelry"
+        sizes="auto"
+        data-srcset="{{ 'christy-natsumi__about__process3--mobile.jpg' | asset_url }} 300w,
+                     {{ 'christy-natsumi__about__process3--web.jpg' | asset_url }} 600w"
+        class="lazyload"
+      />
+    </div>
+    <div class="cn-imgRow__img">
+      <img
+        data-src="{{ 'christy-natsumi__about__process4--web.jpg' | asset_url }}"
+        alt="Christy Natsumi Creating Jewelry"
+        sizes="auto"
+        data-srcset="{{ 'christy-natsumi__about__process4--mobile.jpg' | asset_url }} 300w,
+                     {{ 'christy-natsumi__about__process4--web.jpg' | asset_url }} 600w"
+        class="lazyload"
+      />
+    </div>
+  </div>
 
-    <div class="row">
-      <div class="half">
-        <h3>View and Purchase At:</h3>
-        <h4><a href="https://www.crown-nine.com/collections/christy-natsumi" target="_blank">Crown Nine</a></h4>
-        <p>
-          Downtown Oakland, California
-        </p>
-        <h4><a href="http://www.gallery-of-jewels.com/jewelry-designers/christy-natsumi" target="_blank">Gallery of Jewels - Fillmore Street</a></h4>
-        <p>
-          Fillmore &amp; California, San Francisco, California <span class="cn-note">(bridal jewelry only)</span>
-        </p>
-        <h4><a href="https://www.google.com/maps/place/Zaver+%26+Mor/@37.8804668,-122.2708367,17z/data=!4m13!1m7!3m6!1s0x80857ea6d3970a21:0x7c4fa2d83692a742!2s2111+Vine+St+e,+Berkeley,+CA+94709!3b1!8m2!3d37.8804668!4d-122.268648!3m4!1s0x80857ea6d3dd62cd:0xd2b701d4a7c27b43!8m2!3d37.8803993!4d-122.2686217" target="_blank">Zaver &amp; Mor</a></h4>
-        <p>
-          Downtown Berkeley, California
-        </p>
-        <h4><a href="/pages/contact">Visit our Workshop</a> <span class="cn-note">(by appointment only)</span></h4>
-        <p>
-          Downtown San Francisco, California
-        </p>
+
+  <div class="
+    cn-layoutBlock
+    cn-layoutBlock--withText
+    cn-layoutBlock--marginOuter
+  ">
+    <div class="cn-layoutBlock__img" style="flex: 0 1 896px">
+      <img
+        data-src="{{ 'christy-natsumi__about__sustainability--web.jpg' | asset_url }}"
+        alt="Christy Natsumi taking care of her many plant friends"
+        sizes="(max-width: 375px) 750px, (max-width: 599px) 1200px, (min-width: 600px) 1920px"
+        data-srcset="{{ 'christy-natsumi__about__sustainability--mobile.jpg' | asset_url }} 750w,
+                     {{ 'christy-natsumi__about__sustainability--mobile-large.jpg' | asset_url }} 1200w,
+                     {{ 'christy-natsumi__about__sustainability--web.jpg' | asset_url }} 1920w"
+        class="lazyload"
+      />
+    </div>
+    <div class="cn-layoutBlock__container">
+      <div class="cn-layoutBlock__container__title">
+        Sustainability
       </div>
-      <div class="half">
-        <h3>Proud member of:</h3>
-        <p>
-          <a href="//www.sfmade.org/members/christy-natsumi" target="_blank">
-            <img width="100" class="cn-aboutpage__press-img" src="{{ 'christy-natsumi__about__member__sf-made.png' | asset_url }}"/>
-          </a>
-          <a href="http://www.ethicalmetalsmiths.org/" target="_blank">
-            <img width="100" class="cn-aboutpage__press-img" src="{{ 'christy-natsumi__about__member__ethical-metalsmiths.png' | asset_url }}"/>
-          </a>
-          <a href="https://sfenvironment.org/" target="_blank">
-            <img width="300" class="cn-aboutpage__press-img" src="{{ 'christy-natsumi__about__member__sf-green-business.png' | asset_url }}"/>
-          </a>
-        </p>
+      <p>
+        It’s not enough to create beautiful products. We believe it must be made in ways that enhances the beauty in the lives of the people who contribute to its creation and to the environment from which the materials came from. We do this by working with trusted vendors with honest supply chains, implementing eco-minded studio practices, using alternative stones such as antique, recycled, and domestically sourced diamonds and gemstones, and consciously designing for quality and longevity. By purchasing from Christy Natsumi, you are not only supporting skilled craftsmen and women in San Francisco, but also a network of vendors who are committed to celebrating and respecting the earth’s beautiful resources.
+      </p>
+
+      <p class="cn-about__membership-badges">
+        <a href="https://sfenvironment.org/" target="_blank">
+          <img
+            data-src="{{ 'christy-natsumi__about__member__sf-green-business.png' | asset_url }}"
+            class="lazyload cn-about__membership-badges__sfenv"
+          />
+        </a>
+        <a href="//www.sfmade.org/members/christy-natsumi" target="_blank">
+          <img
+            data-src="{{ 'christy-natsumi__about__member__sf-made.png' | asset_url }}"
+            class="lazyload cn-about__membership-badges__sfmade"
+          />
+        </a>
+        <a href="http://www.ethicalmetalsmiths.org/" target="_blank">
+          <img
+            data-src="{{ 'christy-natsumi__about__member__ethical-metalsmiths.png' | asset_url }}"
+            class="lazyload cn-about__membership-badges__ethical"
+          />
+        </a>
+      </p>
+    </div>
+  </div>
+
+
+  <div class="
+    cn-layoutBlock
+    cn-layoutBlock--marginOuter
+    cn-layoutBlock--withText
+  ">
+    <div class="cn-layoutBlock__img" style="flex: 0 1 896px">
+      <div class="cn-layoutBlock__iframe">
+        <iframe src="https://www.youtube.com/embed/B_5iDPpjQkE" frameborder="0" allow="encrypted-media" allowfullscreen></iframe>
       </div>
+    </div>
+    <div class="cn-layoutBlock__container">
+      <div class="cn-layoutBlock__container__title">
+        About Christy
+      </div>
+      <p>
+        On a whim over a decade ago, Christy signed up for a weekend metalsmithing class as a creative outlet from her pre-med and psychology studies. As a little luck would have it, on that day she met both her love of working with metal and her now husband. After further pursuing her jewelry studies, she started her namesake business in 2013 and has enjoyed working with amazing clients in the San Francisco Bay Area and beyond.
+      </p>
     </div>
   </div>
 
 
   {% include 'featuredin' %}
-
 </main>

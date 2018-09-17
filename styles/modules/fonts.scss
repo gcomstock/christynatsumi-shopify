@@ -81,6 +81,10 @@
     line-height: 44px;
   }
   @media (min-width: $screen-desktop) {
+    font-size: 64px;
+    line-height: 58px;
+  }
+  @media (min-width: $screen-desktop-large) {
     font-size: 72px;
     line-height: 64px;
   }

@@ -1,11 +1,15 @@
+$screen-desktop-large: 1450px;
 $screen-desktop: 960px;
 $screen-desktop-1: 959px; //used for rules that only apply between mobile and desktop (to prevent overlap at 960px)
 $screen-tablet: 600px;
+$screen-mobile-large: 376px; //bigger than normal iphone and android
+
 
 $border-color: #666;
-
 $nav-bg: #fff0f0;
 $header-border-bg: #ffe1e1;
-
 $btn-highlight: #ffe8e8;
 $btn-highlight-dark: #ffaaaa;
+
+
+$site-margin--mobile: 12px;
