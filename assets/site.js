@@ -24,8 +24,18 @@ var timeouts = [];
   $('.cnew-header-mobile__navbtn').on('click', function(){
     $('.cnew-header-mobile__navbtn__icon').toggleClass('active');
     $('.cnew-header-mobile-drawer').toggleClass('expanded');
-
     $('body').toggleClass('mobilenav--expanded');
+
+
+    setTimeout(function(){
+      var $drawer = $('.cnew-header-mobile-drawer');
+      if ($drawer.hasClass('expanded')) {
+        $drawer.addClass('onscreen');
+      } else {
+        // drawer fadeout has completed, now we can move it offscreen for old mobile browsers
+        $drawer.removeClass('onscreen');
+      }
+    }, 500);
   });
 
 

@@ -94,24 +94,32 @@
 .cnew-header-mobile-drawer {
   z-index: 1000;
   position: fixed;
-  top: $mobile-nav-height;
-  bottom: 0;
   width: 100%;
   background-color: $nav-bg;
   padding: 0.8rem 2.4rem 3.2rem 2.4rem;
-  opacity: 0;
   overflow-y: scroll;
-  pointer-events: none;
   transition: opacity .25s ease;
   -webkit-overflow-scrolling: touch;
 
+  top: 100%;
+  opacity: 0;
+  pointer-events: none;
+
   &.expanded {
+    top: $mobile-nav-height;
+    bottom: 0;
     opacity: 1;
     pointer-events: all;
 
     .cnew-header-mobile-drawer__content {
       transform: translate3d(0, 0, 0);
     }
+  }
+
+  // for old mobile safari
+  &.onscreen {
+    top: $mobile-nav-height;
+    bottom: 0;
   }
 
   @media (min-width: $screen-desktop) {

@@ -489,7 +489,8 @@ body {
   background-color: #efefef; }
   body .mobilenav--expanded {
     height: 100%;
-    overflow: hidden; }
+    overflow: hidden;
+    pointer-events: none; }
 
 main {
   overflow: hidden; }
@@ -569,12 +570,23 @@ a.rss:hover {
 .cn-wrapper--narrow {
   max-width: 1280px; }
 
+.lazyload, .lazyloading {
+  opacity: 0; }
+
+.lazyloaded {
+  -webkit-transition: opacity .5s ease;
+  -o-transition: opacity .5s ease;
+  transition: opacity .5s ease;
+  opacity: 1; }
+
 img.full {
   width: 100%; }
 
 .cn-anchor {
   display: block;
-  visibility: hidden; }
+  visibility: hidden;
+  position: relative;
+  top: -128px; }
 
 .cn-note {
   font-family: 'proxima nova', Helvetica, Arial, sans-serif !important;
@@ -891,24 +903,28 @@ img.full {
 .cnew-header-mobile-drawer {
   z-index: 1000;
   position: fixed;
-  top: 56px;
-  bottom: 0;
   width: 100%;
   background-color: #fff0f0;
   padding: 0.8rem 2.4rem 3.2rem 2.4rem;
-  opacity: 0;
   overflow-y: scroll;
-  pointer-events: none;
   -webkit-transition: opacity .25s ease;
   -o-transition: opacity .25s ease;
   transition: opacity .25s ease;
-  -webkit-overflow-scrolling: touch; }
+  -webkit-overflow-scrolling: touch;
+  top: 100%;
+  opacity: 0;
+  pointer-events: none; }
   .cnew-header-mobile-drawer.expanded {
+    top: 56px;
+    bottom: 0;
     opacity: 1;
     pointer-events: all; }
     .cnew-header-mobile-drawer.expanded .cnew-header-mobile-drawer__content {
       -webkit-transform: translate3d(0, 0, 0);
       transform: translate3d(0, 0, 0); }
+  .cnew-header-mobile-drawer.onscreen {
+    top: 56px;
+    bottom: 0; }
   @media (min-width: 960px) {
     .cnew-header-mobile-drawer {
       display: none; } }
@@ -2503,10 +2519,6 @@ p.cn-about__membership-badges {
   padding-bottom: 100%;
   margin: 0; }
   .cn-categoryproduct__img img {
-    opacity: 0;
-    -webkit-transition: opacity .5s ease;
-    -o-transition: opacity .5s ease;
-    transition: opacity .5s ease;
     font-size: 0;
     position: absolute;
     top: 50%;
@@ -2515,8 +2527,6 @@ p.cn-about__membership-badges {
     -webkit-transform: translate(-50%, -50%);
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%); }
-    .cn-categoryproduct__img img.lazyloaded {
-      opacity: 1; }
   .cn-categoryproduct__img:after {
     content: '';
     position: absolute;
