@@ -7,9 +7,8 @@
   - http://docs.shopify.com/themes/liquid-variables/global
 {% endcomment %}
 
+
 <main>
-
-
   <a class="cn-home__hero" href="/collections/all">
     <div class="cn-home__hero__text">
       <div class="cn-home__hero__text__intro">Fine Jewelry</div>
@@ -19,25 +18,27 @@
 
 
   {% comment %}
-
     TO USE "cn-layoutBlock":
 
     specify max width for the image on flex style.
     add any modifying classes like ".cn-layoutBlock--reverse"
-
   {% endcomment %}
 
 
   <div class="cn-layoutBlock cn-layoutBlock--smallBottom cn-layoutBlock--flexStart cn-layoutBlock--marginLeft">
     <div class="cn-layoutBlock__img" style="flex: 0 1 650px">
       <a href="/collections/wedding-bands">
-        <img
-          alt="Shop Wedding Bands"
-          sizes="(max-width: 599px) 1200px, (min-width: 600px) 1920px"
-          src="{{ 'christy-natsumi-home-mens--web.jpg' | asset_url }}"
-          srcset="{{ 'christy-natsumi-home-wedding--mobile.jpg' | asset_url }} 1200w,
-                  {{ 'christy-natsumi-home-wedding--web.jpg' | asset_url }} 1920w"
-        />
+        <picture>
+          <source data-srcset="{{ 'christy-natsumi__home__wedding--mobile.jpg' | asset_url }}" media="(max-width: 375px)" />
+          <source data-srcset="{{ 'christy-natsumi__home__wedding--mobile-large.jpg' | asset_url }}" media="(max-width: 600px)" />
+          <source data-srcset="{{ 'christy-natsumi__home__wedding--web.jpg' | asset_url }}" media="(min-width: 601px)" />
+          <img
+            class="lazyload"
+            data-src="{{ 'christy-natsumi__home__wedding--web.jpg' | asset_url }}"
+            alt="Shop Wedding Bands"
+            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+          />
+        </picture>
       </a>
     </div>
     <div class="cn-layoutBlock__container">
@@ -52,13 +53,17 @@
   <div class="cn-layoutBlock cn-layoutBlock--flexEnd">
     <div class="cn-layoutBlock__img" style="flex: 0 1 960px">
       <a href="/collections/mens">
-        <img
-          alt="Shop Men’s Rings"
-          sizes="(max-width: 599px) 1200px, (min-width: 600px) 1920px"
-          src="{{ 'christy-natsumi-home-mens--web.jpg' | asset_url }}"
-          srcset="{{ 'christy-natsumi-home-mens--mobile.jpg' | asset_url }} 1200w,
-                  {{ 'christy-natsumi-home-mens--web.jpg' | asset_url }} 2000w"
-        />
+        <picture>
+          <source data-srcset="{{ 'christy-natsumi__home__mens--mobile.jpg' | asset_url }}" media="(max-width: 375px)" />
+          <source data-srcset="{{ 'christy-natsumi__home__mens--mobile-large.jpg' | asset_url }}" media="(max-width: 600px)" />
+          <source data-srcset="{{ 'christy-natsumi__home__mens--web.jpg' | asset_url }}" media="(min-width: 601px)" />
+          <img
+            class="lazyload"
+            data-src="{{ 'christy-natsumi__home__mens--web.jpg' | asset_url }}"
+            alt="Shop Men’s Rings"
+            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+          />
+        </picture>
       </a>
     </div>
     <div class="cn-layoutBlock__container">
@@ -94,13 +99,17 @@
   <div class="cn-layoutBlock cn-layoutBlock--reverse">
     <div class="cn-layoutBlock__img" style="flex: 0 1 600px">
       <a href="/collections/all">
-        <img
-          alt="View the Collection"
-          sizes="(max-width: 599px) 1200px, (min-width: 600px) 1300px"
-          src="{{ 'christy-natsumi-home-collection--web.jpg' | asset_url }}"
-          srcset="{{ 'christy-natsumi-home-collection--mobile.jpg' | asset_url }} 1200w,
-                  {{ 'christy-natsumi-home-collection--web.jpg' | asset_url }} 1300w"
-        />
+        <picture>
+          <source data-srcset="{{ 'christy-natsumi__home__collection--mobile.jpg' | asset_url }}" media="(max-width: 375px)" />
+          <source data-srcset="{{ 'christy-natsumi__home__collection--mobile-large.jpg' | asset_url }}" media="(max-width: 600px)" />
+          <source data-srcset="{{ 'christy-natsumi__home__collection--web.jpg' | asset_url }}" media="(min-width: 601px)" />
+          <img
+            class="lazyload"
+            data-src="{{ 'christy-natsumi__home__collection--web.jpg' | asset_url }}"
+            alt="View the Collection"
+            src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw=="
+          />
+        </picture>
       </a>
     </div>
     <div class="cn-layoutBlock__container">
