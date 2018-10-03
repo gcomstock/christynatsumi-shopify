@@ -117,14 +117,12 @@
 }
 
 
-
-
 // for all page headers
 h1 {
   @include serifHeader;
   text-align: center;
   margin-top: 8px;
-  margin-bottom: 48px;
+  margin-bottom: 32px;
 
   @media (min-width: $screen-tablet) {
     margin-top: 16px;
