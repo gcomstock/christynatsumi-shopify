@@ -1,0 +1,344 @@
+.lookbook {
+  font-size: 0;
+}
+
+
+.lookbook-w-half,
+.lookbook-w-full {
+  display: inline-block;
+  background-size: cover;
+  position: relative;
+  width: 100%;
+  box-shadow: inset 0 -2px 0 -1px #eee;
+}
+
+
+.lookbook-border-right {
+  box-shadow: inset 0 -2px 0 -1px #eee, inset -2px 0 0 -1px #eee;
+}
+
+@media (min-width: 700px) {
+  .lookbook-w-half {
+    width: 50%;
+  }
+}
+
+
+
+.lookbook-h-150 { padding-bottom: 150%; }
+.lookbook-h-125 { padding-bottom: 125%; }
+.lookbook-h-100 { padding-bottom: 100%; }
+.lookbook-h-066 { padding-bottom: 66%;  }
+.lookbook-h-062 { padding-bottom: 62%;  }
+.lookbook-h-057 { padding-bottom: 57%;  }
+.lookbook-h-052 { padding-bottom: 52%;  }
+.lookbook-h-041 { padding-bottom: 41%;  }
+
+
+@media (min-width: 700px) {
+  .lookbook-w-half.lookbook-h-150 { padding-bottom: 75%;   }
+  .lookbook-w-half.lookbook-h-125 { padding-bottom: 62.5%; }
+  .lookbook-w-half.lookbook-h-100 { padding-bottom: 50%;   }
+  .lookbook-w-half.lookbook-h-066 { padding-bottom: 33%;   }
+  .lookbook-w-half.lookbook-h-062 { padding-bottom: 31%;   }
+  .lookbook-w-half.lookbook-h-057 { padding-bottom: 28.5%; }
+  .lookbook-w-half.lookbook-h-052 { padding-bottom: 26%;   }
+  .lookbook-w-half.lookbook-h-041 { padding-bottom: 20.5%; }
+}
+
+
+
+//.lookbook__btn {
+//  color: #fff;
+//  display: inline-block;
+//  border: 1px solid #fff;
+//  padding: 10px 20px;
+//  text-transform: uppercase;
+//  text-decoration: none;
+//  font-family: 'dolce vita';
+//  letter-spacing: 1px;
+//  font-size: 1.8rem;
+//
+//  &:hover {
+//    color: #000;
+//    background-color: #fff;
+//  }
+//}
+
+
+// GLINT
+
+.lookbook--glint {
+  a {
+    color: #fff;
+  }
+  .row {
+    margin-bottom: 2rem;
+  }
+}
+
+
+.lookbook--glint__header {
+  background-image: url("{{ 'christy-natsumi__lookbook--glint-1-m.jpg' | asset_url }}");
+  padding-bottom: 100%;
+
+  @media (min-width: 700px) {
+    padding-bottom: 57%;
+    background-image: url("{{ 'christy-natsumi__lookbook--glint-1.jpg' | asset_url }}");
+  }
+}
+
+
+
+// footer doesnt have defined proportional width/height...text dictates that
+.lookbook--glint__footer {
+  background-image: url("{{ 'christy-natsumi__lookbook--glint-22-m.jpg' | asset_url }}");
+
+  @media (min-width: 1020px) {
+    background-image: url("{{ 'christy-natsumi__lookbook--glint-22.jpg' | asset_url }}");
+  }
+}
+
+
+
+.lookbook--glint__h1 {
+  color: #fff;
+  font-weight: normal;
+  position: absolute;
+  text-align: left;
+
+  font-size: 2.4rem;
+  bottom: 2rem;
+  left: 2rem;
+
+  a {
+    text-decoration: none;
+    border-bottom: 0.2vw solid #fff;
+    color: #fff;
+  }
+
+  @media (min-width: 700px) {
+    font-size: 3vw;
+    bottom: 6rem;
+    left: 6rem;
+  }
+}
+
+
+
+
+
+
+
+.lookbook--glint__footerLogo {
+  background-image: url("{{ 'christy-natsumi__lookbook--glint-logo.png' | asset_url }}");
+  width: 100%;
+  padding-bottom: 42%;
+  margin-bottom: 3rem;
+  background-size: cover;
+}
+
+
+.lookbook--glint__footer__creditTitle {
+  width: 16rem;
+  text-align: right;
+}
+
+
+// for spacing
+.collection-layout-lookbook-glint .cn-footer {
+  margin-top: 0;
+}
+
+
+
+
+.lookbook--glint__footer__content {
+  color: #fff;
+  width: 44%;
+  margin: 6vw 0 6vw 54%;
+  max-width: 500px;
+  min-height: 50vw;
+
+  p {
+    text-align: justify;
+  }
+
+  @media (max-width: 1020px) {
+    width: 92%;
+    margin: 6rem auto;
+  }
+}
+
+
+// credit categories
+.lookbook--glint__footer__content__creditTitle {
+  display: inline-block;
+  text-align: right;
+  width: 34%;
+
+  @media (max-width: 1020px) {
+    width: 46%;
+  }
+}
+
+// credit names
+.lookbook--glint__footer__content__creditName {
+  display: inline-block;
+  font-size: 1.6rem;
+  width: 58%;
+  color: #fff;
+
+  p {
+    margin-bottom: 0;
+  }
+
+  @media (max-width: 1020px) {
+    width: 46%;
+  }
+}
+
+
+
+// GLINT IMAGES
+
+.lookbook--glint__2 {
+  background-image: url("{{ 'christy-natsumi__lookbook--glint-2-m.jpg' | asset_url }}");
+
+  @media (min-width: 700px) {
+    background-image: url("{{ 'christy-natsumi__lookbook--glint-2.jpg' | asset_url }}");
+  }
+}
+.lookbook--glint__3 {
+  background-image: url("{{ 'christy-natsumi__lookbook--glint-3-m.jpg' | asset_url }}");
+
+  @media (min-width: 700px) {
+    background-image: url("{{ 'christy-natsumi__lookbook--glint-3.jpg' | asset_url }}");
+  }
+}
+.lookbook--glint__4 {
+  background-image: url("{{ 'christy-natsumi__lookbook--glint-4-m.jpg' | asset_url }}");
+
+  @media (min-width: 700px) {
+    background-image: url("{{ 'christy-natsumi__lookbook--glint-4.jpg' | asset_url }}");
+  }
+}
+.lookbook--glint__5 {
+  background-image: url("{{ 'christy-natsumi__lookbook--glint-5-m.jpg' | asset_url }}");
+
+  @media (min-width: 700px) {
+    background-image: url("{{ 'christy-natsumi__lookbook--glint-5.jpg' | asset_url }}");
+  }
+}
+.lookbook--glint__6 {
+  background-image: url("{{ 'christy-natsumi__lookbook--glint-6-m.jpg' | asset_url }}");
+
+  @media (min-width: 700px) {
+    background-image: url("{{ 'christy-natsumi__lookbook--glint-6.jpg' | asset_url }}");
+  }
+}
+.lookbook--glint__7 {
+  background-image: url("{{ 'christy-natsumi__lookbook--glint-7-m.jpg' | asset_url }}");
+
+  @media (min-width: 700px) {
+    background-image: url("{{ 'christy-natsumi__lookbook--glint-7.jpg' | asset_url }}");
+  }
+}
+.lookbook--glint__8 {
+  background-image: url("{{ 'christy-natsumi__lookbook--glint-8-m.jpg' | asset_url }}");
+
+  @media (min-width: 700px) {
+    background-image: url("{{ 'christy-natsumi__lookbook--glint-8.jpg' | asset_url }}");
+  }
+}
+.lookbook--glint__9 {
+  background-image: url("{{ 'christy-natsumi__lookbook--glint-9-m.jpg' | asset_url }}");
+
+  @media (min-width: 700px) {
+    background-image: url("{{ 'christy-natsumi__lookbook--glint-9.jpg' | asset_url }}");
+  }
+}
+.lookbook--glint__10 {
+  background-image: url("{{ 'christy-natsumi__lookbook--glint-10-m.jpg' | asset_url }}");
+
+  @media (min-width: 700px) {
+    background-image: url("{{ 'christy-natsumi__lookbook--glint-10.jpg' | asset_url }}");
+  }
+}
+.lookbook--glint__11 {
+  background-image: url("{{ 'christy-natsumi__lookbook--glint-11-m.jpg' | asset_url }}");
+
+  @media (min-width: 700px) {
+    background-image: url("{{ 'christy-natsumi__lookbook--glint-11.jpg' | asset_url }}");
+  }
+}
+.lookbook--glint__12 {
+  background-image: url("{{ 'christy-natsumi__lookbook--glint-12-m.jpg' | asset_url }}");
+
+  @media (min-width: 700px) {
+    background-image: url("{{ 'christy-natsumi__lookbook--glint-12.jpg' | asset_url }}");
+  }
+}
+.lookbook--glint__13 {
+  background-image: url("{{ 'christy-natsumi__lookbook--glint-13-m.jpg' | asset_url }}");
+
+  @media (min-width: 700px) {
+    background-image: url("{{ 'christy-natsumi__lookbook--glint-13.jpg' | asset_url }}");
+  }
+}
+.lookbook--glint__14 {
+  background-image: url("{{ 'christy-natsumi__lookbook--glint-14-m.jpg' | asset_url }}");
+
+  @media (min-width: 700px) {
+    background-image: url("{{ 'christy-natsumi__lookbook--glint-14.jpg' | asset_url }}");
+  }
+}
+.lookbook--glint__15 {
+  background-image: url("{{ 'christy-natsumi__lookbook--glint-15-m.jpg' | asset_url }}");
+
+  @media (min-width: 700px) {
+    background-image: url("{{ 'christy-natsumi__lookbook--glint-15.jpg' | asset_url }}");
+  }
+}
+.lookbook--glint__16 {
+  background-image: url("{{ 'christy-natsumi__lookbook--glint-16-m.jpg' | asset_url }}");
+
+  @media (min-width: 700px) {
+    background-image: url("{{ 'christy-natsumi__lookbook--glint-16.jpg' | asset_url }}");
+  }
+}
+.lookbook--glint__17 {
+  background-image: url("{{ 'christy-natsumi__lookbook--glint-17-m.jpg' | asset_url }}");
+
+  @media (min-width: 700px) {
+    background-image: url("{{ 'christy-natsumi__lookbook--glint-17.jpg' | asset_url }}");
+  }
+}
+.lookbook--glint__18 {
+  background-image: url("{{ 'christy-natsumi__lookbook--glint-18-m.jpg' | asset_url }}");
+
+  @media (min-width: 700px) {
+    background-image: url("{{ 'christy-natsumi__lookbook--glint-18.jpg' | asset_url }}");
+  }
+}
+.lookbook--glint__19 {
+  background-image: url("{{ 'christy-natsumi__lookbook--glint-19-m.jpg' | asset_url }}");
+
+  @media (min-width: 700px) {
+    background-image: url("{{ 'christy-natsumi__lookbook--glint-19.jpg' | asset_url }}");
+  }
+}
+.lookbook--glint__20 {
+  background-image: url("{{ 'christy-natsumi__lookbook--glint-20-m.jpg' | asset_url }}");
+
+  @media (min-width: 700px) {
+    background-image: url("{{ 'christy-natsumi__lookbook--glint-20.jpg' | asset_url }}");
+  }
+}
+.lookbook--glint__21 {
+  background-image: url("{{ 'christy-natsumi__lookbook--glint-21-m.jpg' | asset_url }}");
+
+  @media (min-width: 700px) {
+    background-image: url("{{ 'christy-natsumi__lookbook--glint-21.jpg' | asset_url }}");
+  }
+}
