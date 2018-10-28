@@ -24,7 +24,8 @@ prod:
   theme_id: "183663815"
   store: christy-natsumi-jewelry.myshopify.com
   timeout: 120s
-
+  ignore_files:
+    - styles/modules/*
 
 prod-quick:
   password: asdasdasdasdasdasdasdasdasdasdas
@@ -42,7 +43,8 @@ dev:
   theme_id: "12360941616"
   store: christy-natsumi-jewelry.myshopify.com
   timeout: 120s
-
+  ignore_files:
+    - styles/modules/*
 
 dev-quick:
   password: asdasdasdasdasdasdasdasdasdasdas
