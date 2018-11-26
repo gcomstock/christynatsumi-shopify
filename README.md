@@ -25,7 +25,7 @@ prod:
   store: christy-natsumi-jewelry.myshopify.com
   timeout: 120s
   ignore_files:
-    - styles/modules/*
+    - styles/*
 
 prod-quick:
   password: asdasdasdasdasdasdasdasdasdasdas
@@ -35,7 +35,7 @@ prod-quick:
   ignore_files:
     - lib/*
     - assets/*
-    - styles/modules/*
+    - styles/*
 
 
 dev:
@@ -44,7 +44,7 @@ dev:
   store: christy-natsumi-jewelry.myshopify.com
   timeout: 120s
   ignore_files:
-    - styles/modules/*
+    - styles/*
 
 dev-quick:
   password: asdasdasdasdasdasdasdasdasdasdas
@@ -54,7 +54,7 @@ dev-quick:
   ignore_files:
     - lib/*
     - assets/*
-    - styles/modules/*
+    - styles/*
 ```
 
 have changes to config.yml be untracked so it doesn't upload to github but persists if branch is switched:

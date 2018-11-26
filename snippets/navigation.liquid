@@ -3,9 +3,9 @@
    or collection.url == '/collections/wedding-bands'
    or collection.url == '/collections/mens'
 %}
-  <a data-subnav="Wedding" class="active" href="/collections/wedding">Wedding</a>
+  <a data-subnav="Wedding" class="active" href="{{ shop.secure_url }}/collections/wedding">Wedding</a>
 {% else %}
-	<a data-subnav="Wedding" href="/collections/wedding">Wedding</a>
+	<a data-subnav="Wedding" href="{{ shop.secure_url }}/collections/wedding">Wedding</a>
 {% endif %}
 
 {% if collection.url == '/collections/all'
@@ -15,13 +15,13 @@
    or collection.url == '/collections/customer-favorites'
    or collection.url == '/collections/last-call'
 %}
-  <a data-subnav="Jewelry" class="active" href="/collections/all">Jewelry</a>
+  <a data-subnav="Jewelry" class="active" href="{{ shop.secure_url }}/collections/all">Jewelry</a>
 {% else %}
-	<a data-subnav="Jewelry" href="/collections/all">Jewelry</a>
+	<a data-subnav="Jewelry" href="{{ shop.secure_url }}/collections/all">Jewelry</a>
 {% endif %}
 
-<a {% if page.url == '/pages/custom' %}  class="active"{% endif %} href="/pages/custom">Custom</a>
-<a {% if page.url == '/pages/contact' %} class="active"{% endif %} href="/pages/contact">Contact</a>
-<a {% if page.url == '/pages/about' %}   class="active"{% endif %} href="/pages/about">About</a>
+<a {% if page.url == '/pages/custom' %}  class="active"{% endif %} href="{{ shop.secure_url }}/pages/custom">Custom</a>
+<a {% if page.url == '/pages/contact' %} class="active"{% endif %} href="{{ shop.secure_url }}/pages/contact">Contact</a>
+<a {% if page.url == '/pages/about' %}   class="active"{% endif %} href="{{ shop.secure_url }}/pages/about">About</a>
 
-<a {% if page_title == 'Your Shopping Cart' %} class="active"{% endif %} href="/cart">Cart{% if cart.item_count > 0 %} ({{ cart.item_count }}){% endif %}</a>
+<a {% if page_title == 'Your Shopping Cart' %} class="active"{% endif %} href="{{ shop.secure_url }}/cart">Cart{% if cart.item_count > 0 %} ({{ cart.item_count }}){% endif %}</a>
