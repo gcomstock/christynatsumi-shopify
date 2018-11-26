@@ -62,9 +62,7 @@
   {% paginate collection.products by 48 %}
 
     {% for product in collection.products %}
-      {% if product.type != 'Gift Card' %}
-        {% include 'product-grid-item' %}
-      {% endif %}
+      {% include 'product-grid-item' %}
     {% endfor %}
 
   {% if paginate.pages > 1 %}

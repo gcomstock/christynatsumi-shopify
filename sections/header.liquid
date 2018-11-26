@@ -2,7 +2,7 @@
 
 
   <div class="cnew-header__nav">
-    <a class="cnew-header__nav__title" itemprop="brand" href="/" alt="{{ page_title }}" ></a>
+    <a class="cnew-header__nav__title" itemprop="brand" href="{{ shop.secure_url }}" alt="Christy Natsumi Jewelry Home" ></a>
 
     <div class="cnew-header__nav__items">
       {% include 'navigation' %}
@@ -12,28 +12,28 @@
 
   <div class="cnew-header__subnav cnew-header__subnav--Wedding">
     <div class="cn-wrapper cnew-header__subnav__items">
-      <a class="cnew-header__subnav__items__item" href="/collections/diamond-rings">
+      <a class="cnew-header__subnav__items__item" href="{{ shop.secure_url }}/collections/diamond-rings">
         <div class="cnew-header__subnav__items__item__img" style="background-image:url({{ 'christy-natsumi-nav-wedding-diamond-rings.jpg' | asset_url }})">
         </div>
         <div class="cnew-header__subnav__items__item__text">
           diamond rings
         </div>
       </a>
-      <a class="cnew-header__subnav__items__item" href="/collections/wedding-bands">
+      <a class="cnew-header__subnav__items__item" href="{{ shop.secure_url }}/collections/wedding-bands">
         <div class="cnew-header__subnav__items__item__img" style="background-image:url({{ 'christy-natsumi-nav-wedding-bands.jpg' | asset_url }})">
         </div>
         <div class="cnew-header__subnav__items__item__text">
           wedding bands
         </div>
       </a>
-      <a class="cnew-header__subnav__items__item" href="/collections/mens">
+      <a class="cnew-header__subnav__items__item" href="{{ shop.secure_url }}/collections/mens">
         <div class="cnew-header__subnav__items__item__img" style="background-image:url({{ 'christy-natsumi-nav-wedding-mens.jpg' | asset_url }})">
         </div>
         <div class="cnew-header__subnav__items__item__text">
           men's
         </div>
       </a>
-      <a class="cnew-header__subnav__items__item" href="/collections/wedding">
+      <a class="cnew-header__subnav__items__item" href="{{ shop.secure_url }}/collections/wedding">
         <div class="cnew-header__subnav__items__item__img" style="background-image:url({{ 'christy-natsumi-nav-wedding-all.jpg' | asset_url }})">
         </div>
         <div class="cnew-header__subnav__items__item__text">
@@ -46,21 +46,21 @@
 
   <div class="cnew-header__subnav cnew-header__subnav--Jewelry">
     <div class="cn-wrapper cnew-header__subnav__items">
-      <a class="cnew-header__subnav__items__item" href="/collections/rings">
+      <a class="cnew-header__subnav__items__item" href="{{ shop.secure_url }}/collections/rings">
         <div class="cnew-header__subnav__items__item__img" style="background-image:url({{ 'christy-natsumi-nav-jewelry-rings.jpg' | asset_url }})">
         </div>
         <div class="cnew-header__subnav__items__item__text">
           rings
         </div>
       </a>
-      <a class="cnew-header__subnav__items__item" href="/collections/necklaces">
+      <a class="cnew-header__subnav__items__item" href="{{ shop.secure_url }}/collections/necklaces">
         <div class="cnew-header__subnav__items__item__img" style="background-image:url({{ 'christy-natsumi-nav-jewelry-necklaces.jpg' | asset_url }})">
         </div>
         <div class="cnew-header__subnav__items__item__text">
           necklaces
         </div>
       </a>
-      <a class="cnew-header__subnav__items__item" href="/collections/earrings">
+      <a class="cnew-header__subnav__items__item" href="{{ shop.secure_url }}/collections/earrings">
         <div class="cnew-header__subnav__items__item__img" style="background-image:url({{ 'christy-natsumi-nav-jewelry-earrings.jpg' | asset_url }})">
         </div>
         <div class="cnew-header__subnav__items__item__text">
@@ -68,13 +68,16 @@
         </div>
       </a>
       <div class="cnew-header__subnav__items__links">
-        <a href="/collections/customer-favorites">
+        <a href="{{ shop.secure_url }}/collections/customer-favorites">
           <span>customer favorites</span>
         </a>
-        <a href="/collections/last-call">
+        <a href="{{ shop.secure_url }}/collections/last-call">
           <span>last call</span>
         </a>
-        <a href="/collections/all">
+        <a href="{{ shop.secure_url }}/products/gift-card">
+          <span>gift cards</span>
+        </a>
+        <a href="{{ shop.secure_url }}/collections/all">
           <span>see all</span>
         </a>
       </div>

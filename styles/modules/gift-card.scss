@@ -1,0 +1,137 @@
+// product page treatment
+.cn-giftCard {
+  margin-top: -20%;
+
+  @media (min-width: $screen-tablet) {
+    margin-top: 0;
+  }
+}
+
+.main--giftcard {
+  text-align: center;
+}
+
+
+.giftcard__hero {
+  width: 100%;
+  max-width: 800px;
+  height: auto;
+  border-radius: 20px;
+  margin-bottom: 64px;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+
+.giftcard__body {
+  display: inline-flex;
+  width: 100%;
+  max-width: 980px;
+
+
+  flex-wrap: wrap;
+  @media (min-width: $screen-tablet) {
+    flex-wrap: nowrap;
+  }
+}
+
+.giftcard__body__codes {
+  justify-content: center;
+  flex: 0 0 100%;
+
+  @media (min-width: $screen-tablet) {
+    flex: 1 1 50%;
+  }
+
+  .cn-note {
+    margin-top: 32px;
+    margin-bottom: 16px;
+  }
+}
+
+.giftcard__body__codes__qr {
+  margin-top: 16px;
+  display: inline-block;
+}
+
+.giftcard__body__codes__code {
+  font-size: 20px;
+  border: 1px solid $border-color;
+  padding: 16px 32px;
+  margin: 0 32px 32px;
+  display: inline-block;
+  background-color: #ffffff;
+}
+
+.giftcard__body__content {
+  flex: 1 1 auto;
+  justify-content: center;
+}
+
+
+
+.giftcard__body__content__entry {
+  width: 100%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+  min-height: 48px;
+
+
+  label {
+    @include subHeader;
+    font-size: 12px;
+    flex: 0 1 200px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    position: relative;
+    margin-right: 10px;
+    text-align: left;
+
+    @media (min-width: $screen-tablet) and (max-width: $screen-desktop-1) {
+      //text-align: right;
+    }
+
+    @media (min-width: $screen-tablet) {
+      font-size: 14px;
+    }
+  }
+
+
+  p {
+    line-height: 20px;
+    margin: 0;
+    flex: 0 1 120px;
+    text-align: left;
+  }
+}
+
+
+.giftcard__actions {
+  margin-top: 64px;
+
+  .button:first-child {
+    margin-right: 8px;
+  }
+}
+
+
+@media print {
+  body {
+    background-color: #ffffff;
+  }
+
+  .cnew-header,
+  .cnew-header-mobile,
+  .cnew-header-spacer,
+  .cn-footer,
+  .giftcard__actions {
+    display: none;
+  }
+
+  .giftcard__hero {
+    width: 9cm;
+  }
+
+
+}

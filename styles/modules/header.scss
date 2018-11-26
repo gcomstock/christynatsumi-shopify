@@ -20,7 +20,7 @@ $mobile-nav-height: 56px;
 .cnew-header {
   display: none;
 
-  @media (min-width: $screen-desktop) {
+  @media (hover: hover) {
     display: block;
     position: fixed;
     top: 0;
@@ -53,7 +53,7 @@ $mobile-nav-height: 56px;
 .cnew-header__nav__items {
   display: none;
 
-  @media (min-width: $screen-desktop) {
+  @media (hover: hover) {
     display: flex;
     align-items: center;
     font-size: 0;
@@ -141,7 +141,7 @@ $mobile-nav-height: 56px;
     }
   }
 
-  @media (min-width: $screen-desktop) {
+  @media (hover: hover) {
     a:hover span { border-bottom: 1px solid #7e7e7e; }
   }
 }
@@ -155,7 +155,7 @@ $mobile-nav-height: 56px;
 .cnew-header-spacer {
   height: $mobile-nav-height;
 
-  @media (min-width: $screen-desktop) {
+  @media (hover: hover) {
     height: $nav-height;
   }
 }

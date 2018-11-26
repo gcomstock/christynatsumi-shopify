@@ -15,13 +15,18 @@
 
 
     <!--LEFT COLUMN-->
-    <div class="cn-product__mask">
+    <div class="cn-product__mask{% if product.type == 'Gift Card' %} cn-product__mask--giftCard{% endif %}">
       {% for image in product.images %}
-        {% if image.position == 1 %}
-          <img class="cn-product__mask__slide active cn-imageFrame" src="{{ image | img_url : 'master' }}" itemprop="image" alt="original"/>
-        {% else %}
-          <img class="cn-product__mask__slide cn-imageFrame" src="{{ image | img_url : 'master' }}" alt="original"/>
-        {% endif %}
+        <picture>
+            <source srcset="{{ image | img_url: '710x710' }}" media="(max-width: 375px)" />
+          {% if product.type == 'Gift Card' %}
+            <img class="lazyload cn-product__mask__slide active" src="{{ image | img_url : '1200x1200' }}" itemprop="image" alt="Christy Natsumi Gift Card Image"/>
+          {% elsif image.position == 1 %}
+            <img class="lazyload cn-product__mask__slide active cn-imageFrame" src="{{ image | img_url : '1200x1200' }}" itemprop="image" alt="Christy Natsumi Product Image"/>
+          {% else %}
+            <img class="lazyload cn-product__mask__slide cn-imageFrame" src="{{ image | img_url : '1200x1200' }}" alt="Christy Natsumi Product Image"/>
+          {% endif %}
+        </picture>
       {% endfor %}
     </div>
 
@@ -33,14 +38,11 @@
         <div class="cn-product__tnContainer">
           {% for image in product.images %}
             <div class="cn-product__tnContainer__tn" data-index="{{ image.position }}">
-              <img
-                alt="{{ image.alt }}"
-                data-sizes="auto"
-                data-src="{{ image | img_url: '300x300', crop: 'bottom' }}"
-                data-srcset="{{ image | img_url: '200x200', crop: 'bottom' }} 200w,
-                             {{ image | img_url: '300x300', crop: 'bottom' }} 300w"
-                class="lazyload"
-              />
+              <picture>
+                <source srcset="{{ image | img_url: '220x220', crop: 'bottom' }}" media="(max-width: 375px)" />
+                <source srcset="{{ image | img_url: '420x420', crop: 'bottom' }}" media="(min-width: 376px) and (max-width: 959px)" />
+                <img class="lazyload" src="{{ image | img_url: '280x280', crop: 'bottom' }}" alt="Christy Natsumi Product Thumbnail"/>
+              </picture>
             </div>
           {% endfor %}
         </div>
@@ -48,7 +50,6 @@
 
 
       <div class="cn-product__options">
-
         <div class="content-wrapper">
           <label for="Price">Price</label>
           <div class="cn-product__price" id="js-ProductPrice">{{ current_variant.price | money }}</div>
@@ -84,14 +85,66 @@
       </div>
 
 
-      <p>{{ product.description }}</p>
+      <div class="cn-product__textTabs">
+        {% if product.description %}
+          <div class="cn-product__textTabs__tab">
+            <span>description</span>
+          </div>
+        {% endif %}
+          <div class="cn-product__textTabs__tab">
+            <span>returns</span>
+          </div>
+      </div>
+
+
+      <div class="cn-product__textBlocks">
+        {% if product.description %}
+          <div class="cn-product__textBlock">
+            <p>{{ product.description }}</p>
+          </div>
+        {% endif %}
+          <div class="cn-product__textBlock">
+            <p></p>
+            {% if product.type != 'Gift Card' %}
+
+              {% assign is_clearance = false %}
+              {% for tag in product.tags %}
+                {% if tag == 'Clearance' %}
+                  {% assign is_clearance = true %}
+                  {% break %}
+                {% endif %}
+              {% endfor %}
+
+              {% if is_clearance %}
+                <p>This product is part of a special promotion and cannot be returned or refunded. All sales are final.</p>
+              {% else %}
+                <p>
+                  Merchandise in new and unworn condition, in it's original packaging may be returned within 7 days of receipt, excluding shipping costs. Customers are responsible for return shipping. Please note that we are not responsible for lost or stolen items in the mail. When returning your merchandise we strongly suggest adding insurance to the shipment for the dollar amount of the merchandise.
+                </p>
+                <p>
+                  Custom and customized jewelry, sale items, and any rings in special sizes are non-refundable.
+                </p>
+                <p>
+                  Please contact us for a return authorization code. Returned merchandise without a code will not be accepted.
+                </p>
+              {% endif %}
+
+            {% else %}
+              <p>
+                All gift card sales are final.
+              </p>
+            {% endif %}
+            <p></p>
+          </div>
+      </div>
+
+
     </div>
   </div>
 
-
-  <div class="cn-product__related">
+  {% if product.type != 'Gift Card' %}
     {% section 'related-products' %}
-  </div>
+  {% endif %}
 </main>
 
 
@@ -118,6 +171,33 @@
 	}
 
 	thumbnailClickEvent();
+
+
+  // tab click handler
+	function tabClickEvent() {
+		var tabs = document.querySelectorAll('.cn-product__textTabs__tab');
+		var textBlocks = document.querySelectorAll('.cn-product__textBlock');
+
+    tabs[0].classList.add('active');
+    textBlocks[0].classList.add('active');
+
+		for (var i = 0; i < tabs.length; i++) {
+			tabs[i].addEventListener('click', function(){
+				var clicked = $('.cn-product__textTabs__tab').index(this);
+				var textTabs = document.querySelectorAll('.cn-product__textTabs__tab');
+				var textBlocks = document.querySelectorAll('.cn-product__textBlock');
+
+				for (var i = 0; i < textBlocks.length; i++) {
+					textTabs[i].classList.remove('active');
+					textBlocks[i].classList.remove('active');
+				}
+				textTabs[clicked].classList.add('active');
+				textBlocks[clicked].classList.add('active');
+			}, false);
+		}
+	}
+
+	tabClickEvent();
 
 
   jQuery(function($) {

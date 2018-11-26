@@ -52,13 +52,14 @@
   {% comment %}
     We assign an index based on current time, then make sure that index is low enough to return enough related products
     This is a hacky way to randomize the related products so user isnt always seeing the same 4
+    we minus: 2 cause it makes the gift card not show up. not exactly sure why
   {% endcomment %}
 
   {% assign counter = 0 %}
   {% assign break_at = number_of_rows | times: number_of_related_products_per_row %}
   {% assign current_product = product %}
   {% assign index = 'now' | date: '%S' | times: collection.products.size | divided_by: 60 %}
-  {% assign maxIndex = collection.products.size | minus: break_at | minus: 1 %}
+  {% assign maxIndex = collection.products.size | minus: break_at | minus: 2 %}
 
   {% if index > maxIndex %}
     {% assign index = maxIndex %}
@@ -67,16 +68,19 @@
   {% capture related_items %}
     {% for product in collection.products offset:index %}
       {% unless product.handle == current_product.handle %}
-         {% unless same_vendor and current_product.vendor != product.vendor %}
-           {% unless same_type and current_product.type != product.type %}
+        {% unless same_vendor and current_product.vendor != product.vendor %}
+          {% unless same_type and current_product.type != product.type %}
+            {% unless product.type == 'Gift Card' %}
 
-             {% include 'product-grid-item' %}
+              {% include 'product-grid-item' %}
 
-             {% assign counter = counter | plus: 1 %}
-             {% if counter == break_at %}
-               {% break %}
-             {% endif %}
-           {% endunless %}
+              {% assign counter = counter | plus: 1 %}
+              {% if counter == break_at %}
+                {% break %}
+              {% endif %}
+
+            {% endunless %}
+          {% endunless %}
         {% endunless %}
       {% endunless %}
     {% endfor %}
@@ -85,9 +89,11 @@
   {% assign related_items = related_items | trim %}
 
   {% unless related_items == blank %}
-    <h3>related items</h3>
-    <hr>
-    {{ related_items }}
+    <div class="cn-product__related">
+      <h3>related items</h3>
+      <hr>
+      {{ related_items }}
+    </div>
   {% endunless %}
 
 {% endif %}

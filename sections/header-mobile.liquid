@@ -3,9 +3,9 @@
     <div class="cnew-header-mobile__navbtn__icon cnew-header-mobile__navbtn__icon--hamburger active"></div>
     <div class="cnew-header-mobile__navbtn__icon cnew-header-mobile__navbtn__icon--close"></div>
   </div>
-  <a href="/" class="cnew-header-mobile__logo" alt="Christy Natsumi Jewelry">
+  <a href="{{ shop.secure_url }}" class="cnew-header-mobile__logo" alt="Christy Natsumi Jewelry Home">
   </a>
-  <a href="/cart" class="cnew-header-mobile__cart">
+  <a href="{{ shop.secure_url }}/cart" class="cnew-header-mobile__cart">
     {% if cart.item_count > 0 %}
       <div class="cnew-header-mobile__cart__count">
         {{ cart.item_count }}
