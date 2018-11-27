@@ -63,15 +63,29 @@
         </div>
       {% endfor %}
 
-      <div class="cart__subtotal">
-        <span class="cart__subtotal__label">Subtotal:</span>
-        <span class="cart__subtotal__price">{{ cart.total_price | money }}</span>
+
+
+      <div class="cart__footer">
+
+        <div class="cart__footer__note">
+          <label>special requests:</label>
+          <textarea name="note">{{ cart.note }}</textarea>
+        </div>
+
+        <div class="cart__footer__right">
+          <div class="cart__subtotal">
+            <span class="cart__subtotal__label">Subtotal:</span>
+            <span class="cart__subtotal__price">{{ cart.total_price | money }}</span>
+          </div>
+
+          <div class="cart__checkout">
+            <button class="button--dark" type="submit" name="update">{{ 'cart.general.update' | t }}</button>
+            <button class="button--dark" type="submit" name="checkout">Checkout</button>
+          </div>
+        </div>
+
       </div>
 
-      <div class="cart__checkout">
-        <button class="button--dark" type="submit" name="update">{{ 'cart.general.update' | t }}</button>
-        <button class="button--dark" type="submit" name="checkout">Checkout</button>
-      </div>
     </form>
   {% endif %}
 

@@ -243,6 +243,40 @@
 }
 
 
+.cart__footer {
+  @media screen and (min-width: $screen-tablet) {
+    display: flex;
+  }
+}
+
+.cart__footer__note {
+  margin-top: 64px;
+
+  @media screen and (min-width: $screen-tablet) {
+    margin-right: 16px;
+    flex: 0 1 50%;
+  }
+
+  label {
+    @include lightSubHeader;
+    font-size: 16px;
+    display: block;
+    margin-bottom: 8px;
+  }
+
+  textarea {
+    width: 100%;
+    min-height: 106px;
+  }
+}
+
+.cart__footer__right {
+  @media screen and (min-width: $screen-tablet) {
+    flex: 0 0 50%;
+  }
+}
+
+
 .cart__subtotal {
   margin: 64px 0;
   display: flex;
