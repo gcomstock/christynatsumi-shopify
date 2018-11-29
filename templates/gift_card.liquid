@@ -1,6 +1,5 @@
 <!-- /templates/gift_card.liquid -->
 {{ 'modernizr.gift-card.js' | shopify_asset_url | script_tag }}
-{{ 'vendor/qrcode.js' | shopify_asset_url | script_tag }}
 
 <main class="main--top main--bottom main--giftcard cn-wrapper">
 
@@ -24,15 +23,13 @@
 
   <div class="giftcard__body">
     <div class="giftcard__body__codes">
-      <div class="giftcard__body__codes__qr" id="QrCode"></div>
-      <br/>
       <p class="cn-note">
         {{ 'gift_cards.issued.redeem' | t }}
       </p>
       <div class="giftcard__body__codes__code" id="GiftCardDigits" onclick="selectText('GiftCardDigits');">{{ gift_card.code | format_code }}</div>
 
-
       {% if gift_card.pass_url %}
+        <br/>
         <a href="{{ gift_card.pass_url }}"><img id="apple-wallet-badge" src="{{ 'gift-card/add-to-apple-wallet.svg' | shopify_asset_url }}" width="120" height="40" alt="Add To Apple Wallet"></a>
       {% endif %}
     </div>
@@ -81,11 +78,6 @@
 
   document.title = "Gift Card - Christy Natsumi Jewelry";
 
-  new QRCode(document.getElementById('QrCode'), {
-    text: "{{ gift_card.qr_identifier }}",
-    width: 120,
-    height: 120
-  });
 
   /*============================================================================
     Auto-select gift card code on click, based on ID passed to the function

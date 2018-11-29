@@ -2718,7 +2718,7 @@ p.cn-about__membership-badges {
   display: -ms-inline-flexbox;
   display: inline-flex;
   width: 100%;
-  max-width: 980px;
+  max-width: 800px;
   -ms-flex-wrap: wrap;
   flex-wrap: wrap; }
   @media (min-width: 600px) {
@@ -2732,32 +2732,30 @@ p.cn-about__membership-badges {
   justify-content: center;
   -webkit-box-flex: 0;
   -ms-flex: 0 0 100%;
-  flex: 0 0 100%; }
+  flex: 0 0 100%;
+  margin-bottom: 32px; }
   @media (min-width: 600px) {
     .giftcard__body__codes {
       -webkit-box-flex: 1;
-      -ms-flex: 1 1 50%;
-      flex: 1 1 50%; } }
+      -ms-flex: 1 0 300px;
+      flex: 1 0 300px;
+      margin-right: 48px; } }
   .giftcard__body__codes .cn-note {
-    margin-top: 32px;
+    margin-top: 16px;
     margin-bottom: 16px; }
-
-.giftcard__body__codes__qr {
-  margin-top: 16px;
-  display: inline-block; }
 
 .giftcard__body__codes__code {
   font-size: 20px;
   border: 1px solid #666;
   padding: 16px 32px;
-  margin: 0 32px 32px;
+  margin-bottom: 16px;
   display: inline-block;
   background-color: #ffffff; }
 
 .giftcard__body__content {
   -webkit-box-flex: 1;
-  -ms-flex: 1 1 auto;
-  flex: 1 1 auto;
+  -ms-flex: 1 1 340px;
+  flex: 1 1 340px;
   -webkit-box-pack: center;
   -ms-flex-pack: center;
   justify-content: center; }
@@ -2808,7 +2806,8 @@ p.cn-about__membership-badges {
 .giftcard__actions {
   margin-top: 64px; }
   .giftcard__actions .button:first-child, .giftcard__actions .btn:first-child {
-    margin-right: 8px; }
+    margin-right: 8px;
+    margin-bottom: 8px; }
 
 @media print {
   body {
@@ -2817,7 +2816,8 @@ p.cn-about__membership-badges {
   .cnew-header-mobile,
   .cnew-header-spacer,
   .cn-footer,
-  .giftcard__actions {
+  .giftcard__actions,
+  #apple-wallet-badge {
     display: none; }
   .giftcard__hero {
     width: 9cm; } }

@@ -24,7 +24,7 @@
 .giftcard__body {
   display: inline-flex;
   width: 100%;
-  max-width: 980px;
+  max-width: 800px;
 
 
   flex-wrap: wrap;
@@ -36,37 +36,32 @@
 .giftcard__body__codes {
   justify-content: center;
   flex: 0 0 100%;
+  margin-bottom: 32px;
 
   @media (min-width: $screen-tablet) {
-    flex: 1 1 50%;
+    flex: 1 0 300px;
+    margin-right: 48px;
   }
 
   .cn-note {
-    margin-top: 32px;
+    margin-top: 16px;
     margin-bottom: 16px;
   }
-}
-
-.giftcard__body__codes__qr {
-  margin-top: 16px;
-  display: inline-block;
 }
 
 .giftcard__body__codes__code {
   font-size: 20px;
   border: 1px solid $border-color;
   padding: 16px 32px;
-  margin: 0 32px 32px;
+  margin-bottom: 16px;
   display: inline-block;
   background-color: #ffffff;
 }
 
 .giftcard__body__content {
-  flex: 1 1 auto;
+  flex: 1 1 340px;
   justify-content: center;
 }
-
-
 
 .giftcard__body__content__entry {
   width: 100%;
@@ -88,15 +83,10 @@
     margin-right: 10px;
     text-align: left;
 
-    @media (min-width: $screen-tablet) and (max-width: $screen-desktop-1) {
-      //text-align: right;
-    }
-
     @media (min-width: $screen-tablet) {
       font-size: 14px;
     }
   }
-
 
   p {
     line-height: 20px;
@@ -112,6 +102,7 @@
 
   .button:first-child {
     margin-right: 8px;
+    margin-bottom: 8px;
   }
 }
 
@@ -125,13 +116,12 @@
   .cnew-header-mobile,
   .cnew-header-spacer,
   .cn-footer,
-  .giftcard__actions {
+  .giftcard__actions,
+  #apple-wallet-badge {
     display: none;
   }
 
   .giftcard__hero {
     width: 9cm;
   }
-
-
 }
