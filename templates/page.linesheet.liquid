@@ -1,0 +1,67 @@
+<!-- /templates/page.linesheet.liquid -->
+
+<main class="main--top main--bottom cn-wrapper">
+  {% for collection in collections %}
+
+
+    {% if collection.title contains "Wholesale" %}
+      <div class="cn-linesheetTitle">{{ collection.title }}</div>
+
+
+        {% for product in collection.products %}
+          {% assign indexModulo = forloop.index | modulo:6 %}
+
+          {% if indexModulo == 1 %}
+            <div class="cn-linesheet">
+          {% endif %}
+
+            <div class="cn-linesheet__item">
+              <div class="cn-linesheet__item__img">
+                {% if product.images.size > 0 %}
+                  <img
+                    src="{{ product.featured_image | img_url: '600x600', crop: 'bottom' }}"
+                    alt="{{ product.featured_image.alt | escape }}"
+                  />
+                {% else %}
+                  <p>no product thumbnail</p>
+                {% endif %}
+              </div>
+
+              <div class="cn-linesheet__item__table">
+                <div class="cn-linesheet__item__table__left">
+                  <div class="cn-linesheet__item__table__left__title">
+                    {{ product.title }}
+                  </div>
+
+                  {% if product.metafields.details.measurements %}
+                    <div class="cn-linesheet__item__table__left__measurements">
+                      {{ product.metafields.details.measurements }}
+                    </div>
+                  {% endif %}
+                </div>
+
+                <div class="cn-linesheet__item__table__right">
+                  {% for field in product.metafields.wholesale-option %}
+                    <div class="cn-linesheet__item__table__right__option">
+                      <div class="cn-linesheet__item__table__right__option__key">
+                        {{ field | first }}
+                      </div>
+                      <div class="cn-linesheet__item__table__right__option__val">
+                        {{ field | last }}
+                      </div>
+                    </div>
+                  {% endfor %}
+                </div>
+              </div>
+            </div>
+
+          {% if indexModulo == 0 %}
+            </div>
+          {% endif %}
+
+        {% endfor %}
+      </div>
+
+    {% endif %}
+  {% endfor %}
+</main>

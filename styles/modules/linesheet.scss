@@ -1,0 +1,143 @@
+$p8:  0.125in;
+$p16: 0.0625in;
+$p24: 0.0475in;
+
+
+@page {
+  size: A4 portrait;
+  margin: 0.5in;
+}
+
+@page:right{
+  @bottom-right {
+    content: counter(page);
+    font-size: 20px;
+  }
+}
+
+
+
+
+#linesheet {
+  background-color: #fff;
+}
+
+.cn-linesheetTitle {
+  @include serifHeader;
+  text-align: center;
+  margin-top: 8px;
+  margin-bottom: 32px;
+  font-size: 16px;
+
+  @media print {
+    font-size: 16pt;
+    margin: $p8 0 0.25in;
+  }
+}
+
+.cn-linesheet {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  page-break-inside: avoid;
+  break-after: always;
+}
+
+.cn-linesheet__item {
+  width: 46%;
+  flex: 0 0 48%;
+}
+
+.cn-pagebreak {
+  display: none;
+  page-break-after: always;
+  break-after: always;
+  break-before: always;
+
+  @media print {
+    page-break-after: always;
+  }
+}
+
+.cn-linesheet__item__img {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-bottom: 50%;
+  margin: 0;
+  background-color: #eeeeee;
+  -webkit-print-color-adjust: exact;
+
+  img {
+    font-size: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 60%;
+    transform: translate(-50%, -45%);
+  }
+}
+
+.cn-linesheet__item__table {
+  margin: 16px 0 64px;
+
+  @media print {
+    margin: $p8 0 0.5in;
+  }
+}
+
+.cn-linesheet__item__table__left {
+  vertical-align: top;
+  display: inline-block;
+  width: 53.5%;
+  margin-right: 1.5%;
+}
+
+.cn-linesheet__item__table__left__title {
+  @include lightSubHeader;
+  font-size: 16px;
+  color: #000;
+  margin: 8px 0;
+
+  @media print {
+    font-size: 8pt;
+    margin: $p24 0;
+  }
+}
+
+.cn-linesheet__item__table__left__measurements {
+  font-size: 14px;
+
+  @media print {
+    font-size: 6pt;
+  }
+}
+
+.cn-linesheet__item__table__right {
+  vertical-align: top;
+  display: inline-block;
+  width: 45%;
+  border-left: 1px solid #ccc;
+}
+
+.cn-linesheet__item__table__right__option {
+  font-size: 14px;
+  padding: 8px 0 8px 8px;
+  width: 100%;
+  display: flex;
+
+  @media print {
+    font-size: 6pt;
+    padding: $p24 0 $p24 $p16;
+  }
+}
+
+.cn-linesheet__item__table__right__option__key {
+  flex: 0 0 70%;
+  font-style: italic;
+}
+
+.cn-linesheet__item__table__right__option__val {
+  flex: 0 0 30%;
+  text-align: right;
+}

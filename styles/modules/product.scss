@@ -247,6 +247,7 @@ $labelWidthDetailsTablet: calc(50% - 7px);
 .cn-product__textBlock {
   flex: 0 0 100%;
   opacity: 0;
+  pointer-events: none;
 
   &:nth-child(2) {
     transform: translateX(-100%);
@@ -256,9 +257,9 @@ $labelWidthDetailsTablet: calc(50% - 7px);
   }
   &.active {
     opacity: 1;
+    pointer-events: all;
   }
 }
-
 
 
 .cn-product__related {

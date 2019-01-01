@@ -1,0 +1,51 @@
+$color-gallery: #fff;
+
+
+.cn-customgallery {
+  background-color: $color-gallery;
+  border-top: 2px solid $color-gallery;
+
+  .grid-sizer,
+  .grid-item {
+    width: 50%;
+
+    @media (min-width: $screen-tablet) {
+      width: 25%;
+    }
+    @media (min-width: $screen-desktop) {
+      width: 25%;
+    }
+  }
+
+  .grid-item {
+    border-left: 2px solid $color-gallery;
+    border-bottom: 2px solid $color-gallery;
+
+    img {
+      width: 100%;
+      display: block;
+    }
+  }
+
+  .grid-item--width2 {
+    width: 100%;
+
+    @media (min-width: $screen-tablet) {
+      width: 50%;
+    }
+    @media (min-width: $screen-desktop) {
+      width: 50%;
+    }
+  }
+  .grid-item--width3 {
+    width: 100%;
+
+    @media (min-width: $screen-tablet) {
+      width: 75%;
+    }
+    @media (min-width: $screen-desktop) {
+      width: 75%;
+    }
+  }
+
+}
