@@ -8,7 +8,35 @@
 {% endcomment %}
 
 
-<main class="main--top main--bottom cn-wrapper">
+
+
+{% assign is_wholesale = false %}
+{% assign ship_time = '4-5 weeks' %}
+{% assign ship_product = 'jewelry pieces' %}
+
+{% if shop.url contains 'wholesale' %}
+  {% assign is_wholesale = true %}
+{% endif %}
+
+{% if product.type == 'Rings' %}
+  {% assign ship_product = 'rings' %}
+  {% assign ship_time = '3-4 weeks' %}
+{% endif %}
+
+{% if product.tags contains 'Diamond Ring' %}
+  {% assign ship_product = 'rings that contain stones' %}
+  {% assign ship_time = '4-5 weeks' %}
+{% endif %}
+
+{% if product.type == 'Earrings' or product.type == 'Necklaces' %}
+  {% assign ship_product = 'necklaces and earrings' %}
+  {% assign ship_time = '1-2 weeks' %}
+{% endif %}
+
+
+
+
+<main class="main--top main--bottom cn-wrapper cn-wrapper--product">
   <h1>{{ product.title }}</h1>
 
   <div class="cn-product" itemscope itemtype="http://schema.org/Product">
@@ -19,12 +47,13 @@
       {% for image in product.images %}
         <picture>
             <source srcset="{{ image | img_url: '710x710' }}" media="(max-width: 375px)" />
+            <source srcset="{{ image | img_url: '220x220', crop: 'bottom' }}" media="(max-width: 375px)" />
           {% if product.type == 'Gift Card' %}
-            <img class="lazyload cn-product__mask__slide active" src="{{ image | img_url : '1200x1200' }}" itemprop="image" alt="Christy Natsumi Gift Card Image"/>
+            <img class="lazyload cn-product__mask__slide active" src="{{ image | img_url : '1968x1968' }}" itemprop="image" alt="Christy Natsumi Gift Card Image"/>
           {% elsif image.position == 1 %}
-            <img class="lazyload cn-product__mask__slide active cn-imageFrame" src="{{ image | img_url : '1200x1200' }}" itemprop="image" alt="Christy Natsumi Product Image"/>
+            <img class="lazyload cn-product__mask__slide active cn-imageFrame" src="{{ image | img_url : '1928x1928' }}" itemprop="image" alt="Christy Natsumi Product Image"/>
           {% else %}
-            <img class="lazyload cn-product__mask__slide cn-imageFrame" src="{{ image | img_url : '1200x1200' }}" alt="Christy Natsumi Product Image"/>
+            <img class="lazyload cn-product__mask__slide cn-imageFrame" src="{{ image | img_url : '1928x1928' }}" alt="Christy Natsumi Product Image"/>
           {% endif %}
         </picture>
       {% endfor %}
@@ -51,7 +80,11 @@
 
       <div class="cn-product__options">
         <div class="content-wrapper">
-          <label for="Price">Price</label>
+          {% if shop.url contains "wholesale" %}
+            <label for="Price">Wholesale <br/>Price</label>
+          {% else %}
+            <label for="Price">Price</label>
+          {% endif %}
           <div class="cn-product__price" id="js-ProductPrice">{{ current_variant.price | money }}</div>
         </div>
 
@@ -92,6 +125,9 @@
           </div>
         {% endif %}
           <div class="cn-product__textTabs__tab">
+            <span>delivery</span>
+          </div>
+          <div class="cn-product__textTabs__tab">
             <span>returns</span>
           </div>
       </div>
@@ -105,30 +141,43 @@
         {% endif %}
           <div class="cn-product__textBlock">
             <p></p>
+            {% if is_wholesale %}
+              <p>
+                All wholesale jewelry is made to order in our San Francisco workshop. Delivery times will vary based on your order size, however average around 4-5 weeks.
+              </p>
+            {% else %}
+              <p>
+                All {{ ship_product }} are made to order in our San Francisco workshop. Please allow {{ ship_time }} between the time your order was placed and the day it ships to you.
+              </p>
+            {% endif %}
+            <p>
+              If you need your jewelry sooner, please specify in the <b>special requests</b> box on the shopping cart page. We will do our best to accommodate your request and will contact you if we can&#39;t.
+            </p>
+            <p>
+              <a href="/pages/contact">Reach out to us here</a> if you have any questions.
+            </p>
+          </div>
+          <div class="cn-product__textBlock">
+            <p></p>
             {% if product.type != 'Gift Card' %}
-
               {% assign is_clearance = false %}
-              {% for tag in product.tags %}
-                {% if tag == 'Clearance' %}
-                  {% assign is_clearance = true %}
-                  {% break %}
-                {% endif %}
-              {% endfor %}
+              {% if product.tags contains 'Clearance' %}
+                {% assign is_clearance = true %}
+              {% endif %}
 
               {% if is_clearance %}
                 <p>This product is part of a special promotion and cannot be returned or refunded. All sales are final.</p>
               {% else %}
                 <p>
-                  Merchandise in new and unworn condition, in it's original packaging may be returned within 7 days of receipt, excluding shipping costs. Customers are responsible for return shipping. Please note that we are not responsible for lost or stolen items in the mail. When returning your merchandise we strongly suggest adding insurance to the shipment for the dollar amount of the merchandise.
+                  Merchandise in new and unworn condition, in it&#39;s original packaging may be returned within 7 days of receipt, excluding shipping costs. Customers are responsible for return shipping. Please note that we are not responsible for lost or stolen items in the mail. When returning your merchandise we strongly suggest adding insurance to the shipment for the dollar amount of the merchandise.
                 </p>
                 <p>
                   Custom and customized jewelry, sale items, and any rings in special sizes are non-refundable.
                 </p>
                 <p>
-                  Please contact us for a return authorization code. Returned merchandise without a code will not be accepted.
+                  Please <a href="/pages/contact">contact us</a> for a return authorization code. Returned merchandise without a code will not be accepted.
                 </p>
               {% endif %}
-
             {% else %}
               <p>
                 All gift card sales are final.

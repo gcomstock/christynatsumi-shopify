@@ -1,67 +1,122 @@
 <!-- /templates/page.linesheet.liquid -->
 
-<main class="main--top main--bottom cn-wrapper">
-  {% for collection in collections %}
+<main class="main--top main--bottom main--print cn-wrapper">
 
 
-    {% if collection.title contains "Wholesale" %}
-      <div class="cn-linesheetTitle">{{ collection.title }}</div>
+<!-- http://www.jessicaschillinger.us/2017/blog/print-repeating-header-browser -->
 
+<table class="report-container">
+  <thead class="report-header">
+    <tr>
+      <th class="report-header-cell">
+        <div class="report-header-cell__logo">
+          <img
+            src="{{ 'christy-natsumi-logo--stacked.png' | asset_url }}"
+            alt="Christy Natsumi Creating Jewelry"
+          />
+        </div>
+        <div class="report-header-cell__text">
+          natsumi@christynatsumi.com
+          <br/>
+          415-902-3331
+        </div>
+        <div class="report-header-cell__title">
+          spring 2019 linesheet
+        </div>
+      </th>
+    </tr>
+  </thead>
 
-        {% for product in collection.products %}
-          {% assign indexModulo = forloop.index | modulo:6 %}
+   <tbody class="report-content">
+     <tr>
+       <td class="report-content-cell">
 
-          {% if indexModulo == 1 %}
-            <div class="cn-linesheet">
-          {% endif %}
+        {% for collection in collections %}
+          {% if collection.title contains "Wholesale" %}
 
-            <div class="cn-linesheet__item">
-              <div class="cn-linesheet__item__img">
-                {% if product.images.size > 0 %}
-                  <img
-                    src="{{ product.featured_image | img_url: '600x600', crop: 'bottom' }}"
-                    alt="{{ product.featured_image.alt | escape }}"
-                  />
-                {% else %}
-                  <p>no product thumbnail</p>
+            <div class="cn-linesheetTitle">{{ collection.title }}</div>
+
+              {% for product in collection.products %}
+                {% assign indexModulo = forloop.index | modulo:2 %}
+
+                {% if indexModulo == 1 %}
+                  <div class="cn-linesheet">
                 {% endif %}
-              </div>
 
-              <div class="cn-linesheet__item__table">
-                <div class="cn-linesheet__item__table__left">
-                  <div class="cn-linesheet__item__table__left__title">
-                    {{ product.title }}
+                  <div class="cn-linesheet__item">
+                    <div class="cn-linesheet__item__img">
+                      {% if product.metafields.details.sku %}
+                        <div class="cn-linesheet__item__img__sku">
+                          {{ product.metafields.details.sku }}
+                        </div>
+                      {% endif %}
+
+                      {% if product.images.size > 0 %}
+                        <img
+                          src="{{ product.featured_image | img_url: '600x600', crop: 'bottom' }}"
+                          alt="{{ product.featured_image.alt | escape }}"
+                        />
+                      {% else %}
+                        <p>no product thumbnail</p>
+                      {% endif %}
+                    </div>
+
+                    <div class="cn-linesheet__item__table">
+                      <div class="cn-linesheet__item__table__left">
+                        <div class="cn-linesheet__item__table__left__title">
+                          {{ product.title }}
+                        </div>
+
+                        {% if product.metafields.details.measurements %}
+                          <div class="cn-linesheet__item__table__left__measurements">
+                            {{ product.metafields.details.measurements }}
+                          </div>
+                        {% endif %}
+                      </div>
+
+                      <div class="cn-linesheet__item__table__right">
+                        {% for field in product.metafields.wholesale-option %}
+                          <div class="cn-linesheet__item__table__right__option">
+                            <div class="cn-linesheet__item__table__right__option__key">
+                              {{ field | first }}
+                            </div>
+                            <div class="cn-linesheet__item__table__right__option__val">
+                              {{ field | last }}
+                            </div>
+                          </div>
+                        {% endfor %}
+                      </div>
+                    </div>
                   </div>
 
-                  {% if product.metafields.details.measurements %}
-                    <div class="cn-linesheet__item__table__left__measurements">
-                      {{ product.metafields.details.measurements }}
-                    </div>
-                  {% endif %}
-                </div>
+                {% if indexModulo == 0 %}
+                  </div>
+                {% endif %}
 
-                <div class="cn-linesheet__item__table__right">
-                  {% for field in product.metafields.wholesale-option %}
-                    <div class="cn-linesheet__item__table__right__option">
-                      <div class="cn-linesheet__item__table__right__option__key">
-                        {{ field | first }}
-                      </div>
-                      <div class="cn-linesheet__item__table__right__option__val">
-                        {{ field | last }}
-                      </div>
-                    </div>
-                  {% endfor %}
-                </div>
-              </div>
+              {% endfor %}
             </div>
 
-          {% if indexModulo == 0 %}
-            </div>
           {% endif %}
-
         {% endfor %}
-      </div>
 
-    {% endif %}
-  {% endfor %}
+       </td>
+     </tr>
+  </tbody>
+</table>
+
+
+
 </main>
+
+
+<script>
+
+  jQuery(function($) {
+    $('.cn-linesheetTitle').each(function( index ) {
+      var oldTitle = $(this).text();
+      var newTitle = oldTitle.replace('Wholesale ', '');
+      $(this).text(newTitle);
+    });
+  });
+
+</script>

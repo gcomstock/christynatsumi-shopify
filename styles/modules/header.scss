@@ -41,6 +41,11 @@ $mobile-nav-height: 56px;
   height: 104px;
 }
 
+.cnew-header__nav--wholesale {
+  background-color: #ffff00;
+  border-bottom: 4px solid #000;
+}
+
 .cnew-header__nav__title {
   width: 127px;
   margin: 16px 64px;
@@ -49,6 +54,34 @@ $mobile-nav-height: 56px;
   background-position: center;
   background-repeat: no-repeat;
 }
+
+
+.cnew-header__nav__wholesale {
+  display: flex;
+  align-items: center;
+  height: 100%;
+}
+
+.cnew-header__nav__wholesale__title {
+  width: 127px;
+  height: 68px;
+  margin: 16px 64px;
+  background-image: url("{{ 'christy-natsumi-logo--stacked.png' | asset_url }}");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.cnew-header__nav__wholesale__banner {
+  background-color: #000;
+  color: #fff;
+  font-size: 14px;
+  padding: 8px 16px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+
 
 .cnew-header__nav__items {
   display: none;
@@ -72,6 +105,17 @@ $mobile-nav-height: 56px;
         font-weight: bold;
         &:hover, &.expanded { border-bottom: 1px solid #000; }
       }
+    }
+  }
+}
+
+
+.cnew-header__nav__items--wholesale {
+  a {
+    color: #000;
+
+    &:hover, &.expanded {
+      border-bottom: 1px solid #000;
     }
   }
 }

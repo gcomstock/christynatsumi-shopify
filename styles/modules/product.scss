@@ -20,12 +20,14 @@ $labelWidthDetailsTablet: calc(50% - 7px);
   height: 55vh;
 
   @media (min-width: $screen-desktop) {
-    flex: 0 1 620px;
+    flex: 0 1 984px;
     margin-right: 64px;
     margin-top: 0;
-    height: 620px;
+    height: 984px;
+    max-height: 90vh;
   }
 }
+
 
 .cn-product__mask--giftCard {
   overflow: hidden;
@@ -81,7 +83,7 @@ $labelWidthDetailsTablet: calc(50% - 7px);
 
 //RIGHT COLUMN PARENT
 .cn-product__details {
-  flex: 0 1 444px;
+  flex: 0 0 444px;
 }
 
 

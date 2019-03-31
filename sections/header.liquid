@@ -1,10 +1,22 @@
 <header class="cnew-header">
+  {% assign is_wholesale = false %}
+  {% if shop.url contains "wholesale" %}
+    {% assign is_wholesale = true %}
+  {% endif %}
 
 
-  <div class="cnew-header__nav">
-    <a class="cnew-header__nav__title" itemprop="brand" href="{{ shop.secure_url }}" alt="Christy Natsumi Jewelry Home" ></a>
+  <div class="cnew-header__nav{% if is_wholesale %} cnew-header__nav--wholesale{% endif %}">
 
-    <div class="cnew-header__nav__items">
+    {% if is_wholesale %}
+      <div class="cnew-header__nav__wholesale">
+        <a class="cnew-header__nav__wholesale__title" itemprop="brand" href="{{ shop.secure_url }}" alt="Christy Natsumi Jewelry Home"></a>
+        <span class="cnew-header__nav__wholesale__banner">wholesale store</span>
+      </div>
+    {% else %}
+      <a class="cnew-header__nav__title" itemprop="brand" href="{{ shop.secure_url }}" alt="Christy Natsumi Jewelry Home"></a>
+    {% endif %}
+
+    <div class="cnew-header__nav__items{% if is_wholesale %} cnew-header__nav__items--wholesale{% endif %}">
       {% include 'navigation' %}
     </div>
   </div>
