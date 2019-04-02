@@ -204,7 +204,20 @@
 .cart__item__desc__variant {
   @include defaultText;
   display: block;
+  line-height: 30px;
 }
+
+.cart__item__desc__variant__sku {
+  @include defaultText;
+  display: block;
+  line-height: 30px;
+  font-size: 14px;
+
+  span {
+    font-weight: bold;
+  }
+}
+
 
 .cart__item__qty {
   @include qtyFlex;

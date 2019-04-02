@@ -5,6 +5,11 @@
     - Shopify Payments - http://docs.shopify.com/manual/more/shopify-payments/testing-shopify-payments
 {% endcomment %}
 
+{% assign is_wholesale = false %}
+{% if shop.url contains 'wholesale' %}
+  {% assign is_wholesale = true %}
+{% endif %}
+
 <main class="main--top main--bottom cn-wrapper cn-wrapper--narrow">
   {% if cart.item_count < 1 %}
     <div class="cart__empty">
@@ -45,11 +50,17 @@
               {% unless item.variant.title contains 'Default' %}
                 {{ item.variant.title }}
               {% endunless %}
+              {% comment %} this loop is used by infinite options plugin {% endcomment %}
               {% unless item.properties == empty %}
                 {% for property in item.properties %}
                   {{ property.first }}: {{ property.last }}
                 {% endfor %}
               {% endunless %}
+              {% if is_wholesale %}
+                <div class="cart__item__desc__variant__sku">
+                  <span>SKU: </span>{{ item.variant.sku }}
+                </div>
+              {% endif %}
             </div>
           </div>
 

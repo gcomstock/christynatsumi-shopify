@@ -81,12 +81,19 @@
       <div class="cn-product__options">
         <div class="content-wrapper">
           {% if shop.url contains "wholesale" %}
-            <label for="Price">Wholesale <br/>Price</label>
+            <label for="Price">wholesale <br/>price</label>
           {% else %}
-            <label for="Price">Price</label>
+            <label for="Price">price</label>
           {% endif %}
           <div class="cn-product__price" id="js-ProductPrice">{{ current_variant.price | money }}</div>
         </div>
+
+        {% if is_wholesale %}
+          <div class="content-wrapper">
+            <label>wholesale <br/>sku</label>
+            <p id="js-ProductSku"></p>
+          </div>
+        {% endif %}
 
         <form action="/cart/add" method="post">
           <select name="id" id="js-ProductSelect">
@@ -278,6 +285,8 @@
         // variant doesn't exist.
         $('#js-AddToCart').val('Unavailable').html('Unavailable').addClass('disabled').attr('disabled', 'disabled');
       }
+
+      $('#js-ProductSku').html('<span>'+ variant.sku + '</span>');
 
       // js is done loading, now we can show
       $('.cn-product__options').show();
