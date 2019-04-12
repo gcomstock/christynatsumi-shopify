@@ -59,7 +59,7 @@ dev-quick:
 
 have changes to config.yml be untracked so it doesn't upload to github but persists if branch is switched:
 
-`$ git update-index --assume-unchanged <file>`
+`$ git update-index --assume-unchanged config.yml`
 
 
 
@@ -68,6 +68,7 @@ have changes to config.yml be untracked so it doesn't upload to github but persi
 
 ```
 $ theme deploy --env=dev-quick
-$ theme deploy --env=dev —-nodelete
+$ theme deploy --env=dev
 $ theme watch --env=dev
+$ theme deploy --env=prod snippets/headernotice.liquid
 ```
