@@ -23,7 +23,7 @@ prod:
   password: asdasdasdasdasdasdasdasdasdasdas
   theme_id: "183663815"
   store: christy-natsumi-jewelry.myshopify.com
-  timeout: 120s
+  timeout: 600s
   ignore_files:
     - styles/*
 
@@ -31,7 +31,7 @@ prod-quick:
   password: asdasdasdasdasdasdasdasdasdasdas
   theme_id: "183663815"
   store: christy-natsumi-jewelry.myshopify.com
-  timeout: 120s
+  timeout: 600s
   ignore_files:
     - lib/*
     - assets/*
@@ -41,7 +41,7 @@ dev:
   password: asdasdasdasdasdasdasdasdasdasdas
   theme_id: "12360941616"
   store: christy-natsumi-jewelry.myshopify.com
-  timeout: 120s
+  timeout: 600s
   ignore_files:
     - styles/*
 
@@ -49,7 +49,7 @@ dev-quick:
   password: asdasdasdasdasdasdasdasdasdasdas
   theme_id: "12360941616"
   store: christy-natsumi-jewelry.myshopify.com
-  timeout: 120s
+  timeout: 600s
   ignore_files:
     - lib/*
     - assets/*
@@ -59,7 +59,7 @@ wholesale:
   password: asdasdasdasdasdasdasdasdasdasdas
   theme_id: "58171228224"
   store: christy-natsumi-wholesale.myshopify.com
-  timeout: 120s
+  timeout: 600s
   ignore_files:
     - styles/*
 
@@ -67,7 +67,7 @@ wholesale-quick:
   password: asdasdasdasdasdasdasdasdasdasdas
   theme_id: "58171228224"
   store: christy-natsumi-wholesale.myshopify.com
-  timeout: 120s
+  timeout: 600s
   ignore_files:
     - lib/*
     - assets/*
