@@ -273,10 +273,6 @@ $labelWidthDetailsTablet: calc(50% - 7px);
     border-top: 1px solid $border-color;
     margin-bottom: 32px;
   }
-
-  @media (min-width: $screen-tablet) {
-    margin-top: 128px;
-  }
 }
 
 
