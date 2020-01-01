@@ -6,15 +6,12 @@
 
 
   <div class="cnew-header__nav{% if is_wholesale %} cnew-header__nav--wholesale{% endif %}">
-
-    {% if is_wholesale %}
-      <div class="cnew-header__nav__wholesale">
-        <a class="cnew-header__nav__wholesale__title" itemprop="brand" href="{{ shop.secure_url }}" alt="Christy Natsumi Jewelry Home"></a>
-        <span class="cnew-header__nav__wholesale__banner">wholesale store</span>
-      </div>
-    {% else %}
-      <a class="cnew-header__nav__title" itemprop="brand" href="{{ shop.secure_url }}" alt="Christy Natsumi Jewelry Home"></a>
-    {% endif %}
+    <div class="cnew-header__nav__title-content">
+      <a class="cnew-header__nav__title-content__logo" itemprop="brand" href="{{ shop.secure_url }}" alt="Christy Natsumi Jewelry Home"></a>
+      {% if is_wholesale %}
+        <span class="cnew-header__nav__title-content__wholesale-banner">wholesale store</span>
+      {% endif %}
+    </div>
 
     <div class="cnew-header__nav__items{% if is_wholesale %} cnew-header__nav__items--wholesale{% endif %}">
       {% include 'navigation' %}
@@ -45,6 +42,15 @@
           men's
         </div>
       </a>
+      <!--
+      <a class="cnew-header__subnav__items__item" href="{{ shop.secure_url }}/collections/one-of-a-kind">
+        <div class="cnew-header__subnav__items__item__img" style="background-image:url({{ 'christy-natsumi-nav-wedding-one-of-a-kind.jpg' | asset_url }})">
+        </div>
+        <div class="cnew-header__subnav__items__item__text">
+          one of a kind rings
+        </div>
+      </a>
+      -->
       <a class="cnew-header__subnav__items__item" href="{{ shop.secure_url }}/collections/wedding">
         <div class="cnew-header__subnav__items__item__img" style="background-image:url({{ 'christy-natsumi-nav-wedding-all.jpg' | asset_url }})">
         </div>
@@ -86,9 +92,11 @@
         <a href="{{ shop.secure_url }}/collections/last-call">
           <span>last call</span>
         </a>
+        <!--
         <a href="{{ shop.secure_url }}/products/gift-card">
           <span>gift cards</span>
         </a>
+        -->
         <a href="{{ shop.secure_url }}/collections/all">
           <span>see all</span>
         </a>

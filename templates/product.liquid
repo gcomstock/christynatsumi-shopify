@@ -11,6 +11,7 @@
 
 
 {% assign is_wholesale = false %}
+{% assign is_supervariant = false %}
 {% assign ship_time = '4-5 weeks' %}
 {% assign ship_product = 'jewelry pieces' %}
 
@@ -31,6 +32,10 @@
 {% if product.type == 'Earrings' or product.type == 'Necklaces' %}
   {% assign ship_product = 'necklaces and earrings' %}
   {% assign ship_time = '1-2 weeks' %}
+{% endif %}
+
+{% if product.tags contains 'Supervariant' %}
+  {% assign is_supervariant = true %}
 {% endif %}
 
 
@@ -80,8 +85,8 @@
 
       <div class="cn-product__options">
         <div class="content-wrapper">
-          {% if shop.url contains "wholesale" %}
-            <label for="Price">wholesale <br/>price</label>
+          {% if is_wholesale %}
+            <label for="Price">wholesale<br/>price</label>
           {% else %}
             <label for="Price">price</label>
           {% endif %}
@@ -90,9 +95,13 @@
 
         {% if is_wholesale %}
           <div class="content-wrapper">
-            <label>wholesale <br/>sku</label>
+            <label>wholesale<br/>sku</label>
             <p id="js-ProductSku"></p>
           </div>
+        {% endif %}
+
+        {% if is_supervariant %}
+          <div id="supervariant-loader">Loading Variants...</div>
         {% endif %}
 
         <form action="/cart/add" method="post">
@@ -292,7 +301,6 @@
       $('.cn-product__options').show();
     }
 
-
     new Shopify.OptionSelectors('js-ProductSelect', {
       product: {{ product | json }},
       onVariantSelected: selectCallback
@@ -308,5 +316,70 @@
       $('.selector-wrapper').hide();
     {% endif %}
 
+    // If this product is a supervariant, hide the supervariant dropdown
+    {% if is_supervariant %}
+      $('.selector-wrapper').each(function(){
+        if ($(this).children('label').text() === 'Supervariant') {
+          $(this).hide();
+        }
+      });
+    {% endif %}
   });
+
+
+
+
+  {% if is_supervariant %}
+    // there is a race condition while infinite options, jquery, and option_selection.js load.
+    // this interval will check if the normal page is ready before creating the supervariant fields.
+    var supervariantTimer;
+
+
+    function didPageLoad() {
+      if (window.jQuery && $('.selector-wrapper').length > 0) {
+
+        // everything is loaded, now we can assign the special supervariant handler
+        $('.stoneSelect').find('select').change(function() {
+          getSupervariantValue();
+        });
+
+        $('#supervariant-loader').hide();
+
+        getSupervariantValue();
+        clearInterval(supervariantTimer);
+      }
+    }
+
+
+    function getSupervariantValue() {
+      var premium = 0;
+      var $supervariantDropdown = $('.cn-product__options').find('label:contains("Supervariant")').next();
+
+
+      $('.stoneSelect').each(function(){
+        if ($(this).find('select option:selected').val() === 'Diamond') {
+          premium++;
+        }
+      });
+
+
+      if (premium === 2) {
+        $supervariantDropdown.val('Includes');
+      } else if (premium === 1) {
+        $supervariantDropdown.val('Selected');
+      } else {
+        $supervariantDropdown.val('With');
+      }
+
+      $supervariantDropdown.change();
+    }
+
+
+    window.Shoppad = window.Shoppad || {};
+    window.Shoppad.apps = window.Shoppad.apps || {};
+    window.Shoppad.apps.infiniteoptions = window.Shoppad.apps.infiniteoptions || {};
+    window.Shoppad.apps.infiniteoptions.ready = function() {
+      supervariantTimer = setInterval(didPageLoad, 500);
+    };
+  {% endif %}
 </script>

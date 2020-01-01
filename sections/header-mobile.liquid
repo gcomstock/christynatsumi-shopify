@@ -1,4 +1,10 @@
-<header class="cnew-header-mobile">
+{% assign is_wholesale = false %}
+{% if shop.url contains "wholesale" %}
+  {% assign is_wholesale = true %}
+{% endif %}
+
+
+<header class="cnew-header-mobile {% if is_wholesale %} cnew-header-mobile--wholesale{% endif %}">
   <div class="cnew-header-mobile__navbtn">
     <div class="cnew-header-mobile__navbtn__icon cnew-header-mobile__navbtn__icon--hamburger active"></div>
     <div class="cnew-header-mobile__navbtn__icon cnew-header-mobile__navbtn__icon--close"></div>
@@ -17,8 +23,6 @@
 
 <div class="cnew-header-mobile-drawer">
   <div class="cnew-header-mobile-drawer__content">
-
     {% include 'navigation-mobile' %}
-
   </div>
 </div>

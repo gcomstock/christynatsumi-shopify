@@ -123,13 +123,39 @@ $labelWidthDetailsTablet: calc(50% - 7px);
 }
 
 
+#supervariant-loader {
+  @include serifItalic;
+  display: flex;
+  align-items: center;
+  margin-bottom: 8px;
+  min-height: 48px;
+  animation-name: loading;
+  animation-duration: 0.5s;
+  animation-direction: alternate;
+  animation-iteration-count: infinite;
+  font-size: 14px;
+
+  @media (min-width: $screen-tablet) {
+    font-size: 14px;
+  }
+  @media (min-width: $screen-desktop) {
+    font-size: 16px;
+  }
+}
+
+@keyframes loading {
+  from {opacity: 1;}
+  to {opacity: 0.5;}
+}
 
 
 // selector-wrapper is created by option_selection.js to wrap options
 // content-wrapper is used in this template to hold data defined in product.liquid
-// they should be namespaced differently so option_selection.js does not get confused by the extra elements
+// infiniteoptions-container is a 3rd party plugin to give extra options (used for ring size mostly)
+// they should be namespaced differently so shopify's option_selection.js does not get confused by the extra elements
 .selector-wrapper,
-.content-wrapper {
+.content-wrapper,
+#infiniteoptions-container > div {
   width: 100%;
   display: flex;
   align-items: center;
@@ -177,6 +203,14 @@ $labelWidthDetailsTablet: calc(50% - 7px);
   height: 48px;
   display: flex;
   align-items: center;
+  font-size: 28px;
+
+  @media (min-width: $screen-tablet) {
+    font-size: 32px;
+  }
+  @media (min-width: $screen-desktop) {
+    font-size: 36px;
+  }
 
   span {
     margin-top: 0.2em; // the specific italic font we use has an odd baseline, so this balances it out
@@ -272,37 +306,5 @@ $labelWidthDetailsTablet: calc(50% - 7px);
     border: none;
     border-top: 1px solid $border-color;
     margin-bottom: 32px;
-  }
-}
-
-
-// temporary way to display infinite sizes. remove when sizes are tracked in shopify
-#infiniteoptions-container {
-  margin-bottom: 8px;
-  padding-left: $colWidthDetails;
-  margin-left: 10px;
-  position: relative;
-
-  &:before {
-    content: 'size';
-    position: absolute;
-    left: -10px;
-    top: 0;
-    line-height: 48px;
-    @include subHeader;
-    font-size: 12px;
-
-    @media (min-width: $screen-tablet) {
-      font-size: 14px;
-    }
-  }
-
-  @media (min-width: $screen-tablet) and (max-width: $screen-desktop-1) {
-    padding-left: $labelWidthDetailsTablet;
-
-    &:before {
-      margin-left: -45px;
-      left: auto;
-    }
   }
 }
