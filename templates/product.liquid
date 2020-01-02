@@ -8,10 +8,9 @@
 {% endcomment %}
 
 
-
-
 {% assign is_wholesale = false %}
 {% assign is_supervariant = false %}
+{% assign is_lastcall = false %}
 {% assign ship_time = '4-5 weeks' %}
 {% assign ship_product = 'jewelry pieces' %}
 
@@ -29,6 +28,10 @@
   {% assign ship_time = '4-5 weeks' %}
 {% endif %}
 
+{% if product.tags contains 'Last Call' %}
+  {% assign is_lastcall = true %}
+{% endif %}
+
 {% if product.type == 'Earrings' or product.type == 'Necklaces' %}
   {% assign ship_product = 'necklaces and earrings' %}
   {% assign ship_time = '1-2 weeks' %}
@@ -43,7 +46,6 @@
 
 <main class="main--top main--bottom cn-wrapper cn-wrapper--product">
   <h1>{{ product.title }}</h1>
-
   <div class="cn-product" itemscope itemtype="http://schema.org/Product">
 
 
@@ -100,8 +102,8 @@
           </div>
         {% endif %}
 
-        {% if is_supervariant %}
-          <div id="supervariant-loader">Loading Variants...</div>
+        {% if is_supervariant or ship_product == 'rings' %}
+          <div id="infinite-options-loader">Loading Options...</div>
         {% endif %}
 
         <form action="/cart/add" method="post">
@@ -111,20 +113,10 @@
             {% endfor %}
           </select>
 
-
-          {% if product.metafields.details.measurements %}
-            <div class="content-wrapper">
-              <label for="Measurements">Measurements</label>
-              <p>{{ product.metafields.details.measurements }}</p>
-            </div>
-          {% endif %}
-
-
           <div class="content-wrapper">
             <label>Quantity</label>
             <input type="number" name="quantity" value="1" min="1" max="9999">
           </div>
-
 
           <div class="content-wrapper">
             <label></label>
@@ -176,12 +168,7 @@
           <div class="cn-product__textBlock">
             <p></p>
             {% if product.type != 'Gift Card' %}
-              {% assign is_clearance = false %}
-              {% if product.tags contains 'Clearance' %}
-                {% assign is_clearance = true %}
-              {% endif %}
-
-              {% if is_clearance %}
+              {% if is_lastcall %}
                 <p>This product is part of a special promotion and cannot be returned or refunded. All sales are final.</p>
               {% else %}
                 <p>
@@ -217,7 +204,6 @@
 
 
 <script>
-
   // thumbnail click handler
 	function thumbnailClickEvent() {
 		var productTn = document.querySelectorAll('.cn-product__tnContainer__tn');
@@ -329,57 +315,59 @@
 
 
 
-  {% if is_supervariant %}
-    // there is a race condition while infinite options, jquery, and option_selection.js load.
-    // this interval will check if the normal page is ready before creating the supervariant fields.
-    var supervariantTimer;
+
+  // there is a race condition while infinite options, jquery, and option_selection.js load.
+  // this interval will check if everything is ready before creating the infinite options fields.
+  var infiniteOptionsTimer;
 
 
-    function didPageLoad() {
-      if (window.jQuery && $('.selector-wrapper').length > 0) {
+  function isPageReady() {
+    if (window.jQuery && $('.selector-wrapper').length > 0) {
 
-        // everything is loaded, now we can assign the special supervariant handler
+      $('#infinite-options-loader').hide();
+
+      {% if is_supervariant %}
         $('.stoneSelect').find('select').change(function() {
           getSupervariantValue();
         });
-
-        $('#supervariant-loader').hide();
-
         getSupervariantValue();
-        clearInterval(supervariantTimer);
+      {% endif %}
+
+      clearInterval(infiniteOptionsTimer);
+    }
+  }
+
+
+  function getSupervariantValue() {
+    var premium = 0;
+    var $supervariantDropdown = $('.cn-product__options').find('label:contains("Supervariant")').next();
+
+
+    $('.stoneSelect').each(function(){
+      if ($(this).find('select option:selected').val() === 'Diamond') {
+        premium++;
       }
+    });
+
+
+    if (premium === 2) {
+      $supervariantDropdown.val('Includes');
+    } else if (premium === 1) {
+      $supervariantDropdown.val('Selected');
+    } else {
+      $supervariantDropdown.val('With');
     }
 
-
-    function getSupervariantValue() {
-      var premium = 0;
-      var $supervariantDropdown = $('.cn-product__options').find('label:contains("Supervariant")').next();
+    $supervariantDropdown.change();
+  }
 
 
-      $('.stoneSelect').each(function(){
-        if ($(this).find('select option:selected').val() === 'Diamond') {
-          premium++;
-        }
-      });
 
 
-      if (premium === 2) {
-        $supervariantDropdown.val('Includes');
-      } else if (premium === 1) {
-        $supervariantDropdown.val('Selected');
-      } else {
-        $supervariantDropdown.val('With');
-      }
-
-      $supervariantDropdown.change();
-    }
-
-
-    window.Shoppad = window.Shoppad || {};
-    window.Shoppad.apps = window.Shoppad.apps || {};
-    window.Shoppad.apps.infiniteoptions = window.Shoppad.apps.infiniteoptions || {};
-    window.Shoppad.apps.infiniteoptions.ready = function() {
-      supervariantTimer = setInterval(didPageLoad, 500);
-    };
-  {% endif %}
+  window.Shoppad = window.Shoppad || {};
+  window.Shoppad.apps = window.Shoppad.apps || {};
+  window.Shoppad.apps.infiniteoptions = window.Shoppad.apps.infiniteoptions || {};
+  window.Shoppad.apps.infiniteoptions.ready = function() {
+    infiniteOptionsTimer = setInterval(isPageReady, 500);
+  };
 </script>
