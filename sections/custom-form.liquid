@@ -1,33 +1,6 @@
 <div class="form-wrapper custom-form-wrapper">  
   <div class="form-inner-wrapper">
     {% form 'contact' %}
-
-      {% if form.posted_successfully? %}
-        <p class="success">Thank you! We will be in contact with you shortly.</p>
-
-        <script>
-          // bizarre workaround because chrome is not autoscrolling when both a url param and #anchor are in url.
-          window.onload = function() {
-            setTimeout(function(){
-              console.log(2);
-              document.getElementById('howtoorder').scrollIntoView(true);
-            }, 100);
-          }
-        </script>
-      {% endif %} 
-      
-      {% if form.errors %}
-        <p class="error">Sorry, something went wrong. Please try again or email <a href="mailto:natsumi@christynatsumi.com">natsumi@christynatsumi.com</a></p>
-
-        // bizarre workaround because chrome is not autoscrolling when both a url param and #anchor are in url.
-        window.onload = function() {
-          setTimeout(function(){
-            console.log(2);
-            document.getElementById('howtoorder').scrollIntoView(true);
-          }, 100);
-        }
-      {% endif %}
-
       <div class="field-list">
         <div class="field-wrapper">
           <label for="contactFormName">Name*</label>
@@ -42,35 +15,55 @@
           <input type="text" id="contactFormLocation" name="contact[location]" required>
         </div>
         <div class="field-wrapper">
+          <label for="contactFormLocation">Shipping Location</label>
+          <input type="text" id="contactFormLocation" name="contact[shipping-location]" placeholder="If different from above">
+        </div>
+        <div class="field-wrapper">
             <label for="contactFormPhone">Phone*</label>
             <input type="tel" id="contactFormPhone" name="contact[phone]" required>
         </div>
         <div class="field-wrapper">
             <label for="contactFormOccasion">Occasion*</label>
-            <textarea id="contactFormOccasion" name="contact[occasion]" required></textarea>
+            <input type="text" id="contactFormOccasion" name="contact[occasion]" required>
         </div>
         <div class="field-wrapper">
-          <label for="contactFormInterest">Interest*</label>
-          <select id="contactFormInterest" name="contact[interest]">
+          <label for="contactFormJewelryType">Jewelry Type*</label>
+          <select id="contactFormJewelryType" name="contact[jewelry-type]">
             <option value="Ring">Ring</option>
             <option value="Necklace">Necklace</option>
             <option value="Earrings">Earrings</option>
-            <option value="Other">Other</option>
+            <option value="Bracelet">Bracelet</option>
           </select>
         </div>
         <div class="field-wrapper">
-          <label for="contactFormRequest">Service requested*</label>
-          <select id="contactFormRequest" name="contact[request]">
-            <option value="Customization">Customization</option>
-            <option value="Heirloom Redesign">Heirloom Redesign</option>
-            <option value="Full Custom Design">Full Custom Design</option>
-            <option value="Diamond/Gem Sourcing">Diamond/Gem Sourcing</option>
-            <option value="Combination of above – Please explain below">Combination of above – Please explain below</option>
+          <label for="contactFormMetalType">Metal Type*</label>
+          <select id="contactFormMetalType" name="contact[metal-type]">
+            <option value="14K Yellow Gold">14K Yellow Gold</option>
+            <option value="14K Rose Gold">14K Rose Gold</option>
+            <option value="14K White Gold">14K White Gold</option>
+            <option value="18K Yellow Gold">18K Yellow Gold</option>
+            <option value="18K Rose Gold">18K Rose Gold</option>
+            <option value="18K White Gold">18K White Gold</option>
+            <option value="Platinum">Platinum</option>
           </select>
         </div>
         <div class="field-wrapper">
-          <label for="contactFormDescription">A short description of the jewelry you’d like*</label>
-          <textarea id="contactFormDescription" name="contact[description]" required></textarea>
+          <label for="contactFormStoneType">Stone Type*</label>
+          <select id="contactFormStoneType" name="contact[stone-type]">
+            <option value="Not Applicable">Not Applicable</option>
+            <option value="Diamond">Diamond</option>
+            <option value="Sapphire">Sapphire</option>
+            <option value="Ruby">Ruby</option>
+            <option value="Birthstone">Birthstone</option>
+          </select>
+        </div>
+        <div class="field-wrapper">
+          <label for="contactFormDescription">Description*</label>
+          <textarea id="contactFormDescription" name="contact[description]" required placeholder="Please let us know what type of customized/custom work you are interested in. The more details you can provide, the better we can assist you!"></textarea>
+        </div>
+        <div class="field-wrapper">
+          <label for="contactFormDate">Deadline*</label>
+          <input type="text" id="contactFormDeadline" name="contact[deadline]" required>
         </div>
         <div class="field-wrapper">
           <label for="contactFormBudget">Budget range*</label>
@@ -82,11 +75,6 @@
             <option value="$10000+">$10000+</option>
           </select>
         </div>
-        <div class="field-wrapper">
-          <label for="contactFormDate">When would you ideally like your jewelry by?*</label>
-          <input type="text" id="contactFormDate" name="contact[date]" required>
-        </div>
-
         <div class="field-wrapper extra">
           <label for="contactFormCheckbox">Agree to Terms*</label>
           <div class="checkbox-container">
@@ -97,13 +85,20 @@
           </div>
         </div>
 
+        {% if form.posted_successfully? %}
+          <p class="success">Thank you! We will be in contact with you shortly.</p>
+        {% endif %}
+
+        {% if form.errors %}
+          <p class="error">Sorry, something went wrong. Please try again or email <a href="mailto:natsumi@christynatsumi.com">natsumi@christynatsumi.com</a></p>
+        {% endif %}
+
         <div class="field-wrapper extra">
           <label></label>
           <div class="button-container">
             <input type="submit" class="button" id="contactFormSubmit" value="Submit" />
           </div>
         </div>
-
       </div>
     {% endform %}
   </div>

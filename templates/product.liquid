@@ -145,6 +145,8 @@
         {% if product.description %}
           <div class="cn-product__textBlock">
             <p>{{ product.description }}</p>
+
+            <p><b>30% of this item's sale price will be donated to <a href="https://www.feedingamerica.org/" target="_blank">Feeding America</a> and <a href="https://www.mealsonwheelsamerica.org/" target="_blank">Meals on Wheels</a> while California shelters in place.</b></p>
           </div>
         {% endif %}
           <div class="cn-product__textBlock">
@@ -153,14 +155,21 @@
               <p>
                 All wholesale jewelry is made to order in our San Francisco workshop. Delivery times will vary based on your order size, however average around 4-5 weeks.
               </p>
+              <p>
+                If you need your jewelry sooner, please specify in the <b>special requests</b> box on the shopping cart page. We will do our best to accommodate your request and will contact you if we can&#39;t.
+              </p>
+            {% elsif product.type == 'Gift Card' %}
+              <p>
+                Gift cards are delivered by email and contain instructions on how to redeem them during checkout. Our gift cards have no additional processing fees.
+              </p>
             {% else %}
               <p>
                 All {{ ship_product }} are made to order in our San Francisco workshop. Please allow {{ ship_time }} between the time your order was placed and the day it ships to you.
               </p>
+              <p>
+                If you need your jewelry sooner, please specify in the <b>special requests</b> box on the shopping cart page. We will do our best to accommodate your request and will contact you if we can&#39;t.
+              </p>
             {% endif %}
-            <p>
-              If you need your jewelry sooner, please specify in the <b>special requests</b> box on the shopping cart page. We will do our best to accommodate your request and will contact you if we can&#39;t.
-            </p>
             <p>
               <a href="/pages/contact">Reach out to us here</a> if you have any questions.
             </p>
