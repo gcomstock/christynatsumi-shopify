@@ -1,28 +1,46 @@
-{% if collection.url == '/collections/wedding'
-   or collection.url == '/collections/diamond-rings'
-   or collection.url == '/collections/wedding-bands'
-   or collection.url == '/collections/one-of-a-kind'
-   or collection.url == '/collections/mens'
-%}
-  <a data-subnav="Wedding" class="active" href="{{ shop.secure_url }}/collections/wedding">Wedding</a>
-{% else %}
-	<a data-subnav="Wedding" href="{{ shop.secure_url }}/collections/wedding">Wedding</a>
+{% assign is_product = false %}
+{% assign is_readytoship = false %}
+
+{% if product %}
+  {% assign is_product = true %}
 {% endif %}
 
-{% if collection.url == '/collections/all'
-   or collection.url == '/collections/rings'
-   or collection.url == '/collections/necklaces'
+{% for collection in product.collections %}
+  {% if collection.title == 'Ready to ship' %}
+    {% assign is_readytoship = true %}
+  {% endif %}
+{% endfor %}
+
+
+{% if collection.url == '/collections/ready-to-ship-rings'
+   or collection.url == '/collections/ready-to-ship-earrings'
+   or collection.url == '/collections/ready-to-ship-necklaces'
+   or collection.url == '/collections/ready-to-ship-sale'
+   or collection.url == '/collections/ready-to-ship'
+   or is_readytoship
+%}
+  <a data-subnav="ReadyToShip" class="active" href="{{ shop.secure_url }}/collections/ready-to-ship"><span>Ready to ship</span></a>
+{% else %}
+	<a data-subnav="ReadyToShip" href="{{ shop.secure_url }}/collections/ready-to-ship"><span>Ready to ship</span></a>
+{% endif %}
+
+
+{% if collection.url == '/collections/necklaces'
    or collection.url == '/collections/earrings'
-   or collection.url == '/collections/customer-favorites'
-   or collection.url == '/collections/last-call'
+   or collection.url == '/collections/wedding-bands'
+   or collection.url == '/collections/diamond-rings'
+   or collection.url == '/collections/rings'
+   or collection.url == '/collections/made-to-order'
+   or is_product and is_readytoship == false
 %}
-  <a data-subnav="Jewelry" class="active" href="{{ shop.secure_url }}/collections/all">Jewelry</a>
+  <a data-subnav="MadeToOrder" class="active" href="{{ shop.secure_url }}/collections/made-to-order"><span>Made to order</span></a>
 {% else %}
-	<a data-subnav="Jewelry" href="{{ shop.secure_url }}/collections/all">Jewelry</a>
+	<a data-subnav="MadeToOrder" href="{{ shop.secure_url }}/collections/made-to-order"><span>Made to order</span></a>
 {% endif %}
 
-<a {% if page.url == '/pages/custom' %}  class="active"{% endif %} href="{{ shop.secure_url }}/pages/custom">Custom</a>
-<a {% if page.url == '/pages/contact' %} class="active"{% endif %} href="{{ shop.secure_url }}/pages/contact">Contact</a>
-<a {% if page.url == '/pages/about' %}   class="active"{% endif %} href="{{ shop.secure_url }}/pages/about">About</a>
 
-<a {% if page_title == 'Your Shopping Cart' %} class="active"{% endif %} href="{{ shop.secure_url }}/cart">Cart{% if cart.item_count > 0 %} ({{ cart.item_count }}){% endif %}</a>
+<a {% if page.url == '/pages/custom' %}  class="active"{% endif %} href="{{ shop.secure_url }}/pages/custom"><span>Custom</span></a>
+<a {% if page.url == '/pages/contact' %} class="active"{% endif %} href="{{ shop.secure_url }}/pages/contact"><span>Contact</span></a>
+<a {% if page.url == '/pages/about' %}   class="active"{% endif %} href="{{ shop.secure_url }}/pages/about"><span>About</span></a>
+
+<a {% if page_title == 'Your Shopping Cart' %} class="active"{% endif %} href="{{ shop.secure_url }}/cart"><span>Cart{% if cart.item_count > 0 %} ({{ cart.item_count }}){% endif %}</span></a>

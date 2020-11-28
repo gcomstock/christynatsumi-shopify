@@ -9,39 +9,44 @@
 
 
 {% assign is_wholesale = false %}
+{% assign is_readytoship = false %}
 {% assign is_supervariant = false %}
 {% assign is_lastcall = false %}
-{% assign ship_time = '4-5 weeks' %}
-{% assign ship_product = 'jewelry pieces' %}
+{% assign ship_product = 'This jewelry is' %}
+{% assign ship_time = '4-6 weeks' %}
 
 {% if shop.url contains 'wholesale' %}
   {% assign is_wholesale = true %}
 {% endif %}
 
 {% if product.type == 'Rings' %}
-  {% assign ship_product = 'rings' %}
-  {% assign ship_time = '3-4 weeks' %}
+  {% assign ship_product = 'This ring is' %}
+  {% assign ship_time = '4-6 weeks' %}
 {% endif %}
 
-{% if product.tags contains 'Diamond Ring' %}
-  {% assign ship_product = 'rings that contain stones' %}
-  {% assign ship_time = '4-5 weeks' %}
+{% if product.type == 'Earrings' %}
+  {% assign ship_product = 'These earrings are' %}
+  {% assign ship_time = '2-4 weeks' %}
 {% endif %}
 
-{% if product.tags contains 'Last Call' %}
+{% if product.type == 'Necklaces' %}
+  {% assign ship_product = 'This necklace is' %}
+  {% assign ship_time = '2-4 weeks' %}
+{% endif %}
+
+{% if product.tags contains 'RTS-Sale' %}
   {% assign is_lastcall = true %}
-{% endif %}
-
-{% if product.type == 'Earrings' or product.type == 'Necklaces' %}
-  {% assign ship_product = 'necklaces and earrings' %}
-  {% assign ship_time = '1-2 weeks' %}
 {% endif %}
 
 {% if product.tags contains 'Supervariant' %}
   {% assign is_supervariant = true %}
 {% endif %}
 
-
+{% for collection in product.collections %}
+  {% if collection.title == 'Ready to ship' %}
+    {% assign is_readytoship = true %}
+  {% endif %}
+{% endfor %}
 
 
 <main class="main--top main--bottom cn-wrapper cn-wrapper--product">
@@ -119,7 +124,11 @@
           </div>
 
           <div class="content-wrapper">
-            <label></label>
+            <label>
+              {% if is_readytoship and product.available %}
+                <span class="cn-pill">Ships in 1-2 days</span>
+              {% endif %}
+            </label>
             <button type="submit" class="button--dark" id="js-AddToCart">add to cart</button>
           </div>
         </form>
@@ -145,20 +154,20 @@
         {% if product.description %}
           <div class="cn-product__textBlock">
             <p>{{ product.description }}</p>
-
-            {% if product.title != 'Black Lives Matter' %}
-              <p><b>10% of this item's sale price will be donated to <a href="https://www.feedingamerica.org/" target="_blank">Feeding America</a> and <a href="https://www.mealsonwheelsamerica.org/" target="_blank">Meals on Wheels</a> while California shelters in place.</b></p>
-            {% endif %}
           </div>
         {% endif %}
           <div class="cn-product__textBlock">
             <p></p>
             {% if is_wholesale %}
               <p>
-                All wholesale jewelry is made to order in our San Francisco workshop. Delivery times will vary based on your order size, however average around 4-5 weeks.
+                Shipping times will vary based on total order size. We'll be in touch once your order has been placed to facilitate a schedule and sequence of shipments.
+              </p>
+            {% elsif is_readytoship %}
+              <p>
+                This item was hand made in our Santa Cruz workshop. It will ship within 1-2 business days of your order being placed.
               </p>
               <p>
-                If you need your jewelry sooner, please specify in the <b>special requests</b> box on the shopping cart page. We will do our best to accommodate your request and will contact you if we can&#39;t.
+                Not available in your size or style? Check our <a href="/collections/made-to-order">made to order</a> section.
               </p>
             {% elsif product.type == 'Gift Card' %}
               <p>
@@ -166,10 +175,10 @@
               </p>
             {% else %}
               <p>
-                All {{ ship_product }} are made to order in our San Francisco workshop. Please allow {{ ship_time }} between the time your order was placed and the day it ships to you.
-              </p>
+                {{ ship_product }} made to order in our Santa Cruz workshop. Please allow {{ ship_time }} between the time your order was placed and the day it ships to you. Rush orders are available on a case by case basis. Please <a href="/pages/contact">contact us here</a>.
               <p>
-                If you need your jewelry sooner, please specify in the <b>special requests</b> box on the shopping cart page. We will do our best to accommodate your request and will contact you if we can&#39;t.
+              <p>
+                Need something in a hurry? Check our <a href="/collections/ready-to-ship">ready to ship</a> section.
               </p>
             {% endif %}
             <p>

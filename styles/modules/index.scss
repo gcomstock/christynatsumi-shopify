@@ -53,9 +53,6 @@
   }
 }
 
-
-
-
 .cn-home__customer-favorites {
   display: flex;
   justify-content: center;
@@ -80,8 +77,7 @@
 
 .cn-home__customer-favorites__text {
   @include serifHeader;
-  margin-top: 16px;
-  margin-bottom: 24px;
+  margin: 16px 8px 24px;
 }
 
 .cn-home__customer-favorites__imgs {

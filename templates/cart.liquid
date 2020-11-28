@@ -10,12 +10,13 @@
   {% assign is_wholesale = true %}
 {% endif %}
 
+
 <main class="main--top main--bottom cn-wrapper cn-wrapper--narrow">
   {% if cart.item_count < 1 %}
     <div class="emptyPage">
       <h1>Nothing Yet!</h1>
       <p>You have nothing in your shopping cart.</p>
-      <a class="button" href="/collections/all">see all jewelry</a>
+      <a class="button" href="/collections/ready-to-ship">see what&rsquo;s in stock</a>
     </div>
   {% else %}
     <form action="/cart" method="post" novalidate class="cart">
@@ -29,6 +30,14 @@
       </div>
 
       {% for item in cart.items %}
+
+        {% assign is_readytoship = false %}
+        {% for collection in item.product.collections %}
+          {% if collection.title == 'Ready to ship' %}
+            {% assign is_readytoship = true %}
+          {% endif %}
+        {% endfor %}
+
         <div class="cart__item">
           <a class="cart__item__remove" href="/cart/change?line={{ forloop.index }}&amp;quantity=0" title="Remove Item"></a>
 
@@ -60,6 +69,10 @@
                 <div class="cart__item__desc__variant__sku">
                   <span>SKU: </span>{{ item.variant.sku }}
                 </div>
+              {% endif %}
+              {% if is_readytoship %}
+                <br/>
+                <span class="cn-pill">Ships in 1-2 days</span>
               {% endif %}
             </div>
           </div>

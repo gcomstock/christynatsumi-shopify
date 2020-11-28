@@ -9,7 +9,7 @@
 
 
 <main>
-  <a class="cn-home__hero" href="/collections/all">
+  <a class="cn-home__hero" href="/collections/made-to-order">
     <div class="cn-home__hero__text">
       <div class="cn-home__hero__text__intro">Fine Jewelry</div>
       <div class="cn-home__hero__text__subhead">designed and crafted <br/>in santa cruz</div>
@@ -45,11 +45,11 @@
       <div class="cn-layoutBlock__container__title">
         Wedding<br/> Bands
       </div>
-      <a class="button" href="/collections/wedding-bands">explore</a>
+      <a class="button" href="/collections/wedding-bands">made just for you</a>
     </div>
   </div>
 
-
+<!--
   <div class="cn-layoutBlock cn-layoutBlock--flexEnd">
     <div class="cn-layoutBlock__img" style="flex: 0 1 960px">
       <a href="/collections/mens">
@@ -73,16 +73,16 @@
       <a class="button" href="/collections/mens">for every taste</a>
     </div>
   </div>
-
+-->
 
   <div class="cn-home__customer-favorites">
     <div class="cn-home__customer-favorites__text">
-      Customer Favorites
+      Great gifts ready to ship
     </div>
     <div class="cn-home__customer-favorites__imgs">
       <div class="cn-wrapper">
         {% assign counter = 0 %}
-        {% for product in collections.customer-favorites.products %}
+        {% for product in collections.great-gifts-ready-to-ship.products %}
           {% include 'product-grid-item' %}
 
           {% assign counter = counter | plus: 1 %}
@@ -92,13 +92,13 @@
         {% endfor %}
       </div>
     </div>
-    <a class="button" href="/collections/customer-favorites">see more customer favorites</a>
+    <a class="button" href="/collections/great-gifts-ready-to-ship">see more</a>
   </div>
 
 
   <div class="cn-layoutBlock cn-layoutBlock--reverse">
     <div class="cn-layoutBlock__img" style="flex: 0 1 600px">
-      <a href="/collections/all">
+      <a href="/collections/made-to-order">
         <picture>
           <source data-srcset="{{ 'christy-natsumi__home__collection--mobile.jpg' | asset_url }}" media="(max-width: 375px)" />
           <source data-srcset="{{ 'christy-natsumi__home__collection--mobile-large.jpg' | asset_url }}" media="(max-width: 600px)" />
@@ -116,7 +116,7 @@
       <div class="cn-layoutBlock__container__title">
         View the<br/> Collection<br/>
       </div>
-      <a class="button" href="/collections/all">made in santa cruz</a>
+      <a class="button" href="/collections/made-to-order">made in santa cruz</a>
     </div>
   </div>
 

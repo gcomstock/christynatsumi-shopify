@@ -1,6 +1,5 @@
 @mixin navLink {
   @include lightSubHeader;
-
   font-size: 1.6rem;
   color: #7e7e7e;
   text-decoration: none;
@@ -13,7 +12,6 @@
 
 $nav-height: 104px;
 $mobile-nav-height: 56px;
-
 
 
 .cnew-header {
@@ -74,30 +72,66 @@ $mobile-nav-height: 56px;
   font-weight: 700;
 }
 
-
 .cnew-header__nav__items {
   display: none;
 
   @media (hover: hover) {
     display: flex;
     flex: 0 0 auto;
-    align-items: center;
+    align-items: stretch;
+
     font-size: 0;
     margin-bottom: 0;
     margin-right: 48px;
     white-space: nowrap;
 
-    a {
-      margin: 0 1.6rem;
-      @include navLink;
+    .cnew-header__nav__items__item {
+      display: flex;
+      align-items: center;
+    }
 
-      &:hover, &.expanded { border-bottom: 1px solid #7e7e7e; }
+    a {
+      display: flex;
+      align-items: center;
+      padding: 0 1.6rem;
+      text-decoration: none;
+
+      span {
+        position: relative;
+      }
+      &:hover, &.expanded {
+        span {
+          border-bottom: 1px solid #7e7e7e;
+        }
+      }
 
       &.active {
-        color: #000;
-        font-weight: bold;
-        &:hover, &.expanded { border-bottom: 1px solid #000; }
+        span {
+          color: #000;
+          font-weight: bold;
+          &:before {
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            padding: 0.8rem 1.2rem;
+            top: -0.8rem;
+            left: -1.2rem;
+            background-color: $header-border-bg;
+            z-index: -1;
+            pointer-events: none;
+          }
+        }
+        &:hover, &.expanded {
+          span {
+            border-bottom: 1px solid #000;
+          }
+        }
       }
+    }
+
+    span {
+      @include navLink;
     }
   }
 }
@@ -143,7 +177,7 @@ $mobile-nav-height: 56px;
 
 .cnew-header__subnav__items__item {
   flex: 1 0 1px;
-  max-width: 276px; // images are exported at 2x this value. can change but need to re-export
+  max-width: 276px; // images are exported at 2x this value. can change but need to re-export images to prevent quality loss
   margin-right: 3.2rem;
   height: 100%;
   text-align: center;
