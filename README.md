@@ -86,5 +86,5 @@ have changes to config.yml be untracked so it doesn't upload to github but persi
 $ theme deploy --env=dev-quick
 $ theme deploy --env=dev
 $ theme watch --env=dev
-$ theme deploy --env=prod snippets/headernotice.liquid
+$ theme deploy --env=prod snippets/headernotice.liquid --allow-live
 ```
