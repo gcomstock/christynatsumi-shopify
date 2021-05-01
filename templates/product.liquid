@@ -107,11 +107,11 @@
           </div>
         {% endif %}
 
-        {% if is_supervariant or ship_product == 'rings' %}
-          <div id="infinite-options-loader">Loading Options...</div>
-        {% endif %}
+        {%- form 'product', product, data-productid: product.id, class: 'addtocartForm' -%}
+          {% if is_supervariant or ship_product == 'rings' %}
+            <div id="infinite-options-loader">Loading Options...</div>
+          {% endif %}
 
-        <form action="/cart/add" method="post">
           <select name="id" id="js-ProductSelect">
             {% for variant in product.variants %}
               <option value="{{ variant.id }}">{{ variant.title }} - {{ variant.price | money }}</option>
@@ -131,7 +131,12 @@
             </label>
             <button type="submit" class="button--dark" id="js-AddToCart">add to cart</button>
           </div>
-        </form>
+          
+          <div class="content-wrapper">
+            <label></label>
+            {{ form | payment_terms }}
+          </div>
+        {% endform %}
       </div>
 
 
